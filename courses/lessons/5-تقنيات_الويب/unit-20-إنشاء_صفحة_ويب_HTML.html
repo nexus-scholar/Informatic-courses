@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الوحدة 20: إنشاء صفحة ويب HTML</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+body{font-family:'Amiri','Noto Naskh Arabic',serif;direction:rtl;text-align:right;background:#fff;color:#1a1a1a;line-height:2;max-width:900px;margin:0 auto;padding:20px 30px}
+h1{color:#1565c0;border-bottom:3px solid #1565c0;padding-bottom:10px}
+h2{color:#1976d2;border-bottom:2px solid #e3f2fd;padding-bottom:6px;margin-top:30px}
+h3{color:#1e88e5;margin-top:20px}
+h4{color:#42a5f5}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #bbb;padding:8px 12px;text-align:right}
+th{background:#e3f2fd;font-weight:bold}
+tr:nth-child(even){background:#f5f5f5}
+pre,code{background:#f5f5f5;padding:2px 6px;border-radius:3px;font-family:monospace}
+pre{padding:12px;overflow-x:auto;border:1px solid #ddd}
+blockquote{border-right:4px solid #1976d2;padding-right:15px;margin:15px 0;color:#555}
+hr{border:none;border-top:2px solid #e3f2fd;margin:20px 0}
+ul,ol{padding-right:20px}
+a{color:#1565c0}
+a:hover{color:#0d47a1}
+img{max-width:100%;height:auto}
+</style>
+</head>
+<body>
+<h1>الوحدة 20: إنشاء صفحة ويب HTML</h1>
+<h2>المجال الخامس: تقنيات الويب</h2>
+<h3>المدة الزمنية: 06 ساعات</h3>
+
+<hr>
+
+<h3>1 مقدمة</h3>
+
+<p>يظن بعض الناس أن إنشاء المواقع عملية صعبة معقدة، وهذا ليس صحيحاً، فيمكن للجميع تعلم كيفية إنشاء المواقع. الهدف من هذا الدرس هو مقدمة سهلة في كيفية إنشاء المواقع، وهذا الدرس لا يتطلب أي معرفة مسبقة منك عن البرمجة أو تطوير المواقع.</p>
+
+<h3>2 ما هي HTML</h3>
+
+<p>هي اللغة المستخدمة في إنشاء وتصميم صفحات الويب.</p>
+
+<p>اخترعت HTML في عام 1991م من قبل عالم يسمى تيم بيرنرزلي، الهدف من هذه اللغة هو تبسيط عملية وصول العلماء في جامعات مختلفة إلى البحوث التي ينشرونها. المشروع نجح بشكل لم يتصوره تيم بيرنرزلي، فباختراعه HTML قام تيم بيرنرزلي بوضع أساس شبكة الويب كما نعرفها اليوم.</p>
+
+<p>هي لغة تسمح بعرض المعلومات (مثال: البحوث العلمية) على شبكة الإنترنت، وهذا ما نراه عند زيارتنا لأي صفحة في الشبكة.</p>
+
+<h3>3 ماذا تعني H-T-M-L؟</h3>
+
+<p>كلمة HTML هي اختصار &quot;HyperText Markup Language&quot;،</p>
+
+<ul>
+<li>HYPER هي عكس &quot;خطي&quot;، وهي تعني في هذه الحالة أن ننتقل من أي نقطة إلى أي نقطة بدون أن نسير في خط سير محدد.</li>
+<li>Text تعني النص.</li>
+<li>Mark-up هو ما نفعله بالنص، فهذه الكلمة تعني توصيف النص، فنحن نقوم بتوصيف النص تماماً كما نفعل مع معالجات النصوص والكلمات، فنضيف العناوين والنقاط والنص السميك وغيرها.</li>
+<li>Language تعني اللغة، فتقنية HTML هي لغة توصيف.</li>
+</ul>
+
+<p>تكتب ملفات HTML في صورة ملفات نصوص بسيطة (Text)، تأخذ الامتداد .html عادة، وتكتب في أي برنامج للنصوص البسيطة، في الويندوز نستخدم Notepad++.</p>
+
+<p>لغة HTML لغة وصفية سهلة جداً ذات قدرات عالية وميزات فريدة وقوية، جميع الصفحات العالمية متقنة التصميم تم إعدادها باستخدام لغة HTML، وتتميز HTML أيضاً بأنها ذات قواعد سهلة ومعروفة.</p>
+
+<p>شبكة المنهل التعليمية http://111000.net/wdesign/?start=30</p>
+
+<h3>4 العناصر والوسوم</h3>
+
+<p>تتكون ملفات HTML من قسمين:</p>
+
+<ul>
+<li>المحتوى: وهو ما يشاهده الجمهور في صفحتك.</li>
+</ul>
+
+<p>الوسوم (Tags) هي الأجزاء التي تحدد وتصف المحتوى من حيث التنسيق. الوسوم هي توصيفات نستخدمها ونضعها في بداية العنصر وعند نهايته. كل الوسوم لها نفس الشكل، تبدأ مع علامة أصغر من &quot;&amp;lt;&quot; وتنتهي مع علامة أكبر من &quot;&amp;gt;&quot;.</p>
+
+<pre><code class="html">
+&lt;html&gt; .............................................&lt;/html&gt;
+</code></pre>
+
+<p>بشكل عام هناك نوعان من الوسوم، وسم البداية مثلاً: &amp;lt;html&amp;gt; ثم وسم الإغلاق &amp;lt;/html&amp;gt;. الفرق بين الاثنين هو علامة &quot;/&quot;، وتوصيف المحتوى يكون بوضعه بين وسم البداية ووسم الإغلاق.</p>
+
+<p>بعض الأمثلة:</p>
+
+<ul>
+<li>المثال 1:</li>
+</ul>
+
+<p>الوسم em هو اختصار لكلمة &quot;emphasis&quot;، أو الوسم i، يجعل النص &quot;مائلاً&quot;، وكل النصوص بين وسم البداية &amp;lt;em&amp;gt; ووسم الإغلاق &amp;lt;/em&amp;gt; ستظهر بشكل مائل في المتصفح.</p>
+
+<pre><code class="html">
+&lt;em&gt;نص مائل&lt;/em&gt;
+</code></pre>
+
+<ul>
+<li>المثال 2:</li>
+</ul>
+
+<p>الوسم b هو اختصار لكلمة Bold أو الوسم strong للخط العريض، ويأتي في صورة زوج من الوسوم، وسم للفتح ووسم للإغلاق.</p>
+
+<pre><code class="html">
+HTML is a &lt;b&gt;Great&lt;/b&gt; Language
+</code></pre>
+
+<p>وعند استخدام المتصفح في مشاهدة السطر سيظهر هكذا:</p>
+
+<p>سيظهر بهذا الشكل في المتصفح: HTML is a Great Language</p>
+
+<h4>ملاحظات:</h4>
+
+<ul>
+<li>جميع عناصر ملف HTML يتم إدراجها عن طريق الوسوم، وتحدد خصائصها أيضاً عن طريق الوسوم.</li>
+<li>لغة HTML لا تراعي حالة الأحرف من حيث كونها كبيرة أو صغيرة، أي أنه في HTML الوسم &amp;lt;b&amp;gt; لا يختلف عن &amp;lt;B&amp;gt;.</li>
+<li>بعض الوسوم تحتاج إلى وسم إغلاق وبعضها لا يحتاج إليه، مثلاً الوسم &amp;lt;br&amp;gt; الذي يستخدم لتحديد نهاية السطر وبداية سطر جديد ليس له وسم إغلاق.</li>
+<li>لغة HTML لا تراعي الفراغات والمسافات البيضاء، أما الفراغات فتعتبر رموزاً خاصة أيضاً، وللتحكم بها نستخدم الوسم non breakable space (&amp;amp;nbsp)، وإذا أردنا إدخال عدة فراغات بين نص وآخر ما علينا إلا كتابة هذا الوسم بنفس الفراغات المطلوبة.</li>
+<li>توضع التعليقات بين &amp;lt;!-- و --&amp;gt;، أي أن المتصفح يتجاهل أي شيء بينهما وكأنه غير موجود.</li>
+</ul>
+
+<h4>بنية ملف HTML</h4>
+
+<p>يتكون ملف HTML من جزئيين رئيسيين هما:</p>
+
+<ul>
+<li>البداية: HTML — &amp;lt;html&amp;gt; وسم بداية المستند، و&amp;lt;/html&amp;gt; وسم نهاية المستند.</li>
+<li>الرأس: Head — يحتوي على المعلومات الإضافية الخاصة بالمستند من حيث، مثلاً، عنوان الصفحة والكلمات المفتاحية فيها وغيرها من الأمور الخاصة بالصفحة والتي لا تعتبر من ضمن محتوى المستند.</li>
+<li>العنوان: Title — يحتوي على عنوان المستند.</li>
+<li>الجسم: Body — وهو يحتوي على محتوى المستند الذي يراه المستخدم.</li>
+</ul>
+
+<p><img src="artifacts/image_000295_74d64fd865cd7746db019af7ff3e8187299b9843c31fff2c83fcbc7e0fbe226d.png" alt="Image"></p>
+
+<pre><code class="html">
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>المثال التالي يبين كيفية تقسيم ملف HTML:</p>
+
+<p><img src="artifacts/image_000296_2f035fba18d0da051ab45623151e67c753e20afa1af022dc66d2d6b353328b86.png" alt="Image"></p>
+
+<p>الأجزاء التابعة للرأس توضع بين الوسمين &amp;lt;head&amp;gt; و&amp;lt;/head&amp;gt;، أما الأجزاء التابعة للجسم فتوضع بين الوسمين &amp;lt;body&amp;gt; و&amp;lt;/body&amp;gt;.</p>
+
+<p>يتم تحديد عنوان المستند الذي يظهر في شريط العنوان للمتصفح بإحاطته بالوسمين &amp;lt;title&amp;gt; و&amp;lt;/title&amp;gt;، والمكان الصحيح لوسم الـ title هو الرأس، حيث أن الوسم title لا يعتبر من ضمن محتوى الصفحة ولا يظهر في الصفحة، وهو يستخدم في عمليات البحث والأرشيف كما في محركات البحث.</p>
+
+<h3>5 العناوين والفقرات</h3>
+
+<h4>الأنماط الأساسية</h4>
+
+<p>العناوين: وهي من ستة مستويات، العنوان الأول h1 والثاني h2 وهكذا حتى h6.</p>
+
+<pre><code class="html">
+&lt;h1&gt;المستوى 1&lt;/h1&gt; &lt;h2&gt;المستوى 2&lt;/h2&gt; &lt;h3&gt;المستوى 3&lt;/h3&gt; &lt;h4&gt;المستوى 4&lt;/h4&gt; &lt;h5&gt;المستوى 5&lt;/h5&gt; &lt;h6&gt;المستوى 6&lt;/h6&gt;
+</code></pre>
+
+<p><img src="artifacts/image_000297_f16566fe120db90b8823894fb58c8dc973c229407e99882f8f191d8efda9cc72.png" alt="Image"></p>
+
+<pre><code class="html">
+&lt;p&gt;Paragraph Text&lt;/p&gt;
+</code></pre>
+
+<p><img src="artifacts/image_000298_b87bf2885ba7951d6def976a25e6e430e336cfa7a3fc6bb88af8ae610ca70f8d.png" alt="Image"></p>
+
+<p>تحديد الفقرات:</p>
+
+<p>يتم إحاطة الفقرة بالوسم:</p>
+
+<p>P</p>
+
+<p><img src="artifacts/image_000299_a11a64d72be287d42c15064311ecef92a4eeafeec7304dc933cee986f7a0d634.png" alt="Image"></p>
+
+<h4>تحديد اتجاه الفقرة: استخدم الخاصية align في الوسم P</h4>
+
+<p><img src="artifacts/image_000300_abfcecd6de1f73d6438aa7744ef871fba632ef4d07363e7abfdbfd675d519ee8.png" alt="Image"></p>
+
+<p><img src="artifacts/image_000301_ba0077a089d6c3f3b9736d109bbec01d44c9bb375085ac00670cfc008a1f7565.png" alt="Image"></p>
+
+<h4>الوسم Font</h4>
+
+<p>يستعمل الوسم &amp;lt;font&amp;gt; دائماً مع مجموعة من الخصائص، فهو لا يمتلك أي تأثير لوحده، وأهم خصائصه هي التي تحدد نوع الخط ولونه وحجمه.</p>
+
+<h4>خصائص الوسم font</h4>
+
+<p>الخاصية face: تحدد نوع الخط المستخدم:</p>
+
+<pre><code class="html">
+&lt;font face=&quot;Arial&quot;&gt;هذا ملف html&lt;/font&gt;&lt;br&gt;
+&lt;font face=&quot;Courier New&quot;&gt;هذا ملف html&lt;/font&gt;&lt;br&gt;
+&lt;font face=&quot;andalus&quot;&gt;هذا ملف html&lt;/font&gt;
+</code></pre>
+
+<p><img src="artifacts/image_000302_6913e8c47029e2bfb8cf367e3a13d7a5f38b79afc8f0f3882017230dd0e20bc5.png" alt="Image"></p>
+
+<p>الخاصية color: تستخدم لتحديد لون الخط (انظر إلى الألوان في الأسفل):</p>
+
+<pre><code class="html">
+هذه الكلمة &lt;font color=&quot;red&quot;&gt;حمراء&lt;/font&gt; وهذه &lt;font color=&quot;blue&quot;&gt;زرقاء&lt;/font&gt;
+</code></pre>
+
+<p><img src="artifacts/image_000303_423b537752b13342ec1379c42736325ded432c2275cbd729c9a38091917b5a8d.png" alt="Image"></p>
+
+<p>الخاصية size: تستخدم لتحديد حجم الخط.</p>
+
+<p>توجد سبعة أحجام للخط، والخط الأساسي في الصفحة يأخذ أحد هذه الأحجام، وإذا أردنا تغيير حجم الخط في كلمة معينة أو جزء ما من النص، نستخدم الوسم font مع الخاصية size لزيادة حجم الخط أو إنقاصه بمقدار معين.</p>
+
+<p><img src="artifacts/image_000304_05f246f3c32cf7aeee5aa1f1cdbb776f49c2d42ee2869245ceaa5f5417dda275.png" alt="Image"></p>
+
+<p><img src="artifacts/image_000305_cce6bc9907f33d8f25515c6c5a816744fca094064abd43ac09f84d16841c885c.png" alt="Image"></p>
+
+<p>توجد أيضاً طريقة سريعة لتكبير الخط خطوة واحدة أو تصغيره خطوة واحدة، باستخدام الوسم &amp;lt;big&amp;gt; أو &amp;lt;small&amp;gt;.</p>
+
+<p><img src="artifacts/image_000306_55dd98b8209f78532de6fb38dae83b38e7a3a500a7899b1b4b0095fdde86c7d2.png" alt="Image"></p>
+
+<p><img src="artifacts/image_000307_4c987d2b2da0225cc452e19b9b1a271d153d0907d0056578fed4d6ea4f0ced50.png" alt="Image"></p>
+
+<h4>ملاحظة:</h4>
+
+<p>يمكننا كذلك تغيير حجم الخط الأساسي في المستند، وهذا سيؤثر على جميع الأماكن التي استخدمت فيها الأحجام النسبية للخطوط.</p>
+
+<p>نغير الخط الأساسي باستخدام وسم يدعى basefont، ويمكن استخدامه لتغيير حجم الخط الأساسي في المستند ولونه ونوعه، وهو لا يأخذ قيماً نسبية في الحجم.</p>
+
+<h4>مثال:</h4>
+
+<p>لتغيير الخط الأساسي إلى Arial بحجم 3 ولون أخضر، نضع السطر التالي في المستند:</p>
+
+<pre><code class="html">
+&lt;basefont color=&quot;Green&quot; size=&quot;3&quot; face=&quot;Arial&quot;&gt;
+</code></pre>
+
+<p>والوسم basefont لا يستخدم في جزء محدد من نصوص HTML، بل يظهر تأثيره في الصفحة كلها، لذلك فهو لا يحتاج إلى وسم إغلاق.</p>
+
+<h4>الوسم <code>&lt;hr&gt;</code> وهو وسم خاص لوضع الخط الأفقي</h4>
+
+<p>يمكننا تحديد عرض الخط بالخاصية width، حيث تأخذ width قيماً مطلقة مثل 11 أو 293 وهي تحدد العرض بالبكسل، أو قيماً نسبية تقاس بالنسبة إلى عرض الصفحة، مثل 21% و55%.</p>
+
+<p>توجد أيضاً خاصية وهي size التي تحدد ارتفاع الخط رأسياً، وتأخذ قيماً مطلقة صغيرة.</p>
+
+<p>توجد أيضاً خاصية color لتحديد لون الخط.</p>
+
+<p>توجد أيضاً الخاصية noshade وهي خاصية بدون قيمة، وعند وضعها تجعل الخط يبدو مصمتاً وليس منحوتاً كما في الحالة القياسية.</p>
+
+<ul>
+<li>خط أفقي: <code>&lt;hr&gt;</code></li>
+<li>خط أفقي ملون: <code>&lt;hr color=&quot;red&quot;&gt;</code></li>
+<li>خط أفقي ملون أكبر عرضاً: <code>&lt;hr color=&quot;Purple&quot; size=&quot;8&quot;&gt;</code></li>
+<li>خط أفقي محدود الطول: <code>&lt;hr width=&quot;30%&quot;&gt;</code></li>
+<li>خط أفقي سميك: <code>&lt;hr noshade size=&quot;20&quot;&gt;</code></li>
+</ul>
+
+<p><img src="artifacts/image_000308_76cda1cd869c15bc6df00b2e4bd7115e582a7a76aead0e72c34b1e3240f924f8.png" alt="Image"></p>
+
+<h4>تنسيق الصفحة:</h4>
+
+<p>يمكن أيضاً استخدام بعض المتغيرات في وسم الجسم body، وهذه المتغيرات تستخدم في تحديد تنسيق الصفحة:</p>
+
+<ul>
+<li>لون خلفية الصفحة: bgcolor</li>
+<li>لون النص: text</li>
+<li>حاشية الصفحة العلوية: topmargin، والسفلية: bottommargin، واليسرى: leftmargin، واليمنى: rightmargin.</li>
+</ul>
+
+<p><img src="artifacts/image_000309_c3b0ea2983480a4724acdbe573f00bade963d1b2b340467ee40be92928c397fe.png" alt="Image"></p>
+
+<p><img src="artifacts/image_000310_52f02b01949a216ba24b219d60453e11cfd5c8a70bb2eb344f9ee1868749b8de.png" alt="Image"></p>
+
+<p>disc، circle</p>
+
+<h3>6 تنظيم المحتوى</h3>
+
+<h4>التعداد الرقمي والنقطي</h4>
+
+<p>يمكننا تنظيم المحتوى في لغة HTML في عدة أشكال، مثلاً وضعه في صورة قائمة مرتبة، أو في صورة شجرة (مخطط هرمي).</p>
+
+<p>يمكننا إنجاز قائمة مرتبة بالتعداد الرقمي باستخدام الوسم ol وهي اختصار &quot;ordered list&quot;، وقائمة غير مرتبة بالتعداد النقطي باستخدام الوسم ul وهي اختصار &quot;unordered list&quot;، بحيث توضع البنود بينهما، وكل بند يحدد بالوسم li وهي اختصار &quot;list item&quot;.</p>
+
+<p>يمكننا تحديد نوع الترقيم في القوائم المرتبة بالحروف أو بالأرقام العربية أو الرومانية وغيرها عبر الخاصية type، وتأخذ أحد القيم التالية:</p>
+
+<pre><code>
+1, 2, 3, 4, ... : أرقام عادية
+a, b, c, d, ... : أحرف صغيرة
+A, B, C, D, ... : أحرف كبيرة
+i, ii, iii, iv, ... : أرقام رومانية صغيرة
+I, II, III, IV, ... : أرقام رومانية كبيرة
+</code></pre>
+
+<p>وفي القوائم غير المرتبة: disc، circle، square.</p>
+
+<p>ويمكننا وضع قائمة داخل قائمة لتشكيل المخططات الهرمية.</p>
+
+<p>مثال:</p>
+
+<p><img src="artifacts/image_000311_d8c0cea351defeb9f1cf315bbea1fcb5d77fcc9f6bd40b264d2ebe828074e901.png" alt="Image"></p>
+
+<p><img src="artifacts/image_000312_8a9f58db560c09ec2a127a92b6875f718869839dfa0922d9bd77d0f30624b140.png" alt="Image"></p>
+
+<h3>7 الصور والرسومات</h3>
+
+<p>يمكننا في لغة HTML عرض الصور في الصفحات والتحكم في خواصها.</p>
+
+<h4>ملاحظة:</h4>
+
+<p>يجب أن تكون الصورة جاهزة للنشر على الويب، أي أن لا تكون ذات حجم كبير لأن ذلك سيؤدي إلى بطء شديد في التحميل، لذلك يفضل التقليل من الصور قدر الإمكان في صفحات HTML.</p>
+
+<p>لكي نستطيع عرض الصور في المستند، يجب أن تكون الصورة من النوع JPEG أو GIF أو PNG.</p>
+
+<h4>إدراج الصور</h4>
+
+<p>يتم إدراج الصور في صفحة HTML عن طريق الوسم IMG، وهو وسم مفرد (لا يحتاج إلى وسم إغلاق)، وهذا الوسم يحتاج إلى خاصية مهمة لكي يعمل بشكل سليم وهي src اختصار لكلمة source، والتي نضع بها عنوان الصورة المطلوبة:</p>
+
+<pre><code class="html">
+&lt;img src=&quot;velo.jpg&quot;&gt;
+</code></pre>
+
+<p><img src="artifacts/image_000313_f7ed5295d691e340a01dbc09af45e2772501a4bd33fd1587dbe6971a6aa62ec5.png" alt="Image"></p>
+
+<p><img src="artifacts/image_000314_8802b77dd4fb8937220e1b9b21a42936e9eb3bcef0a0ec05e9dc05c3e9e8350b.png" alt="Image"></p>
+
+<h4>الخاصية width و height</h4>
+
+<p>الخاصية width تستعمل لتحديد عرض الصورة، والخاصية height لتحديد ارتفاع الصورة. يمكن بواسطة الخاصيتين السابقتين تكبير الصورة وتصغيرها حسب المطلوب، وإذا كنت تريد إظهارها بالحجم الطبيعي فيمكنك ترك هذه الخصائص.</p>
+
+<p><img src="artifacts/image_000315_8742f5f41670c694a88cb4d49fa406e5b5b7468614028fc9b8292b15c22d712a.png" alt="Image"></p>
+
+<p><img src="artifacts/image_000316_60037f2510e1c6282e6fc340d950de96165da9a63a6b9770c8b657a805200d2f.png" alt="Image"></p>
+
+<h4>الخاصية align</h4>
+
+<p>وهي خاصية مهمة جداً في الصور، وتنبع أهميتها من كونها الطريقة الوحيدة للتحكم بكيفية عرض الصورة بالنسبة للنصوص المحيطة بها، حيث أن الصور في HTML تعتبر جزءاً من النص المحيط بها، تتحرك معه وترتبط به.</p>
+
+<p>تأخذ align العديد من القيم وهي:</p>
+
+<ul>
+<li>bottom, baseline, absbottom: وهي تعرض الصورة بحيث تكون على السطر مثل أي كلمة أخرى.</li>
+<li><code>&lt;img src=&quot;velo.gif&quot; align=&quot;bottom&quot;&gt;</code></li>
+<li>left: وهي تعرض الصورة على يسار الفقرة ولا يكون للصورة علاقة بالسطر.</li>
+<li><code>&lt;img src=&quot;velo.gif&quot; align=&quot;left&quot;&gt;</code></li>
+<li>middle, absmiddle: وهي تعرض الصورة في منتصف السطر.</li>
+<li><code>&lt;img src=&quot;velo.gif&quot; align=&quot;middle&quot;&gt;</code></li>
+<li>right: وهي تعرض الصورة على يمين الفقرة ولا يكون للصورة علاقة بالسطر.</li>
+<li><code>&lt;img src=&quot;velo.gif&quot; align=&quot;right&quot;&gt;</code></li>
+<li>top, texttop: وهي تعرض الصورة أعلى السطر فيكون السطر أسفلها.</li>
+<li><code>&lt;img src=&quot;velo.gif&quot; align=&quot;top&quot;&gt;</code></li>
+</ul>
+
+<h3>8 الارتباطات التشعبية</h3>
+
+<p>تعد الارتباطات التشعبية من أهم مكونات صفحة الويب، لأنها هي المسؤولة عن ربط مجموعة من صفحات الويب المختلفة بينها، مما يتيح للمستخدم التنقل عبرها بسهولة.</p>
+
+<p>لإنجاز وصلة نستخدم الوسم a وهي اختصار لكلمة anchor، وهي لا تعمل لوحدها ولكن تتطلب خصائص معينة، من أهمها الخاصية href وهي اختصار &quot;hypertext reference&quot;، لتحديد الوجهة.</p>
+
+<ul>
+<li>الوجهة قد تكون صفحة من موقع خارجي، وعندها يبدأ العنوان بـ http:</li>
+</ul>
+
+<pre><code class="html">
+&lt;a href=&quot;http://www.microsoft.com/&quot;&gt;Microsoft Corp.&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;http://www.microsoft.com/&quot;&gt;cliquer ici.&lt;/a&gt;&lt;br&gt;
+</code></pre>
+
+<p><img src="artifacts/image_000317_110ebd825fba33d0eae07507a97717f589dd52f014935fc3fb76b01e36176840.png" alt="Image"></p>
+
+<p>يمكننا إدراج صورة أو زر كبديل عن الكلمات:</p>
+
+<pre><code class="html">
+&lt;a href=&quot;http://www.microsoft.com/&quot;&gt;&lt;img src=&quot;new.gif&quot;&gt;&lt;/a&gt;&lt;br&gt;
+</code></pre>
+
+<ul>
+<li>الوجهة قد تكون ملفاً موجوداً في نفس الموقع، سواء كانت صفحة أو صورة أو غير ذلك:</li>
+</ul>
+
+<pre><code class="html">
+&lt;a href=&quot;صفحتي.htm&quot;&gt;الصفحة الأولى&lt;/a&gt;&lt;br&gt;
+</code></pre>
+
+<pre><code class="html">
+&lt;a href=&quot;velo.gif&quot;&gt;&lt;img src=&quot;velo.gif&quot;&gt;انقر على الصورة&lt;/a&gt;&lt;br&gt;
+</code></pre>
+
+<p><img src="artifacts/image_000318_d7da290561ea40f143132b8da42f0f98932489c3e970c46cb91acd9f90c4703c.png" alt="Image"></p>
+
+<ul>
+<li>الوجهة قد تكون عنواناً لبريد إلكتروني، وعندها يبدأ بـ mailto:</li>
+</ul>
+
+<pre><code class="html">
+&lt;a href=&quot;mailto:nordine@hotmail.com&quot;&gt;Mon E-mail&lt;/a&gt;
+</code></pre>
+
+<ul>
+<li>الوجهة قد تكون مكاناً ما داخل نفس الصفحة، أولها، أخيرها أو أي مكان نريده.</li>
+</ul>
+
+<p>بإمكاننا إنشاء روابط داخلية ضمن الصفحة، كل ما تحتاجه هي خاصية تسمى id أو &quot;identification&quot;، والعلامة &quot;#&quot;.</p>
+
+<p>استخدم خاصية id لتضع إشارة للعنصر الذي تريد وضع رابط له، مثال:</p>
+
+<pre><code class="html">
+&lt;p&gt;&lt;a href=&quot;#heading1&quot;&gt;انتقل إلى العنوان رقم 1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;#heading2&quot;&gt;انتقل إلى العنوان رقم 2&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;heading1&quot;&gt;العنوان رقم 1&lt;/h1&gt;
+&lt;p&gt;نص... نص... نص...&lt;/p&gt;
+&lt;h1 id=&quot;heading2&quot;&gt;العنوان رقم 2&lt;/h1&gt;
+&lt;p&gt;نص... نص... نص...&lt;/p&gt;
+</code></pre>
+
+<p><img src="artifacts/image_000319_2b55493476368f19f743aeba4b22c3a5886a93d1679f43ec000549a43e25f8a6.png" alt="Image"></p>
+
+<h3>9 الجداول</h3>
+
+<p>تعتبر الجداول من أهم مكونات صفحات HTML، وجميع التصاميم الاحترافية تستفيد من الجداول لتصميم الصفحة وتوزيع الكائنات عليها وتشكيلها في القالب الذي يريدونه.</p>
+
+<p>يتم إدراج الجدول بالوسم &amp;lt;table&amp;gt;، وداخل الجدول يجب إدراج صفوف باستخدام الوسم &amp;lt;tr&amp;gt; وتعني &quot;table row&quot;، وداخل الصفوف توجد البيانات بالوسم &amp;lt;td&amp;gt; وهو اختصار &quot;table data&quot;، وهذا الوسم يبدأ وينهي كل خلية في صفوف الجدول.</p>
+
+<p>يمكن وضع إطار للجدول بالخاصية border، حيث نحدد فيها سماكة الإطار المطلوب. القيمة الافتراضية للإطار هي 0 أي بدون إطار.</p>
+
+<p><img src="artifacts/image_000320_20bbd5244f485b812dfe519e0c9c39a8ed1daf0abeafc9bb9826f74fe155f567.png" alt="Image"></p>
+
+<p><img src="artifacts/image_000321_28c7018d80a6ffcdcb7b24dd54c1b2d704bc548973be02673275f35ff260a673.png" alt="Image"></p>
+
+<h4>الخاصية cellspacing و cellpadding</h4>
+
+<p>يمكننا التحكم بالمسافة بين الخلايا بواسطة الخاصية cellspacing، والمسافة بين الحدود الداخلية للخلايا ومحتوياتها بواسطة الخاصية cellpadding:</p>
+
+<p><img src="artifacts/image_000322_265f3267b9a43b38411b2f129a47f14d9adf97b2aab252de44c10048213290dc.png" alt="Image"></p>
+
+<pre><code class="html">
+&lt;table cellspacing=&quot;10&quot; cellpadding=&quot;20&quot; border=&quot;1&quot;&gt;
+  &lt;tr&gt;
+    &lt;td&gt;الخلية الأولى&lt;/td&gt;
+    &lt;td&gt;الخلية الثانية&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+
+<h4>الخاصية width و height</h4>
+
+<p>يمكن التحكم بعرض الجدول بالخاصية width وارتفاعه بالخاصية height، وكلاهما يأخذ قيماً مطلقة أو نسباً مئوية، ويمكن استخدام هذه الخصائص في الخلايا td أيضاً:</p>
+
+<pre><code class="html">
+&lt;table width=&quot;100%&quot; height=&quot;100%&quot; border=&quot;1&quot;&gt;
+  &lt;tr&gt;
+    &lt;td width=&quot;100&quot; height=&quot;40%&quot;&gt;الخلية الأولى&lt;/td&gt;
+    &lt;td width=&quot;100%&quot; height=&quot;40%&quot;&gt;الخلية الثانية&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+
+<ul>
+<li>الخاصية bgcolor: التحكم في لون خلفية الجدول.</li>
+<li>الخاصية background: تعيين صورة الخلفية للجدول.</li>
+</ul>
+
+<p>يمكن استعمال هذه الخواص في الخلايا td أيضاً، وعند تعيين قيمة bgcolor للجدول مختلفة عن قيمة أحد الخلايا، فإن لون الخلية سيطغى على لون الجدول في تلك الخلية، لأن الخلية موجودة فوق الجدول في ترتيب الطبقات:</p>
+
+<pre><code class="html">
+&lt;table border=&quot;1&quot; width=&quot;90%&quot; height=&quot;80%&quot;&gt;
+  &lt;tr&gt;
+    &lt;td bgcolor=&quot;Yellow&quot;&gt;الخلية الأولى&lt;/td&gt;
+    &lt;td&gt;الخلية الثانية&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+
+<p><img src="artifacts/image_000323_ce808b9e4779cd955329453a2a231551e77441ace85e5d9b1dbbcdf3f42d0425.png" alt="Image"></p>
+
+<h4>الخاصية align</h4>
+
+<p>يمكن التحكم بمحاذاة محتوى الخلية أفقياً بالخاصية align.</p>
+
+<p>في الخاصية align، القيمة left تعني محاذاة لليسار، وright لليمين، وcenter للمنتصف، وjustify للضبط الكلي الذي يجعل الأسطر متساوية في الطول.</p>
+
+<h4>الخاصية valign</h4>
+
+<p>يمكن التحكم بمحاذاة محتوى الخلية رأسياً بالخاصية valign.</p>
+
+<p>في الخاصية valign، تأخذ القيمة top للأعلى، وbottom للأسفل.</p>
+
+<p><img src="artifacts/image_000324_5bb8364fda40a211088ae1b5461b6aefdbd2827bbac2963dd1d908048664ff40.png" alt="Image"></p>
+</body>
+</html>

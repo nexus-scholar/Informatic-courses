@@ -1,0 +1,144 @@
+- generic [active] [ref=e1]:
+  - 'heading "الوحدة 1: تقنية المعلومات" [level=1] [ref=e2]'
+  - 'heading "المجال الأول: التعامل مع بيئة الحاسوب" [level=2] [ref=e3]'
+  - 'heading "المدة الزمنية: 02 ساعة" [level=3] [ref=e4]'
+  - separator [ref=e5]
+  - heading "تقنية المعلومات" [level=2] [ref=e6]
+  - heading "1 تكنولوجيا الإعلام والاتصال" [level=3] [ref=e7]
+  - paragraph [ref=e8]: Techniques de l'information et de la communication
+  - paragraph [ref=e9]: "كلمة تكنولوجيا الإعلام والاتصال مركبة من ثلاث كلمات هي:"
+  - list [ref=e10]:
+    - listitem [ref=e11]: تكنولوجيا
+    - listitem [ref=e12]: إعلام
+    - listitem [ref=e13]: اتصال
+  - heading "1.1 التكنولوجيا Technologie" [level=3] [ref=e14]
+  - paragraph [ref=e15]: "تكنولوجيا (Technologie) هي كلمة أصلها يوناني technología مركبة من مقطعين:"
+  - list [ref=e16]:
+    - listitem [ref=e17]: "تكنو (techno): المهارة الفنية"
+    - listitem [ref=e18]: "لوجي (logos): علم"
+  - paragraph [ref=e19]: وهي تلك المجموعة المتناسقة من المعارف والممارسات في المجال التقني، وتوظيفها بشكل منطقي لتأدية وظيفة محددة وبلوغ أهداف مرجوة.
+  - heading "2.1 الإعلام Information" [level=3] [ref=e20]
+  - paragraph [ref=e21]: الإعلام لغة هو الإخبار وتقديم المعلومات، ويعني وجود رسالة (أخبار، معلومات، أفكار وآراء) تنتقل من مرسل إلى مستقبل.
+  - heading "3.1 الاتصال Communication" [level=3] [ref=e22]
+  - paragraph [ref=e23]: الاتصال هو العملية التي يتم بمقتضاها تفاعل بين مرسل ومستقبل ورسالة في مضامين معينة مستعملين أدوات خاصة.
+  - paragraph [ref=e24]: "مثل: اللقاءات العلمية، المحاضرات، الندوات، المؤتمرات، الدروس في القسم، ..."
+  - heading "تكنولوجيا الإعلام والاتصال Techniques de l'information et de la communication" [level=3] [ref=e25]
+  - paragraph [ref=e26]: "تكنولوجيا الإعلام والاتصال (TIC) هي:"
+  - list [ref=e27]:
+    - listitem [ref=e28]: 1. مجموعة التقنيات
+    - listitem [ref=e29]: 2. الأدوات والأجهزة السمعية البصرية
+    - listitem [ref=e30]: 3. مختلف الوسائط المتعددة
+    - listitem [ref=e31]: 4. الإنترنت والاتصالات
+  - paragraph [ref=e32]: ويمكن اختصار المفهوم في أنه ذلك التلاقي والتزاوج بين عتاد وأجهزة الكمبيوتر بمختلف أنواعها والبرمجيات وشبكات الاتصالات.
+  - heading "1.1 خصائص تكنولوجيا الإعلام والاتصال" [level=3] [ref=e33]
+  - heading "من مميزات وخصائص TIC ما يلي:" [level=3] [ref=e34]
+  - list [ref=e35]:
+    - listitem [ref=e36]: ربح الوقت والجهد.
+    - listitem [ref=e37]: استغلال عقلاني وإيجابي للموارد.
+    - listitem [ref=e38]: زيادة الدقة والتقليل من الأخطاء.
+    - listitem [ref=e39]: توفير معلومات حديثة وبكميات هائلة.
+    - listitem [ref=e40]: جعل الاتصالات أسرع، وأقل تكلفة.
+    - listitem [ref=e41]: تستخدم في جميع الميادين.
+  - heading "من سلبيات استخدام TIC ما يلي:" [level=3] [ref=e42]
+  - paragraph [ref=e43]:
+    - img "Image" [ref=e44]
+  - list [ref=e45]:
+    - listitem [ref=e46]: تشتت الانتباه لمن يستعمله بطريقة مكثفة.
+    - listitem [ref=e47]: استخدامها بشكل كلي تقلل من مهارات الإنسان.
+    - listitem [ref=e48]: "كثرة الجلوس أمام الحاسوب أو باستعمال الهواتف الذكية واللوحات الرقمية يسبب بعض الأمراض مثل: آلام العمود الفقري، توتر الجهاز العصبي والانطواء، ضعف النظر ..."
+  - heading "1.1 إدماج تكنولوجيا الإعلام والاتصال في التعليم TICE" [level=3] [ref=e49]
+  - paragraph [ref=e50]: "استخدام التكنولوجيا في العملية التعليمية التعلمية يعتبر تطويرا وإثراء لها وتيسيرا لها، وذلك باستخدام الوسائل التكنولوجية من وسائل صوتية وفيديو وشرائح وغيرها، حيث أصبح الكمبيوتر الأداة الرئيسية التي تركز على نشاط المتعلم وعلى أساليب العمل داخل القسم. ومن أهم خصائصها:"
+  - list [ref=e51]:
+    - listitem [ref=e52]: التحول من التعليم القائم على التلقين، إلى تعليم يدعم لدى المتعلم القدرة على التفكير والابتكار وتعليم الذات (المقاربة بالكفاءات).
+    - listitem [ref=e53]: القدرة على تخزين واسترجاع كم هائل من المعلومات.
+    - listitem [ref=e54]: القدرة على العرض المرئي للمعلومات.
+    - listitem [ref=e55]: السرعة الفائقة في إجراء العمليات.
+    - listitem [ref=e56]: تقديم العديد من الفرص والاختيارات أمام المتعلم.
+  - heading "2 المعلوماتية Informatique" [level=3] [ref=e57]
+  - list [ref=e58]:
+    - listitem [ref=e59]: "مفهوم المعلوماتية: هو ذلك العلم الحديث الذي يعالج المعلومات ويبني البرامج التي يقترحها الإنسان بطريقة آلية وباستعمال جهاز الحاسوب وبرامج خاصة أنشئت لهذا الغرض."
+    - listitem [ref=e60]: "وهي المنظومة التي تجمع كل ما يتعلق بأجهزة الحاسوب عبر أبعاده الأربعة:"
+    - listitem [ref=e61]: 1. العتاد أو الأجهزة Matériels (Hard)
+    - listitem [ref=e62]: 2. البرمجيات Logiciels (Soft)
+    - listitem [ref=e63]: 3. الموارد المعرفية
+    - listitem [ref=e64]: 4. الموارد البشرية
+  - heading "3 تطور تقنية المعلومات" [level=3] [ref=e65]
+  - paragraph [ref=e66]: تهتم تقنية المعلومات باستخدام الحواسيب ووسائل الاتصال والتطبيقات من أجل
+  - paragraph [ref=e67]: تخزين، معالجة، حماية، إرسال واسترجاع آمن للمعلومات.
+  - paragraph [ref=e68]: "لقد مرت بمراحل عدة في تطورها عبر الزمن وبسرعة جد فائقة وصولا إلى ما نحن عليه اليوم، ويمكن تصنيف التطور إلى ثلاثة أصناف هي:"
+  - list [ref=e69]:
+    - listitem [ref=e70]: 1. تطور أجهزة معالجة المعلومات (الحاسوب)
+  - paragraph [ref=e71]: "يبين الجدول الموالي تطور أجهزة الحواسيب عبر الزمن:"
+  - table [ref=e72]:
+    - rowgroup [ref=e73]:
+      - row [ref=e74]:
+        - columnheader "الجهاز" [ref=e75]
+        - columnheader "سنة الظهور" [ref=e76]
+      - row [ref=e77]:
+        - cell "بدأ تشغيل الكمبيوتر المعروف باسم EDVAC" [ref=e78]
+        - cell "1951" [ref=e79]
+      - row [ref=e80]:
+        - cell "ظهر أول حاسوب محمول يعتمد على المعالج الدقيق." [ref=e81]
+        - cell "1981" [ref=e82]
+      - row [ref=e83]:
+        - cell "ظهر أول هاتف ذكي باسم Simon من إنتاج شركة IBM" [ref=e84]
+        - cell "1994" [ref=e85]
+      - row [ref=e86]:
+        - cell "عرضت Microsoft أول نموذج لحاسوب لوحي يعمل بالقلم" [ref=e87]
+        - cell "2001" [ref=e88]
+      - row [ref=e89]:
+        - cell "تطلق Sony Ericsson سلسلة الهواتف الذكية" [ref=e90]
+        - cell "2009" [ref=e91]
+      - row [ref=e92]:
+        - cell "ظهر جهاز iPhone من شركة أبل Apple" [ref=e93]
+        - cell "2007" [ref=e94]
+      - row [ref=e95]:
+        - cell "تكشف Samsung عن (Galaxy Tab) الذي يعمل بنظام (Android) من Google" [ref=e96]
+        - cell "2010" [ref=e97]
+  - heading "2 تطور البرامج" [level=3] [ref=e98]
+  - paragraph [ref=e99]: "لا يمكن الاستفادة من العتاد بدون برامج وهي بدورها تتطور بتطور الأجهزة ويمكن تصنيفها إلى صنفين:"
+  - heading "1.2 البرامج التطبيقية:" [level=4] [ref=e100]
+  - paragraph [ref=e101]: التي هي كثيرة ومتنوعة وفي مختلف المجالات والميادين وكان تطورها دوما مرتبطا بالأجهزة وبأنظمة التشغيل.
+  - heading "2.2 نظام التشغيل:" [level=4] [ref=e102]
+  - paragraph [ref=e103]: "توجد عدة شركات مصممة لأنظمة التشغيل، لكن نتوقف عند شركة Microsoft التي تستحوذ على أكثر من 90% من الاستعمال عبر العالم، حيث بدأت بنظام MS-DOS سنة 1981 ثم تحولت لنظام Windows ذو الواجهة البيانية، ويبين المخطط التالي تطور النظام:"
+  - heading "نظام التشغيل الخاص بالهواتف الذكية واللوحات الرقمية" [level=4] [ref=e104]
+  - table [ref=e105]:
+    - rowgroup [ref=e106]:
+      - row [ref=e107]:
+        - columnheader "Windows 8" [ref=e108]
+        - columnheader "Windows 7" [ref=e109]
+        - columnheader "Windows Vista" [ref=e110]
+        - columnheader "Windows XP" [ref=e111]
+        - columnheader "Windows 95" [ref=e112]
+        - columnheader "Windows 1.0" [ref=e113]
+      - row [ref=e114]:
+        - cell "أكتوبر 2012" [ref=e115]
+        - cell "أكتوبر 2009" [ref=e116]
+        - cell "جانفي 2007" [ref=e117]
+        - cell "أكتوبر 2001" [ref=e118]
+        - cell "أوت 1995" [ref=e119]
+        - cell "نوفمبر 1985" [ref=e120]
+  - paragraph [ref=e121]: "بدأ تصميم أنظمة التشغيل الخاصة باللوحات الرقمية والهواتف الذكية سنة 1987، وعرفت هي كذلك تطورا سريعا بحيث تخصصت مختلف الشركات المختصة في البرمجة بهذا النوع، ومنها ما يبينه الجدول:"
+  - table [ref=e122]:
+    - rowgroup [ref=e123]:
+      - row [ref=e124]:
+        - columnheader "الشركة" [ref=e125]
+        - columnheader "النظام" [ref=e126]
+      - row [ref=e127]:
+        - cell "Google" [ref=e128]
+        - cell "Android" [ref=e129]
+      - row [ref=e130]:
+        - cell "Samsung" [ref=e131]
+        - cell "Bada" [ref=e132]
+      - row [ref=e133]:
+        - cell "Apple" [ref=e134]
+        - cell "iOS" [ref=e135]
+      - row [ref=e136]:
+        - cell "RIM" [ref=e137]
+        - cell "BlackBerry OS" [ref=e138]
+      - row [ref=e139]:
+        - cell "Symbian ltd" [ref=e140]
+        - cell "Symbian OS" [ref=e141]
+      - row [ref=e142]:
+        - cell "Microsoft" [ref=e143]
+        - cell "Windows Phone" [ref=e144]
