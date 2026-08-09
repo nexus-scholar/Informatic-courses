@@ -4,3 +4,6 @@ __pycache__/
 *.pyc
 preview-*.png
 .DS_Store
+.playwright-mcp/
+package-lock.json
+*.zip
