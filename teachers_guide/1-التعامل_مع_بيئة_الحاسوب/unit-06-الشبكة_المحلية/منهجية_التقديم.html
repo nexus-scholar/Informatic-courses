@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منهجية تقديم الدرس: الشبكة المحلية (LAN)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+body{font-family:'Amiri','Noto Naskh Arabic',serif;direction:rtl;text-align:right;background:#fff;color:#1a1a1a;line-height:2;max-width:900px;margin:0 auto;padding:20px 30px}
+h1{color:#1565c0;border-bottom:3px solid #1565c0;padding-bottom:10px}
+h2{color:#1976d2;border-bottom:2px solid #e3f2fd;padding-bottom:6px;margin-top:30px}
+h3{color:#1e88e5;margin-top:20px}
+h4{color:#42a5f5}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #bbb;padding:8px 12px;text-align:right}
+th{background:#e3f2fd;font-weight:bold}
+tr:nth-child(even){background:#f5f5f5}
+pre,code{background:#f5f5f5;padding:2px 6px;border-radius:3px;font-family:monospace}
+pre{padding:12px;overflow-x:auto;border:1px solid #ddd}
+blockquote{border-right:4px solid #1976d2;padding-right:15px;margin:15px 0;color:#555}
+hr{border:none;border-top:2px solid #e3f2fd;margin:20px 0}
+ul,ol{padding-right:20px}
+a{color:#1565c0}
+a:hover{color:#0d47a1}
+img{max-width:100%;height:auto}
+</style>
+</head>
+<body>
+<h1>منهجية تقديم الدرس: الشبكة المحلية (LAN)</h1>
+
+<h2>1. المقاربة البيداغوجية (المقاربة بالكفاءات)</h2>
+
+<p><strong>التلميذ هو مركز العملية التعلمية (التعلم بالتجربة):</strong></p>
+
+<ul>
+<li><strong>وضعية الانطلاق (خلق الحاجة):</strong></li>
+</ul>
+<p>اطبع ورقة واحدة فقط من حاسوبك، وقل لهم: <em>&quot;أريد أن أطبع ورقة من حاسوب التلميذ أحمد الموجود في آخر القسم، لكن لا يمكنني نقل الطابعة، ولا يوجد لدي فلاش ديسك. كيف أحل المشكلة؟&quot;</em></p>
+<p>سيفكر التلاميذ في &quot;الإنترنت&quot;، أو &quot;البلوتوث&quot;، وهذا سيقودهم لمفهوم الشبكة.</p>
+
+<ul>
+<li><strong>البناء والتركيب (تجسيد المفاهيم):</strong></li>
+<li>لتبسيط مفهوم الهيكليات (Topology)، لا تعتمد على الرسم فقط. اطلب من 5 تلاميذ الوقوف:</li>
+<li><strong>الناقل (Bus):</strong> يمسكون أيديهم في صف واحد. إذا أفلت أحدهم يده، تنقطع الشبكة.</li>
+<li><strong>الحلقة (Ring):</strong> يشكلون دائرة مغلقة.</li>
+<li><strong>النجمة (Star):</strong> يقف تلميذ في الوسط (يمثل Switch) والباقي يمسكون يده. إذا سقط أحدهم لا تتأثر الشبكة، لكن إذا سقط التلميذ في الوسط تسقط الشبكة.</li>
+</ul>
+<p>هذا التمثيل الحركي يرسخ المعلومة تماماً.</p>
+
+<ul>
+<li><strong>الجانب التطبيقي (الشبكة في الواقع):</strong></li>
+</ul>
+<p>اصطحبهم لرؤية (Switch) أو الروتر الموجود في زاوية القسم، وأرهم الكابلات المتصلة به ليدركوا أن ما درسوه نظرياً موجود تحت أقدامهم وخلف شاشاتهم.</p>
+
+<hr>
+
+<h2>2. أدوار الأستاذ والتلميذ</h2>
+
+<table>
+<tr><th>المرحلة</th><th>دور الأستاذ (المُيسّر)</th><th>دور التلميذ (النشط)</th></tr>
+<tr><td><strong>الانطلاق</strong></td><td>يطرح مشكلة مشاركة طابعة أو ملف ضخم.</td><td>يقترح حلولاً لربط الأجهزة.</td></tr>
+<tr><td><strong>البناء (التمثيل)</strong></td><td>يوجه التلاميذ لتمثيل أنواع الشبكات حركياً.</td><td>يشارك في التمثيل ويستنتج مزايا وعيوب كل نوع.</td></tr>
+<tr><td><strong>التطبيق</strong></td><td>يشرح باختصار كيفية تفعيل مشاركة الملفات.</td><td>ينشئ مجلداً ويشاركه مع زملائه في الشبكة.</td></tr>
+</table>
+
+<hr>
+
+<h2>3. ملاحظات بيداغوجية هامة</h2>
+
+<ul>
+<li>ركز على شبكات الـ (Wi-Fi) بجانب الشبكات السلكية، لأنها أصبحت المعيار الأساسي في 2026. اشرح لهم أن (Router) المنزل الذي يسمونه (مودم) هو في الحقيقة أداة تبني (LAN) في بيوتهم.</li>
+<li>التطبيق العملي لمشاركة الملفات قد يواجه بعض مشاكل جدار الحماية (Firewall) في الويندوز. الأستاذ يجب أن يختبر ذلك في أجهزة المخبر قبل الحصة.</li>
+</ul>
+</body>
+</html>

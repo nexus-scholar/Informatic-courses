@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الوحدة 03: نظام التشغيل (Windows 11) وإدارة الملفات</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap');
+body{font-family:'Noto Naskh Arabic','Amiri',sans-serif;direction:rtl;text-align:right;background:#f8fafc;color:#1e293b;line-height:1.9;max-width:920px;margin:0 auto;padding:30px 40px}
+.header-card{background:linear-gradient(135deg, #1e40af, #3b82f6);color:#fff;padding:25px 30px;border-radius:12px;margin-bottom:30px;box-shadow:0 4px 12px rgba(30,64,175,0.15)}
+.header-card h1{color:#fff;border:none;margin:0 0 10px 0;padding:0;font-size:1.8em}
+.header-card p{margin:0;opacity:0.9;font-size:1.05em}
+h1{color:#1e40af;border-bottom:3px solid #3b82f6;padding-bottom:10px;margin-top:40px;font-size:1.7em}
+h2{color:#1e3a8a;border-bottom:2px solid #e2e8f0;padding-bottom:6px;margin-top:32px;font-size:1.35em}
+h3{color:#2563eb;margin-top:24px;font-size:1.15em}
+h4{color:#0284c7;font-size:1.05em}
+p{margin:12px 0;text-align:justify}
+strong{color:#0f172a;font-weight:700}
+table{width:100%;border-collapse:collapse;margin:20px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+th,td{border:1px solid #cbd5e1;padding:10px 14px;text-align:right}
+th{background:#eff6ff;color:#1e40af;font-weight:700}
+tr:nth-child(even){background:#f8fafc}
+pre,code{font-family:'Fira Code',monospace;direction:ltr;text-align:left}
+code{background:#f1f5f9;color:#0f172a;padding:2px 6px;border-radius:4px;font-size:0.9em;display:inline-block}
+pre{background:#0f172a;color:#f8fafc;padding:16px;border-radius:8px;overflow-x:auto;margin:18px 0}
+pre code{background:transparent;color:inherit;padding:0;display:block}
+blockquote{border-right:4px solid #3b82f6;background:#eff6ff;padding:12px 18px;margin:20px 0;border-radius:0 8px 8px 0;color:#1e3a8a}
+hr{border:none;border-top:2px solid #e2e8f0;margin:30px 0}
+ul,ol{padding-right:24px;margin:12px 0}
+li{margin:6px 0}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;border-radius:8px;margin:15px 0;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.note-box{background:#f0fdf4;border-right:4px solid #22c55e;padding:15px;border-radius:0 8px 8px 0;margin:20px 0}
+.warning-box{background:#fef2f2;border-right:4px solid #ef4444;padding:15px;border-radius:0 8px 8px 0;margin:20px 0}
+</style>
+</head>
+<body>
+<h1>الوحدة 03: نظام التشغيل (Windows 11) وإدارة الملفات</h1>
+
+<h2>المجال المفاهيمي الأول: التعامل مع بيئة الحاسوب</h2>
+<p><strong>المستوى:</strong> السنة الأولى ثانوي (1AS)</p>
+<p><strong>الحجم الزمني الموصى به:</strong> 02 ساعة</p>
+
+<hr>
+
+<h2>الأهداف التعلمية</h2>
+<p>في نهاية هذه الوحدة، يكون المتعلم قادرًا على:</p>
+<ol>
+<li>استيعاب <strong>مفهوم نظام التشغيل (Operating System - OS)</strong> ووظائفه الجوهرية في إدارة الحاسوب.</li>
+<li>التعرف على الواجهة الحديثة لنظام <strong>Windows 11</strong> وتحديثاتها البيانية.</li>
+<li>التمكن من مهارات <strong>إدارة الملفات والمجلدات</strong> عبر مستكشف الملفات (File Explorer).</li>
+<li>التحكم في النوافذ المتعددة باستخدام تقنيات Snap Layouts وأسطح المكتب الافتراضية.</li>
+</ol>
+
+<hr>
+
+<h2>1. مفهوم نظام التشغيل ووظائفه (Operating System - OS)</h2>
+
+<h3>1.1 التعريف</h3>
+<p><strong>نظام التشغيل (OS):</strong> هو البرنامج الأساسي والوسيط الذي يدير جميع مكونات الحاسوب العتادية (Hardware) والبرمجية (Software)، ويوفر واجهة تفاعلية تُمكن المستخدم من إعطاء الأوامر وتشغيل التطبيقات بسهولة.</p>
+
+<pre><code>
+[ المستخدم ] &lt;---&gt; [ التطبيقات والبرامج ] &lt;---&gt; [ نظام التشغيل (OS) ] &lt;---&gt; [ المكونات المادية (Hardware) ]
+</code></pre>
+
+<h3>2.1 وظائف نظام التشغيل الأساسية:</h3>
+<ul>
+<li><strong>إدارة المعالج والعمليات (Process Management):</strong> تنظيم تنفيذ البرامج والمهام وتوزيع وقت المعالج بينها.</li>
+<li><strong>إدارة الذاكرة الحية (Memory Management):</strong> تخصيص مساحات الذاكرة للبرامج الحالية وتفرغتها عند الإغلاق.</li>
+<li><strong>إدارة الملفات والتخزين (File System Management):</strong> تنظيم قراءة وكتابة وحفظ الملفات في الأقراص الصلبة.</li>
+<li><strong>إدارة أجهزة الإدخال والإخراج (Device Management):</strong> التنسيق مع تعريفات التجهيزات (Drivers) لتشغيل الشاشة، الطابعة، الفأرة وغيرها.</li>
+<li><strong>توفير واجهة المستخدم (User Interface - UI):</strong> تقديم واجهة رسومية سهلة الاستخدام (GUI - Graphical User Interface).</li>
+</ul>
+
+<hr>
+
+<h2>2. الواجهة البيانية الحديثة لنظام Windows 11</h2>
+
+<p>يتميز نظام <strong>Windows 11</strong> بتصميم حديث يركز على السلاسة وزيادة الإنتاجية:</p>
+
+<h3>المكونات الرئيسية للواجهة:</h3>
+<ol>
+<li><strong>شريط المهام (Taskbar):</strong> يقع في أسفل الشاشة وتتوسطه أيقونات التطبيقات المثبتة والنوافذ المفتوحة.</li>
+<li><strong>قائمة ابدأ (Start Menu):</strong> تتوسط شريط المهام، وتتيح الوصول السريع للتطبيقات المثبتة والملفات الأخيرة وزر الطاقة (إيقاف التشغيل/إعادة التشغيل).</li>
+<li><strong>مركز الإشعارات والإعدادات السريعة (Quick Settings &amp; Notification Center):</strong> عند النقر على أيقونة الشبكة والصوت، يظهر لوح التحكم السريع بالسطوع، الصوت، Wi-Fi، وBluetooth.</li>
+<li><strong>مستكشف الملفات (File Explorer):</strong> النافذة الرئيسية لتصفح الأقراص والمجلدات، والتي أصبحت تدعم <strong>علامات التبويب (Tabs)</strong> لتفتح عدة مجلدات في نافذة واحدة.</li>
+</ol>
+
+<hr>
+
+<h2>3. ميزات زيادة الإنتاجية وإدارة النوافذ في Windows 11</h2>
+
+<h3>1.3 محاذاة النوافذ الذكية (Snap Layouts &amp; Snap Groups)</h3>
+<p>عند تمرير مؤشر الفأرة فوق زر التكبير (Maximize) بأي نافذة، تظهر خيارات تقسيم الشاشة تلقائيًا إلى:</p>
+<ul>
+<li>نصفين متساويين (50% / 50%).</li>
+<li>ثلاثة أقسام.</li>
+<li>أربعة أرباع شاشة.</li>
+</ul>
+<p>تساعد هذه الميزة على العمل على عدة ملفات أو تطبيقات في نفس الوقت بمرونة عالية.</p>
+
+<h3>2.3 أسطح المكتب الافتراضية (Virtual Desktops)</h3>
+<p>تسمح بإنشاء أسطح مكتب متعددة وتسميتها (مثل: &quot;سطح مكتب للدراسة&quot;، &quot;سطح مكتب للمشاريع الشخصية&quot;) للفصل بين مهام العمل وتنظيم المساحة.</p>
+
+<hr>
+
+<h2>4. إدماج وإدارة الملفات والمجلدات (File Management)</h2>
+
+<h3>1.4 المفاهيم الأساسية:</h3>
+<ul>
+<li><strong>الملف (File):</strong> مجموعة من البيانات المخزنة تحت اسم امتداد محدد يحدد نوعه (مثل <code>.docx</code> للمستندات، <code>.xlsx</code> للجداول، <code>.pdf</code> للكتب الرقمية، <code>.jpg</code> للصور، <code>.py</code> لملفات البرمجة).</li>
+<li><strong>المجلد (Folder / Répertoire):</strong> حاوية تنظيمية تُستخدم لتجميع الملفات والمجلدات الفرعية داخل الشجرة التنظيمية.</li>
+</ul>
+
+<h3>2.4 العمليات الأساسية على الملفات والمجلدات:</h3>
+
+<table>
+<tr><th>العملية</th><th>الاختصار في الكيبورد</th><th>الوصف</th></tr>
+<tr><td><strong>إنشاء مجلد جديد</strong></td><td><code>Ctrl + Shift + N</code></td><td>إنشاء حاوية جديدة في المسار الحالي</td></tr>
+<tr><td><strong>نسخ (Copy)</strong></td><td><code>Ctrl + C</code></td><td>عمل نسخة طبق الأصل مع الاحتفاظ بالملف الأصلي</td></tr>
+<tr><td><strong>قص (Cut / Move)</strong></td><td><code>Ctrl + X</code></td><td>نقل الملف من مساره الحالي إلى مسار جديد</td></tr>
+<tr><td><strong>لصق (Paste)</strong></td><td><code>Ctrl + V</code></td><td>وضع الملف المنسوخ أو المقصوص في المكان المريح</td></tr>
+<tr><td><strong>إعادة التسمية (Rename)</strong></td><td><code>F2</code></td><td>تغيير اسم الملف أو المجلد</td></tr>
+<tr><td><strong>حذف إلى سلة المهملات</strong></td><td><code>Delete</code></td><td>نقل الملف إلى Recycle Bin لإمكانية استرجاعه</td></tr>
+<tr><td><strong>حذف نهائي</strong></td><td><code>Shift + Delete</code></td><td>حذف الملف فورًا دون إرساله لسلة المهملات</td></tr>
+<tr><td><strong>البحث (Search)</strong></td><td><code>Ctrl + F</code></td><td>البحث السريع عن ملف باسمه أو امتداده</td></tr>
+</table>
+
+<h3>3.4 ضغط الملفات وفك الضغط (Compression):</h3>
+<ul>
+<li><strong>الضغط (ZIP):</strong> تحديد الملفات $\rightarrow$ النقر بالزر الأيمن $\rightarrow$ اختيار <strong>Compress to ZIP file</strong> لتصغير حجم البيانات وتسهيل إرسالها عبر البريد الإلكتروني.</li>
+<li><strong>فك الضغط:</strong> النقر بالزر الأيمن على الملف المضغوط $\rightarrow$ اختيار <strong>Extract All...</strong>.</li>
+</ul>
+
+<hr>
+
+<h2>نشاط تطبيقي (في المخبر)</h2>
+
+<h3>ورشة عمل: إدارة بيئة العمل ومستكشف الملفات</h3>
+<ol>
+<li><strong>الخطوة الأولى:</strong> قم بإنشاء مجلد على سطح المكتب باسمك الكامل والصف (مثال: <code>أحمد_محمود_1AS1</code>).</li>
+<li><strong>الخطوة الثانية:</strong> أنشئ داخل مجلدك الرئيسي ثلاثة مجلدات فرعية:</li>
+<ul>
+<li><code>مستندات</code></li>
+<li><code>جداول</code></li>
+<li><code>صور</code></li>
+</ul>
+<li><strong>الخطوة الثالثة:</strong> استخدم تقنية <strong>Snap Layouts</strong> لتقسيم الشاشة إلى نصفين:</li>
+<ul>
+<li>النصف الأيمن: نافذة <code>مستكشف الملفات</code>.</li>
+<li>النصف الأيسر: متصفح الإنترنت أو برنامج الكاتب.</li>
+</ul>
+<li><strong>الخطوة الرابعة:</strong> قم بضغط مجلدك الرئيسي بصيغة ZIP وتسميته <code>مشروع_الوحدة_03.zip</code>.</li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الوحدة 06: الشبكات المحلية والربط الشبكي الحديث</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap');
+body{font-family:'Noto Naskh Arabic','Amiri',sans-serif;direction:rtl;text-align:right;background:#f8fafc;color:#1e293b;line-height:1.9;max-width:920px;margin:0 auto;padding:30px 40px}
+.header-card{background:linear-gradient(135deg, #1e40af, #3b82f6);color:#fff;padding:25px 30px;border-radius:12px;margin-bottom:30px;box-shadow:0 4px 12px rgba(30,64,175,0.15)}
+.header-card h1{color:#fff;border:none;margin:0 0 10px 0;padding:0;font-size:1.8em}
+.header-card p{margin:0;opacity:0.9;font-size:1.05em}
+h1{color:#1e40af;border-bottom:3px solid #3b82f6;padding-bottom:10px;margin-top:40px;font-size:1.7em}
+h2{color:#1e3a8a;border-bottom:2px solid #e2e8f0;padding-bottom:6px;margin-top:32px;font-size:1.35em}
+h3{color:#2563eb;margin-top:24px;font-size:1.15em}
+h4{color:#0284c7;font-size:1.05em}
+p{margin:12px 0;text-align:justify}
+strong{color:#0f172a;font-weight:700}
+table{width:100%;border-collapse:collapse;margin:20px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+th,td{border:1px solid #cbd5e1;padding:10px 14px;text-align:right}
+th{background:#eff6ff;color:#1e40af;font-weight:700}
+tr:nth-child(even){background:#f8fafc}
+pre,code{font-family:'Fira Code',monospace;direction:ltr;text-align:left}
+code{background:#f1f5f9;color:#0f172a;padding:2px 6px;border-radius:4px;font-size:0.9em;display:inline-block}
+pre{background:#0f172a;color:#f8fafc;padding:16px;border-radius:8px;overflow-x:auto;margin:18px 0}
+pre code{background:transparent;color:inherit;padding:0;display:block}
+blockquote{border-right:4px solid #3b82f6;background:#eff6ff;padding:12px 18px;margin:20px 0;border-radius:0 8px 8px 0;color:#1e3a8a}
+hr{border:none;border-top:2px solid #e2e8f0;margin:30px 0}
+ul,ol{padding-right:24px;margin:12px 0}
+li{margin:6px 0}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;border-radius:8px;margin:15px 0;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.note-box{background:#f0fdf4;border-right:4px solid #22c55e;padding:15px;border-radius:0 8px 8px 0;margin:20px 0}
+.warning-box{background:#fef2f2;border-right:4px solid #ef4444;padding:15px;border-radius:0 8px 8px 0;margin:20px 0}
+</style>
+</head>
+<body>
+<h1>الوحدة 06: الشبكات المحلية والربط الشبكي الحديث</h1>
+
+<h2>المجال المفاهيمي الأول: التعامل مع بيئة الحاسوب</h2>
+<p><strong>المستوى:</strong> السنة الأولى ثانوي (1AS)</p>
+<p><strong>الحجم الزمني الموصى به:</strong> 02 ساعة</p>
+
+<hr>
+
+<h2>الأهداف التعلمية</h2>
+<p>في نهاية هذه الوحدة، يكون المتعلم قادرًا على:</p>
+<ol>
+<li>استيعاب <strong>مفهوم شبكة الحاسوب</strong> وأهم فوائدها في مشاركة الموارد والبيانات.</li>
+<li>التمييز بين تصنيفات الشبكات حسب النطاق الجغرافي (LAN, MAN, WAN, WLAN).</li>
+<li>التعرف على <strong>المكونات المادية للشبكة المحلية</strong> (بطاقات الشبكة، الكابلات، المبدل Switch، الموجه Router).</li>
+<li>استيعاب مفهوم <strong>عنوان IP</strong> وكيفية مشاركة المجلدات والطابعات داخل شبكة المؤسسة أو مخبر الإعلام الآلي.</li>
+</ol>
+
+<hr>
+
+<h2>1. مفهوم شبكة الحاسوب وفوائدها (Computer Networks)</h2>
+
+<p><strong>شبكة الحاسوب:</strong> هي مجموعة من الحواسيب والأجهزة الرقمية المربوطة ببعضها البعض عبر وسائط توصيل سلكية أو لاسلكية، بهدف تبادل البيانات ومشاركة الموارد.</p>
+
+<h3>فوائد الشبكات المحلية:</h3>
+<ul>
+<li><strong>مشاركة الموارد المادية:</strong> استخدام طابعة واحدة أو وحدة تخزين واحدة من طرف عدة حواسيب في المخبر.</li>
+<li><strong>مشاركة البرمجيات والبيانات:</strong> الوصول إلى ملفات وقواعد بيانات مركزية بسهولة.</li>
+<li><strong>السرعة وربح الوقت:</strong> نقل الملفات بين الحواسيب في أجزاء من الثانية دون الحاجة لاستعمال قرص فلاش USB.</li>
+<li><strong>التواصل الفعال:</strong> التفاعل والتحكم عن بُعد في أجهزة قسم الإعلام الآلي.</li>
+</ul>
+
+<hr>
+
+<h2>2. تصنيف الشبكات حسب النطاق الجغرافي</h2>
+
+<table>
+<tr><th>نوع الشبكة</th><th>الاختصار</th><th>النطاق الجغرافي</th><th>مثال</th></tr>
+<tr><td><strong>الشبكة المحلية</strong></td><td><strong>LAN</strong> (Local Area Network)</td><td>مبنى واحد، قاعة دروس، أو منزل</td><td>مخبر الإعلام الآلي بالمؤسسة</td></tr>
+<tr><td><strong>الشبكة اللاسلكية المحلية</strong></td><td><strong>WLAN</strong> (Wireless LAN)</td><td>التوصيل اللاسلكي عبر موجات الراديو (Wi-Fi)</td><td>شبكة Wi-Fi المنزلية أو المدرسية</td></tr>
+<tr><td><strong>الشبكة الإقليمية</strong></td><td><strong>MAN</strong> (Metropolitan Area Network)</td><td>على مستوى مدينة أو مجمع جامعي</td><td>شبكة تجميعية لمؤسسات مدينة واحدة</td></tr>
+<tr><td><strong>الشبكة الموسعة</strong></td><td><strong>WAN</strong> (Wide Area Network)</td><td>عبر الدول والقارات</td><td>شبكة الإنترنت العالمية</td></tr>
+</table>
+
+<hr>
+
+<h2>3. التوبولوجيا والمخططات الهندسية للشبكات (Topologies)</h2>
+
+<p>تحدد التوبولوجيا كيفية توصيل أجهزة الشبكة هندسيًا:</p>
+
+<pre><code>
+                  [ المبدل Switch / Router ]
+                 /        |        \        \
+         [ حاسوب 1 ]  [ حاسوب 2 ]  [ حاسوب 3 ]  [ طابعة شبكية ]
+</code></pre>
+
+<ul>
+<li><strong>المخطط النجمي (Star Topology):</strong> التوبولوجيا الأكثر انتشارًا وتطورًا اليوم. تتصل جميع حواسيب الشبكة بجهاز موزع مركزي (Switch / Router). مميزاتها: إذا تعطل أحد الحواسيب أو الكابلات لا تؤثر على باقي أجهزة الشبكة.</li>
+<li><strong>المخطط الخطي (Bus Topology - تاريخي):</strong> تتصل جميع الأجهزة بكابل رئيسي واحد. (مخطط قديم وقلما يُستخدم اليوم).</li>
+<li><strong>المخطط الحلقي (Ring Topology - تاريخي):</strong> تتصل الأجهزة على شكل دائر مغلقة.</li>
+</ul>
+
+<hr>
+
+<h2>4. المكونات المادية للشبكة المحلية (LAN Hardware)</h2>
+
+<ol>
+<li><strong>بطاقة الشبكة (Network Interface Card - NIC):</strong> الرقاقة المسؤولة عن ربط الجهاز بالشبكة، وتكون إما سلكية منفذ Ethernet (RJ-45) أو لاسلكية بطاقة Wi-Fi.</li>
+<li><strong>وسائط التوصيل (Transmission Media):</strong></li>
+<ul>
+<li><strong>الكابلات المزدوجة المجدولة (UTP Cat6 / Cat7):</strong> الكابلات الأكثر استخدامًا داخل المخبر وتُختم بموصل <strong>RJ-45</strong>.</li>
+<li><strong>الألياف البصرية (Fiber Optics):</strong> لنقل البيانات بواسطة الضوء بسرعة فائقة جدًا لمسافات طويلة.</li>
+<li><strong>الموجات اللاسلكية (Wi-Fi 6 / 7):</strong> للاتصال دون كابلات.</li>
+</ul>
+<li><strong>أجهزة الربط والتوجيه:</strong></li>
+<ul>
+<li><strong>المبدل (Switch):</strong> جهاز ذكي يربط أجهزة الشبكة المحلية ببعضها ويوزع البيانات بين الحواسيب بدقة.</li>
+<li><strong>الموجه (Router):</strong> جهاز يربط الشبكة المحلية LAN بشبكة الإنترنت الخارجية WAN ويقوم بتوزيع عناوين IP تلقائيًا (DHCP).</li>
+</ul>
+</ol>
+
+<hr>
+
+<h2>5. عناوين الشبكة ومشاركة الموارد (IP Addressing &amp; Sharing)</h2>
+
+<h3>1.5 عنوان IP (Internet Protocol Address)</h3>
+<p>لكل جهاز مربوط بالشبكة بطاقة تعريف رقمية فريدة تسمى <strong>عنوان IP</strong>.</p>
+<ul>
+<li><strong>الإصدار الرابع (IPv4):</strong> يتكون من 4 أعداد تفصل بينها نقاط، تتراوح بين 0 و 255 (مثال: <code>192.168.1.15</code>).</li>
+<li><strong>الإصدار السادس (IPv6):</strong> نظام عناوين سداسي عشر حديث وموسع للتعامل مع مليارات الأجهزة المحمولة والذكية حول العالم.</li>
+</ul>
+
+<h3>2.5 مشاركة المجلدات في Windows 11:</h3>
+<ol>
+<li>النقر بالزر الأيمن على المجلد المراد مشاركته $\rightarrow$ اختيار <strong>Properties</strong> $\rightarrow$ تبويب <strong>Sharing</strong>.</li>
+<li>النقر على زر <strong>Share</strong> واختيار المستخدمين المصرح لهم بقراءة أو تعديل الملفات عبر الشبكة المحلية.</li>
+</ol>
+
+<hr>
+
+<h2>نشاط تطبيقي (في المخبر)</h2>
+
+<h3>ورشة عمل: فحص شبكة المخبر ومشاركة مجلد</h3>
+<ol>
+<li><strong>التطبيق الأول (معرفة عنوان IP الخاص بجهازك):</strong></li>
+<ul>
+<li>افتح موجه الأوامر (Command Prompt) بإدخال <code>cmd</code> في قائمة ابدأ.</li>
+<li>اكتب الأمر <code>ipconfig</code> واضغط Enter.</li>
+<li>استخرج عنوان IPv4 الخاص بجهازك وعنوان الموجه (Default Gateway).</li>
+</ul>
+<li><strong>التطبيق الثاني (اختبار التوصيل Ping):</strong></li>
+<ul>
+<li>نفذ الأمر <code>ping 192.168.1.1</code> لاختبار سرعة استجابة الموجه.</li>
+</ul>
+<li><strong>التطبيق الثالث (المشاركة الشبكية):</strong></li>
+<ul>
+<li>قم بمشاركة مجلد تطبيقاتك على الشبكة ليتمكن زميلك في الطاولة المجاورة من الوصول إليه وتصفحه.</li>
+</ul>
+</ol>
+</body>
+</html>

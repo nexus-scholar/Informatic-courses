@@ -70,12 +70,12 @@ C:\Utilisateurs\nom_utilisateur\AppData\Roaming\Microsoft\Templates
 
 ![Image](artifacts/image_000106_7757b5f2c90b07830078f5e4b619a6277e995ea091c1143c18083fc994c91292.png)
 
-- 1. ننقر على الزر Microsoft Office ثم ننقر على Nouveau.
-- 2. أسفل Modèles نجد عدة خيارات:
+1. ننقر على الزر Microsoft Office ثم ننقر على Nouveau.
+2. أسفل Modèles نجد عدة خيارات:
 - إذا أردنا استخدام قالب موجود على جهاز الحاسوب، ننقر على:
 - Modèles Installés.
 - إذا أردنا تنزيل قالب، ننقر على أحد الارتباطات الموجودة أسفل Microsoft Office Online، مثل Curriculum-vitae، Lettres، Diplômes (يجب أن يكون الحاسوب متصلا بالإنترنت).
-- 3. ننقر نقرا مزدوجا على القالب المختار.
+3. ننقر نقرا مزدوجا على القالب المختار.
 
 ![Image](artifacts/image_000107_053a083f3e56499e8ef6d21abefc2ab8a20ace1629b2f6c8225e64e75d66c5de.png)
 
@@ -83,9 +83,9 @@ C:\Utilisateurs\nom_utilisateur\AppData\Roaming\Microsoft\Templates
 
 إذا كان ملف القالب موجودا في مجلد خاص، على سطح المكتب أو في مفتاح USB:
 
-- 1. ننقر بالزر الأيمن للفأرة على ملف القالب.
-- 2. ننقر على Nouveau.
-- 3. يفتح مباشرة مستند جديد من هذا القالب.
+1. ننقر بالزر الأيمن للفأرة على ملف القالب.
+2. ننقر على Nouveau.
+3. يفتح مباشرة مستند جديد من هذا القالب.
 
 ### 5 إنشاء قالب
 
@@ -121,8 +121,8 @@ C:\Utilisateurs\nom_utilisateur\AppData\Roaming\Microsoft\Templates
 
 #### إنشاء قالب "الرسالة"
 
-- 1. ننشئ مستندا جديدا في Word. لاحظ في شريط العنوان Document x - Microsoft Word حيث x عدد.
-- 2. نقوم بكتابة النصوص الثابتة في الرسالة وتنسيقها.
+1. ننشئ مستندا جديدا في Word. لاحظ في شريط العنوان Document x - Microsoft Word حيث x عدد.
+2. نقوم بكتابة النصوص الثابتة في الرسالة وتنسيقها.
 
 رأس الرسالة: اسم المؤسسة مع الرمز (مثلا صورة من معرض الصور)، العنوان البريدي، الهاتف، الفاكس، البريد الإلكتروني، اسم المدينة والتاريخ.
 
@@ -145,7 +145,7 @@ C:\Utilisateurs\nom_utilisateur\AppData\Roaming\Microsoft\Templates
 
 لإظهار كل العلامات والرموز المخفية، ننقر على الأمر Afficher tout من المجموعة Paragraphe.
 
-يُمثَّل الضغط على المفتاح Entrer بالرمز ¶.
+يُمثَّل الضغط على المفتاح Entrer بالرمز .
 
 يُمثَّل الضغط على المفتاحين Maj + Entrer بالرمز ↵.
 
@@ -163,13 +163,13 @@ C:\Utilisateurs\nom_utilisateur\AppData\Roaming\Microsoft\Templates
 
 ![Image](artifacts/image_000115_c21fa411df2a901145b9662164d015543ff55ce19a3bc359fb4be53f57122c36.png)
 
-- 1. ننقر على التبويب إدراج Insertion.
-- 2. في المجموعة Texte، ننقر على الأمر.
-- 3. تظهر علبة حوار Date et heure، نختار نوع التاريخ، ننشط Mettre à jour automatiquement، ثم ننقر على OK.
+1. ننقر على التبويب إدراج Insertion.
+2. في المجموعة Texte، ننقر على الأمر.
+3. تظهر علبة حوار Date et heure، نختار نوع التاريخ، ننشط Mettre à jour automatiquement، ثم ننقر على OK.
 
 ![Image](artifacts/image_000116_4dae701d21937534011b9697e9b51d8728ef861dc26a43f5f4113a0867808ae4.png)
 
-- 4. نحفظ المستند الجديد على شكل قالب:
+4. نحفظ المستند الجديد على شكل قالب:
 - ننقر على زر Microsoft Office.
 - نختار حفظ باسم Enregistrer sous.
 - ننقر على Modèle Word.
@@ -191,8 +191,8 @@ C:\Utilisateurs\nom_utilisateur\AppData\Roaming\Microsoft\Templates
 
 (القوالب من الشكل "اسم_القالب.dotm" تكون الماكروات فيها مُنشَّطة).
 
-- 5. نغلق المستند بالنقر على الزر.
-- 6. نجد فوق سطح المكتب الملف التالي جاهزا للاستعمال.
+5. نغلق المستند بالنقر على الزر.
+6. نجد فوق سطح المكتب الملف التالي جاهزا للاستعمال.
 
 ![Image](artifacts/image_000119_0c2ef1017667b52a6aa98ce389013223e2a37e7c92d2d441ea96ae021e4786b8.png)
 
@@ -235,9 +235,9 @@ C:\Utilisateurs\nom_utilisateur\AppData\Roaming\Microsoft\Templates
 
 - س1: ما الفائدة من استعمال القوالب؟
 - س2: اختر الإجابة الصحيحة: كيف أعرف القالب الذي يعتمد عليه مستند Word؟
-  - [ ] من خصائص المستند.
-  - [ ] لا نستطيع معرفة القالب.
-  - [ ] القالب هو دوما القالب الافتراضي Normal.dotm.
+ - [ ] من خصائص المستند.
+ - [ ] لا نستطيع معرفة القالب.
+ - [ ] القالب هو دوما القالب الافتراضي Normal.dotm.
 
 ### التمرين 2
 

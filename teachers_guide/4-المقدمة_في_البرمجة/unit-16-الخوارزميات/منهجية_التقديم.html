@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منهجية تقديم الدرس: الخوارزميات (لغة بايثون)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+body{font-family:'Amiri','Noto Naskh Arabic',serif;direction:rtl;text-align:right;background:#fff;color:#1a1a1a;line-height:2;max-width:900px;margin:0 auto;padding:20px 30px}
+h1{color:#1565c0;border-bottom:3px solid #1565c0;padding-bottom:10px}
+h2{color:#1976d2;border-bottom:2px solid #e3f2fd;padding-bottom:6px;margin-top:30px}
+h3{color:#1e88e5;margin-top:20px}
+h4{color:#42a5f5}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #bbb;padding:8px 12px;text-align:right}
+th{background:#e3f2fd;font-weight:bold}
+tr:nth-child(even){background:#f5f5f5}
+pre,code{background:#f5f5f5;padding:2px 6px;border-radius:3px;font-family:monospace}
+pre{padding:12px;overflow-x:auto;border:1px solid #ddd}
+blockquote{border-right:4px solid #1976d2;padding-right:15px;margin:15px 0;color:#555}
+hr{border:none;border-top:2px solid #e3f2fd;margin:20px 0}
+ul,ol{padding-right:20px}
+a{color:#1565c0}
+a:hover{color:#0d47a1}
+img{max-width:100%;height:auto}
+</style>
+</head>
+<body>
+<h1>منهجية تقديم الدرس: الخوارزميات (لغة بايثون)</h1>
+
+<h2>1. المقاربة البيداغوجية (المقاربة بالكفاءات)</h2>
+
+<p><strong>التلميذ هو مركز العملية التعلمية:</strong></p>
+
+<ul>
+<li><strong>الجسر بين البصري والنصّي:</strong></li>
+</ul>
+<p>الانتقال المباشر للبرمجة النصية قد يصدم التلاميذ. المنهجية الأفضل هي استخدام <strong>Flowgorithm</strong> كجسر.</p>
+<p>اجعلهم يرسمون المخطط أولاً (كما في الوحدة 15)، ثم اطلب منهم فتح نافذة الكود (Source Code) وتغيير اللغة إلى Python. دعهم يقرأون الكود المتولد ويحاولون مطابقته مع الأشكال.</p>
+<p>الشكل متوازي الأضلاع يقابله <code>print</code> أو <code>input</code>. المعين يقابله <code>if</code>. هذا سيجعلهم يستوعبون تركيب الجمل (Syntax) دون عناء الحفظ.</p>
+
+<ul>
+<li><strong>التعلم البنائي (Constructivism):</strong></li>
+</ul>
+<p>لا تبدأ بكتابة الأكواد الطويلة على السبورة ثم تطلب منهم نقلها! هذا يقتل الإبداع ويحولهم إلى آلات كاتبة.</p>
+<p>بدل ذلك، أعطهم الأداة (مثلاً تعليمة <code>print</code>) واطلب منهم كتابة برنامجهم الخاص. &quot;من يستطيع جعل الحاسوب يطرح عليه سؤالاً؟&quot;</p>
+
+<hr>
+
+<h2>2. أدوار الأستاذ والتلميذ</h2>
+
+<table>
+<tr><th>المرحلة</th><th>دور الأستاذ (المُيسّر)</th><th>دور التلميذ (المُبرمج)</th></tr>
+<tr><td><strong>الانطلاق</strong></td><td>يربط المخطط الانسيابي بالكود من خلال أداة (Source Code).</td><td>يستنتج الترجمة النصية لكل شكل هندسي.</td></tr>
+<tr><td><strong>البناء (الكتابة)</strong></td><td>يشرح قواعد لغة بايثون الأساسية (حساسية الأحرف، الفراغات - Indentation).</td><td>يكتب الأكواد الأساسية ويراقب الأخطاء (Syntax Errors) التي تظهر له.</td></tr>
+<tr><td><strong>التقويم (التحديات)</strong></td><td>يقدم تحديات برمجية صغيرة (مثل: برنامج يرفض الأرقام السالبة).</td><td>يفكر في الحل، يخطئ، يصلح كوده (Debugging)، ويصل للنتيجة.</td></tr>
+</table>
+
+<hr>
+
+<h2>3. ملاحظات بيداغوجية هامة للوحدة 16</h2>
+
+<ul>
+<li><strong>رسائل الخطأ (Error Messages):</strong> أخبر التلاميذ منذ اليوم الأول أن رسائل الخطأ الحمراء ليست مؤشراً على الفشل، بل هي &quot;طريقة الحاسوب في التحدث معك وإرشادك لمكان الخلل&quot;. دربهم على قراءة رسالة الخطأ (مثل نسيان الأقواس أو النقطتين الرأسيتين <code>:</code>).</li>
+<li><strong>الفراغات في بايثون (Indentation):</strong> بايثون لا تستخدم الأقواس المجعدة <code>{}</code> لتحديد بداية ونهاية الشروط كما في اللغات الأخرى، بل تستخدم الفراغ (Tab). يجب التأكيد مراراً وتكراراً على هذه الميزة لأنها أكثر مكان يخطئ فيه المبتدئون.</li>
+</ul>
+</body>
+</html>

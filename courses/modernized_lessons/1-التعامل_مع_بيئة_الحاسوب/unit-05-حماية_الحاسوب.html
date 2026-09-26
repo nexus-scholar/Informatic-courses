@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الوحدة 05: حماية الحاسوب والأمان الرقمي</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap');
+body{font-family:'Noto Naskh Arabic','Amiri',sans-serif;direction:rtl;text-align:right;background:#f8fafc;color:#1e293b;line-height:1.9;max-width:920px;margin:0 auto;padding:30px 40px}
+.header-card{background:linear-gradient(135deg, #1e40af, #3b82f6);color:#fff;padding:25px 30px;border-radius:12px;margin-bottom:30px;box-shadow:0 4px 12px rgba(30,64,175,0.15)}
+.header-card h1{color:#fff;border:none;margin:0 0 10px 0;padding:0;font-size:1.8em}
+.header-card p{margin:0;opacity:0.9;font-size:1.05em}
+h1{color:#1e40af;border-bottom:3px solid #3b82f6;padding-bottom:10px;margin-top:40px;font-size:1.7em}
+h2{color:#1e3a8a;border-bottom:2px solid #e2e8f0;padding-bottom:6px;margin-top:32px;font-size:1.35em}
+h3{color:#2563eb;margin-top:24px;font-size:1.15em}
+h4{color:#0284c7;font-size:1.05em}
+p{margin:12px 0;text-align:justify}
+strong{color:#0f172a;font-weight:700}
+table{width:100%;border-collapse:collapse;margin:20px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+th,td{border:1px solid #cbd5e1;padding:10px 14px;text-align:right}
+th{background:#eff6ff;color:#1e40af;font-weight:700}
+tr:nth-child(even){background:#f8fafc}
+pre,code{font-family:'Fira Code',monospace;direction:ltr;text-align:left}
+code{background:#f1f5f9;color:#0f172a;padding:2px 6px;border-radius:4px;font-size:0.9em;display:inline-block}
+pre{background:#0f172a;color:#f8fafc;padding:16px;border-radius:8px;overflow-x:auto;margin:18px 0}
+pre code{background:transparent;color:inherit;padding:0;display:block}
+blockquote{border-right:4px solid #3b82f6;background:#eff6ff;padding:12px 18px;margin:20px 0;border-radius:0 8px 8px 0;color:#1e3a8a}
+hr{border:none;border-top:2px solid #e2e8f0;margin:30px 0}
+ul,ol{padding-right:24px;margin:12px 0}
+li{margin:6px 0}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;border-radius:8px;margin:15px 0;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.note-box{background:#f0fdf4;border-right:4px solid #22c55e;padding:15px;border-radius:0 8px 8px 0;margin:20px 0}
+.warning-box{background:#fef2f2;border-right:4px solid #ef4444;padding:15px;border-radius:0 8px 8px 0;margin:20px 0}
+</style>
+</head>
+<body>
+<h1>الوحدة 05: حماية الحاسوب والأمان الرقمي</h1>
+
+<h2>المجال المفاهيمي الأول: التعامل مع بيئة الحاسوب</h2>
+<p><strong>المستوى:</strong> السنة الأولى ثانوي (1AS)</p>
+<p><strong>الحجم الزمني الموصى به:</strong> 02 ساعة</p>
+
+<hr>
+
+<h2>الأهداف التعلمية</h2>
+<p>في نهاية هذه الوحدة، يكون المتعلم قادرًا على:</p>
+<ol>
+<li>التعرف على أهم <strong>البرمجيات الخبيثة والمخاطر الرقمية الحديثة</strong> (الفيروسات، الفدية، التصيد الاحتيالي).</li>
+<li>استخدام برمجية الأمان <strong>Windows Security (Microsoft Defender)</strong> لفحص وحماية الحاسوب.</li>
+<li>استيعاب دور <strong>جدار الحماية (Firewall)</strong> والمصادقة ثنائية العوامل (MFA) في تأمين البيانات.</li>
+<li>تطبيق قواعد <strong>النسخ الاحتياطي السحابي والآمن</strong> والتصفح الإيجابي الحذر عبر شبكة الإنترنت.</li>
+</ol>
+
+<hr>
+
+<h2>1. التهديدات والبرمجيات الخبيثة الحديثة (Malware)</h2>
+
+<p><strong>البرمجيات الخبيثة (Malware):</strong> هي أي برنامج أو شفرة برمجية مصممة لإلحاق الضرر بالحاسوب، سرقة البيانات، أو تعطيل النظام دون علم المستخدم.</p>
+
+<pre><code>
+[ البرمجيات الخبيثة Malware ]
+  ├── الفيروسات (Viruses) ---------&gt; تتكيف وتلتصق بالملفات وتنتقل عند التشغيل
+  ├── ديدان الشبكة (Worms) -------&gt; تنتشر ذاتيًا عبر الشبكات دون الحاجة لملف عائل
+  ├── أحصنة طروادة (Trojans) -----&gt; تظهر كبرامج مفيدة وتخفي داخلها شفرات ضارة
+  ├── برمجيات الفدية (Ransomware) -&gt; تشفر جميع الملفات وتطالب بمبالغ فدية لفكها
+  ├── برمجيات التجسس (Spyware) ---&gt; تسجل ضغطات المفاتيح وتسرق كلمات المرور
+  └── التصيد الاحتيالي (Phishing) -&gt; رسائل وصفحات مزيفة لتضليل المستخدم
+</code></pre>
+
+<hr>
+
+<h2>2. وسائل الحماية والتأمين الأولي</h2>
+
+<h3>2.1 مضاد الفيروسات (Antivirus) - Windows Security</h3>
+<p>يأتي نظام Windows 11 مدمجًا ببرنامج <strong>أمان Windows (Windows Security / Defender)</strong> والذي يوفر حماية في الوقت الفعلي (Real-time protection).</p>
+
+<p><strong>أنواع الفحص (Scanning Types):</strong></p>
+<ul>
+<li><strong>الفحص السريع (Quick Scan):</strong> يفحص الأماكن الحساسة والملفات النظامية الأكثر عرضة للإصابة.</li>
+<li><strong>الفحص الكامل (Full Scan):</strong> يفحص جميع القرص الصلب والملفات والتطبيقات (يستغرق وقتًا أطول).</li>
+<li><strong>الفحص المخصص (Custom Scan):</strong> يفحص مجلدًا محددًا أو قرص فلاش USB خارجي.</li>
+</ul>
+
+<hr>
+
+<h3>2.2 جدار الحماية (Firewall)</h3>
+<p><strong>جدار الحماية:</strong> هو جدار دفاعي برمدي أو عتادي يراقب حزم البيانات الصادرة والواردة بين حاسوبك وشبكة الإنترنت، ويحظر الاتصالات المشبوهة أو غير المصرح بها.</p>
+
+<hr>
+
+<h3>2.3 تحديثات النظام والبرمجيات (Windows Update)</h3>
+<p>يعد سد الثغرات الأمنية (Security Patches) من أهم خطوات الحماية. تقوم التحديثات الدورية بنواة النظام بتأمين الجهاز ضد الهجمات الجديدة التي تستغل الثغرات المكتشفة حديثًا.</p>
+
+<hr>
+
+<h2>3. قواعد السلامة الرقمية والمصادقة الأقوى</h2>
+
+<h3>1.3 المصادقة ثنائية العوامل (Multi-Factor Authentication - MFA / 2FA)</h3>
+<p>لا تكفي كلمة المرور لوحدها لتأمين الحسابات اليوم. تعتمد المصادقة ثنائية العوامل على خطوتين للتأكد من هويتك:</p>
+<ol>
+<li><strong>الخطوة الأولى:</strong> شيء تعرفه (كلمة المرور أو رمز PIN).</li>
+<li><strong>الخطوة الثانية:</strong> شيء تمتلكه (رمز مؤقت يصلك على هاتفك عبر تطبيق Authenticator أو SMS).</li>
+</ol>
+
+<hr>
+
+<h3>2.3 النسخ الاحتياطي واستراتيجية (3-2-1 Backup Rule)</h3>
+<p>لحماية ملفاتك المدرسية والشخصية من التلف أو الإصابة بفيروسات الفدية، يُنصح بتطبيق قاعدة النسخ الاحتياطي الذهبية:</p>
+<ul>
+<li><strong>3</strong> نسخ من بياناتك المهمة.</li>
+<li><strong>2</strong> على وسيطين مختلفين (مثل قرص صلب خارجي وقرص فلاش).</li>
+<li><strong>1</strong> نسخة مخزنة سحابيًا في مكان منفصل (OneDrive أو Google Drive).</li>
+</ul>
+
+<hr>
+
+<h3>3.3 قواعد التصفح الآمن على الإنترنت:</h3>
+<ul>
+<li>التأكد من وجود رمز القفل وشريط التشفير الآمن <strong>HTTPS</strong> في عنوان الموقع قبل إدخال أي بيانات شخصية.</li>
+<li>تجنب فتح المرفقات أو الضغط على روابط البريد الإلكتروني المجهولة أو المشبوهة.</li>
+<li>الامتناع عن تحميل البرامج المقرصنة أو غير الموثوقة (Cracks / Keygens) لأنها تحتوي غالبًا على طروادة وفيروسات فدية.</li>
+</ul>
+
+<hr>
+
+<h2>نشاط تطبيقي (في المخبر)</h2>
+
+<h3>ورشة عمل: فحص الحماية وضبط أمان الجهاز</h3>
+<ol>
+<li><strong>التطبيق الأول (فحص الجهاز):</strong></li>
+<ul>
+<li>افتح تطبيق <strong>Windows Security</strong> من قائمة ابدأ.</li>
+<li>انتقل إلى <strong>Virus &amp; threat protection</strong> وقم بإجراء <strong>فحص سريع (Quick Scan)</strong> للجهاز.</li>
+</ul>
+<li><strong>التطبيق الثاني (تحقيق الأمان):</strong></li>
+<ul>
+<li>تحقق من حالة <strong>جدار الحماية (Firewall &amp; network protection)</strong> وتأكد من أن جدار الحماية نشط (Active).</li>
+</ul>
+<li><strong>التطبيق الثالث (التفكير النقدي):</strong></li>
+<ul>
+<li>استلمت رسالة إلكترونية يدعي صاحبها أنك فزت بهاتف حديث ويطلب منك الضغط على رابط وتعبئة بياناتك وكلمة سر حسابك. ما هو هذا النوع من الهجمات؟ وكيف تتصرف معه؟</li>
+</ul>
+</ol>
+</body>
+</html>

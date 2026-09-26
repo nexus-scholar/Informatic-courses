@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الوحدة 02: تجميع الحاسوب والمكونات المادية</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap');
+body{font-family:'Noto Naskh Arabic','Amiri',sans-serif;direction:rtl;text-align:right;background:#f8fafc;color:#1e293b;line-height:1.9;max-width:920px;margin:0 auto;padding:30px 40px}
+.header-card{background:linear-gradient(135deg, #1e40af, #3b82f6);color:#fff;padding:25px 30px;border-radius:12px;margin-bottom:30px;box-shadow:0 4px 12px rgba(30,64,175,0.15)}
+.header-card h1{color:#fff;border:none;margin:0 0 10px 0;padding:0;font-size:1.8em}
+.header-card p{margin:0;opacity:0.9;font-size:1.05em}
+h1{color:#1e40af;border-bottom:3px solid #3b82f6;padding-bottom:10px;margin-top:40px;font-size:1.7em}
+h2{color:#1e3a8a;border-bottom:2px solid #e2e8f0;padding-bottom:6px;margin-top:32px;font-size:1.35em}
+h3{color:#2563eb;margin-top:24px;font-size:1.15em}
+h4{color:#0284c7;font-size:1.05em}
+p{margin:12px 0;text-align:justify}
+strong{color:#0f172a;font-weight:700}
+table{width:100%;border-collapse:collapse;margin:20px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+th,td{border:1px solid #cbd5e1;padding:10px 14px;text-align:right}
+th{background:#eff6ff;color:#1e40af;font-weight:700}
+tr:nth-child(even){background:#f8fafc}
+pre,code{font-family:'Fira Code',monospace;direction:ltr;text-align:left}
+code{background:#f1f5f9;color:#0f172a;padding:2px 6px;border-radius:4px;font-size:0.9em;display:inline-block}
+pre{background:#0f172a;color:#f8fafc;padding:16px;border-radius:8px;overflow-x:auto;margin:18px 0}
+pre code{background:transparent;color:inherit;padding:0;display:block}
+blockquote{border-right:4px solid #3b82f6;background:#eff6ff;padding:12px 18px;margin:20px 0;border-radius:0 8px 8px 0;color:#1e3a8a}
+hr{border:none;border-top:2px solid #e2e8f0;margin:30px 0}
+ul,ol{padding-right:24px;margin:12px 0}
+li{margin:6px 0}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;border-radius:8px;margin:15px 0;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.note-box{background:#f0fdf4;border-right:4px solid #22c55e;padding:15px;border-radius:0 8px 8px 0;margin:20px 0}
+.warning-box{background:#fef2f2;border-right:4px solid #ef4444;padding:15px;border-radius:0 8px 8px 0;margin:20px 0}
+</style>
+</head>
+<body>
+<h1>الوحدة 02: تجميع الحاسوب والمكونات المادية</h1>
+
+<h2>المجال المفاهيمي الأول: التعامل مع بيئة الحاسوب</h2>
+<p><strong>المستوى:</strong> السنة الأولى ثانوي (1AS)</p>
+<p><strong>الحجم الزمني الموصى به:</strong> 04 ساعات (ساعتان نظري + ساعتان تطبيقي في المخبر)</p>
+
+<hr>
+
+<h2>الأهداف التعلمية</h2>
+<p>في نهاية هذه الوحدة، يكون المتعلم قادرًا على:</p>
+<ol>
+<li>فهم <strong>بنية الحاسوب الحدوثة</strong> المعتمدة على نموذج &quot;فون نيومان&quot; (Von Neumann Architecture).</li>
+<li>التعرف التفصيلي على <strong>المكونات الداخلية للوحدة المركزية</strong> (اللوحة الأم، المعالج، الذاكرة الحية، وسائط التخزين SSD/HDD، علبة التغذية).</li>
+<li>التمييز بين أنواع المنافذ الحديثة (USB-C, HDMI, DisplayPort, RJ45) والمنافذ القديمة (VGA, PS/2).</li>
+<li>تطبيق الخطوات المنهجية الصحيحة وقواعد السلامة عند <strong>تجميع أجزاء الحاسوب</strong>.</li>
+</ol>
+
+<hr>
+
+<h2>1. البنية الأساسية للحاسوب (نموذج فون نيومان)</h2>
+
+<p>يتكون الحاسوب من أجزاء مادية تتكامل فيما بينها وفق المخطط الوظيفي التالي:</p>
+
+<pre><code>
+[ وحدات الإدخال ] ---&gt; [ وحدة المعالجة المركزية (CPU) + الذاكرة الرئيسية ] ---&gt; [ وحدات الإخراج ]
+                                     ^
+                                     |
+                             [ وحدات التخزين الثانوية ]
+</code></pre>
+
+<ul>
+<li><strong>وحدات الإدخال (Input Units):</strong> تُدخل البيانات إلى الحاسوب (لوحة المفاتيح، الفأرة، الميكروفون، الماسح الضوئي، الكاميرا).</li>
+<li><strong>وحدة المعالجة والذاكرة (CPU &amp; RAM):</strong> تقوم بمعالجة البيانات وتخزين التراكمات المؤقتة.</li>
+<li><strong>وحدات التخزين (Storage Units):</strong> تحفظ البيانات بصفة دائمة (SSD, HDD, القرص الومضي USB).</li>
+<li><strong>وحدات الإخراج (Output Units):</strong> تعرض وتخرج النتائج للمستخدم (الشاشة، الطابعة، مكبرات الصوت).</li>
+</ul>
+
+<hr>
+
+<h2>2. المكونات الداخلية للوحدة المركزية (Unit Center / Boîtier)</h2>
+
+<h3>2.1 اللوحة الأم (Motherboard / Carte Mère)</h3>
+<p>هي اللوحة الإلكترونية الرئيسية داخل الهيكل، وتعتبر القاعدة التي تتصل بها جميع المكونات الأخرى إما مباشرة أو عبر كابلات.</p>
+
+<p><strong>أهم المكونات على اللوحة الأم الحديثة:</strong></p>
+<ul>
+<li><strong>مقبس المعالج (CPU Socket):</strong> المكان المخصص لتثبيت المعالج (مثل مقابس Intel LGA أو AMD AM5).</li>
+<li><strong>شقوق الذاكرة (RAM Slots):</strong> فتحات تثبيت شرائح الذاكرة الحية (DDR4 / DDR5).</li>
+<li><strong>شقوق التوسعة (Expansion Slots - PCIe):</strong> لتثبيت بطاقة العرض الرسومي (GPU) أو بطاقات الشبكة والصوت.</li>
+<li><strong>منافذ M.2 NVMe:</strong> منافذ فائقة السرعة لتثبيت وحدات التخزين الصلبة الحديثة (SSD M.2).</li>
+<li><strong>رقاقة BIOS / UEFI:</strong> البرمجية الدائمة الثابتة المخزنة في ذاكرة ROM لبدء تشغيل الجهاز.</li>
+</ul>
+
+<hr>
+
+<h3>2.2 وحدة المعالجة المركزية (CPU / المعالج)</h3>
+<p>المعالج هو &quot;عقل الحاسوب&quot;، ويقوم بتنفيذ الأوامر وإجراء الحسابات المنطقية والرياضية.</p>
+
+<p><strong>أهم خصائص المعالج:</strong></p>
+<ul>
+<li><strong>السرعة (التردد - Frequency):</strong> تُقاس بالغيغاهرتز (GHz)، وتعبر عن عدد العمليات في الثانية.</li>
+<li><strong>عدد الأنوية والمجاري (Cores &amp; Threads):</strong> المعالجات الحديثة تحتوي على أنوية متعددة (4، 8، 16 نواة أو أكثر) لعمل مهام متعددة في نفس الوقت.</li>
+<li><strong>الذاكرة التخبئية (Cache Memory L1/L2/L3):</strong> ذاكرة فائقة السرعة داخل المعالج لتخزين الأوامر الأكثر استخدامًا.</li>
+<li><strong>أبرز الشركات المصنعة:</strong> Intel (سلسلة Core i3, i5, i7, i9) و AMD (سلسلة Ryzen 3, 5, 7, 9).</li>
+</ul>
+
+<hr>
+
+<h3>2.3 الذاكرة الرئيسية (Main Memory)</h3>
+
+<p>تنسقسم الذاكرة الرئيسية إلى نوعين أساسيين:</p>
+
+<table>
+<tr><th>وجه المقارنة</th><th>الذاكرة الحية (RAM)</th><th>الذاكرة الميتة (ROM / UEFI)</th></tr>
+<tr><td><strong>المسمى</strong></td><td>Random Access Memory</td><td>Read Only Memory</td></tr>
+<tr><td><strong>طبيعة التخزين</strong></td><td>مؤقتة (تُمحى محتوياتها عند انقطاع الكهرباء)</td><td>دائمة (لا تُمحى محتوياتها)</td></tr>
+<tr><td><strong>الوظيفة</strong></td><td>تخزين البرامج والبيانات قيد التشغيل حاليًا</td><td>تخزين برنامج الإقلاع الأساسي (BIOS/UEFI)</td></tr>
+<tr><td><strong>قابلة للتعديل</strong></td><td>نعم (قراءة وكتابة)</td><td>قراءة فقط (تُبرمج في المصنع)</td></tr>
+<tr><td><strong>السعة الحديثة</strong></td><td>8GB, 16GB, 32GB (DDR4 / DDR5)</td><td>بضعة ميغابايت (MB)</td></tr>
+</table>
+
+<hr>
+
+<h3>2.4 وسائط التخزين الثانوية (Secondary Storage)</h3>
+
+<p>تستخدم لتخزين الملفات ونظام التشغيل بصفة دائمة:</p>
+
+<ol>
+<li><strong>وحدات SSD من نوع M.2 NVMe:</strong> أحدث وأسرع تقنيات التخزين، تصل سرعتها إلى أكثر من 7000 MB/s، وتُثبت مباشرة على اللوحة الأم.</li>
+<li><strong>وحدات SSD من نوع SATA:</strong> أقراص صلبة إلكترونية بدون أجزاء متحركة، أسرع بـ 5 مرات من الأقراص الميكانيكية التقليدية.</li>
+<li><strong>الأقراص الميكانيكية التقليدية (HDD):</strong> تعتمد على أقراص مغناطيسية دوارة، سعاتها كبيرة وتكلفتها منخفضة، لكن سرعتها أبطأ وتتأثر الصدمات.</li>
+<li><strong>وسائط تخزين خارجية:</strong> أقراص صلبة خارجية (External SSD/HDD) وأقراص الفلاش (USB Flash Drives).</li>
+</ol>
+
+<hr>
+
+<h3>2.5 علبة التغذية الكهربائية (Power Supply Unit - PSU)</h3>
+<p>تقوم بتحويل التيار الكهربائي المتناوب (AC 220V) القادم من المأخذ إلى تيار مستمر (DC 12V, 5V, 3.3V) بجهود مختلفة لتغذية مكونات اللوحة الأم والمعالج وبقية الأجزاء. وتُقاس استطاعتها بالواط (Watt) مثل 500W, 650W, 750W.</p>
+
+<hr>
+
+<h2>3. منافذ التوصيل الخارجية (Ports &amp; Interfaces)</h2>
+
+<p>توجد المنافذ في الخلف والأمام من الهيكل لتوصيل الأجهزة الملحقة:</p>
+
+<h3>المنافذ الحديثة والشائعة:</h3>
+<ul>
+<li><strong>USB Type-C:</strong> منفذ متعدد الاستخدامات وسريع جدًا لنقل البيانات، الشحن، ونقل الصورة.</li>
+<li><strong>USB 3.2 / 3.0 (اللون الأزرق):</strong> لنقل البيانات بسرعة عالية تصل إلى 10-20 Gbps.</li>
+<li><strong>HDMI &amp; DisplayPort:</strong> منافذ رقمية لنقل الصوت والصورة عالية الدقة (4K / 8K) إلى الشاشات.</li>
+<li><strong>RJ-45 (Ethernet):</strong> توصيل كابل الشبكة المحلية والإنترنت السلكي.</li>
+<li><strong>مآخذ الصوت 3.5mm (Audio Jacks):</strong> لتوصيل السماعات والميكروفون.</li>
+</ul>
+
+<h3>المنافذ القديمة (تراثية / Legacy):</h3>
+<ul>
+<li><strong>VGA (اللون الأزرق - 15 إبرة):</strong> منفذ تماثلي قديم لنقل الشاشة (تم استبداله بـ HDMI/DisplayPort).</li>
+<li><strong>PS/2 (أخضر وبنفسجي):</strong> منافذ قديمة للوحة المفاتيح والفأرة (تم استبدالها بـ USB).</li>
+<li><strong>المنفذ المتوازي (Parallel DB25 / LPT):</strong> منفذ قديم للطابعات الكبيرة.</li>
+</ul>
+
+<hr>
+
+<h2>4. مراحل وخطوات تجميع الحاسوب الشخصي</h2>
+
+<blockquote><p>[!WARNING]</p></blockquote>
+<blockquote><p><strong>قواعد السلامة قبل التجميع:</strong></p></blockquote>
+<blockquote><p>- فصل كابل الكهرباء وتفريغ الشحنات الكهروساكنة (Static Electricity) من اليدين.</p></blockquote>
+<blockquote><p>- عدم الضغط بقوة عند تثبيت قطع المعالج أو شرائح الذاكرة.</p></blockquote>
+
+<h3>خطوات التجميع المنظمة:</h3>
+<ol>
+<li><strong>تثبيت المعالج (CPU):</strong> فتح مقبس اللوحة الأم، وضع المعالج بالاتجاه الصحيح وفق علامة التوجيه (السهم)، ثم غلق ذراع التثبيت.</li>
+<li><strong>تثبيت مبرد المعالج (CPU Cooler):</strong> وضع المعجون الحراري (Thermal Paste) وتثبيت المبرد فوق المعالج.</li>
+<li><strong>تثبيت ذاكرة RAM:</strong> فتح مشابك شقوق الذاكرة، محاذاة الشفرة السفلية للذاكرة والضغط حتى سماع صوت الإغلاق (Click).</li>
+<li><strong>تثبيت قرص التخزين SSD M.2:</strong> أدخال القرص في فتحة M.2 وزاويته مائلة ثم تثبيته بالبرغي المخصص.</li>
+<li><strong>تركيب اللوحة الأم داخل الهيكل (Case):</strong> محاذاة منافذ الخلفية وتثبيت اللوحة بالبراغي.</li>
+<li><strong>تركيب علبة التغذية (PSU):</strong> تثبيت العلبة وتوصيل الكابل الرئيسي (24-pin) للوحة الأم وكابل المعالج (8-pin CPU) وكابلات التغذية الأخرى.</li>
+<li><strong>توصيل أزرار ومنافذ الواجهة الأمامية:</strong> توصيل كابلات زر التشغيل (Power SW)، زر إعادة التشغيل (Reset SW)، ومنافذ USB الصوتية.</li>
+</ol>
+
+<hr>
+
+<h2>نشاط تطبيقي (في المخبر)</h2>
+
+<h3>ورشة عمل: التعرف على المكونات وتجميع حاسوب</h3>
+<ol>
+<li><strong>التطبيق الأول:</strong> قم بفتح غطاء الوحدة المركزية المتاحة في المخبر وتحديد الأجزاء التالية:</li>
+<ul>
+<li>اللوحة الأم ورقم طرازها.</li>
+<li>شرائح الذاكرة الحية وسعتها.</li>
+<li>نوع وسيط التخزين المستعمل (SSD أم HDD).</li>
+</ul>
+<li><strong>التطبيق الثاني:</strong> حدد نوع كل منفذ خلفي في جهاز المخبر وصنفه (رقمي حديث / تماثلي قديم).</li>
+</ol>
+</body>
+</html>

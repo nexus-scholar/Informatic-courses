@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مذكرة درس: الخوارزميات ولغة بايثون (Algorithms & Python)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+body{font-family:'Amiri','Noto Naskh Arabic',serif;direction:rtl;text-align:right;background:#fff;color:#1a1a1a;line-height:2;max-width:900px;margin:0 auto;padding:20px 30px}
+h1{color:#1565c0;border-bottom:3px solid #1565c0;padding-bottom:10px}
+h2{color:#1976d2;border-bottom:2px solid #e3f2fd;padding-bottom:6px;margin-top:30px}
+h3{color:#1e88e5;margin-top:20px}
+h4{color:#42a5f5}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #bbb;padding:8px 12px;text-align:right}
+th{background:#e3f2fd;font-weight:bold}
+tr:nth-child(even){background:#f5f5f5}
+pre,code{background:#f5f5f5;padding:2px 6px;border-radius:3px;font-family:monospace}
+pre{padding:12px;overflow-x:auto;border:1px solid #ddd}
+blockquote{border-right:4px solid #1976d2;padding-right:15px;margin:15px 0;color:#555}
+hr{border:none;border-top:2px solid #e3f2fd;margin:20px 0}
+ul,ol{padding-right:20px}
+a{color:#1565c0}
+a:hover{color:#0d47a1}
+img{max-width:100%;height:auto}
+</style>
+</head>
+<body>
+<h1>مذكرة درس: الخوارزميات ولغة بايثون (Algorithms &amp; Python)</h1>
+
+<h2>1. بطاقة تعريف الدرس</h2>
+
+<table>
+<tr><th>العنصر</th><th>التفصيل</th></tr>
+<tr><td><strong>عنوان الدرس</strong></td><td>من المخطط الانسيابي إلى الكود (مقدمة في Python)</td></tr>
+<tr><td><strong>المجال التعليمي</strong></td><td>الرابع: المقدمة في البرمجة</td></tr>
+<tr><td><strong>الكفاءة المستهدفة</strong></td><td>أن ينتقل المتعلم من التفكير المنطقي البصري (المخططات) إلى كتابة تعليمات برمجية حقيقية باستخدام لغة بايثون.</td></tr>
+<tr><td><strong>الكفاءة الشاملة للسنة</strong></td><td>يتعلم المفاهيم القاعدية حول المحيط الحاسوبي ويطور مهارات وتقنيات جديدة أكثر تقدماً.</td></tr>
+<tr><td><strong>المدة الزمنية</strong></td><td>12 ساعة (موزعة على عدة أسابيع: نظري وتطبيقي)</td></tr>
+<tr><td><strong>الموارد البيداغوجية</strong></td><td>حواسيب المخبر، برنامج Flowgorithm (لتوليد الكود)، بيئة بايثون (IDLE أو محرر أونلاين).</td></tr>
+<tr><td><strong>طريقة التقويم</strong></td><td>إنجاز مشاريع صغيرة مستمرة (آلة حاسبة، طباعة أشكال هندسية).</td></tr>
+</table>
+
+<hr>
+
+<h2>2. الأهداف التعليمية</h2>
+
+<ul>
+<li>أن يكتشف المتعلم كيف يمكن لبرنامج Flowgorithm توليد كود Python بناءً على المخطط الانسيابي.</li>
+<li>أن يفرق المتعلم بين أنواع البيانات الأساسية (نص، عدد صحيح، عدد حقيقي).</li>
+<li>أن يكتب المتعلم برامج بسيطة باستخدام تعليمات الإدخال <code>input()</code> والإخراج <code>print()</code>.</li>
+<li>أن يترجم المتعلم شكل (المعين) إلى تعليمة <code>if / else</code>.</li>
+<li>أن يدرك المتعلم فائدة التكرار ويطبق حلقات <code>while</code> و <code>for</code> لتقليص الأكواد.</li>
+</ul>
+
+<hr>
+
+<h2>3. التدرج في المهام التعليمية (موزعة على الحصص)</h2>
+
+<h3>الجزء الأول: المتغيرات والإدخال والإخراج</h3>
+
+<table>
+<tr><th>المرحلة</th><th>النشاط</th><th>المدة</th></tr>
+<tr><td><strong>وضعية الانطلاق</strong></td><td>في Flowgorithm، نضغط على زر (Source Code Viewer) ونغير اللغة إلى Python. &quot;ماذا تشاهدون؟&quot;.</td><td>10 د</td></tr>
+<tr><td><strong>بناء التعلمات 1</strong></td><td>استنتاج كيفية تعريف متغير (الصندوق) وكيف يقرأ بايثون البيانات باستخدام <code>input()</code>.</td><td>20 د</td></tr>
+<tr><td><strong>بناء التعلمات 2</strong></td><td>إبراز تعليمة <code>print()</code> وكيف تتجاوب مع المستخدم.</td><td>15 د</td></tr>
+<tr><td><strong>التطبيق</strong></td><td>كتابة أول برنامج بايثون: يطلب من المستخدم اسمه وعمره ويطبع رسالة ترحيبية.</td><td>15 د</td></tr>
+</table>
+
+<h3>الجزء الثاني: الشروط (Decision Making)</h3>
+
+<table>
+<tr><th>المرحلة</th><th>النشاط</th><th>المدة</th></tr>
+<tr><td><strong>وضعية الانطلاق</strong></td><td>&quot;لو أردنا أن يرحب البرنامج فقط بمن هم فوق سن الـ 15، كيف نخبره بذلك؟&quot;.</td><td>10 د</td></tr>
+<tr><td><strong>بناء التعلمات</strong></td><td>استبدال شكل (المعين) بالكلمات المفتاحية <code>if</code> و <code>else</code>. التنويه الشديد لضرورة (الفراغ البادئ - Indentation).</td><td>20 د</td></tr>
+<tr><td><strong>التطبيق</strong></td><td>كتابة برنامج يحسب المعدل ويحدد ما إذا كان التلميذ ناجحاً أم راسباً.</td><td>30 د</td></tr>
+</table>
+
+<h3>الجزء الثالث: التكرار (Loops)</h3>
+
+<table>
+<tr><th>المرحلة</th><th>النشاط</th><th>المدة</th></tr>
+<tr><td><strong>وضعية الانطلاق</strong></td><td>يطلب الأستاذ من التلاميذ طباعة كلمة &quot;الجزائر&quot; 100 مرة باستخدام <code>print()</code>. هل هذا منطقي؟</td><td>10 د</td></tr>
+<tr><td><strong>بناء التعلمات</strong></td><td>تقديم الحلقة <code>for i in range(100):</code> لحل المشكلة في سطرين.</td><td>20 د</td></tr>
+<tr><td><strong>التطبيق</strong></td><td>برمجة جدول ضرب تفاعلي لرقم يختاره المستخدم.</td><td>30 د</td></tr>
+</table>
+</body>
+</html>

@@ -31,16 +31,9 @@ This project is a **teaching resource collection for Computer Science (Informati
 ```
 Informatic-courses/
 ├── README.md
-├── sources/                      # الملفات الأصلية (PDF)
-│   ├── informatique1as-livre_scolaire.pdf
-│   ├── plan_annuel2020-informatique1as.pdf
-│   └── courses/                  # ملفات PDF مصدرية للدروس
-│       ├── course-1-tic.pdf
-│       ├── course-2-office.pdf
-│       ├── course-3-excel.pdf
-│       ├── course-4-ppt.pdf
-│       ├── course-5-algo.pdf
-│       └── course-6-web.pdf
+├── archive/                      # المواد المرجعية والنسخ السابقة (غير نشطة)
+│   ├── legacy-reference/         # PDF وOCR الكتاب القديم
+│   └── planning-legacy/          # نسخ التخطيط السابقة
 ├── courses/                      # فصول دراسية بصيغة Markdown
 │   ├── course-1-tic/             # تقنية المعلومات (TIC)
 │   ├── course-2-office/          # المكتبية: Word / Excel / PowerPoint
@@ -48,16 +41,11 @@ Informatic-courses/
 │   ├── course-4-ppt/             # العروض التقديمية والروابط التشعبية
 │   ├── course-5-algo/            # المخططات النسقية والخوارزميات
 │   └── course-6-web/             # المتصفح، البريد، شبكات التواصل
-├── book/                         # الكتاب المدرسي كاملًا (Markdown)
-│   ├── informatique1as-livre_scolaire.md
-│   └── informatique1as-livre_scolaire_artifacts/
 └── planning/                     # وثائق التخطيط والمذكرات
-    ├── التدرج_السنوي_الرسمي_الكامل.md
-    ├── خريطة_الوحدات_الصفحات_أدق.md
-    ├── خطة_التوزيع_السنوية_المصححة.md
-    ├── خطة_التوزيع_السنوية_النهائية_جدول_رسمي.md
-    ├── مذكرة_درس_المخططات_النسقية.md
-    └── مذكرة_درس_تجميع_الحاسوب.md
+    ├── التخطيط_السنوي.md          # الوثيقة العملية الوحيدة
+    └── README.md                   # الاستعمال والأرشيف
 ```
+
+> **تنظيم العمل الحالي:** استُبدلت المسارات `book/` و`sources/` في البنية النشطة بالأرشيف `archive/legacy-reference/`. وثيقة التخطيط اليومية هي `planning/التخطيط_السنوي.md`؛ والنسخ السابقة محفوظة في `archive/planning-legacy/`.
 
 > **ملاحظة:** كل مجلد درس يحوي مجلد `*_artifacts/` يضم صور صفحات الكتاب المرتبطة به، ويتم الرجوع إليها بمسارات نسبية داخل ملفات Markdown.

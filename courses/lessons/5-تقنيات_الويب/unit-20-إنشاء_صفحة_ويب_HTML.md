@@ -282,15 +282,15 @@ I, II, III, IV, ... : أرقام رومانية كبيرة
 تأخذ align العديد من القيم وهي:
 
 - bottom, baseline, absbottom: وهي تعرض الصورة بحيث تكون على السطر مثل أي كلمة أخرى.
-  - `<img src="velo.gif" align="bottom">`
+ - `<img src="velo.gif" align="bottom">`
 - left: وهي تعرض الصورة على يسار الفقرة ولا يكون للصورة علاقة بالسطر.
-  - `<img src="velo.gif" align="left">`
+ - `<img src="velo.gif" align="left">`
 - middle, absmiddle: وهي تعرض الصورة في منتصف السطر.
-  - `<img src="velo.gif" align="middle">`
+ - `<img src="velo.gif" align="middle">`
 - right: وهي تعرض الصورة على يمين الفقرة ولا يكون للصورة علاقة بالسطر.
-  - `<img src="velo.gif" align="right">`
+ - `<img src="velo.gif" align="right">`
 - top, texttop: وهي تعرض الصورة أعلى السطر فيكون السطر أسفلها.
-  - `<img src="velo.gif" align="top">`
+ - `<img src="velo.gif" align="top">`
 
 ### 8 الارتباطات التشعبية
 
@@ -368,10 +368,10 @@ I, II, III, IV, ... : أرقام رومانية كبيرة
 
 ```html
 <table cellspacing="10" cellpadding="20" border="1">
-  <tr>
+ <tr>
     <td>الخلية الأولى</td>
     <td>الخلية الثانية</td>
-  </tr>
+ </tr>
 </table>
 ```
 
@@ -381,10 +381,10 @@ I, II, III, IV, ... : أرقام رومانية كبيرة
 
 ```html
 <table width="100%" height="100%" border="1">
-  <tr>
+ <tr>
     <td width="100" height="40%">الخلية الأولى</td>
     <td width="100%" height="40%">الخلية الثانية</td>
-  </tr>
+ </tr>
 </table>
 ```
 
@@ -395,10 +395,10 @@ I, II, III, IV, ... : أرقام رومانية كبيرة
 
 ```html
 <table border="1" width="90%" height="80%">
-  <tr>
+ <tr>
     <td bgcolor="Yellow">الخلية الأولى</td>
     <td>الخلية الثانية</td>
-  </tr>
+ </tr>
 </table>
 ```
 
