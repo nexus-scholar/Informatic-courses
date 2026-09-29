@@ -48,4 +48,12 @@ Informatic-courses/
 
 > **تنظيم العمل الحالي:** استُبدلت المسارات `book/` و`sources/` في البنية النشطة بالأرشيف `archive/legacy-reference/`. وثيقة التخطيط اليومية هي `planning/التخطيط_السنوي.md`؛ والنسخ السابقة محفوظة في `archive/planning-legacy/`.
 
+## البوابة التعليمية والنشر
+
+توجد البوابة التعليمية المبنية بـ Next.js في `site/`. تُنشر تلقائيًا على GitHub Pages عبر `.github/workflows/deploy-pages.yml` عند الدفع إلى فرع `master`، ويكون نطاقها العام `https://informatique.mouadh.info`.
+
+- لتحديث صفحات البوابة من الدروس: شغّل `python courses/generate_site_docs.py`.
+- لا تُنشر مواد `archive/` أو `teachers_guide/` ضمن مخرجات الموقع.
+- يتطلب النشر أن تكون قيمة **Source** في GitHub: `GitHub Actions` ضمن `Settings → Pages`.
+
 > **ملاحظة:** كل مجلد درس يحوي مجلد `*_artifacts/` يضم صور صفحات الكتاب المرتبطة به، ويتم الرجوع إليها بمسارات نسبية داخل ملفات Markdown.
