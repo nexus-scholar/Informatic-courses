@@ -1,20 +1,19 @@
 """
 generate_site_docs.py
 ---------------------
-Convert all 20 lesson Markdown files from courses/modernized_lessons/ and courses/lessons/
-into clean Markdoc-compatible pages for the Syntax Next.js documentation portal in site/src/app/docs/.
+Generate the public lesson pages from the project's single canonical lesson source.
+
+Authors edit ``courses/lessons/``. This script then creates the derived,
+Markdoc-compatible pages in ``site/src/app/docs/``; do not edit those generated
+pages directly.
 """
 
 import json
-import os
 import re
-import glob
-import json
 import shutil
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-MODERN_DIR = BASE_DIR / "courses" / "modernized_lessons"
 LESSONS_DIR = BASE_DIR / "courses" / "lessons"
 DOCS_DIR = BASE_DIR / "site" / "src" / "app" / "docs"
 PUBLIC_ARTIFACTS = BASE_DIR / "site" / "public" / "artifacts"
@@ -68,15 +67,12 @@ UNIT_TITLES = {
 
 def find_source_file(unit_num: int) -> Path:
     num_str = f"{unit_num:02d}"
-    # Prefer modernized lessons
-    modern_files = list(MODERN_DIR.glob(f"**/unit-{num_str}*.md"))
-    if modern_files:
-        return modern_files[0]
-    # Fallback to standard lessons
     standard_files = list(LESSONS_DIR.glob(f"**/unit-{num_str}*.md"))
-    if standard_files:
+    if len(standard_files) == 1:
         return standard_files[0]
-    raise FileNotFoundError(f"Unit {num_str} not found in lessons.")
+    if not standard_files:
+        raise FileNotFoundError(f"Unit {num_str} not found in courses/lessons/.")
+    raise RuntimeError(f"More than one source file was found for unit {num_str}: {standard_files}")
 
 
 def process_markdown_content(raw_text: str, unit_num: int, title: str) -> str:
@@ -112,8 +108,8 @@ def process_markdown_content(raw_text: str, unit_num: int, title: str) -> str:
             in_header = False
         
         # Normalize image paths
-        line = re.sub(r'!\[(.*?)\]\(\.?/?artifacts/(image_[a-zA-Z0-9_]+\.png)\)', r'![\1](/artifacts/\2)', line)
-        line = re.sub(r'src=[\'"]\.?/?artifacts/(image_[a-zA-Z0-9_]+\.png)[\'"]', r'src="/artifacts/\1"', line)
+        line = re.sub(r'!\[(.*?)\]\(\.?/?artifacts/([^)]+)\)', r'![\1](/artifacts/\2)', line)
+        line = re.sub(r'src=[\'"]\.?/?artifacts/([^\'"]+)[\'"]', r'src="/artifacts/\1"', line)
 
         # Normalize bare code blocks without language to ```text
         if stripped.startswith("```"):
@@ -200,7 +196,9 @@ nextjs:
 def sync_images():
     PUBLIC_ARTIFACTS.mkdir(parents=True, exist_ok=True)
     count = 0
-    for img_path in LESSONS_DIR.glob("**/artifacts/*.png"):
+    for img_path in LESSONS_DIR.glob("**/artifacts/*"):
+        if not img_path.is_file():
+            continue
         dest_file = PUBLIC_ARTIFACTS / img_path.name
         if not dest_file.exists() or dest_file.stat().st_size != img_path.stat().st_size:
             shutil.copy2(img_path, dest_file)
@@ -219,13 +217,6 @@ def main():
         target_dir.mkdir(parents=True, exist_ok=True)
         target_page = target_dir / "page.md"
         
-        # If unit-01 already has our hand-crafted rich version, we can keep or re-verify
-        # Unit 01 was handcrafted with extra quick-links, let's preserve it if already fine,
-        # or we only generate units 02 to 20!
-        if unit_num == 1 and target_page.exists():
-            print(f" - Unit 01: Preserved hand-crafted version at {target_page.relative_to(BASE_DIR)}")
-            continue
-
         src_file = find_source_file(unit_num)
         title = UNIT_TITLES.get(unit_num, f"الوحدة {num_str}")
         

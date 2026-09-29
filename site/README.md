@@ -1,44 +1,45 @@
-# Syntax
+# البوابة التعليمية — الإعلام الآلي 1AS
 
-Syntax is a [Tailwind Plus](https://tailwindcss.com/plus) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+هذه البوابة هي النسخة العامة لمواد الإعلام الآلي للسنة الأولى ثانوي في الجزائر. تبنى بـ Next.js وتُنشر آلياً عبر GitHub Pages إلى `https://informatique.mouadh.info`.
 
-## Getting started
+## أين أحرر ماذا؟
 
-To get started with this template, first install the npm dependencies:
+| ما تريد تغييره | حرر هذا الملف أو المجلد | لا تحرر |
+|---|---|---|
+| محتوى درس للتلاميذ | `courses/lessons/` | `site/src/app/docs/` لأنه ناتج تلقائي |
+| صور الدروس | مجلد `artifacts/` قرب الدرس | `site/public/artifacts/` لأنه نسخة منشورة |
+| موارد خارجية موثوقة | `site/src/app/resources/page.md` | روابط أرشيفية داخل الكتاب القديم |
+| ترتيب عناصر القائمة | `site/src/lib/navigation.ts` | مخرجات `site/out/` |
+| التخطيط السنوي | `planning/التخطيط_السنوي.md` | الملفات المحفوظة في `archive/planning-legacy/` |
 
-```bash
-npm install
+توجد مسودات سابقة في `courses/modernized_lessons/` للاحتفاظ بسجل التطوير فقط؛ لا يقرأها مولّد الموقع.
+
+## سير عمل آمن قبل النشر
+
+من جذر المشروع:
+
+```powershell
+python courses/convert_lessons.py
+python courses/generate_site_docs.py
+python courses/verify_site_content.py
+npm --prefix site run build
 ```
 
-Next, run the development server:
+يكرر GitHub Actions التوليد والتحقق والبناء عند الدفع إلى `master`. لا تُرفع `site/out/` ولا `node_modules/` إلى Git؛ مخرجات النشر تُنشأ في CI.
 
-```bash
-npm run dev
+## تشغيل محلي
+
+```powershell
+npm --prefix site ci
+npm --prefix site run dev
 ```
 
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+ثم افتح `http://localhost:3000`. يمكن البحث داخل الدروس من مربع البحث أو اختصار لوحة المفاتيح الظاهر في الواجهة.
 
-## Customizing
+## سياسة الموارد
 
-You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
+أضف موردًا فقط إذا كان رسمياً أو تابعاً لمؤسسة تعليمية موثوقة، وحدد الوحدة والهدف التربوي. اختبر الرابط قبل استعماله مع التلاميذ، ولا تطلب من التلاميذ إنشاء حسابات أو مشاركة بيانات شخصية من أجل نشاط مدرسي.
 
-## Global search
+## الرخصة
 
-This template includes a global search that's powered by the [FlexSearch](https://github.com/nextapps-de/flexsearch) library. It's available by clicking the search input or by using the `⌘K` shortcut.
-
-This feature requires no configuration, and works out of the box by automatically scanning your documentation pages to build its index. You can adjust the search parameters by editing the `/src/markdoc/search.mjs` file.
-
-## License
-
-This site template is a commercial product and is licensed under the [Tailwind Plus license](https://tailwindcss.com/plus/license).
-
-## Learn more
-
-To learn more about the technologies used in this site template, see the following resources:
-
-- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
-- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
-- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
-- [Markdoc](https://markdoc.io) - the official Markdoc documentation
-- [Algolia Autocomplete](https://www.algolia.com/doc/ui-libraries/autocomplete/introduction/what-is-autocomplete/) - the official Algolia Autocomplete documentation
-- [FlexSearch](https://github.com/nextapps-de/flexsearch) - the official FlexSearch documentation
+قالب الواجهة مرخص وفق [Tailwind Plus license](./LICENSE.md). محتوى الدروس ومصادره يتبعان تنظيم هذا المستودع والمواد المرجعية المحفوظة فيه.

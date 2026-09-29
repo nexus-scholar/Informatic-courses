@@ -2,7 +2,7 @@
 import pathlib, re, html as htmllib, sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
-BASE = pathlib.Path(r"C:\Users\mouadh\Documents\Informatic-courses")
+BASE = pathlib.Path(__file__).resolve().parent.parent
 LESSONS = BASE / "courses" / "lessons"
 
 CSS = """

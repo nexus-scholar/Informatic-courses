@@ -57,3 +57,9 @@ Informatic-courses/
 - يتطلب النشر أن تكون قيمة **Source** في GitHub: `GitHub Actions` ضمن `Settings → Pages`.
 
 > **ملاحظة:** كل مجلد درس يحوي مجلد `*_artifacts/` يضم صور صفحات الكتاب المرتبطة به، ويتم الرجوع إليها بمسارات نسبية داخل ملفات Markdown.
+
+## تعديل المحتوى دون كسر الموقع
+
+- المصدر الوحيد لدروس التلاميذ هو `courses/lessons/`؛ أمّا `site/src/app/docs/` فهو ناتج تلقائي ولا يُعدّل مباشرة.
+- قبل النشر شغّل: `python courses/convert_lessons.py`، ثم `python courses/generate_site_docs.py`، ثم `python courses/verify_site_content.py`، وأخيراً `npm --prefix site run build`.
+- الموارد الخارجية المنتقاة موجودة في `site/src/app/resources/page.md`، ودليل التشغيل المختصر للموقع موجود في `site/README.md`.
