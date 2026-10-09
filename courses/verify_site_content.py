@@ -24,6 +24,9 @@ MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[[^]]+\]\((/[^)#?]+)\)")
 
 
 def page_exists(path: str) -> bool:
+    public_file = PUBLIC / path.lstrip("/")
+    if public_file.is_file():
+        return True
     if path == "/":
         return (ROOT / "site" / "src" / "app" / "page.md").is_file()
     return (ROOT / "site" / "src" / "app" / path.lstrip("/") / "page.md").is_file()
