@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دليل لقطات الشاشة — الوحدة 05: حماية الحاسوب (Windows 11)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+body{font-family:'Amiri','Noto Naskh Arabic',serif;direction:rtl;text-align:right;background:#fff;color:#1a1a1a;line-height:2;max-width:900px;margin:0 auto;padding:20px 30px}
+h1{color:#1565c0;border-bottom:3px solid #1565c0;padding-bottom:10px}
+h2{color:#1976d2;border-bottom:2px solid #e3f2fd;padding-bottom:6px;margin-top:30px}
+h3{color:#1e88e5;margin-top:20px}
+h4{color:#42a5f5}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #bbb;padding:8px 12px;text-align:right}
+th{background:#e3f2fd;font-weight:bold}
+tr:nth-child(even){background:#f5f5f5}
+pre,code{background:#f5f5f5;padding:2px 6px;border-radius:3px;font-family:monospace}
+pre{padding:12px;overflow-x:auto;border:1px solid #ddd}
+blockquote{border-right:4px solid #1976d2;padding-right:15px;margin:15px 0;color:#555}
+hr{border:none;border-top:2px solid #e3f2fd;margin:20px 0}
+ul,ol{padding-right:20px}
+a{color:#1565c0}
+a:hover{color:#0d47a1}
+img{max-width:100%;height:auto}
+</style>
+</head>
+<body>
+<h1>دليل لقطات الشاشة — الوحدة 05: حماية الحاسوب (Windows 11)</h1>
+
+<h2>0. الغرض من هذه الوثيقة</h2>
+
+<p>النسخة الأصلية للوحدة 05 تعتمد على صور من الكتاب المدرسي (2015): علب برامج مكافحة فيروسات بأسماء تجارية قديمة، وأيقونات ورسائل من Windows 7. هذه الصور لم تعد مطابقة لما يراه التلميذ، وبعضها يحمل أسماء منتجات وتفاصيل تجارية لا تخدم الدرس.</p>
+
+<p>يهدف هذا الدليل إلى إنتاج <strong>مجموعة موحّدة من لقطات Windows 11</strong> تُظهر المفاهيم التي نعلّمها: لوحة الحماية، أنوع الفحص، جدار الحماية، رسالة تصيد، وفحص وحدة تخزين. <strong>الدرس الحالي مكتوب دون صور</strong>، وتُضاف الأسطر المشار إليها في القسم 4 بعد إنجاز اللقطات.</p>
+
+<p><strong>البيئة المتوفرة:</strong></p>
+
+<table>
+<tr><th>العنصر</th><th>التفصيل</th></tr>
+<tr><td>جهاز الأستاذ</td><td>Windows 11 (مصدر جميع اللقطات)</td></tr>
+<tr><td>مخبر المؤسسة</td><td>Windows 8.1 (يُستعمل للتطبيق العملي فقط، لا للتصوير)</td></tr>
+<tr><td>أداة التصوير</td><td>ShareX — <code>Ctrl + Alt + PrintScreen</code> للنافذة، <code>Ctrl + PrintScreen</code> للمنطقة</td></tr>
+<tr><td>التأخير المضبوط</td><td>5 ثوانٍ قبل اللقطة (ضروري لإظهار القوائم المنسدلة)</td></tr>
+<tr><td>مجلد الحفظ</td><td><code>courses\lessons\1-التعامل_مع_بيئة_الحاسوب\artifacts</code></td></tr>
+<tr><td>نمط اسم الملف</td><td><code>u05-01-...png</code> إلى <code>u05-06-...png</code> كما في جدول القسم 3</td></tr>
+</table>
+
+<hr>
+
+<h2>1. التحضير قبل أول لقطة (إلزامي)</h2>
+
+<ol>
+<li><strong>نمط واحد لكل اللقطات:</strong> الوضع الداكن أو الفاتح، لا خليط بينهما (اللقطات الحالية للوحدة 04 داكنة؛ الأفضل الالتزام بالداكن للتناسق بين الوحدتين).</li>
+<li><strong>لغة واجهة واحدة:</strong> العربية (كما في الوحدة 04)، وعدم خلط لقطات إنجليزية أو فرنسية.</li>
+<li><strong>إسكات الإشعارات:</strong> <code>Win + N</code> ← «عدم الإزعاج»، وإغلاق البريد والمراسلة.</li>
+<li><strong>الخصوصية:</strong> أي شاشة تُظهر اسم الحساب أو بريده أو اسم الجهاز أو شبكة Wi-Fi تُحجب قبل النشر.</li>
+<li><strong>لا بيانات حقيقية:</strong> رسالة التصيد تُركَّب محليًا (مسودة في برنامج بريد أو صفحة نصية)، ولا تُصوَّر رسالة حقيقية فيها اسم مرسل أو بريد شخص آخر.</li>
+<li><strong>لا برمجيات خبيثة حقيقية:</strong> لا تُشغّل عيّنة فدية أو فيروسًا للتصوير، ولو «آمنة». صورة ملاحظة الفدية تُحاكى نصيًا إن لزم.</li>
+</ol>
+
+<hr>
+
+<h2>2. قواعد التعليق على الصور (Annotation)</h2>
+
+<ul>
+<li>لون أحمر واحد فقط، وعلامات مرقّمة ①②③ بحد أقصى.</li>
+<li><strong>لا نصوص عربية داخل الصورة</strong>؛ الشرح مكانه في الدرس.</li>
+<li>لا تُغطّي العلامة نصًا مهمًا (كلمة أو زر)، بل توضع في الفراغ القريب من العنصر.</li>
+<li>حجم الصورة النهائي أقل من 200 كيلوبايت، والعرض في حدود 1000–1100 بكسل.</li>
+</ul>
+
+<hr>
+
+<h2>3. جدول اللقطات المطلوبة</h2>
+
+<table>
+<tr><th>الرقم</th><th>اسم الملف النهائي</th><th>الشاشة</th><th>القسم في الدرس</th></tr>
+<tr><td>01</td><td><code>u05-01-windows-security.png</code></td><td>الإعدادات ← الخصوصية والأمان ← أمن Windows (اللوحة الرئيسية)</td><td>8. الفحص بمضاد الفيروسات</td></tr>
+<tr><td>02</td><td><code>u05-02-scan-options.png</code></td><td>الحماية من الفيروسات والتهديدات ← خيارات الفحص</td><td>8. أنواع الفحص</td></tr>
+<tr><td>03</td><td><code>u05-03-scan-result.png</code></td><td>نتيجة فحص سريع (سليمة أو مع تهديد محجور)</td><td>8. قراءة النتيجة</td></tr>
+<tr><td>04</td><td><code>u05-04-firewall.png</code></td><td>أمن Windows ← جدار الحماية وحماية الشبكة</td><td>7. قواعد الوقاية</td></tr>
+<tr><td>05</td><td><code>u05-05-phishing-message.png</code></td><td>رسالة تصيد مركّبة محليًا (بريد أو نص)</td><td>4. الهندسة الاجتماعية</td></tr>
+<tr><td>06</td><td><code>u05-06-usb-scan.png</code></td><td>فحص «قابل للإزالة» أو وحدة تخزين محدّدة</td><td>8 و10. الفحص العملي</td></tr>
+</table>
+
+<hr>
+
+<h2>4. تعليمات كل لقطة</h2>
+
+<h3>اللقطة 01 — لوحة أمن Windows</h3>
+
+<ul>
+<li>المسار: <strong>الإعدادات ← الخصوصية والأمان ← أمن Windows ← فتح أمن Windows</strong>.</li>
+<li>المطلوب: اللوحة الرئيسية بأقسامها الرئيسة (الحماية من الفيروسات، جدار الحماية، أمان التطبيقات والمتصفح، أمان الجهاز).</li>
+<li>العلامات: ① الحماية من الفيروسات والتهديدات، ② جدار الحماية وحماية الشبكة، ③ حالة الحماية (علامة صح خضراء أو تحذير).</li>
+<li>احجب اسم الجهاز إن ظهر.</li>
+</ul>
+
+<p><strong>سطر الدرس بعد الإنجاز (يُضاف بعد «مسارنا: ...» في القسم 8):</strong></p>
+
+<pre><code>
+![لوحة أمن Windows وأقسام الحماية الأربعة](artifacts/u05-01-windows-security.png)
+</code></pre>
+
+<h3>اللقطة 02 — خيارات الفحص</h3>
+
+<ul>
+<li>المسار: <strong>أمن Windows ← الحماية من الفيروسات والتهديدات ← خيارات الفحص</strong>.</li>
+<li>المطلوب: النافذة المنبثقة وفيها <strong>فحص سريع</strong> و<strong>فحص كامل</strong> و<strong>فحص مخصّص</strong>.</li>
+<li>العلامات: ①②③ على الأنواع الثلاثة.</li>
+</ul>
+
+<p><strong>سطر الدرس (بعد جدول أنواع الفحص):</strong></p>
+
+<pre><code>
+![خيارات الفحص: سريع وكامل ومخصّص](artifacts/u05-02-scan-options.png)
+</code></pre>
+
+<h3>اللقطة 03 — نتيجة الفحص</h3>
+
+<ul>
+<li>المطلوب: شاشة النتيجة بعد فحص سريع («لا توجد تهديدات حالية» أو تهديد محجور).</li>
+<li>لا تُصوّر تهديدًا حقيقيًا خطيرًا باسم ملف شخصي؛ استعمل نتيجة سليمة إن أمكن.</li>
+<li>علامة واحدة ① على عبارة النتيجة.</li>
+</ul>
+
+<p><strong>سطر الدرس (في نهاية خطوات الفحص):</strong></p>
+
+<pre><code>
+![نتيجة الفحص السريع كما تظهر للمستخدم](artifacts/u05-03-scan-result.png)
+</code></pre>
+
+<h3>اللقطة 04 — جدار الحماية</h3>
+
+<ul>
+<li>المسار: <strong>أمن Windows ← جدار الحماية وحماية الشبكة</strong>.</li>
+<li>المطلوب: حالة الشبكة (خاصة / عامة) وحالة الجدار (مفعّل).</li>
+<li>العلامات: ① اسم الشبكة، ② حالة «مفعّل»، ③ خيارات الإشعارات أو الحظر.</li>
+<li>احجب اسم شبكة Wi-Fi إن كان يحمل اسمًا شخصيًا.</li>
+</ul>
+
+<p><strong>سطر الدرس (بعد تعداد قواعد النظام في القسم 7):</strong></p>
+
+<pre><code>
+![جدار الحماية وحالة الشبكة في أمن Windows](artifacts/u05-04-firewall.png)
+</code></pre>
+
+<h3>اللقطة 05 — رسالة تصيد مركّبة</h3>
+
+<ul>
+<li>الطريقة: اكتب الرسالة في <strong>مسودة</strong> داخل برنامج بريد، أو في صفحة نصية بمظهر بريد، ثم صوّر النافذة.</li>
+<li>المحتوى: نفس مثال الدرس (جائزة + مهلة 24 ساعة + رابط غريب + طلب بيانات بطاقة).</li>
+<li>العلامات: ①②③ على ثلاث علامات فقط (التحية العامة، المهلة، الرابط).</li>
+<li><strong>ممنوع:</strong> تصوير بريد حقيقي، أو عنوان مرسل حقيقي، أو رابط فعّال.</li>
+</ul>
+
+<p><strong>سطر الدرس (بعد مثال الرسالة في القسم 4):</strong></p>
+
+<pre><code>
+![رسالة تصيد: تحية عامة ومهلة قصيرة ورابط مشبوه](artifacts/u05-05-phishing-message.png)
+</code></pre>
+
+<h3>اللقطة 06 — فحص وحدة تخزين</h3>
+
+<ul>
+<li>المسار: <strong>خيارات الفحص ← فحص مخصّص</strong> ثم اختيار حرف وحدة التخزين (أو خيار «قابل للإزالة»).</li>
+<li>المطلوب: نافذة اختيار الوحدة، وحرف المفتاح ظاهرًا (<code>E:</code> مثلًا).</li>
+<li>علامة ① على اسم الوحدة، و② على زر الفحص.</li>
+</ul>
+
+<p><strong>سطر الدرس (في المهمة العملية بالقسم 10):</strong></p>
+
+<pre><code>
+![فحص وحدة تخزين قبل فتحها](artifacts/u05-06-usb-scan.png)
+</code></pre>
+
+<hr>
+
+<h2>5. بعد إنجاز اللقطات</h2>
+
+<ol>
+<li>ضع الملفات في <code>courses/lessons/1-التعامل_مع_بيئة_الحاسوب/artifacts/</code> بالأسماء أعلاه.</li>
+<li>أضف أسطر الصور الخمسة في المواضع المشار إليها (الملف يُحدَّث آليًا في الموقع).</li>
+<li>شغّل:</li>
+</ol>
+
+<pre><code>
+python courses/convert_lessons.py
+python courses/generate_site_docs.py
+python courses/verify_site_content.py
+</code></pre>
+
+<ol>
+<li>تحقّق من ظهور الصور في صفحة الوحدة قبل النشر.</li>
+</ol>
+
+<hr>
+
+<h2>6. حالة التصوير</h2>
+
+<table>
+<tr><th>اللقطة</th><th>الملف في <code>artifacts</code></th><th>الحالة</th></tr>
+<tr><td>01 لوحة أمن Windows</td><td><code>u05-01-windows-security.png</code></td><td><strong>متبقية</strong></td></tr>
+<tr><td>02 خيارات الفحص</td><td><code>u05-02-scan-options.png</code></td><td><strong>متبقية</strong></td></tr>
+<tr><td>03 نتيجة الفحص</td><td><code>u05-03-scan-result.png</code></td><td><strong>متبقية</strong></td></tr>
+<tr><td>04 جدار الحماية</td><td><code>u05-04-firewall.png</code></td><td><strong>متبقية</strong></td></tr>
+<tr><td>05 رسالة تصيد</td><td><code>u05-05-phishing-message.png</code></td><td><strong>متبقية</strong></td></tr>
+<tr><td>06 فحص وحدة تخزين</td><td><code>u05-06-usb-scan.png</code></td><td><strong>متبقية</strong></td></tr>
+</table>
+
+<blockquote><p>الدرس الحالي <strong>نصّي بالكامل</strong> ويعمل دون صور. تُضاف اللقطات لاحقًا بضغطة واحدة في المواضع المحددة أعلاه، ثم يُعاد التوليد بالأوامر في القسم 5.</p></blockquote>
+</body>
+</html>
