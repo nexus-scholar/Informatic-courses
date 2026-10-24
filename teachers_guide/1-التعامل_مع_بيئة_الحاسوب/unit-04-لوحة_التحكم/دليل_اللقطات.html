@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دليل لقطات الشاشة — الوحدة 04: إعدادات النظام (Windows 11)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+body{font-family:'Amiri','Noto Naskh Arabic',serif;direction:rtl;text-align:right;background:#fff;color:#1a1a1a;line-height:2;max-width:900px;margin:0 auto;padding:20px 30px}
+h1{color:#1565c0;border-bottom:3px solid #1565c0;padding-bottom:10px}
+h2{color:#1976d2;border-bottom:2px solid #e3f2fd;padding-bottom:6px;margin-top:30px}
+h3{color:#1e88e5;margin-top:20px}
+h4{color:#42a5f5}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #bbb;padding:8px 12px;text-align:right}
+th{background:#e3f2fd;font-weight:bold}
+tr:nth-child(even){background:#f5f5f5}
+pre,code{background:#f5f5f5;padding:2px 6px;border-radius:3px;font-family:monospace}
+pre{padding:12px;overflow-x:auto;border:1px solid #ddd}
+blockquote{border-right:4px solid #1976d2;padding-right:15px;margin:15px 0;color:#555}
+hr{border:none;border-top:2px solid #e3f2fd;margin:20px 0}
+ul,ol{padding-right:20px}
+a{color:#1565c0}
+a:hover{color:#0d47a1}
+img{max-width:100%;height:auto}
+</style>
+</head>
+<body>
+<h1>دليل لقطات الشاشة — الوحدة 04: إعدادات النظام (Windows 11)</h1>
+
+<h2>0. الغرض من هذه الوثيقة</h2>
+
+<p>النسخة الأصلية للوحدة 04 تعتمد على لقطات شاشة من <strong>Windows 7</strong> (قائمة Panneau de configuration، وحساب الضيف Invité)، وهي لا تطابق ما يراه التلميذ اليوم. يهدف هذا الدليل إلى إنتاج <strong>مجموعة لقطات حديثة موحّدة</strong> تُدرج في درس التلميذ بدل اللقطات القديمة.</p>
+
+<p><strong>البيئة المتوفرة:</strong></p>
+
+<table>
+<tr><th>العنصر</th><th>التفصيل</th></tr>
+<tr><td>جهاز الأستاذ</td><td>Windows 11 (مصدر جميع اللقطات)</td></tr>
+<tr><td>مخبر المؤسسة</td><td>Windows 8.1 (يُستعمل للتطبيق العملي فقط، لا للتصوير)</td></tr>
+<tr><td>أداة التصوير</td><td>ShareX 21.0.0 — مثبتة في <code>C:\Program Files\ShareX</code></td></tr>
+<tr><td>مفتاح لقطة النافذة</td><td><code>Ctrl + Alt + PrintScreen</code> (بعد حل تعارض <code>Alt + PrintScreen</code>)</td></tr>
+<tr><td>مفتاح لقطة منطقة</td><td><code>Ctrl + PrintScreen</code></td></tr>
+<tr><td>التأخير المضبوط</td><td>5 ثوانٍ (ضروري لإظهار القوائم المنسدلة)</td></tr>
+<tr><td>مجلد الحفظ</td><td><code>courses\lessons\1-التعامل_مع_بيئة_الحاسوب\artifacts</code></td></tr>
+<tr><td>نمط اسم الملف</td><td><code>u04-%y%mo%d-%h%mi%s</code> ثم يُعاد تسميته يدوياً</td></tr>
+</table>
+
+<hr>
+
+<h2>1. التحضير قبل أول لقطة (إلزامي)</h2>
+
+<ol>
+<li><strong>ثبات المقياس:</strong> اترك المقياس (Scale) على القيمة الموصى بها — 150% على الشاشات عالية الدقة — ولا تغيّره بين لقطة وأخرى؛ الأداة تسجّل الدقة الفعلية للشاشة، والمهم أن تكون كل اللقطات بالمقياس نفسه.</li>
+<li><strong>نمط واحد لكل اللقطات:</strong> إما الوضع الفاتح أو الوضع الداكن، وليس خليطاً بينهما.</li>
+<li><strong>لغة واجهة واحدة لكل اللقطات:</strong> إما العربية أو الإنجليزية. لا تُخلط لقطات فرنسية (من المخبر) مع لقطات إنجليزية.</li>
+<li><strong>إسكات الإشعارات:</strong> <code>Win + N</code> ← تشغيل «عدم الإزعاج» (Do Not Disturb)، وإغلاق المتصفح والمراسلة الفورية.</li>
+<li><strong>مراجعة الخصوصية:</strong> صفحة الإعدادات الرئيسية تُظهر اسم الحساب وبريده في أسفل اليسار، وكذلك اسم الجهاز وشبكة Wi-Fi. يجب حجبها أو تجنّب ظهورها.</li>
+<li><strong>سطح مكتب افتراضي ثانٍ:</strong> <code>Win + Ctrl + D</code> ثم فتح تطبيق الإعدادات مرة واحدة، لتبدأ كل لقطة من نفس النقطة.</li>
+</ol>
+
+<hr>
+
+<h2>2. قواعد التعليق على الصور (Annotation)</h2>
+
+<ul>
+<li>لون واحد فقط (أحمر)، وعلامات مرقّمة ①②③ كحد أقصى ثلاث علامات في الصورة.</li>
+<li><strong>لا تُكتب نصوص عربية داخل الصورة</strong>: التعليق العربي مكانه شرح الدرس، حتى تبقى الصور صالحة إن تغيّرت لغة الواجهة.</li>
+<li>سهم واحد عند وجود مسار من مستويين (مثل: Bluetooth &amp; devices ← Mouse).</li>
+<li>بعد الحفظ، يجب أن يبقى حجم الصورة أقل من 200 كيلوبايت وعرضها في حدود 1000–1100 بكسل.</li>
+</ul>
+
+<hr>
+
+<h2>3. جدول اللقطات المطلوبة</h2>
+
+<table>
+<tr><th>الرقم</th><th>اسم الملف النهائي</th><th>الشاشة</th><th>القسم في الدرس</th></tr>
+<tr><td>01</td><td><code>u04-01-settings-home.png</code></td><td>الصفحة الرئيسية لتطبيق الإعدادات</td><td>من لوحة التحكم إلى تطبيق الإعدادات</td></tr>
+<tr><td>02</td><td><code>u04-02-display.png</code></td><td>النظام ← العرض + ضوء ليلي</td><td>تخصيص العرض</td></tr>
+<tr><td>03</td><td><code>u04-03-mouse-settings.png</code></td><td>الأجهزة ← الفأرة (الصفحة الحديثة)</td><td>إعدادات الفأرة</td></tr>
+<tr><td>04</td><td><code>u04-04-mouse-classic.png</code></td><td>نافذة خصائص الفأرة الكلاسيكية</td><td>إعدادات الفأرة</td></tr>
+<tr><td>05</td><td><code>u04-05-sound.png</code></td><td>النظام ← الصوت</td><td>الصوت ومخرج التشغيل</td></tr>
+<tr><td>06</td><td><code>u04-06-language-region.png</code></td><td>الوقت واللغة ← اللغة والمنطقة</td><td>إضافة لغة الإدخال</td></tr>
+<tr><td>07</td><td><code>u04-07-datetime.png</code></td><td>الوقت واللغة ← التاريخ والوقت</td><td>المنطقة الزمنية GMT+1</td></tr>
+<tr><td>08</td><td><code>u04-08-installed-apps.png</code></td><td>التطبيقات ← التطبيقات المثبتة</td><td>إلغاء تثبيت برنامج</td></tr>
+<tr><td>09</td><td><code>u04-09-other-users.png</code></td><td>الحسابات ← مستخدمون آخرون</td><td>أنواع الحسابات وإنشاؤها</td></tr>
+<tr><td>10</td><td><code>u04-10-signin-pin.png</code></td><td>الحسابات ← خيارات تسجيل الدخول</td><td>الأمان ورمز PIN</td></tr>
+<tr><td>11</td><td><code>u04-11-windows-update.png</code></td><td>Windows Update</td><td>تحيين النظام</td></tr>
+<tr><td>12</td><td><code>u04-12-privacy-security.png</code></td><td>الخصوصية والأمان (اختياري)</td><td>الخصوصية (تمهيد للوحدة 05)</td></tr>
+</table>
+
+<hr>
+
+<h2>4. التعليمات التفصيلية لكل لقطة</h2>
+
+<h3>اللقطة 01 — الصفحة الرئيسية للإعدادات</h3>
+
+<ul>
+<li><strong>المسار:</strong> <code>Win + I</code> مباشرة.</li>
+<li><strong>ما يجب أن يظهر:</strong> الشريط الجانبي وبطاقات الأقسام (النظام، Bluetooth والأجهزة، الشبكة، التخصيص، التطبيقات، الحسابات، الوقت واللغة، الخصوصية والأمان، Windows Update).</li>
+<li><strong>التعليق:</strong> ① مربع البحث ② بطاقة النظام ③ بطاقة الوقت واللغة.</li>
+<li><strong>تحذير:</strong> أسفل اليسار يظهر اسم الحساب وبريده، فيجب حجبهما.</li>
+<li><strong>في مخبر Windows 8.1:</strong> لا مقابل لهذه الصفحة (يوجد لوحة «PC settings» الجانبية فقط)، فهذه اللقطة من Windows 11 حصراً، ويُذكر ذلك صراحة في الدرس.</li>
+</ul>
+
+<h3>اللقطة 02 — العرض وضوء ليلي</h3>
+
+<ul>
+<li><strong>المسار:</strong> الإعدادات ← النظام ← العرض.</li>
+<li><strong>ما يجب أن يظهر:</strong> المقياس (Scale)، دقة العرض (Display resolution)، ومفتاح ضوء ليلي (Night light) في إطار واحد.</li>
+<li><strong>التعليق:</strong> ① المقياس ② دقة العرض ③ ضوء ليلي.</li>
+<li><strong>لا تفتح</strong> القائمة المنسدلة للدقة، لأنها ستُخفي بقية العناصر.</li>
+<li><strong>في مخبر Windows 8.1:</strong> تغيير الدقة موجود (لوحة التحكم ← العرض)، أما <strong>ضوء ليلي فغير موجودة</strong>، فلا تُقدَّم كخاصية متوفرة في المخبر.</li>
+</ul>
+
+<h3>اللقطة 03 — صفحة الفأرة الحديثة</h3>
+
+<ul>
+<li><strong>المسار:</strong> الإعدادات ← Bluetooth والأجهزة ← الفأرة.</li>
+<li><strong>ما يجب أن يظهر:</strong> الزر الأساسي للفأرة (Primary mouse button)، سرعة المؤشر، ورابط «إعدادات الفأرة الإضافية» (Additional mouse settings).</li>
+<li><strong>التعليق:</strong> ① الزر الأساسي ② سرعة المؤشر ③ رابط الإعدادات الإضافية.</li>
+<li><strong>في مخبر Windows 8.1:</strong> لا توجد هذه الصفحة، بل تُفتح النافذة الكلاسيكية مباشرة.</li>
+</ul>
+
+<h3>اللقطة 04 — نافذة خصائص الفأرة الكلاسيكية</h3>
+
+<ul>
+<li><strong>المسار:</strong> الإعدادات ← Bluetooth والأجهزة ← الفأرة ← إعدادات الفأرة الإضافية، ثم تبويب <strong>Buttons</strong> لسرعة النقر المزدوج، وتبويب <strong>Pointer Options</strong> لسرعة المؤشر.</li>
+<li><strong>ما يجب أن يظهر:</strong> مفتاح تبديل الزر الأساسي/الثانوي، ومنزلق سرعة النقر المزدوج.</li>
+<li><strong>التعليق:</strong> ① مفتاح الزر الأساسي ② منزلق سرعة النقر المزدوج.</li>
+<li><strong>ملاحظة مهمة:</strong> هذه النافذة <strong>متطابقة في Windows 7 و8.1 و10 و11</strong>، وهي اللقطة الوحيدة التي يمكن تصويرها في مخبر 8.1 واستعمالها في درس Windows 11 دون تضليل التلميذ.</li>
+</ul>
+
+<h3>اللقطة 05 — الصوت ومخرج التشغيل</h3>
+
+<ul>
+<li><strong>المسار:</strong> الإعدادات ← النظام ← الصوت.</li>
+<li><strong>ما يجب أن يظهر:</strong> قائمة أجهزة الإخراج (Output)، منزلق مستوى الصوت، ورابط «إعدادات صوت إضافية».</li>
+<li><strong>التعليق:</strong> ① اختيار جهاز الإخراج ② منزلق الصوت.</li>
+<li><strong>في مخبر Windows 8.1:</strong> لوحة التحكم ← الصوت ← تبويب Playback يسمح باختيار الجهاز، لكن الشكل مختلف تماماً.</li>
+</ul>
+
+<h3>اللقطة 06 — اللغة والمنطقة</h3>
+
+<ul>
+<li><strong>المسار:</strong> الإعدادات ← الوقت واللغة ← اللغة والمنطقة.</li>
+<li><strong>ما يجب أن يظهر:</strong> لغة عرض Windows، وقائمة اللغات المفضّلة (العربية، الفرنسية، الإنجليزية).</li>
+<li><strong>حالة ثانية (اختيارية):</strong> الضغط على «Add a language» ثم تصوير القائمة مفتوحة (التأخير 5 ثوانٍ يتيح ذلك).</li>
+<li><strong>التعليق:</strong> ① اللغات المفضّلة ② إضافة لغة ③ قائمة خيارات اللغة (لوحة المفاتيح).</li>
+<li><strong>في مخبر Windows 8.1:</strong> إعدادات الكمبيوتر ← الوقت واللغة ← المنطقة واللغة ← إضافة لغة، بنفس الفكرة وتخطيط مختلف.</li>
+</ul>
+
+<h3>اللقطة 07 — التاريخ والوقت والمنطقة الزمنية</h3>
+
+<ul>
+<li><strong>المسار:</strong> الإعدادات ← الوقت واللغة ← التاريخ والوقت.</li>
+<li><strong>ما يجب أن يظهر:</strong> الضبط التلقائي للوقت، والمنطقة الزمنية <strong>(UTC+01:00) الجزائر / Algiers</strong>، وزر مزامنة الساعة.</li>
+<li><strong>التعليق:</strong> ① صفّ المنطقة الزمنية ② خيار الضبط التلقائي للمنطقة الزمنية.</li>
+<li><strong>الفائدة:</strong> هذه اللقطة هي السند البصري لمفهوم المنطقة الزمنية GMT+1 المذكور في الدرس.</li>
+</ul>
+
+<h3>اللقطة 08 — التطبيقات المثبتة وإلغاء التثبيت</h3>
+
+<ul>
+<li><strong>المسار:</strong> الإعدادات ← التطبيقات ← التطبيقات المثبتة.</li>
+<li><strong>ما يجب أن يظهر:</strong> اكتب اسم برنامج في مربع البحث لتقصير القائمة، ثم اضغط <code>Ctrl + Alt + PrintScreen</code> وافتح قائمة <strong>⋯</strong> واختر <strong>Uninstall</strong> خلال 5 ثوانٍ.</li>
+<li><strong>التعليق:</strong> ① مربع البحث ② قائمة ⋯ ③ خيار Uninstall.</li>
+<li><strong>تحذير:</strong> لا تُظهر تطبيقات شخصية أو تطبيقات حسّاسة (OneDrive، VPN، تطبيقات بنكية) في الإطار.</li>
+<li><strong>في مخبر Windows 8.1:</strong> لوحة التحكم ← البرامج ← إلغاء تثبيت برنامج (Programs and Features)، وهذه هي خانة «مسار المخبر» في جدول الدرس.</li>
+</ul>
+
+<h3>اللقطة 09 — مستخدمون آخرون وإنشاء حساب</h3>
+
+<ul>
+<li><strong>المسار:</strong> الإعدادات ← الحسابات ← مستخدمون آخرون.</li>
+<li><strong>ما يجب أن يظهر:</strong> زر «إضافة حساب» (Add account) وقائمة الحسابات مع نوع كل حساب (Administrator / Standard user).</li>
+<li><strong>حالة ثانية (اختيارية):</strong> إضافة حساب ← «ليس لدي معلومات تسجيل الدخول» ← «إضافة حساب محلي» ثم تصوير نموذج الإنشاء مع نوع الحساب ظاهراً.</li>
+<li><strong>التعليق:</strong> ① زر إضافة حساب ② نوع الحساب (مسؤول أم قياسي).</li>
+<li><strong>الخصوصية:</strong> احجب الأسماء والصور الحقيقية. الأفضل إنشاء حساب تجريبي باسم «أخي الصغير» (وهو سيناريو الدرس) فلا تظهر أي معطيات شخصية، ويصبح التصوير نفسه تمريناً.</li>
+<li><strong>في مخبر Windows 8.1:</strong> إعدادات الكمبيوتر ← الحسابات ← حسابات أخرى. <strong>لا تُصوَّر هذه الشاشة في المخبر</strong>، لأن 8.1 لا يزال يعرض <strong>حساب الضيف (Invité)</strong> المحذوف من Windows 11، وعرضه يكرّس بالضبط المفهوم الخاطئ الذي يجب تصحيحه.</li>
+</ul>
+
+<h3>اللقطة 10 — خيارات تسجيل الدخول ورمز PIN</h3>
+
+<ul>
+<li><strong>المسار:</strong> الإعدادات ← الحسابات ← خيارات تسجيل الدخول.</li>
+<li><strong>ما يجب أن يظهر:</strong> بطاقة <strong>PIN (Windows Hello)</strong>، والبصمة أو التعرّف على الوجه إن توفرت، وملاحظة «السماح فقط بتسجيل الدخول عبر Windows Hello».</li>
+<li><strong>التعليق:</strong> ① بطاقة PIN ② زر الإعداد أو التغيير.</li>
+<li><strong>الخصوصية:</strong> اسم الحساب يظهر في الأعلى، فيجب قصّه أو حجبه.</li>
+</ul>
+
+<h3>اللقطة 11 — Windows Update</h3>
+
+<ul>
+<li><strong>المسار:</strong> الإعدادات ← Windows Update.</li>
+<li><strong>ما يجب أن يظهر:</strong> زر «التحقق من وجود تحديثات» (Check for updates)، حالة التحديث، وخيار إيقاف التحديثات مؤقتاً (Pause updates).</li>
+<li><strong>التعليق:</strong> ① التحقق من التحديثات ② إيقاف التحديثات مؤقتاً.</li>
+<li><strong>تحذير:</strong> لا تُفتح «خيارات متقدمة» تجنّباً لظهور اسم الجهاز.</li>
+</ul>
+
+<h3>اللقطة 12 — الخصوصية والأمان (اختيارية)</h3>
+
+<ul>
+<li><strong>المسار:</strong> الإعدادات ← الخصوصية والأمان.</li>
+<li><strong>ما يجب أن يظهر:</strong> قائمة الفئات (الموقع، الكاميرا، الميكروفون، التشخيص...).</li>
+<li><strong>التعليق:</strong> ① قائمة الفئات ② الفئة التي يناقشها الدرس.</li>
+<li><strong>ملاحظة:</strong> لوحة الخصوصية في 8.1 مختصرة جداً، فهذه اللقطة من Windows 11 فقط. ويُبقى هذا القسم قصيراً لأن التفصيل في الوحدة 05 (حماية الحاسوب).</li>
+</ul>
+
+<hr>
+
+<h2>5. قائمة «لا تُصوِّر»</h2>
+
+<ul>
+<li>سطح المكتب كاملاً أو شريط المهام مع تطبيقات شخصية مثبّتة.</li>
+<li>بريد الحساب أو اسم المستخدم الحقيقي أو اسم الجهاز أو اسم شبكة Wi-Fi.</li>
+<li>متصفحاً مفتوحاً على صفحات فيها تسجيل دخول.</li>
+<li>اللقطات القديمة الموجودة في مجلد <code>artifacts</code> (نظام Windows 7) — تُحذف من الدرس.</li>
+<li>نافذة «حساب الضيف» في المخبر، لأنها غير موجودة في Windows 11.</li>
+</ul>
+
+<hr>
+
+<h2>6. التحقق بعد انتهاء التصوير</h2>
+
+<ol>
+<li>عدد الملفات: 11 ملفاً على الأقل (12 عند إضافة لقطة الخصوصية).</li>
+<li>أسماء الملفات مطابقة للجدول في القسم 3.</li>
+<li>عرض الصور متقارب (1000–1100 بكسل) وحجم كل صورة أقل من 200 كيلوبايت.</li>
+<li>لا توجد معطيات شخصية ظاهرة.</li>
+<li>نمط واحد (فاتح أو داكن) ولغة واجهة واحدة في كل اللقطات.</li>
+<li>الصور موجودة داخل <code>courses/lessons/1-التعامل_مع_بيئة_الحاسوب/artifacts</code> حتى ينسخها سكربت البناء تلقائياً إلى <code>site/public/artifacts</code>.</li>
+</ol>
+
+<hr>
+
+<h2>7. مشاكل شائعة وحلولها</h2>
+
+<table>
+<tr><th>المشكلة</th><th>السبب</th><th>الحل</th></tr>
+<tr><td>لا تُلتقط القائمة المنسدلة</td><td>مفتاح اللقطة يُغلق القائمة</td><td>استعمل التأخير 5 ثوانٍ ثم افتح القائمة بعد الضغط</td></tr>
+<tr><td>اختصار <code>Alt + PrintScreen</code> لا يعمل</td><td>تعارض مع تطبيق آخر</td><td>استُبدل بـ <code>Ctrl + Alt + PrintScreen</code></td></tr>
+<tr><td>الصورة ضبابية</td><td>تكبير الصورة بعد التصوير</td><td>استعمل اللقطة الأصلية دون تكبير، أو أعد التصوير بالمقياس نفسه</td></tr>
+<tr><td>اسم الملف غير مفهوم</td><td>النمط التلقائي <code>u04-%y%mo%d-%h%mi%s</code></td><td>أعِد التسمية حسب جدول القسم 3</td></tr>
+<tr><td>ظهور جزء من سطح المكتب</td><td>التُقطت الشاشة كاملة</td><td>استعمل لقطة النافذة <code>Ctrl + Alt + PrintScreen</code> لا <code>PrintScreen</code></td></tr>
+</table>
+
+<hr>
+
+<h2>8. حالة التصوير (محدّثة)</h2>
+
+<table>
+<tr><th>اللقطة</th><th>الملف في <code>artifacts</code></th><th>الحالة</th></tr>
+<tr><td>01 الصفحة الرئيسية</td><td><code>u04-01-settings-home.png</code></td><td><strong>منجزة</strong> — حُجب اسم الحساب وبريده</td></tr>
+<tr><td>02 العرض</td><td><code>u04-02-display.png</code></td><td><strong>منجزة</strong> — حُجب اسم الحساب وبريده</td></tr>
+<tr><td>03 الفأرة (الحديثة)</td><td><code>u04-03-mouse-settings.png</code></td><td><strong>منجزة</strong> — حُذف العلامة ③ المقطوعة عند الحافة</td></tr>
+<tr><td>04 خصائص الفأرة الكلاسيكية</td><td><code>u04-04-mouse-classic.png</code></td><td><strong>منجزة</strong></td></tr>
+<tr><td>05 الصوت</td><td><code>u04-05-sound.png</code></td><td><strong>منجزة</strong> — حُجب اسم الحساب وبريده</td></tr>
+<tr><td>06 اللغة والمنطقة</td><td><code>u04-06-language-region.png</code></td><td><strong>متبقية</strong></td></tr>
+<tr><td>07 التاريخ والوقت</td><td><code>u04-07-datetime.png</code></td><td><strong>متبقية</strong></td></tr>
+<tr><td>08 التطبيقات المثبتة</td><td><code>u04-08-installed-apps.png</code></td><td><strong>متبقية</strong></td></tr>
+<tr><td>09 مستخدمون آخرون</td><td><code>u04-09-other-users.png</code></td><td><strong>متبقية</strong></td></tr>
+<tr><td>10 خيارات تسجيل الدخول</td><td><code>u04-10-signin-pin.png</code></td><td><strong>متبقية</strong></td></tr>
+<tr><td>11 Windows Update</td><td><code>u04-11-windows-update.png</code></td><td><strong>متبقية</strong></td></tr>
+<tr><td>12 الخصوصية والأمان</td><td><code>u04-12-privacy-security.png</code></td><td><strong>اختيارية / متبقية</strong></td></tr>
+</table>
+
+<blockquote><p><strong>مهم:</strong> اللقطات 06 إلى 12 <strong>لم تُدرج بعد في ملف الدرس</strong>، لأن الصور غير الموجودة تُظهر أيقونة مكسورة في النسخة المنشورة. عند إنجازها، تُضاف أسطرها في المواضع المشار إليها في القسم 4، ويُعاد توليد HTML بالمسار: <code>python courses/convert_lessons.py</code> ثم <code>python courses/generate_site_docs.py</code>.</p></blockquote>
+
+<p><strong>ملاحظات على ما أُنجز:</strong></p>
+
+<ul>
+<li>وجهة الحفظ انزلقت إلى المجلد الافتراضي <code>Documents\ShareX\Screenshots</code> بدل مجلد <code>artifacts</code>؛ نُقلت اللقطات المقبولة إلى مكانها الصحيح بأسمائها النهائية.</li>
+<li>اللقطات المرفوضة: نسختان بلا علامات (العرض والفأرة)، ولقطة ثانية للصفحة الرئيسية، ولقطة نافذة خصائص الفأرة بلا علامات، ولقطة منطقة فارغة (1152×864). أصلها باقٍ في <code>Documents\ShareX\Screenshots</code> دون حذف.</li>
+<li>تُركت أسماء الجهاز وشبكة Wi-Fi في لقطة الصفحة الرئيسية لأنهما ليسا معطيين شخصيين؛ تُحجب إن أراد الأستاذ ذلك.</li>
+</ul>
+
+</body>
+</html>
