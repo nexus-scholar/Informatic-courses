@@ -173,6 +173,13 @@ export function evaluate(src: string, env: Env): Value {
   return v
 }
 
+/** "avg ≥ 10" with avg = 9.67 → "9.67 ≥ 10" (for step notes). */
+export function substitute(cond: string, env: Env): string {
+  return cond.replace(/"[^"]*"|\b[A-Za-z_][A-Za-z0-9_]*\b/g, (w) =>
+    w.startsWith('"') || !(w in env) ? w : show(env[w]),
+  )
+}
+
 /** Split `"x = ", x, y` at top-level commas (outside strings and parentheses). */
 export function splitArgs(src: string): string[] {
   let parts: string[] = []

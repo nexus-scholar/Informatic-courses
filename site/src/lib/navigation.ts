@@ -41,7 +41,8 @@ export const navigation = [
       { title: 'الوحدة 15: المخطط النسقي', href: '/docs/unit-15' },
       { title: 'الوحدة 16: الخوارزميات', href: '/docs/unit-16' },
       { title: 'الوحدة 17: التعليمات الأساسية', href: '/docs/unit-17' },
-      { title: 'مختبر المخططات التفاعلي', href: '/studio' },
+      { title: 'مختبر المخططات النسقية', href: '/studio' },
+      { title: 'مختبر الخوارزميات', href: '/studio/algorithms' },
     ],
   },
   {

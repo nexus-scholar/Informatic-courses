@@ -1,8 +1,17 @@
 import { Callout } from '@/components/Callout'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
+import { AlgorithmStudio } from '@/components/studio/AlgorithmStudio'
 import { FlowchartStudio } from '@/components/studio/FlowchartStudio'
 
 const tags = {
+  'algorithm-studio': {
+    selfClosing: true,
+    attributes: {
+      example: { type: String },
+      only: { type: String },
+    },
+    render: AlgorithmStudio,
+  },
   'flowchart-studio': {
     selfClosing: true,
     attributes: {

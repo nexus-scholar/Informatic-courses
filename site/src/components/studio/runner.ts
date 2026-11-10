@@ -1,4 +1,4 @@
-import { evaluate, parseAssignment, PseudoError, show, splitArgs, type Env, type Value } from './evaluator'
+import { evaluate, parseAssignment, PseudoError, show, splitArgs, substitute, type Env, type Value } from './evaluator'
 import type { Example, RunResult, Step } from './types'
 
 const MAX_STEPS = 400
@@ -45,7 +45,7 @@ export function runExample(ex: Example, inputs: Record<string, number>): RunResu
             if (!(n in inputs)) throw new PseudoError(`لا توجد قيمة مُدخلة للمتغير ${n}`)
             env[n] = inputs[n]
           }
-          note = `نقرأ من لوحة المفاتيح: ${names.map((n) => `${n} = ${show(env[n])}`).join('، ')}`
+          note = `نقرأ من لوحة المفاتيح: \`${names.map((n) => `${n} = ${show(env[n])}`).join(', ')}\``
           break
         }
         case 'process': {
@@ -56,7 +56,7 @@ export function runExample(ex: Example, inputs: Record<string, number>): RunResu
             env[name] = v
             parts.push(`${name} ← ${show(v)}`)
           }
-          note = `نحسب ونخزّن: ${parts.join('، ')}`
+          note = `نحسب ونخزّن: \`${parts.join(', ')}\``
           break
         }
         case 'output': {
@@ -69,7 +69,7 @@ export function runExample(ex: Example, inputs: Record<string, number>): RunResu
           let ok = evaluate(node.code ?? '', env)
           if (typeof ok !== 'boolean') throw new PseudoError('الشرط لا ينتج نعم/لا')
           branch = ok ? 'yes' : 'no'
-          note = `${describeCondition(node.code ?? '', env)} ؟ ${ok ? 'نعم' : 'لا'}`
+          note = `\`${describeCondition(node.code ?? '', env)}\` ؟ ${ok ? 'نعم' : 'لا'}`
           break
         }
       }
@@ -100,12 +100,7 @@ export function runExample(ex: Example, inputs: Record<string, number>): RunResu
   return { steps }
 }
 
-/** "avg ≥ 10" with avg = 9.67 → "9.67 ≥ 10" */
-function describeCondition(cond: string, env: Env): string {
-  return cond.replace(/"[^"]*"|\b[A-Za-z_][A-Za-z0-9_]*\b/g, (w) =>
-    w.startsWith('"') || !(w in env) ? w : show(env[w]),
-  )
-}
+const describeCondition = substitute
 
 /** Final screen output, joined by line, for practice questions. */
 export function finalOutput(ex: Example, inputs: Record<string, number>): string {

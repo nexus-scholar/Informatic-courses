@@ -7,6 +7,7 @@ import { EXAMPLES, LEVELS } from './examples'
 import { FlowchartSvg, nodeLabel, type NodeState } from './FlowchartSvg'
 import { runExample } from './runner'
 import type { Example, Step } from './types'
+import { Btn, Card, Code, FullscreenIcon, ModeTabs, QuestionCard, Rich, rnd, shuffle, studioKeys, useFullscreen, useScore, useSwipe } from './ui'
 
 type Mode = 'explain' | 'run' | 'train'
 
@@ -18,19 +19,6 @@ const MODES: Array<{ id: Mode; label: string }> = [
 
 function defaults(ex: Example) {
   return Object.fromEntries(ex.inputs.map((i) => [i.name, i.value]))
-}
-
-function rnd(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
-
-function shuffle<T>(a: T[]): T[] {
-  let b = [...a]
-  for (let i = b.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1))
-    ;[b[i], b[j]] = [b[j], b[i]]
-  }
-  return b
 }
 
 // ---------- practice questions ----------
@@ -63,7 +51,7 @@ function makeQuestion(ex: Example): Question {
   if (kind === 'turns') {
     let turns = decisions.filter((s) => s.branch === 'yes').length
     let opts = new Set([turns, turns + 1, Math.max(0, turns - 1), turns + 2])
-    return { inputs, prompt: 'كم مرة يُنفَّذ جسم الحلقة؟', options: shuffle([...opts].slice(0, 3).map(String)).sort((a, b) => +a - +b), answer: String(turns) }
+    return { inputs, prompt: 'كم مرة يُنفَّذ جسم الحلقة؟', options: [...opts].slice(0, 3).map(String).sort((a, b) => +a - +b), answer: String(turns) }
   }
   let { text, lastOnly } = screenAnswer(run.steps)
   let opts = new Set([text])
@@ -78,75 +66,6 @@ function makeQuestion(ex: Example): Question {
     options: shuffle([...opts]),
     answer: text,
   }
-}
-
-function useScore(id: string) {
-  let key = `studio-score-${id}`
-  let [score, setScore] = useState({ right: 0, total: 0 })
-  useEffect(() => {
-    try {
-      let saved = localStorage.getItem(key)
-      setScore(saved ? JSON.parse(saved) : { right: 0, total: 0 })
-    } catch {
-      setScore({ right: 0, total: 0 })
-    }
-  }, [key])
-  let add = useCallback(
-    (ok: boolean) =>
-      setScore((s) => {
-        let next = { right: s.right + (ok ? 1 : 0), total: s.total + 1 }
-        try { localStorage.setItem(key, JSON.stringify(next)) } catch {}
-        return next
-      }),
-    [key],
-  )
-  return [score, add] as const
-}
-
-// ---------- small UI pieces ----------
-
-function Btn({ onClick, children, primary, label, className }: { onClick: () => void; children: React.ReactNode; primary?: boolean; label?: string; className?: string }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label={label}
-      className={clsx(
-        'inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-xl px-3 text-sm font-semibold whitespace-nowrap transition select-none active:scale-[0.98] sm:px-4',
-        primary
-          ? 'bg-sky-600 text-white hover:bg-sky-500 dark:bg-sky-500 dark:hover:bg-sky-400'
-          : 'bg-white text-slate-700 ring-1 ring-slate-300 hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-600 dark:hover:bg-slate-700',
-        className,
-      )}
-    >
-      {children}
-    </button>
-  )
-}
-
-function Card({ title, children, className }: { title?: string; children: React.ReactNode; className?: string }) {
-  return (
-    <div className={clsx('rounded-2xl bg-white p-4 ring-1 ring-slate-200 dark:bg-slate-800/70 dark:ring-slate-700', className)}>
-      {title && <p className="mb-2 text-xs font-semibold text-slate-500 dark:text-slate-400">{title}</p>}
-      {children}
-    </div>
-  )
-}
-
-function Code({ children }: { children: React.ReactNode }) {
-  return (
-    <span dir="ltr" className="font-mono [unicode-bidi:isolate]">
-      {children}
-    </span>
-  )
-}
-
-function FullscreenIcon({ on }: { on: boolean }) {
-  return (
-    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
-      {on ? <path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5" /> : <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" />}
-    </svg>
-  )
 }
 
 // ---------- main component ----------
@@ -165,12 +84,11 @@ export function FlowchartStudio({ example: initial = 'average', only }: { exampl
   let [step, setStep] = useState(0)
   let [playing, setPlaying] = useState(false)
   let [showPseudo, setShowPseudo] = useState(false)
-  let [full, setFull] = useState(false)
   let [question, setQuestion] = useState<Question | null>(null)
   let [picked, setPicked] = useState<string | null>(null)
   let [score, addScore] = useScore(ex.id)
   let rootRef = useRef<HTMLDivElement>(null)
-  let touch = useRef<number | null>(null)
+  let [full, toggleFull] = useFullscreen(rootRef)
 
   let run = useMemo(() => runExample(ex, inputs), [ex, inputs])
   let last = run.steps.length - 1
@@ -211,56 +129,14 @@ export function FlowchartStudio({ example: initial = 'average', only }: { exampl
     else if (mode === 'run') setStep((s) => Math.max(s - 1, 0))
   }, [mode])
 
-  // auto-play in run mode
+  let swipe = useSwipe(next, prev)
+
   useEffect(() => {
     if (!playing) return
     if (step >= last) { setPlaying(false); return }
     let t = setTimeout(() => setStep((s) => s + 1), 900)
     return () => clearTimeout(t)
   }, [playing, step, last])
-
-  // full screen: native API when available, otherwise a full-page overlay (iPhone)
-  function toggleFull() {
-    if (full) {
-      if (document.fullscreenElement) document.exitFullscreen().catch(() => {})
-      setFull(false)
-      return
-    }
-    let el = rootRef.current
-    setFull(true)
-    if (el && document.fullscreenEnabled && el.requestFullscreen) el.requestFullscreen().catch(() => {})
-    setTimeout(() => rootRef.current?.focus(), 50)
-  }
-  useEffect(() => {
-    function onChange() { if (!document.fullscreenElement) setFull(false) }
-    document.addEventListener('fullscreenchange', onChange)
-    return () => document.removeEventListener('fullscreenchange', onChange)
-  }, [])
-  useEffect(() => {
-    if (!full) return
-    let prevOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    return () => { document.body.style.overflow = prevOverflow }
-  }, [full])
-
-  function onKey(e: React.KeyboardEvent) {
-    if ((e.target as HTMLElement).closest('input, select, textarea')) return
-    // RTL: the next slide is to the left
-    if (e.key === 'ArrowLeft' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); next() }
-    else if (e.key === 'ArrowRight' || e.key === 'PageUp') { e.preventDefault(); prev() }
-    else if (e.key === 'Escape' && full) toggleFull()
-    else if (e.key === 'f' || e.key === 'F') toggleFull()
-  }
-
-  // swipe on the chart (RTL: swipe right = next)
-  function onTouchStart(e: React.TouchEvent) { touch.current = e.touches[0].clientX }
-  function onTouchEnd(e: React.TouchEvent) {
-    if (touch.current === null) return
-    let dx = e.changedTouches[0].clientX - touch.current
-    touch.current = null
-    if (Math.abs(dx) < 50) return
-    if (dx > 0) next(); else prev()
-  }
 
   // ----- what the chart shows -----
   let revealed = useMemo(() => new Set(ex.slides.slice(0, slide + 1).flatMap((s) => s.reveal)), [ex, slide])
@@ -275,7 +151,6 @@ export function FlowchartStudio({ example: initial = 'average', only }: { exampl
   }
   let activeEdge = mode === 'explain' ? ex.slides[slide]?.edge ?? null : mode === 'run' && step > 0 ? run.steps[step - 1]?.edge ?? null : null
 
-  // ----- trace table rows (one per executed shape that does something) -----
   let varNames = useMemo(() => Object.keys(run.steps[last]?.vars ?? {}), [run, last])
   let traceRows = run.steps
     .map((s, i) => ({ s, i }))
@@ -289,37 +164,20 @@ export function FlowchartStudio({ example: initial = 'average', only }: { exampl
     <div
       ref={rootRef}
       tabIndex={-1}
-      onKeyDown={onKey}
+      onKeyDown={(e) => studioKeys(e, { next, prev, full, toggleFull })}
       dir="rtl"
       className={clsx(
-        'not-prose my-8 rounded-3xl bg-slate-50 p-3 outline-none ring-1 ring-slate-200 sm:p-5 dark:bg-slate-900 dark:ring-slate-700',
+        '@container not-prose my-8 rounded-3xl bg-slate-50 p-3 outline-none ring-1 ring-slate-200 sm:p-5 dark:bg-slate-900 dark:ring-slate-700',
         full && 'fixed inset-0 z-[60] my-0 flex flex-col overflow-y-auto rounded-none',
       )}
     >
-      {/* top bar */}
       <div className="flex flex-wrap items-center gap-2">
-        <div className="flex rounded-xl bg-white p-1 ring-1 ring-slate-200 dark:bg-slate-800 dark:ring-slate-700" role="tablist">
-          {MODES.map((m) => (
-            <button
-              key={m.id}
-              type="button"
-              role="tab"
-              aria-selected={mode === m.id}
-              onClick={() => chooseMode(m.id)}
-              className={clsx(
-                'min-h-10 rounded-lg px-4 text-sm font-semibold transition',
-                mode === m.id ? 'bg-sky-600 text-white dark:bg-sky-500' : 'text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-700',
-              )}
-            >
-              {m.label}
-            </button>
-          ))}
-        </div>
+        <ModeTabs modes={MODES} mode={mode} onChange={chooseMode} />
         <select
           value={ex.id}
           onChange={(e) => chooseExample(e.target.value)}
           aria-label="اختر مثالًا"
-          className="min-h-11 min-w-0 flex-1 rounded-xl bg-white px-3 text-sm text-slate-800 ring-1 ring-slate-300 sm:flex-none dark:bg-slate-800 dark:text-slate-100 dark:ring-slate-600"
+          className="order-last min-h-11 w-full min-w-0 rounded-xl bg-white px-3 text-sm text-slate-800 ring-1 ring-slate-300 sm:order-none sm:w-auto dark:bg-slate-800 dark:text-slate-100 dark:ring-slate-600"
         >
           {(['sequence', 'decision', 'loop'] as const).map((lvl) =>
             list.some((e) => e.level === lvl) ? (
@@ -343,32 +201,27 @@ export function FlowchartStudio({ example: initial = 'average', only }: { exampl
 
       <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
         <span className="font-semibold text-slate-800 dark:text-slate-100">المسألة: </span>
-        {ex.problem}
+        <Rich text={ex.problem} />
       </p>
 
-      {/* stage */}
-      <div className={clsx('mt-3 grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]', full && 'flex-1')}>
+      <div className={clsx('mt-3 grid gap-4 @4xl:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]', full && 'flex-1')}>
         {/* phones: the caption sits right above the chart so each tap shows its effect without scrolling */}
         {mode !== 'train' && (
-          <div className="rounded-2xl bg-white p-3 ring-1 ring-slate-200 lg:hidden dark:bg-slate-800/70 dark:ring-slate-700" aria-live="polite">
+          <div className="rounded-2xl bg-white p-3 ring-1 ring-slate-200 @4xl:hidden dark:bg-slate-800/70 dark:ring-slate-700" aria-live="polite">
             {mode === 'explain' ? (
               <>
                 <p className="text-base font-bold text-slate-900 dark:text-white">{ex.slides[slide].title}</p>
-                <p className="mt-1 text-sm leading-7 text-slate-700 dark:text-slate-200">{ex.slides[slide].text}</p>
+                <p className="mt-1 text-sm leading-7 text-slate-700 dark:text-slate-200"><Rich text={ex.slides[slide].text} /></p>
               </>
             ) : (
               <p className="text-sm leading-7 text-slate-800 dark:text-slate-100">
                 {cur?.turn ? <span className="font-semibold">الدورة {cur.turn} · </span> : null}
-                {cur?.note}
+                <Rich text={cur?.note ?? ''} />
               </p>
             )}
           </div>
         )}
-        <div
-          className="rounded-2xl bg-white p-2 ring-1 ring-slate-200 dark:bg-slate-800/40 dark:ring-slate-700"
-          onTouchStart={onTouchStart}
-          onTouchEnd={onTouchEnd}
-        >
+        <div className="rounded-2xl bg-white p-2 ring-1 ring-slate-200 dark:bg-slate-800/40 dark:ring-slate-700" {...swipe}>
           <FlowchartSvg
             example={ex}
             nodeState={nodeState}
@@ -396,9 +249,9 @@ export function FlowchartStudio({ example: initial = 'average', only }: { exampl
                   </dl>
                 </Card>
               )}
-              <Card title={`الشريحة ${slide + 1} من ${ex.slides.length}`} className="hidden lg:block">
+              <Card title={`الشريحة ${slide + 1} من ${ex.slides.length}`} className="hidden @4xl:block">
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white">{ex.slides[slide].title}</h3>
-                <p className="mt-2 text-base leading-8 text-slate-700 dark:text-slate-200">{ex.slides[slide].text}</p>
+                <p className="mt-2 text-base leading-8 text-slate-700 dark:text-slate-200"><Rich text={ex.slides[slide].text} /></p>
               </Card>
               {slide === ex.slides.length - 1 && (
                 <Btn primary onClick={() => chooseMode('run')}>نفّذ هذا المخطط خطوة بخطوة</Btn>
@@ -432,40 +285,14 @@ export function FlowchartStudio({ example: initial = 'average', only }: { exampl
                 </div>
               </Card>
 
-              <Card title={`الخطوة ${Math.min(step, last) + 1} من ${run.steps.length}${cur?.turn ? ` · الدورة ${cur.turn}` : ''}`} className={clsx(!(run.error && step >= last) && 'hidden lg:block')}>
-                <p className="text-base leading-8 text-slate-800 dark:text-slate-100">{cur?.note}</p>
+              <Card title={`الخطوة ${Math.min(step, last) + 1} من ${run.steps.length}${cur?.turn ? ` · الدورة ${cur.turn}` : ''}`} className={clsx(!(run.error && step >= last) && 'hidden @4xl:block')}>
+                <p className="text-base leading-8 text-slate-800 dark:text-slate-100"><Rich text={cur?.note ?? ''} /></p>
                 {run.error && step >= last && (
                   <p className="mt-2 rounded-lg bg-rose-50 p-2 text-sm text-rose-800 dark:bg-rose-900/40 dark:text-rose-200">{run.error}</p>
                 )}
               </Card>
 
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <Card title="الذاكرة (المتغيرات)">
-                  {Object.keys(cur?.vars ?? {}).length === 0 ? (
-                    <p className="text-sm text-slate-400">فارغة بعد</p>
-                  ) : (
-                    <div className="flex flex-wrap gap-2" dir="ltr">
-                      {Object.entries(cur.vars).map(([k, v]) => (
-                        <div
-                          key={k}
-                          className={clsx(
-                            'min-w-16 rounded-lg px-2 py-1 text-center ring-1 transition',
-                            prevVars[k] !== v ? 'bg-amber-50 ring-amber-400 dark:bg-amber-900/40' : 'bg-slate-50 ring-slate-200 dark:bg-slate-900 dark:ring-slate-600',
-                          )}
-                        >
-                          <div className="font-mono text-xs text-slate-500 dark:text-slate-400">{k}</div>
-                          <div className="font-mono text-base font-bold text-slate-900 dark:text-white">{v}</div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </Card>
-                <Card title="الشاشة (المخرجات)">
-                  <div className="min-h-12 rounded-lg bg-slate-900 p-2 font-mono text-sm leading-6 text-emerald-300">
-                    {(cur?.output ?? []).length === 0 ? <span className="text-slate-500">…</span> : cur.output.map((line, i) => <div key={i}>{line}</div>)}
-                  </div>
-                </Card>
-              </div>
+              <MemoryAndScreen vars={cur?.vars ?? {}} prevVars={prevVars} output={cur?.output ?? []} />
 
               <details className="rounded-2xl bg-white p-3 ring-1 ring-slate-200 dark:bg-slate-800/70 dark:ring-slate-700">
                 <summary className="cursor-pointer text-sm font-semibold text-slate-700 dark:text-slate-200">جدول التتبع</summary>
@@ -498,68 +325,94 @@ export function FlowchartStudio({ example: initial = 'average', only }: { exampl
           )}
 
           {mode === 'train' && question && (
-            <Card title={`تدريب · النتيجة ${score.right} من ${score.total}`}>
-              <p className="text-sm text-slate-600 dark:text-slate-300">
-                المدخلات:{' '}
-                {Object.entries(question.inputs).map(([k, v], i) => (
-                  <span key={k}>{i > 0 && '، '}<Code>{k} = {v}</Code></span>
-                ))}
-              </p>
-              <p className="mt-2 text-base font-semibold leading-8 text-slate-900 dark:text-white">{question.prompt}</p>
-              <div className="mt-3 grid gap-2">
-                {question.options.map((o) => {
-                  let isAnswer = o === question.answer
-                  return (
-                    <button
-                      key={o}
-                      type="button"
-                      disabled={picked !== null}
-                      onClick={() => { setPicked(o); addScore(o === question.answer) }}
-                      className={clsx(
-                        'min-h-12 rounded-xl px-4 text-start text-base ring-1 transition',
-                        picked === null && 'bg-white ring-slate-300 hover:bg-sky-50 dark:bg-slate-800 dark:ring-slate-600 dark:hover:bg-slate-700',
-                        picked !== null && isAnswer && 'bg-emerald-50 ring-2 ring-emerald-500 dark:bg-emerald-900/40',
-                        picked !== null && !isAnswer && picked === o && 'bg-rose-50 ring-2 ring-rose-500 dark:bg-rose-900/40',
-                        picked !== null && !isAnswer && picked !== o && 'opacity-60 ring-slate-200 dark:ring-slate-700',
-                      )}
-                    >
-                      <span dir="auto" className="[unicode-bidi:plaintext]">{o}</span>
-                    </button>
-                  )
-                })}
-              </div>
-              {picked !== null && (
-                <div className="mt-3 flex flex-wrap items-center gap-2">
-                  <p className={clsx('text-sm font-semibold', picked === question.answer ? 'text-emerald-700 dark:text-emerald-400' : 'text-rose-700 dark:text-rose-400')}>
-                    {picked === question.answer ? 'صحيح، أحسنت.' : `ليس بعد. الجواب الصحيح: ${question.answer}`}
-                  </p>
-                  <Btn onClick={() => { setInputs(question.inputs); setMode('run'); setStep(0) }}>شاهد التنفيذ</Btn>
-                  <Btn primary onClick={newQuestion}>سؤال آخر</Btn>
-                </div>
-              )}
-            </Card>
+            <QuestionCard
+              score={score}
+              inputsLabel={<>المدخلات:{' '}{Object.entries(question.inputs).map(([k, v], i) => <span key={k}>{i > 0 && '، '}<Code>{k} = {v}</Code></span>)}</>}
+              prompt={question.prompt}
+              options={question.options}
+              answer={question.answer}
+              picked={picked}
+              onPick={(o) => { setPicked(o); addScore(o === question.answer) }}
+              onWatch={() => { setInputs(question.inputs); setMode('run'); setStep(0) }}
+              onNext={newQuestion}
+            />
           )}
         </div>
       </div>
 
-      {/* bottom controls: sticky on phones */}
-      <div className={clsx('sticky bottom-0 -mx-3 mt-4 flex items-center gap-2 bg-slate-50/95 px-3 py-2 backdrop-blur sm:-mx-5 sm:px-5 dark:bg-slate-900/95', full && 'mt-auto')}>
-        {mode !== 'train' && (
-          <Btn onClick={prev} label="السابق"><span className="hidden sm:inline">→</span> السابق</Btn>
+      <ControlBar
+        mode={mode}
+        counter={counter}
+        full={full}
+        playing={playing}
+        onPrev={prev}
+        onNext={next}
+        onReset={() => { setStep(0); setPlaying(false) }}
+        onPlay={() => { if (step >= last) setStep(0); setPlaying((p) => !p) }}
+      />
+    </div>
+  )
+}
+
+// ---------- pieces shared with the algorithm studio ----------
+
+export function MemoryAndScreen({ vars, prevVars, output }: { vars: Record<string, string>; prevVars: Record<string, string>; output: string[] }) {
+  return (
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+      <Card title="الذاكرة (المتغيرات)">
+        {Object.keys(vars).length === 0 ? (
+          <p className="text-sm text-slate-400">فارغة بعد</p>
+        ) : (
+          <div className="flex flex-wrap gap-2" dir="ltr">
+            {Object.entries(vars).map(([k, v]) => (
+              <div
+                key={k}
+                className={clsx(
+                  'min-w-16 rounded-lg px-2 py-1 text-center ring-1 transition',
+                  prevVars[k] !== undefined && prevVars[k] !== v ? 'bg-amber-50 ring-amber-400 dark:bg-amber-900/40' : 'bg-slate-50 ring-slate-200 dark:bg-slate-900 dark:ring-slate-600',
+                )}
+              >
+                <div className="font-mono text-xs text-slate-500 dark:text-slate-400">{k}</div>
+                <div className={clsx('font-mono text-base font-bold', v === '؟' ? 'text-slate-400' : 'text-slate-900 dark:text-white')}>{v}</div>
+              </div>
+            ))}
+          </div>
         )}
-        <span className="mx-auto font-mono text-sm whitespace-nowrap text-slate-500 dark:text-slate-400" dir="ltr">{counter}</span>
-        {mode === 'run' && (
-          <>
-            <Btn onClick={() => { setStep(0); setPlaying(false) }} label="إعادة">↺</Btn>
-            <Btn onClick={() => { if (step >= last) setStep(0); setPlaying((p) => !p) }} label={playing ? 'إيقاف' : 'تشغيل تلقائي'}>
-              {playing ? '❚❚' : '▶'}
-            </Btn>
-          </>
-        )}
-        <Btn primary onClick={next} label="التالي">
-          {mode === 'train' ? 'سؤال آخر' : <>التالي <span className="hidden sm:inline">←</span></>}
-        </Btn>
-      </div>
+      </Card>
+      <Card title="الشاشة (المخرجات)">
+        <div className="min-h-12 rounded-lg bg-slate-900 p-2 text-sm leading-6 text-emerald-300" dir="auto">
+          {output.length === 0 ? <span className="text-slate-500">…</span> : output.map((line, i) => <div key={i} dir="auto">{line}</div>)}
+        </div>
+      </Card>
+    </div>
+  )
+}
+
+export function ControlBar({ mode, counter, full, playing, onPrev, onNext, onReset, onPlay }: {
+  mode: string
+  counter: string
+  full: boolean
+  playing: boolean
+  onPrev: () => void
+  onNext: () => void
+  onReset: () => void
+  onPlay: () => void
+}) {
+  return (
+    <div className={clsx('sticky bottom-0 -mx-3 mt-4 flex items-center gap-2 bg-slate-50/95 px-3 py-2 backdrop-blur sm:-mx-5 sm:px-5 dark:bg-slate-900/95', full && 'mt-auto')}>
+      {mode !== 'train' && (
+        <Btn onClick={onPrev} label="السابق"><span className="hidden sm:inline">→</span> السابق</Btn>
+      )}
+      <span className="mx-auto font-mono text-sm whitespace-nowrap text-slate-500 dark:text-slate-400" dir="ltr">{counter}</span>
+      {mode === 'run' && (
+        <>
+          <Btn onClick={onReset} label="إعادة">↺</Btn>
+          <Btn onClick={onPlay} label={playing ? 'إيقاف' : 'تشغيل تلقائي'}>{playing ? '❚❚' : '▶'}</Btn>
+        </>
+      )}
+      <Btn primary onClick={onNext} label="التالي">
+        {mode === 'train' ? 'سؤال آخر' : <>التالي <span className="hidden sm:inline">←</span></>}
+      </Btn>
     </div>
   )
 }
