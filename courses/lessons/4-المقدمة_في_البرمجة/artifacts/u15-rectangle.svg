@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 385" width="360" height="385" role="img" aria-label="مخطط نسقي لحساب مساحة ومحيط مستطيل">
+<title>مخطط نسقي لحساب مساحة ومحيط مستطيل</title>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#000"/></marker>
+<style>
+text{font-family:"Segoe UI",Tahoma,Arial,"Noto Sans Arabic",sans-serif;text-anchor:middle;dominant-baseline:central;fill:#000}
+.s{fill:#fff;stroke:#000;stroke-width:2}
+.a{fill:none;stroke:#000;stroke-width:2;marker-end:url(#ah)}
+.l{fill:none;stroke:#000;stroke-width:2}
+</style>
+</defs>
+<rect width="360" height="385" fill="#fff"/>
+<rect class="s" x="110" y="15" width="110" height="36" rx="18"/><text x="165" y="33" font-size="14" direction="rtl">بداية</text><polyline class="a" points="165,51 165,75"/><polygon class="s" points="69,75 275,75 261,115 55,115"/><text x="165" y="95" font-size="14">Lire(long, larg)</text><text x="326" y="95" font-size="11" direction="rtl" fill="#555">مدخلات</text><polyline class="a" points="165,115 165,140"/><rect class="s" x="50" y="140" width="230" height="40"/><text x="165" y="160" font-size="14">surface ← long * larg</text><polyline class="a" points="165,180 165,205"/><rect class="s" x="50" y="205" width="230" height="40"/><text x="165" y="225" font-size="13">perimetre ← 2 * (long + larg)</text><text x="326" y="192" font-size="11" direction="rtl" fill="#555">معالجة</text><line x1="303" y1="140" x2="303" y2="245" stroke="#999" stroke-width="1.5"/><polyline class="a" points="165,245 165,270"/><polygon class="s" points="44,270 300,270 286,310 30,310"/><text x="165" y="290" font-size="13">Ecrire(surface, " ", perimetre)</text><text x="326" y="290" font-size="11" direction="rtl" fill="#555">مخرجات</text><polyline class="a" points="165,310 165,335"/><rect class="s" x="110" y="335" width="110" height="36" rx="18"/><text x="165" y="353" font-size="14" direction="rtl">نهاية</text>
+</svg>

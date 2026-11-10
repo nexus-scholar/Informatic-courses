@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>أنشطة وتمارين التقويم: لغة بايثون</title>
+<title>أنشطة وتمارين التقويم: الخوارزميات — من المسألة إلى خوارزمية مكتوبة</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
 body{font-family:'Amiri','Noto Naskh Arabic',serif;direction:rtl;text-align:right;background:#fff;color:#1a1a1a;line-height:2;max-width:900px;margin:0 auto;padding:20px 30px}
@@ -26,55 +26,157 @@ img{max-width:100%;height:auto}
 </style>
 </head>
 <body>
-<h1>أنشطة وتمارين التقويم: لغة بايثون</h1>
+<h1>أنشطة وتمارين التقويم: الخوارزميات — من المسألة إلى خوارزمية مكتوبة</h1>
 
-<h2>1. التقويم التكويني (أثناء الحصة)</h2>
+<h2>1. التقويم التكويني (أثناء الحصص)</h2>
 
-<p><strong>النشاط الأول: (اكتشاف الأخطاء - Debugging)</strong></p>
+<h3>النشاط الأول: خوارزمية أم لا؟ (الأسبوع 1 نظري — 5 دقائق)</h3>
+
 <ul>
-<li><strong>التعليمة:</strong> قام زميلك بكتابة الكود التالي ليطبع جملة بناءً على العمر، لكن البرنامج أظهر خطأ (Error). هل يمكنك إيجاد الأخطاء وتصحيحها؟</li>
-<pre><code class="python">
-age = input(كم عمرك؟)
-if age &gt; 18
-print(&quot;أنت بالغ&quot;)
+<li><strong>التعليمة:</strong> لكل مجموعة خطوات، قل هل هي خوارزمية سليمة، وإن لم تكن فاذكر الخاصية المخالفة:</li>
+</ul>
+<ol>
+<li>«اغسل يديك، ثم كرّر الغسل باستمرار.»</li>
+<li>«أدخل بطاقتك، اكتب الرمز السري، اختر المبلغ، خذ النقود والبطاقة.»</li>
+<li>«أضف قليلًا من الدقيق حتى يصبح العجين مناسبًا.»</li>
+<li>«اقسم عدد التلاميذ على عدد الأفواج 0.»</li>
+<ul>
+<li><strong>الإجابة المنتظرة:</strong> 1 غير منتهية؛ 2 سليمة (مدخلات: البطاقة والرمز والمبلغ؛ مخرجات: النقود)؛ 3 غير دقيقة؛ 4 غير فعّالة (القسمة على صفر مستحيلة).</li>
+</ul>
+</ol>
+
+<h3>النشاط الثاني: حلّل المسألة (الأسبوع 1 نظري — 5 دقائق)</h3>
+
+<ul>
+<li><strong>التعليمة:</strong> أكمل جدول مدخلات / معالجة / مخرجات لمسألة: «حساب ثمن شحن هاتف بـ <code>n</code> بطاقة تعبئة ثمن كل منها 100 دج».</li>
+<li><strong>الإجابة المنتظرة:</strong> مدخلات <code>n</code>؛ معالجة <code>total ← n * 100</code>؛ مخرجات <code>total</code>. ويُلاحظ أن 100 يمكن أن تكون ثابتًا <code>PRIX_CARTE = 100</code>.</li>
+</ul>
+
+<h3>النشاط الثالث: ترتيب الهيكل (الأسبوع 1 نظري — 4 دقائق)</h3>
+
+<ul>
+<li><strong>التعليمة:</strong> أسطر خوارزمية مبعثرة على بطاقات (<code>Fin</code>، <code>Var</code>، <code>Algorithme Aire</code>، <code>Début</code>، <code>Const</code>، <code>PI = 3.14</code>، <code>r, aire : Réel</code>)؛ رتّبها.</li>
+<li><strong>الإجابة المنتظرة:</strong></li>
+</ul>
+
+<pre><code class="text">
+Algorithme Aire
+Const
+    PI = 3.14
+Var
+    r, aire : Réel
+Début
+Fin
 </code></pre>
-<li><strong>الإجابات المنتظرة من التلاميذ:</strong></li>
-</ul>
-<ol>
-<li>نسيان علامتي التنصيص <code>&quot;&quot;</code> داخل الـ <code>input</code>.</li>
-<li>نسيان النقطتين الرأسيتين <code>:</code> بعد الشرط <code>18</code>.</li>
-<li>غياب الفراغ (Indentation) قبل كلمة <code>print</code>.</li>
-<li>نسيان تحويل العمر إلى رقم <code>int()</code> (متقدم).</li>
-</ol>
 
-<p><strong>النشاط الثاني: (حلقات التكرار)</strong></p>
+<h3>النشاط الرابع: صحّح الأسماء (الأسبوع 1 تطبيقي — 5 دقائق)</h3>
+
 <ul>
-<li><strong>التعليمة:</strong> باستخدام حلقة <code>for</code>، اكتب كوداً يطبع الأعداد الزوجية فقط من 0 إلى 10.</li>
+<li><strong>التعليمة:</strong> أعد كتابة كل اسم بشكل صالح: <code>note finale</code>، <code>1er_trim</code>، <code>âge</code>، <code>Début</code>، <code>taux%</code>.</li>
+<li><strong>الإجابة المنتظرة (تُقبل بدائل صالحة):</strong> <code>note_finale</code>، <code>trim_1</code>، <code>age</code>، <code>debut_cours</code>، <code>taux</code>.</li>
+</ul>
+
+<h3>النشاط الخامس: احسب بسرعة (الأسبوع 2 نظري — 5 دقائق)</h3>
+
+<ul>
+<li><strong>التعليمة:</strong> مع <code>x = 9</code> و<code>y = 2</code>: <code>x div y</code>، <code>x mod y</code>، <code>x / y</code>، <code>x - y * 3</code>، <code>(x &gt; y) ET (y &gt; 5)</code>، <code>NON (x = 9) OU (y = 2)</code>.</li>
+<li><strong>الإجابة المنتظرة:</strong> <code>4</code>؛ <code>1</code>؛ <code>4.5</code>؛ <code>3</code>؛ <code>Faux</code>؛ <code>Faux OU Vrai = Vrai</code> (لأن <code>NON</code> تُحسب قبل <code>OU</code>).</li>
+</ul>
+
+<h3>النشاط السادس: تنبّأ بالمخرجات (الأسبوع 2 نظري — 3 دقائق)</h3>
+
+<ul>
+<li><strong>التعليمة:</strong> ماذا تعرض خوارزمية المجموع للمدخلات <code>-4</code> و<code>10</code>؟ ثم للمدخلات <code>0</code> و<code>0</code>؟</li>
+<li><strong>الإجابة المنتظرة:</strong> <code>La somme est : 6</code>؛ <code>La somme est : 0</code>.</li>
 </ul>
 
 <hr>
 
-<h2>2. التقويم الإدماجي الختامي (نهاية الوحدة)</h2>
+<h2>2. التقويم الإدماجي الختامي (التقويم المرحلي الرسمي)</h2>
 
-<p><strong>وضعية مشكلة (تطوير تطبيق مصغر - الصراف الآلي):</strong></p>
-<p>تخيل أنك تبرمج جزءاً من نظام صراف آلي (ATM). الرصيد الحالي للمستخدم هو 5000 دينار.</p>
-<p>المطلوب كتابة برنامج بايثون يقوم بالآتي:</p>
-<ol>
-<li>يطبع رسالة: &quot;رصيدك الحالي هو 5000&quot;.</li>
-<li>يطلب من المستخدم إدخال المبلغ الذي يريد سحبه (استخدم <code>input</code> و <code>float</code>).</li>
-<li>إذا كان المبلغ المطلوب أكبر من الرصيد، يطبع &quot;عذراً، رصيدك غير كافٍ&quot;.</li>
-<li>إذا كان المبلغ متوفراً، يطرح المبلغ من الرصيد الأساسي، ويطبع &quot;عملية السحب ناجحة. رصيدك المتبقي هو: &quot; متبوعاً بالرصيد الجديد.</li>
-</ol>
+<p><strong>الوضعية:</strong> تحضّر جمعية الثانوية مسابقة «الحساب السريع». طلب منك المنظمون برنامجًا صغيرًا: يُدخل اللاعب عددين، فيُظهر البرنامج مجموعهما، ثم يقارن بينهما ليُعلن العدد الأكبر.</p>
 
-<p><em>ملاحظة للأستاذ: هذا النشاط يدمج (المتغيرات، الإدخال/الإخراج، الشروط، والعمليات الحسابية) في كود واحد يمثل خلاصة المجال الرابع.</em></p>
+<p><strong>المطلوب:</strong></p>
+
+<table>
+<tr><th>المهمة</th><th>التعليمة</th><th>النقاط</th></tr>
+<tr><td>1</td><td>حلّل المسألة: المدخلات، المعالجة، المخرجات</td><td>2</td></tr>
+<tr><td>2</td><td>اكتب جزء الرأس والتصريحات بأسماء صالحة وأنواع مناسبة</td><td>2</td></tr>
+<tr><td>3</td><td>اكتب خوارزمية <strong>مجموع عددين</strong> كاملة</td><td>2</td></tr>
+<tr><td>4</td><td>اكتب خوارزمية <strong>مقارنة عددين</strong> تُظهر الأكبر</td><td>2</td></tr>
+<tr><td>5</td><td>جرّب الخوارزميتين بالمدخلات <code>8</code> و<code>13</code> واكتب المخرجات المنتظرة</td><td>2</td></tr>
+</table>
+
+<p><strong>المجموع:</strong> 10 نقاط.</p>
+
+<p><strong>الإجابة النموذجية (المهام 3–5):</strong></p>
+
+<pre><code class="text">
+Algorithme Somme_Deux_Nombres
+Var
+    a, b, s : Entier
+Début
+    Ecrire(&quot;Donner deux nombres :&quot;)
+    Lire(a, b)
+    s ← a + b
+    Ecrire(&quot;La somme est : &quot;, s)
+Fin
+</code></pre>
+
+<pre><code class="text">
+Algorithme Comparer_Deux_Nombres
+Var
+    a, b : Entier
+Début
+    Ecrire(&quot;Donner deux nombres :&quot;)
+    Lire(a, b)
+    Si a &gt; b Alors
+        Ecrire(&quot;Le plus grand : &quot;, a)
+    Sinon
+        Ecrire(&quot;Le plus grand : &quot;, b)
+    FinSi
+Fin
+</code></pre>
+
+<ul>
+<li>المدخلات <code>8</code> و<code>13</code> ← <code>La somme est : 21</code> ثم <code>Le plus grand : 13</code>.</li>
+<li><strong>يُقبل:</strong> النوع <code>Réel</code> بدل <code>Entier</code>، رسائل مختلفة أو بالعربية، الشرط <code>a ≥ b</code> أو <code>a &lt; b</code> مع تبديل الفرعين، وخوارزمية واحدة تجمع المهمتين.</li>
+<li><strong>لا يُشترط:</strong> معالجة حالة التساوي برسالة خاصة (من أهداف الوحدة 17).</li>
+</ul>
 
 <hr>
 
-<h2>3. نشاط إثرائي (مهمة منزلية)</h2>
+<h2>3. شبكة التقويم (Rubric)</h2>
 
-<ul>
-<li><strong>مهمة البحث والتجربة:</strong></li>
-</ul>
-<p>اطلب منهم الدخول إلى موقع (Replit.com) أو أي مترجم بايثون أونلاين عبر هواتفهم الذكية، وتجربة كتابة كود يطبع أسمائهم بحروف كبيرة (باستخدام الدالة <code>.upper()</code>).</p>
+<table>
+<tr><th>المعيار</th><th>ممتاز (2)</th><th>مقبول (1)</th><th>غير مكتمل (0)</th></tr>
+<tr><td>التحليل</td><td>مدخلات ومعالجة ومخرجات صحيحة</td><td>عنصر واحد ناقص أو خاطئ</td><td>لا يميّز بين العناصر</td></tr>
+<tr><td>الهيكل والتصريح</td><td>الترتيب صحيح، أسماء صالحة، أنواع مناسبة</td><td>خطأ واحد في اسم أو نوع</td><td>هيكل ناقص أو متغير غير مصرَّح به</td></tr>
+<tr><td>خوارزمية المجموع</td><td>كاملة وصحيحة</td><td>صحيحة مع خطأ شكلي (<code>=</code> بدل <code>←</code>)</td><td>المعالجة أو المخرجات غائبة</td></tr>
+<tr><td>خوارزمية المقارنة</td><td>الفرعان صحيحان و<code>FinSi</code> مكتوبة</td><td>فرع واحد صحيح</td><td>لا شرط</td></tr>
+<tr><td>التجريب</td><td>مخرجات منتظرة صحيحة لكلتا الخوارزميتين</td><td>واحدة صحيحة</td><td>لا تجريب</td></tr>
+</table>
+
+<hr>
+
+<h2>4. المعالجة البيداغوجية</h2>
+
+<table>
+<tr><th>الصعوبة الملاحظة</th><th>نشاط المعالجة</th></tr>
+<tr><td>خلط الأنواع</td><td>بطاقات معطيات يفرزها التلميذ في خمس علب مرسومة</td></tr>
+<tr><td>أسماء غير صالحة</td><td>قائمة من 10 أسماء يصحّحها ويذكر القاعدة لكل منها</td></tr>
+<tr><td>أخطاء الأولويات</td><td>عبارات يضع فيها التلميذ الأقواس التي تُظهر ترتيب الحساب</td></tr>
+<tr><td>نسيان المدخلات أو المخرجات</td><td>إعادة جدول التحليل قبل كتابة أي خوارزمية</td></tr>
+</table>
+
+<hr>
+
+<h2>5. نشاط إثرائي (اختياري)</h2>
+
+<ol>
+<li><strong>تحويل:</strong> اكتب خوارزمية تقرأ مدة بالدقائق وتُظهرها بالساعات والدقائق باستعمال <code>div</code> و<code>mod</code>. تجربة: المدخل <code>135</code> ← المخرجات <code>2</code> ساعة و<code>15</code> دقيقة.</li>
+<li><strong>جسر Python:</strong> اكتب خوارزمية المجموع بلغة Python (<code>int(input())</code> و<code>print</code>) وجرّبها إن توفر محرر. تجربة: <code>7</code> و<code>5</code> ← <code>La somme est : 12</code>.</li>
+<li><strong>بحث قصير:</strong> ابحث عن عالم آخر من الحضارة الإسلامية ساهم في الرياضيات، واذكر إسهامًا واحدًا له.</li>
+</ol>
 </body>
 </html>

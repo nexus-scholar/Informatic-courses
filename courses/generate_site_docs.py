@@ -35,10 +35,11 @@ DOMAIN_NAMES = {
     14: "المجال 3: العروض التقديمية",
     15: "المجال 4: الخوارزميات والبرمجة",
     16: "المجال 4: الخوارزميات والبرمجة",
-    17: "المجال 5: تقنيات الويب والإنترنت",
+    17: "المجال 4: الخوارزميات والبرمجة",
     18: "المجال 5: تقنيات الويب والإنترنت",
     19: "المجال 5: تقنيات الويب والإنترنت",
     20: "المجال 5: تقنيات الويب والإنترنت",
+    21: "المجال 5: تقنيات الويب والإنترنت",
 }
 
 UNIT_TITLES = {
@@ -56,12 +57,13 @@ UNIT_TITLES = {
     12: "فرز وتصفية البيانات في Excel",
     13: "الارتباطات التشعبية في PowerPoint",
     14: "الحركة والمؤثرات في العروض التقديمية",
-    15: "المخطط الانسيابي (Flowcharts)",
-    16: "الخوارزميات والبرمجة بلغة بايثون",
-    17: "متصفح الويب والبحث الآمن",
-    18: "البريد الإلكتروني والمراسلات الرقمية",
-    19: "شبكات التواصل الاجتماعي والاستعمال المسؤول",
-    20: "إنشاء صفحة ويب بلغة HTML5",
+    15: "المخطط النسقي (Flowchart)",
+    16: "الخوارزميات: البنية والبيانات والمتغيرات",
+    17: "التعليمات الأساسية: الإسناد والإدخال والشرط والتكرار",
+    18: "متصفح الويب والبحث الآمن",
+    19: "البريد الإلكتروني والمراسلات الرقمية",
+    20: "شبكات التواصل الاجتماعي والاستعمال المسؤول",
+    21: "إنشاء صفحة ويب بلغة HTML5",
 }
 
 
@@ -211,7 +213,7 @@ def main():
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
     
     print("\n[Converting Lessons] Processing Units 01 to 20...")
-    for unit_num in range(1, 21):
+    for unit_num in range(1, 22):
         num_str = f"{unit_num:02d}"
         target_dir = DOCS_DIR / f"unit-{num_str}"
         target_dir.mkdir(parents=True, exist_ok=True)
@@ -258,7 +260,7 @@ def main():
             shutil.rmtree(obs_dir)
             print(f" - Cleaned up demo page: {obs}")
 
-    print("\n[Done] All 20 units are now successfully converted into site/src/app/docs/!")
+    print("\n[Done] All 21 units are now successfully converted into site/src/app/docs/!")
 
 
 if __name__ == "__main__":

@@ -34,13 +34,13 @@ def page_exists(path: str) -> bool:
 
 def main() -> int:
     errors: list[str] = []
-    lesson_pages = [DOCS / f"unit-{number:02d}" / "page.md" for number in range(1, 21)]
+    lesson_pages = [DOCS / f"unit-{number:02d}" / "page.md" for number in range(1, 22)]
     missing_pages = [page for page in lesson_pages if not page.is_file()]
     if missing_pages:
         errors.extend(f"Missing generated page: {page.relative_to(ROOT)}" for page in missing_pages)
 
     nav = NAVIGATION.read_text(encoding="utf-8")
-    for number in range(1, 21):
+    for number in range(1, 22):
         href = f"/docs/unit-{number:02d}"
         if href not in nav:
             errors.append(f"Navigation is missing {href}")
@@ -69,7 +69,7 @@ def main() -> int:
         print("\n".join(f"- {error}" for error in errors))
         return 1
 
-    print("Portal integrity check passed: 20 lesson pages, navigation, internal links, and images.")
+    print("Portal integrity check passed: 21 lesson pages, navigation, internal links, and images.")
     return 0
 
 

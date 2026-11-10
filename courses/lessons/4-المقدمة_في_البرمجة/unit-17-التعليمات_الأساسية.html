@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الوحدة 17: التعليمات الأساسية — الإسناد، القراءة والكتابة، الشرط والتكرار</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+body{font-family:'Amiri','Noto Naskh Arabic',serif;direction:rtl;text-align:right;background:#fff;color:#1a1a1a;line-height:2;max-width:900px;margin:0 auto;padding:20px 30px}
+h1{color:#1565c0;border-bottom:3px solid #1565c0;padding-bottom:10px}
+h2{color:#1976d2;border-bottom:2px solid #e3f2fd;padding-bottom:6px;margin-top:30px}
+h3{color:#1e88e5;margin-top:20px}
+h4{color:#42a5f5}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #bbb;padding:8px 12px;text-align:right}
+th{background:#e3f2fd;font-weight:bold}
+tr:nth-child(even){background:#f5f5f5}
+pre,code{background:#f5f5f5;padding:2px 6px;border-radius:3px;font-family:monospace}
+pre{padding:12px;overflow-x:auto;border:1px solid #ddd}
+blockquote{border-right:4px solid #1976d2;padding-right:15px;margin:15px 0;color:#555}
+hr{border:none;border-top:2px solid #e3f2fd;margin:20px 0}
+ul,ol{padding-right:20px}
+a{color:#1565c0}
+a:hover{color:#0d47a1}
+img{max-width:100%;height:auto}
+</style>
+</head>
+<body>
+<h1>الوحدة 17: التعليمات الأساسية — الإسناد، القراءة والكتابة، الشرط والتكرار</h1>
+
+<h2>المجال المفاهيمي الثاني: مقدمة في البرمجة</h2>
+
+<p><strong>المستوى:</strong> السنة الأولى ثانوي (1AS)</p>
+<p><strong>المدة الزمنية:</strong> 08 ساعات (أربعة أسابيع: حصة نظرية وحصة تطبيقية كل أسبوع)</p>
+<p><strong>المكتسبات القبلية:</strong> المخطط النسقي (الوحدة 15)، الهيكل العام للخوارزمية والمتغيرات والثوابت وأنواع البيانات والعمليات (الوحدة 16)</p>
+
+<hr>
+
+<h2>الأهداف التعلمية</h2>
+
+<p>في نهاية هذه الوحدة، يكون المتعلم قادرًا على أن:</p>
+
+<ol>
+<li>يعرّف التعليمة (Instruction) ويذكر التعليمات الأساسية الخمس، ويشرح معنى التنفيذ المتسلسل.</li>
+<li>يستعمل تعليمة الإسناد <code>←</code> ويميّزها عن المساواة الرياضية، ويبادل قيمتي متغيرين.</li>
+<li>يستعمل تعليمتي القراءة <code>Lire</code> والكتابة <code>Ecrire</code>، ويفرّق بين كتابة نص وكتابة قيمة متغير.</li>
+<li>يكتب تعليمة شرطية بسيطة واختيارية ومتداخلة، ويكوّن شروطًا مركّبة بـ <code>ET</code> و<code>OU</code> و<code>NON</code>.</li>
+<li>يختار الحلقة المناسبة (<code>Pour</code> أو <code>TantQue</code>) ويوظّف العدّاد والمجمّع.</li>
+<li>يتتبّع تنفيذ خوارزمية بجدول التتبع (Trace table) ويتوقّع ما يظهر على الشاشة.</li>
+<li>يكتشف الأخطاء الشائعة ويصحّحها، ومنها الحلقة اللانهائية.</li>
+<li>يكتب خوارزمية وينفّذها في برنامج Algobox.</li>
+<li>يُنجز خوارزمية لمشكلة تتضمن تعليمات شرطية وتكرارية (التقويم الرسمي للوحدة).</li>
+</ol>
+
+<hr>
+
+<h2>خريطة التعلم في ثماني حصص</h2>
+
+<table>
+<tr><th>الحصة</th><th>السؤال المركزي</th><th>ناتج التعلّم القابل للملاحظة</th></tr>
+<tr><td>1 — نظري (الأسبوع 1)</td><td>كيف يُنفّذ الحاسوب أوامرنا؟ وما معنى «يأخذ المتغير قيمة»؟</td><td>يتتبّع سلسلة إسنادات ويبادل قيمتي متغيرين.</td></tr>
+<tr><td>2 — تطبيقي (الأسبوع 1)</td><td>كيف يتحاور البرنامج مع المستخدم؟</td><td>يكتب في Algobox خوارزمية تقرأ معطيات وتُظهر نتيجة.</td></tr>
+<tr><td>3 — نظري (الأسبوع 2)</td><td>كيف يختار البرنامج بين طريقين أو أكثر؟</td><td>يكتب <code>Si…Sinon</code> ومتداخلة ويتتبّعها بقيمتين مختلفتين.</td></tr>
+<tr><td>4 — تطبيقي (الأسبوع 2)</td><td>كيف نجمع أكثر من شرط؟</td><td>يُنفّذ خوارزمية بشرط مركّب، ويُنجز <strong>محطة منتصف الوحدة</strong>.</td></tr>
+<tr><td>5 — نظري (الأسبوع 3)</td><td>كيف نكرّر عملًا عددًا معروفًا من المرات؟</td><td>يكتب حلقة <code>Pour</code> بعدّاد ومجمّع ويتتبّعها.</td></tr>
+<tr><td>6 — تطبيقي (الأسبوع 3)</td><td>كيف نجعل الحاسوب يقوم بالعمل المتكرر عنا؟</td><td>ينفّذ جدول الضرب وإحصائيات المباريات في Algobox.</td></tr>
+<tr><td>7 — نظري (الأسبوع 4)</td><td>ماذا لو لم نعرف عدد التكرارات مسبقًا؟</td><td>يكتب <code>TantQue</code> ويختار الحلقة المناسبة ويتجنب الحلقة اللانهائية.</td></tr>
+<tr><td>8 — تطبيقي (الأسبوع 4)</td><td>هل أستطيع حل مشكلة حقيقية وحدي؟</td><td>يُنجز المشروع المصغر «إحصائيات القسم» (التقويم الرسمي).</td></tr>
+</table>
+
+<blockquote><p>في الوحدة 16 تعلّمت <strong>أين</strong> تُكتب التعليمات: بين <code>Début</code> و<code>Fin</code>، بعد التصريح بالمتغيرات في <code>Var</code>. في هذه الوحدة نتعلّم <strong>ماذا</strong> نكتب هناك: التعليمات التي تجعل الخوارزمية تعمل.</p></blockquote>
+
+<hr>
+
+<h2>1. ما هي التعليمة؟</h2>
+
+<h3>أ. التعريف</h3>
+
+<p><strong>التعليمة</strong> (Instruction / <em>Instruction</em>) أمر واحد واضح يحدّد للحاسوب العملية التي ينجزها. والخوارزمية سلسلة من التعليمات تُكتب سطرًا سطرًا، تعليمة واحدة في كل سطر.</p>
+
+<h3>ب. التعليمات الأساسية الخمس</h3>
+
+<p>كل خوارزمية مهما كبرت تُبنى من خمس تعليمات فقط، ولكل منها شكل يقابلها في المخطط النسقي (الوحدة 15):</p>
+
+<table>
+<tr><th>التعليمة</th><th>الكتابة</th><th>دورها</th><th>شكلها في المخطط النسقي</th></tr>
+<tr><td>الإسناد (<em>Affectation</em>)</td><td><code>x ← 5</code></td><td>وضع قيمة في متغير</td><td>مستطيل (معالجة)</td></tr>
+<tr><td>القراءة (<em>Lecture</em>)</td><td><code>Lire(x)</code></td><td>أخذ قيمة من لوحة المفاتيح</td><td>متوازي أضلاع (إدخال)</td></tr>
+<tr><td>الكتابة (<em>Écriture</em>)</td><td><code>Ecrire(x)</code></td><td>إظهار نتيجة على الشاشة</td><td>متوازي أضلاع (إخراج)</td></tr>
+<tr><td>الشرطية (<em>Conditionnelle</em>)</td><td><code>Si … FinSi</code></td><td>الاختيار بين طريقين</td><td>معيّن (قرار)</td></tr>
+<tr><td>التكرارية (<em>Répétitive</em>)</td><td><code>Pour</code>، <code>TantQue</code></td><td>إعادة مجموعة تعليمات</td><td>معيّن مع سهم راجع</td></tr>
+</table>
+
+<h3>ج. التنفيذ المتسلسل (Séquence)</h3>
+
+<p>ينفّذ الحاسوب التعليمات <strong>بالترتيب من الأعلى إلى الأسفل</strong>، تعليمة بعد أخرى، ولا يعود إلى الخلف إلا داخل حلقة. لذلك يغيّر ترتيب التعليمات النتيجة:</p>
+
+<pre><code class="text">
+a ← 2
+b ← a + 3
+</code></pre>
+
+<p>هنا <code>b</code> تساوي 5. أما إن كتبنا <code>b ← a + 3</code> قبل <code>a ← 2</code> فالحاسوب يحسب <code>a + 3</code> و<code>a</code> لا تحمل بعدُ أي قيمة: <strong>خطأ</strong>.</p>
+
+<h3>د. أداة المبرمج: جدول التتبع</h3>
+
+<p><strong>جدول التتبع</strong> (Trace table / <em>Tableau de suivi</em>) يجعلك «تلعب دور الحاسوب»: عمود لكل متغير، وعمود لما يظهر على الشاشة، وسطر لكل تعليمة منفّذة أو لكل دورة في الحلقة. الرمز <code>؟</code> يعني أن المتغير لم يأخذ قيمة بعد. سنتتبّع في هذه الوحدة <strong>كل نوع من التعليمات</strong> بهذا الجدول.</p>
+
+<hr>
+
+<h2>2. تعليمة الإسناد (Affectation)</h2>
+
+<h3>أ. الشكل العام والمعنى</h3>
+
+<pre><code class="text">
+variable ← expression
+</code></pre>
+
+<p><strong>المعنى:</strong> احسب قيمة العبارة على اليمين، ثم ضعها في المتغير على اليسار. القيمة القديمة للمتغير <strong>تُمحى</strong> وتحلّ محلها الجديدة. العبارة قد تكون:</p>
+
+<ul>
+<li>قيمة ثابتة: <code>prix ← 250</code></li>
+<li>متغيرًا آخر: <code>copie ← prix</code></li>
+<li>عبارة حسابية: <code>surface ← longueur * largeur</code></li>
+</ul>
+
+<blockquote><p><strong>تشبيه:</strong> المتغير علبة عليها اسم، لا تتسع إلا لقيمة واحدة. الإسناد يُفرغ العلبة ثم يضع فيها القيمة الجديدة.</p></blockquote>
+
+<h3>ب. الإسناد ليس مساواة رياضية</h3>
+
+<p>في الرياضيات، <code>x = x + 1</code> معادلة مستحيلة. أما في الخوارزمية فـ <code>x ← x + 1</code> تعني: «خذ القيمة الحالية لـ x، أضف إليها 1، وضع النتيجة في x». لهذا نكتب السهم <code>←</code> لا علامة <code>=</code>.</p>
+
+<pre><code class="text">
+x ← 5
+x ← x + 1
+x ← x * 2
+</code></pre>
+
+<table>
+<tr><th>الخطوة</th><th>التعليمة</th><th>x</th></tr>
+<tr><td>1</td><td><code>x ← 5</code></td><td>5</td></tr>
+<tr><td>2</td><td><code>x ← x + 1</code></td><td>6</td></tr>
+<tr><td>3</td><td><code>x ← x * 2</code></td><td>12</td></tr>
+</table>
+
+<blockquote><p><strong>اتجاه السهم مهم:</strong> <code>x ← y</code> تنسخ قيمة y في x، و<code>y ← x</code> تنسخ قيمة x في y. والطرف الأيسر متغير دائمًا: <code>5 ← x</code> خطأ.</p></blockquote>
+
+<h3>ج. مثال متتبَّع: تبادل قيمتي متغيرين</h3>
+
+<p><strong>المشكلة:</strong> لدينا <code>a = 4</code> و<code>b = 9</code>، ونريد أن تصبح <code>a = 9</code> و<code>b = 4</code>.</p>
+
+<p>المحاولة الخاطئة: <code>a ← b</code> ثم <code>b ← a</code>. بعد السطر الأول تُمحى قيمة a (4) وتصبح 9، فيأخذ b القيمة 9 أيضًا: <strong>ضاعت القيمة 4</strong>.</p>
+
+<p>الحل: متغير مؤقت <code>tmp</code> يحفظ القيمة قبل أن تُمحى، كما نستعمل كأسًا فارغة لتبادل محتوى كأسين.</p>
+
+<pre><code class="text">
+Algorithme Echange
+Var
+    a, b, tmp : Entier
+Début
+    a ← 4
+    b ← 9
+    tmp ← a
+    a ← b
+    b ← tmp
+    Ecrire(&quot;a = &quot;, a, &quot; ; b = &quot;, b)
+Fin
+</code></pre>
+
+<table>
+<tr><th>الخطوة</th><th>التعليمة</th><th>a</th><th>b</th><th>tmp</th><th>الشاشة</th></tr>
+<tr><td>1</td><td><code>a ← 4</code></td><td>4</td><td>؟</td><td>؟</td><td></td></tr>
+<tr><td>2</td><td><code>b ← 9</code></td><td>4</td><td>9</td><td>؟</td><td></td></tr>
+<tr><td>3</td><td><code>tmp ← a</code></td><td>4</td><td>9</td><td>4</td><td></td></tr>
+<tr><td>4</td><td><code>a ← b</code></td><td>9</td><td>9</td><td>4</td><td></td></tr>
+<tr><td>5</td><td><code>b ← tmp</code></td><td>9</td><td>4</td><td>4</td><td></td></tr>
+<tr><td>6</td><td><code>Ecrire(…)</code></td><td>9</td><td>4</td><td>4</td><td><code>a = 9 ; b = 4</code></td></tr>
+</table>
+
+<h3>د. أخطاء شائعة في الإسناد</h3>
+
+<ul>
+<li>كتابة <code>x = 5</code> بدل <code>x ← 5</code>: علامة <code>=</code> محجوزة للمقارنة داخل الشروط.</li>
+<li>استعمال متغير قبل إعطائه قيمة (<code>S ← S + 1</code> دون <code>S ← 0</code> قبلها).</li>
+<li>وضع قيمة من نوع لا يناسب المتغير: <code>n ← 2.5</code> و<code>n</code> من نوع <code>Entier</code>.</li>
+</ul>
+
+<hr>
+
+<h2>3. تعليمتا القراءة والكتابة (Lire / Ecrire)</h2>
+
+<h3>أ. تعليمة القراءة <code>Lire</code></h3>
+
+<pre><code class="text">
+Lire(variable)
+Lire(a, b)
+</code></pre>
+
+<p><strong>المعنى:</strong> يتوقف التنفيذ وينتظر المستخدم حتى يكتب قيمة بلوحة المفاتيح ويضغط Enter، ثم توضع القيمة في المتغير. <code>Lire(a, b)</code> تقرأ قيمتين وتضعهما في a ثم b بالترتيب. القراءة إسناد يأتي من المستخدم بدل أن يأتي من الخوارزمية.</p>
+
+<blockquote><p><strong>قاعدة الأدب مع المستخدم:</strong> قبل كل <code>Lire</code> نكتب <code>Ecrire</code> تشرح للمستخدم ما المطلوب منه، وإلا رأى شاشة فارغة ولم يعرف ماذا يكتب.</p></blockquote>
+
+<h3>ب. تعليمة الكتابة <code>Ecrire</code>: نص أم قيمة؟</h3>
+
+<p><strong>المعنى:</strong> إظهار نتيجة على الشاشة. والفرق الأهم في هذه الوحدة هو <strong>علامتا التنصيص</strong>:</p>
+
+<table>
+<tr><th>التعليمة (حيث <code>x = 4</code>)</th><th>ما يظهر على الشاشة</th><th>التفسير</th></tr>
+<tr><td><code>Ecrire(&quot;Bonjour&quot;)</code></td><td><code>Bonjour</code></td><td>ما بين المزدوجتين نص يُكتب حرفيًا</td></tr>
+<tr><td><code>Ecrire(x)</code></td><td><code>4</code></td><td>اسم متغير دون مزدوجتين: تُكتب <strong>قيمته</strong></td></tr>
+<tr><td><code>Ecrire(&quot;x&quot;)</code></td><td><code>x</code></td><td>الحرف x نفسه، لا قيمته</td></tr>
+<tr><td><code>Ecrire(5 - 3)</code></td><td><code>2</code></td><td>عبارة حسابية: تُحسب ثم تُكتب نتيجتها</td></tr>
+<tr><td><code>Ecrire(&quot;5 - 3&quot;)</code></td><td><code>5 - 3</code></td><td>نص حرفي، لا حساب فيه</td></tr>
+<tr><td><code>Ecrire(&quot;x = &quot;, x)</code></td><td><code>x = 4</code></td><td>مزيج: الفاصلة تفصل الأجزاء وتُكتب متتالية</td></tr>
+</table>
+
+<blockquote><p><strong>انتبه للفراغات:</strong> في المزيج، الحاسوب لا يضيف فراغًا من عنده؛ الفراغ الذي تراه في <code>x = 4</code> موجود داخل النص <code>&quot;x = &quot;</code>.</p></blockquote>
+
+<h3>ج. مثال متتبَّع: تحويل الدقائق إلى ساعات</h3>
+
+<p><strong>المشكلة:</strong> مدة فيلم 135 دقيقة. كم ساعة وكم دقيقة؟ نستعمل <code>div</code> (حاصل القسمة الصحيحة) و<code>mod</code> (باقي القسمة) اللذين تعرّفت عليهما في الوحدة 16.</p>
+
+<pre><code class="text">
+Algorithme Conversion_Duree
+Var
+    duree, h, m : Entier
+Début
+    Ecrire(&quot;Durée en minutes :&quot;)
+    Lire(duree)
+    h ← duree div 60
+    m ← duree mod 60
+    Ecrire(h, &quot; h &quot;, m, &quot; min&quot;)
+Fin
+</code></pre>
+
+<p>جدول التتبع عندما يكتب المستخدم 135:</p>
+
+<table>
+<tr><th>الخطوة</th><th>التعليمة</th><th>duree</th><th>h</th><th>m</th><th>الشاشة</th></tr>
+<tr><td>1</td><td><code>Ecrire(&quot;Durée…&quot;)</code></td><td>؟</td><td>؟</td><td>؟</td><td><code>Durée en minutes :</code></td></tr>
+<tr><td>2</td><td><code>Lire(duree)</code></td><td>135</td><td>؟</td><td>؟</td><td>(المستخدم يكتب 135)</td></tr>
+<tr><td>3</td><td><code>h ← duree div 60</code></td><td>135</td><td>2</td><td>؟</td><td></td></tr>
+<tr><td>4</td><td><code>m ← duree mod 60</code></td><td>135</td><td>2</td><td>15</td><td></td></tr>
+<tr><td>5</td><td><code>Ecrire(h, …)</code></td><td>135</td><td>2</td><td>15</td><td><code>2 h 15 min</code></td></tr>
+</table>
+
+<hr>
+
+<h2>4. التعليمات الشرطية (Si)</h2>
+
+<h3>أ. لماذا نحتاج إلى الشرط؟</h3>
+
+<p>حتى الآن تُنفّذ كل التعليمات دائمًا. لكن الحياة مليئة بالقرارات: إن كانت البطارية ضعيفة فاشحن الهاتف، إن كان المعدل 10 أو أكثر فالتلميذ ناجح. <strong>الشرط</strong> (Condition) عبارة قيمتها <code>Vrai</code> (صحيح) أو <code>Faux</code> (خطأ)، تُكتب بعمليات المقارنة <code>=  ≠  &lt;  &gt;  ≤  ≥</code>.</p>
+
+<h3>ب. الشرط البسيط: Si … Alors … FinSi</h3>
+
+<pre><code class="text">
+Si condition Alors
+    instructions
+FinSi
+</code></pre>
+
+<p><strong>المعنى:</strong> إن كان الشرط صحيحًا تُنفّذ التعليمات، وإلا تُتجاوز ويستمر التنفيذ بعد <code>FinSi</code>. لا تنسَ <code>FinSi</code> أبدًا: هي التي تحدد أين ينتهي الجزء المشروط.</p>
+
+<pre><code class="text">
+Algorithme Batterie
+Var
+    niveau : Entier
+Début
+    Ecrire(&quot;Niveau de batterie (%) :&quot;)
+    Lire(niveau)
+    Si niveau &lt; 20 Alors
+        Ecrire(&quot;Batterie faible !&quot;)
+    FinSi
+    Ecrire(&quot;Niveau : &quot;, niveau, &quot; %&quot;)
+Fin
+</code></pre>
+
+<table>
+<tr><th>القيمة المُدخلة</th><th>الشرط <code>niveau &lt; 20</code></th><th>الشاشة (بعد سطر الطلب)</th></tr>
+<tr><td>12</td><td><code>Vrai</code></td><td><code>Batterie faible !</code> ثم <code>Niveau : 12 %</code></td></tr>
+<tr><td>65</td><td><code>Faux</code></td><td><code>Niveau : 65 %</code> فقط</td></tr>
+</table>
+
+<h3>ج. الشرط الاختياري: Si … Alors … Sinon … FinSi</h3>
+
+<pre><code class="text">
+Si condition Alors
+    instructions 1
+Sinon
+    instructions 2
+FinSi
+</code></pre>
+
+<p><strong>المعنى:</strong> طريقان لا ثالث لهما: إن كان الشرط صحيحًا تُنفّذ المجموعة الأولى فقط، وإلا تُنفّذ الثانية فقط.</p>
+
+<p><strong>مثال 1: ناجح أم راسب؟</strong></p>
+
+<pre><code class="text">
+Algorithme Eleve_Admis
+Var
+    moyenne : Réel
+Début
+    Ecrire(&quot;Moyenne :&quot;)
+    Lire(moyenne)
+    Si moyenne ≥ 10 Alors
+        Ecrire(&quot;Admis&quot;)
+    Sinon
+        Ecrire(&quot;Ajourné&quot;)
+    FinSi
+Fin
+</code></pre>
+
+<table>
+<tr><th>moyenne</th><th>الشرط <code>moyenne ≥ 10</code></th><th>الفرع المنفّذ</th><th>الشاشة</th></tr>
+<tr><td>13.5</td><td><code>Vrai</code></td><td><code>Alors</code></td><td><code>Admis</code></td></tr>
+<tr><td>9.75</td><td><code>Faux</code></td><td><code>Sinon</code></td><td><code>Ajourné</code></td></tr>
+<tr><td>10</td><td><code>Vrai</code></td><td><code>Alors</code></td><td><code>Admis</code></td></tr>
+</table>
+
+<blockquote><p>جرّب دائمًا <strong>القيمة الحدّية</strong> (هنا 10): هي أكثر مكان تختبئ فيه الأخطاء، كأن تكتب <code>&gt;</code> بدل <code>≥</code>.</p></blockquote>
+
+<p><strong>مثال 2: زوجي أم فردي؟</strong> العدد زوجي إذا كان باقي قسمته على 2 يساوي 0.</p>
+
+<pre><code class="text">
+Si n mod 2 = 0 Alors
+    Ecrire(n, &quot; est pair&quot;)
+Sinon
+    Ecrire(n, &quot; est impair&quot;)
+FinSi
+</code></pre>
+
+<table>
+<tr><th>n</th><th><code>n mod 2</code></th><th>الشرط <code>n mod 2 = 0</code></th><th>الشاشة</th></tr>
+<tr><td>14</td><td>0</td><td><code>Vrai</code></td><td><code>14 est pair</code></td></tr>
+<tr><td>7</td><td>1</td><td><code>Faux</code></td><td><code>7 est impair</code></td></tr>
+</table>
+
+<h3>د. الشروط المتداخلة (Si imbriqués)</h3>
+
+<p>عندما تكون الحالات <strong>أكثر من اثنتين</strong> نضع <code>Si</code> داخل فرع <code>Sinon</code>. لكل <code>Si</code> نهايتها <code>FinSi</code> الخاصة بها، والإزاحة (4 فراغات) تُظهر من داخل من.</p>
+
+<p><strong>مثال 1: تقدير المعدل</strong> (سلّم توضيحي: 16 فأكثر ممتاز، من 12 جيد، من 10 مقبول، وأقل من 10 غير كافٍ).</p>
+
+<pre><code class="text">
+Si note ≥ 16 Alors
+    Ecrire(&quot;Excellent&quot;)
+Sinon
+    Si note ≥ 12 Alors
+        Ecrire(&quot;Bien&quot;)
+    Sinon
+        Si note ≥ 10 Alors
+            Ecrire(&quot;Passable&quot;)
+        Sinon
+            Ecrire(&quot;Insuffisant&quot;)
+        FinSi
+    FinSi
+FinSi
+</code></pre>
+
+<table>
+<tr><th>note</th><th><code>note ≥ 16</code></th><th><code>note ≥ 12</code></th><th><code>note ≥ 10</code></th><th>الشاشة</th></tr>
+<tr><td>17</td><td><code>Vrai</code></td><td>(لا يُختبر)</td><td>(لا يُختبر)</td><td><code>Excellent</code></td></tr>
+<tr><td>13</td><td><code>Faux</code></td><td><code>Vrai</code></td><td>(لا يُختبر)</td><td><code>Bien</code></td></tr>
+<tr><td>9.5</td><td><code>Faux</code></td><td><code>Faux</code></td><td><code>Faux</code></td><td><code>Insuffisant</code></td></tr>
+</table>
+
+<blockquote><p>لماذا لا نكتب <code>note ≥ 12 ET note &lt; 16</code> في الشرط الثاني؟ لأننا لا نصل إليه إلا إذا كان الشرط الأول خاطئًا، أي أن <code>note &lt; 16</code> مؤكدة.</p></blockquote>
+
+<p><strong>مثال 2: أكبر ثلاثة أعداد</strong></p>
+
+<pre><code class="text">
+Algorithme Plus_Grand
+Var
+    a, b, c, max : Réel
+Début
+    Ecrire(&quot;Donner trois nombres :&quot;)
+    Lire(a, b, c)
+    Si a ≥ b Alors
+        Si a ≥ c Alors
+            max ← a
+        Sinon
+            max ← c
+        FinSi
+    Sinon
+        Si b ≥ c Alors
+            max ← b
+        Sinon
+            max ← c
+        FinSi
+    FinSi
+    Ecrire(&quot;Le plus grand est &quot;, max)
+Fin
+</code></pre>
+
+<p>جدول التتبع مع <code>a = 7</code> و<code>b = 12</code> و<code>c = 9</code>:</p>
+
+<table>
+<tr><th>الخطوة</th><th>التعليمة أو الشرط</th><th>النتيجة</th><th>max</th><th>الشاشة</th></tr>
+<tr><td>1</td><td><code>Lire(a, b, c)</code></td><td>a=7، b=12، c=9</td><td>؟</td><td></td></tr>
+<tr><td>2</td><td><code>a ≥ b</code> أي <code>7 ≥ 12</code></td><td><code>Faux</code>: فرع <code>Sinon</code> الخارجي</td><td>؟</td><td></td></tr>
+<tr><td>3</td><td><code>b ≥ c</code> أي <code>12 ≥ 9</code></td><td><code>Vrai</code></td><td>؟</td><td></td></tr>
+<tr><td>4</td><td><code>max ← b</code></td><td></td><td>12</td><td></td></tr>
+<tr><td>5</td><td><code>Ecrire(…)</code></td><td></td><td>12</td><td><code>Le plus grand est 12</code></td></tr>
+</table>
+
+<h3>هـ. الشروط المركّبة: ET و OU و NON</h3>
+
+<p>نربط شرطين أو أكثر بالعمليات المنطقية (Opérateurs logiques):</p>
+
+<table>
+<tr><th>A</th><th>B</th><th><code>A ET B</code></th><th><code>A OU B</code></th><th><code>NON A</code></th></tr>
+<tr><td><code>Vrai</code></td><td><code>Vrai</code></td><td><code>Vrai</code></td><td><code>Vrai</code></td><td><code>Faux</code></td></tr>
+<tr><td><code>Vrai</code></td><td><code>Faux</code></td><td><code>Faux</code></td><td><code>Vrai</code></td><td><code>Faux</code></td></tr>
+<tr><td><code>Faux</code></td><td><code>Vrai</code></td><td><code>Faux</code></td><td><code>Vrai</code></td><td><code>Vrai</code></td></tr>
+<tr><td><code>Faux</code></td><td><code>Faux</code></td><td><code>Faux</code></td><td><code>Faux</code></td><td><code>Vrai</code></td></tr>
+</table>
+
+<ul>
+<li><code>ET</code> (<em>AND</em>): صحيح فقط إذا كان <strong>الشرطان معًا</strong> صحيحين.</li>
+<li><code>OU</code> (<em>OR</em>): صحيح إذا كان <strong>أحدهما على الأقل</strong> صحيحًا.</li>
+<li><code>NON</code> (<em>NOT</em>): يعكس القيمة؛ <code>NON (age &lt; 18)</code> تعني <code>age ≥ 18</code>.</li>
+</ul>
+
+<p><strong>مثال: ثمن تذكرة الحافلة.</strong> الركوب مجاني للأطفال دون 6 سنوات ولكبار السن من 60 سنة فأكثر، و25 دج لغيرهم.</p>
+
+<pre><code class="text">
+Si age &lt; 6 OU age ≥ 60 Alors
+    prix ← 0
+Sinon
+    prix ← 25
+FinSi
+Ecrire(&quot;Prix : &quot;, prix, &quot; DA&quot;)
+</code></pre>
+
+<table>
+<tr><th>age</th><th><code>age &lt; 6</code></th><th><code>age ≥ 60</code></th><th><code>… OU …</code></th><th>prix</th><th>الشاشة</th></tr>
+<tr><td>4</td><td><code>Vrai</code></td><td><code>Faux</code></td><td><code>Vrai</code></td><td>0</td><td><code>Prix : 0 DA</code></td></tr>
+<tr><td>15</td><td><code>Faux</code></td><td><code>Faux</code></td><td><code>Faux</code></td><td>25</td><td><code>Prix : 25 DA</code></td></tr>
+<tr><td>65</td><td><code>Faux</code></td><td><code>Vrai</code></td><td><code>Vrai</code></td><td>0</td><td><code>Prix : 0 DA</code></td></tr>
+</table>
+
+<blockquote><p><strong>خطأ شائع:</strong> كتابة <code>0 ≤ note ≤ 20</code> كما في الرياضيات. الحاسوب يقارن مرة واحدة في كل شرط بسيط، لذلك نكتب: <code>note ≥ 0 ET note ≤ 20</code>.</p></blockquote>
+
+<h3>و. أخطاء شائعة في الشروط</h3>
+
+<ul>
+<li>نسيان <code>FinSi</code>، أو كتابة <code>Fin Si</code> و<code>Finsi</code> بأشكال مختلفة: نلتزم بـ <code>FinSi</code>.</li>
+<li>استعمال <code>←</code> داخل الشرط: <code>Si x ← 5</code> خطأ؛ الصحيح <code>Si x = 5</code>.</li>
+<li>استعمال <code>ET</code> حيث يلزم <code>OU</code>: <code>age &lt; 6 ET age ≥ 60</code> لا يكون صحيحًا أبدًا!</li>
+<li>عدم اختبار القيمة الحدّية.</li>
+</ul>
+
+<hr>
+
+<h2>محطة منتصف الوحدة (نهاية الأسبوع الثاني)</h2>
+
+<p>تقويم قصير (15 دقيقة، فرديًا وعلى الورق) قبل الانتقال إلى التكرار:</p>
+
+<ol>
+<li><strong>تتبّع:</strong> ما قيمتا x وy بعد تنفيذ: <code>x ← 3</code> ثم <code>y ← x + 4</code> ثم <code>x ← y * 2</code> ثم <code>y ← y - x</code>؟</li>
+<li><strong>نص أم قيمة؟</strong> إذا كانت <code>x = 4</code>، ماذا تُظهر <code>Ecrire(&quot;x&quot;)</code>؟ وماذا تُظهر <code>Ecrire(x)</code>؟</li>
+<li><strong>تنفيذ شرط:</strong> ماذا يظهر من أجل <code>n = 15</code> ثم <code>n = 8</code>؟</li>
+</ol>
+
+<pre><code class="text">
+Si n mod 3 = 0 Alors
+    Ecrire(&quot;Multiple de 3&quot;)
+Sinon
+    Ecrire(&quot;Non&quot;)
+FinSi
+</code></pre>
+
+<ol>
+<li><strong>شرط مركّب:</strong> اكتب شرطًا يكون صحيحًا عندما تكون درجة الحرارة <code>t</code> بين 18 و25 (مع الحدّين).</li>
+<li><strong>كتابة:</strong> اكتب خوارزمية تقرأ أهداف فريقين <code>butsA</code> و<code>butsB</code> في مباراة كرة قدم، وتُظهر <code>Victoire A</code> أو <code>Victoire B</code> أو <code>Match nul</code>. مثال: المدخلات <code>2</code> و<code>2</code> يُعطي <code>Match nul</code>.</li>
+</ol>
+
+<hr>
+
+<h2>5. التعليمات التكرارية (1): الحلقة Pour</h2>
+
+<h3>أ. لماذا نكرّر؟</h3>
+
+<p>لو طُلب منك إظهار جدول ضرب العدد 7 لكتبت عشر تعليمات <code>Ecrire</code> متشابهة؛ ولجدول من 100 سطر مئة تعليمة! <strong>الحلقة</strong> (Boucle / <em>Loop</em>) تكتب التعليمات مرة واحدة وتطلب من الحاسوب تكرارها.</p>
+
+<h3>ب. الحلقة Pour: عدد التكرارات معروف</h3>
+
+<pre><code class="text">
+Pour i de 1 à n Faire
+    instructions
+FinPour
+</code></pre>
+
+<p><strong>المعنى:</strong> المتغير <code>i</code> يسمّى <strong>العدّاد</strong> (Compteur). يأخذ القيمة 1، فتُنفّذ التعليمات، ثم يزيد آليًا بـ 1، وهكذا حتى يتجاوز <code>n</code>. عدد الدورات معروف مسبقًا: <code>n</code> دورة.</p>
+
+<blockquote><p>لا تكتب <code>i ← i + 1</code> داخل <code>Pour</code>: الحلقة تزيد العدّاد وحدها، وتغييره بيدك يُفسد عدد الدورات.</p></blockquote>
+
+<p><strong>مثال متتبَّع: مجموع الأعداد من 1 إلى 5</strong></p>
+
+<pre><code class="text">
+S ← 0
+Pour i de 1 à 5 Faire
+    S ← S + i
+FinPour
+Ecrire(&quot;Somme = &quot;, S)
+</code></pre>
+
+<table>
+<tr><th>الدورة</th><th>i</th><th><code>S ← S + i</code></th><th>S</th><th>الشاشة</th></tr>
+<tr><td>قبل الحلقة</td><td>؟</td><td><code>S ← 0</code></td><td>0</td><td></td></tr>
+<tr><td>1</td><td>1</td><td>0 + 1</td><td>1</td><td></td></tr>
+<tr><td>2</td><td>2</td><td>1 + 2</td><td>3</td><td></td></tr>
+<tr><td>3</td><td>3</td><td>3 + 3</td><td>6</td><td></td></tr>
+<tr><td>4</td><td>4</td><td>6 + 4</td><td>10</td><td></td></tr>
+<tr><td>5</td><td>5</td><td>10 + 5</td><td>15</td><td></td></tr>
+<tr><td>بعد الحلقة</td><td></td><td></td><td>15</td><td><code>Somme = 15</code></td></tr>
+</table>
+
+<p>بتغيير 5 إلى 100 نحصل على مجموع الأعداد من 1 إلى 100 (<code>Somme = 5050</code>) <strong>دون أي سطر إضافي</strong>: هذه قوة الحلقة.</p>
+
+<h3>ج. مثال: جدول الضرب</h3>
+
+<pre><code class="text">
+Algorithme Table_Multiplication
+Var
+    n, i : Entier
+Début
+    Ecrire(&quot;Table de :&quot;)
+    Lire(n)
+    Pour i de 1 à 10 Faire
+        Ecrire(n, &quot; x &quot;, i, &quot; = &quot;, n * i)
+    FinPour
+Fin
+</code></pre>
+
+<p>من أجل <code>n = 7</code> تظهر عشرة أسطر: <code>7 x 1 = 7</code> ثم <code>7 x 2 = 14</code> ثم … حتى <code>7 x 10 = 70</code>.</p>
+
+<h3>د. العدّاد والمجمّع</h3>
+
+<ul>
+<li><strong>المجمّع</strong> (Accumulateur): متغير يجمع القيم دورة بعد دورة: <code>total ← total + valeur</code>. يُهيّأ بـ <strong>0</strong> قبل الحلقة.</li>
+<li><strong>العدّاد الشرطي</strong>: متغير يعدّ الحالات التي تحقق شرطًا: <code>nb ← nb + 1</code> داخل <code>Si</code>. يُهيّأ أيضًا بـ <strong>0</strong>.</li>
+</ul>
+
+<blockquote><p><strong>قاعدة ذهبية:</strong> كل مجمّع وكل عدّاد يُهيّأ <strong>قبل</strong> الحلقة لا داخلها. لو كتبنا <code>total ← 0</code> داخل الحلقة لعاد إلى الصفر في كل دورة.</p></blockquote>
+
+<p><strong>مثال متتبَّع: إحصائيات خمس مباريات كرة قدم</strong></p>
+
+<pre><code class="text">
+Algorithme Stat_Matchs
+Var
+    i, buts, total, nb : Entier
+    moyenne : Réel
+Début
+    total ← 0
+    nb ← 0
+    Pour i de 1 à 5 Faire
+        Ecrire(&quot;Buts du match &quot;, i, &quot; :&quot;)
+        Lire(buts)
+        total ← total + buts
+        Si buts ≥ 3 Alors
+            nb ← nb + 1
+        FinSi
+    FinPour
+    moyenne ← total / 5
+    Ecrire(&quot;Total : &quot;, total, &quot; buts&quot;)
+    Ecrire(&quot;Moyenne : &quot;, moyenne)
+    Ecrire(&quot;Matchs à 3 buts ou + : &quot;, nb)
+Fin
+</code></pre>
+
+<p>جدول التتبع مع المدخلات <code>2، 0، 3، 1، 4</code>:</p>
+
+<table>
+<tr><th>الدورة</th><th>i</th><th>buts</th><th>total</th><th><code>buts ≥ 3</code></th><th>nb</th></tr>
+<tr><td>قبل الحلقة</td><td>؟</td><td>؟</td><td>0</td><td></td><td>0</td></tr>
+<tr><td>1</td><td>1</td><td>2</td><td>2</td><td><code>Faux</code></td><td>0</td></tr>
+<tr><td>2</td><td>2</td><td>0</td><td>2</td><td><code>Faux</code></td><td>0</td></tr>
+<tr><td>3</td><td>3</td><td>3</td><td>5</td><td><code>Vrai</code></td><td>1</td></tr>
+<tr><td>4</td><td>4</td><td>1</td><td>6</td><td><code>Faux</code></td><td>1</td></tr>
+<tr><td>5</td><td>5</td><td>4</td><td>10</td><td><code>Vrai</code></td><td>2</td></tr>
+</table>
+
+<p>بعد الحلقة: <code>moyenne = 10 / 5 = 2</code>، وتظهر الأسطر الثلاثة: <code>Total : 10 buts</code> و<code>Moyenne : 2</code> و<code>Matchs à 3 buts ou + : 2</code>.</p>
+
+<hr>
+
+<h2>6. التعليمات التكرارية (2): TantQue و Répéter</h2>
+
+<h3>أ. الحلقة TantQue: عدد التكرارات غير معروف</h3>
+
+<pre><code class="text">
+TantQue condition Faire
+    instructions
+FinTantQue
+</code></pre>
+
+<p><strong>المعنى:</strong> يُختبر الشرط <strong>قبل</strong> كل دورة؛ ما دام صحيحًا تُنفّذ التعليمات ثم يُعاد اختباره، وعندما يصبح خاطئًا يستمر التنفيذ بعد <code>FinTantQue</code>.</p>
+
+<blockquote><p><strong>الحد الأدنى لعدد الدورات هو 0:</strong> إن كان الشرط خاطئًا من البداية فلن تُنفّذ التعليمات ولا مرة واحدة.</p></blockquote>
+
+<blockquote><p><strong>مسؤوليتك:</strong> <code>TantQue</code> لا تملك عدّادًا آليًا. يجب أن تغيّر داخل الحلقة متغيرًا يدخل في الشرط، حتى يصبح الشرط خاطئًا يومًا ما.</p></blockquote>
+
+<p><strong>مثال متتبَّع: شحن الهاتف.</strong> (نموذج مبسّط: الشاحن يضيف 20% كل 10 دقائق.) كم دقيقة حتى تمتلئ البطارية؟</p>
+
+<pre><code class="text">
+Algorithme Charge_Batterie
+Var
+    charge, minutes : Entier
+Début
+    Ecrire(&quot;Charge actuelle (%) :&quot;)
+    Lire(charge)
+    minutes ← 0
+    TantQue charge &lt; 100 Faire
+        charge ← charge + 20
+        minutes ← minutes + 10
+    FinTantQue
+    Ecrire(&quot;Durée : &quot;, minutes, &quot; min&quot;)
+Fin
+</code></pre>
+
+<p>جدول التتبع عندما يكتب المستخدم 40:</p>
+
+<table>
+<tr><th>الدورة</th><th>الشرط <code>charge &lt; 100</code></th><th>charge</th><th>minutes</th><th>الشاشة</th></tr>
+<tr><td>قبل الحلقة</td><td></td><td>40</td><td>0</td><td></td></tr>
+<tr><td>1</td><td><code>40 &lt; 100</code>: <code>Vrai</code></td><td>60</td><td>10</td><td></td></tr>
+<tr><td>2</td><td><code>60 &lt; 100</code>: <code>Vrai</code></td><td>80</td><td>20</td><td></td></tr>
+<tr><td>3</td><td><code>80 &lt; 100</code>: <code>Vrai</code></td><td>100</td><td>30</td><td></td></tr>
+<tr><td>—</td><td><code>100 &lt; 100</code>: <code>Faux</code> (خروج)</td><td>100</td><td>30</td><td><code>Durée : 30 min</code></td></tr>
+</table>
+
+<p>وعندما يكتب المستخدم 100: الشرط <code>100 &lt; 100</code> خاطئ من البداية، <strong>0 دورة</strong>، وتظهر <code>Durée : 0 min</code>.</p>
+
+<h3>ب. مثال: مراقبة صحة الإدخال</h3>
+
+<p>البرنامج الجيد لا يقبل نقطة مثل 25 أو -3. نُعيد السؤال <strong>ما دام</strong> الإدخال خاطئًا:</p>
+
+<pre><code class="text">
+Ecrire(&quot;Note (0 à 20) :&quot;)
+Lire(note)
+TantQue note &lt; 0 OU note &gt; 20 Faire
+    Ecrire(&quot;Erreur ! Note (0 à 20) :&quot;)
+    Lire(note)
+FinTantQue
+Ecrire(&quot;Note acceptée : &quot;, note)
+</code></pre>
+
+<p>مع المدخلات <code>25</code> ثم <code>-3</code> ثم <code>14</code>: الشرط صحيح مع 25 فتظهر رسالة الخطأ، وصحيح مع -3 فتظهر مرة ثانية، وخاطئ مع 14 فنخرج وتظهر <code>Note acceptée : 14</code>.</p>
+
+<h3>ج. إثراء: الحلقة Répéter … Jusqu&#x27;à</h3>
+
+<pre><code class="text">
+Répéter
+    instructions
+Jusqu&#x27;à condition
+</code></pre>
+
+<p><strong>المعنى:</strong> تُنفّذ التعليمات <strong>أولًا</strong> ثم يُختبر الشرط <strong>بعدها</strong>؛ ويتوقف التكرار عندما يصبح الشرط <strong>صحيحًا</strong>. لذلك:</p>
+
+<ul>
+<li><strong>الحد الأدنى لعدد الدورات هو 1</strong>: التعليمات تُنفّذ مرة واحدة على الأقل.</li>
+<li>شرط <code>Jusqu&#x27;à</code> شرط <strong>توقف</strong>، وهو عكس شرط <code>TantQue</code> الذي هو شرط <strong>استمرار</strong>.</li>
+</ul>
+
+<p>نفس مثال مراقبة النقطة بـ <code>Répéter</code>:</p>
+
+<pre><code class="text">
+Répéter
+    Ecrire(&quot;Note (0 à 20) :&quot;)
+    Lire(note)
+Jusqu&#x27;à note ≥ 0 ET note ≤ 20
+Ecrire(&quot;Note acceptée : &quot;, note)
+</code></pre>
+
+<table>
+<tr><th>الدورة</th><th>note المُدخلة</th><th>شرط التوقف <code>note ≥ 0 ET note ≤ 20</code></th><th>القرار</th></tr>
+<tr><td>1</td><td>25</td><td><code>Vrai ET Faux</code>: <code>Faux</code></td><td>نكرّر</td></tr>
+<tr><td>2</td><td>-3</td><td><code>Faux ET Vrai</code>: <code>Faux</code></td><td>نكرّر</td></tr>
+<tr><td>3</td><td>14</td><td><code>Vrai ET Vrai</code>: <code>Vrai</code></td><td>نتوقف: <code>Note acceptée : 14</code></td></tr>
+</table>
+
+<blockquote><p><code>Répéter</code> غير موجودة في Algobox ولا في Python؛ لهذا هي إثراء. ما يُطلب منك في التقويم هو <code>Pour</code> و<code>TantQue</code>.</p></blockquote>
+
+<h3>د. كيف أختار الحلقة المناسبة؟</h3>
+
+<table>
+<tr><th>السؤال</th><th>الحلقة</th><th>مثال</th></tr>
+<tr><td>هل أعرف عدد الدورات قبل البدء (أو سأقرؤه)؟</td><td><code>Pour</code></td><td>جدول الضرب، نقاط 30 تلميذًا</td></tr>
+<tr><td>هل يتوقف التكرار على حدث لا أعرف متى يقع؟</td><td><code>TantQue</code></td><td>شحن البطارية، إدخال صحيح، رمز PIN</td></tr>
+<tr><td>هل يجب تنفيذ التعليمات مرة على الأقل؟ (إثراء)</td><td><code>Répéter</code></td><td>قائمة اختيارات تظهر ثم تتكرر</td></tr>
+</table>
+
+<blockquote><p>كل حلقة <code>Pour</code> يمكن كتابتها بـ <code>TantQue</code> (بعدّاد نهيّئه ونزيده بأنفسنا)، والعكس غير ممكن دائمًا. لكن <code>Pour</code> أوضح وأقل أخطاءً عندما يكون العدد معروفًا.</p></blockquote>
+
+<h3>هـ. خطر الحلقة اللانهائية</h3>
+
+<p><strong>الحلقة اللانهائية</strong> (Boucle infinie / <em>Infinite loop</em>): شرط <code>TantQue</code> لا يصبح خاطئًا أبدًا، فيتجمّد البرنامج أو يتوقف برسالة خطأ.</p>
+
+<pre><code class="text">
+i ← 1
+TantQue i ≤ 10 Faire
+    Ecrire(i)
+FinTantQue
+</code></pre>
+
+<p>هنا <code>i</code> تبقى 1 إلى الأبد، فيُكتب 1 بلا نهاية. <strong>الإصلاح:</strong> إضافة <code>i ← i + 1</code> داخل الحلقة. وسبب آخر شائع: تغيير المتغير في الاتجاه الخاطئ (<code>i ← i - 1</code> بدل <code>i ← i + 1</code>).</p>
+
+<blockquote><p><strong>قبل التشغيل اسأل نفسك:</strong> ما المتغير الذي يتغير داخل الحلقة؟ وهل يقترب تغييره من جعل الشرط خاطئًا؟</p></blockquote>
+
+<hr>
+
+<h2>7. أنشطة تطبيقية في Algobox</h2>
+
+<h3>أ. ما هو Algobox وما الذي نحتاجه؟</h3>
+
+<p><strong>Algobox</strong> برنامج تعليمي مجاني باللغة الفرنسية، مخصّص لكتابة الخوارزميات وتنفيذها. لا تُكتب فيه التعليمات حرفًا حرفًا، بل تُضاف بأزرار، فلا تقع أخطاء الكتابة. ومن أهم ميزاته <strong>التنفيذ خطوة بخطوة</strong> (<em>Mode pas à pas</em>) الذي يُظهر قيم المتغيرات بعد كل تعليمة: إنه جدول التتبع الذي تكتبه بيدك، لكن يرسمه الحاسوب.</p>
+
+<p><strong>التجهيزات:</strong> برنامج Algobox مثبّت على حواسيب المخبر (يعمل دون إنترنت على Windows وLinux)، وجهاز عرض لحاسوب الأستاذ. إن تعذّر التثبيت، يعرض الأستاذ الأنشطة على حاسوبه، وينجز التلاميذ جداول التتبع على الورق ويقارنونها بما يظهر على الشاشة.</p>
+
+<h3>ب. من الشبه-رمز إلى Algobox</h3>
+
+<table>
+<tr><th>الشبه-رمز (في الدرس والتقويم)</th><th>Algobox</th></tr>
+<tr><td><code>Var x : Entier</code></td><td><code>x EST_DU_TYPE NOMBRE</code></td></tr>
+<tr><td><code>Début</code> / <code>Fin</code></td><td><code>DEBUT_ALGORITHME</code> / <code>FIN_ALGORITHME</code></td></tr>
+<tr><td><code>x ← 5</code></td><td><code>x PREND_LA_VALEUR 5</code></td></tr>
+<tr><td><code>Lire(x)</code></td><td><code>LIRE x</code></td></tr>
+<tr><td><code>Ecrire(&quot;texte&quot;)</code> / <code>Ecrire(x)</code></td><td><code>AFFICHER &quot;texte&quot;</code> / <code>AFFICHER x</code></td></tr>
+<tr><td><code>Si … Alors … Sinon … FinSi</code></td><td><code>SI (…) ALORS</code> مع <code>DEBUT_SI</code>/<code>FIN_SI</code> و<code>SINON</code></td></tr>
+<tr><td><code>Pour i de 1 à n Faire … FinPour</code></td><td><code>POUR i ALLANT_DE 1 A n</code> مع <code>DEBUT_POUR</code>/<code>FIN_POUR</code></td></tr>
+<tr><td><code>TantQue … Faire … FinTantQue</code></td><td><code>TANT_QUE (…) FAIRE</code> مع <code>DEBUT_TANT_QUE</code>/<code>FIN_TANT_QUE</code></td></tr>
+<tr><td><code>=</code> و<code>≠</code> و<code>≤</code> و<code>≥</code></td><td><code>==</code> و<code>!=</code> و<code>&lt;=</code> و<code>&gt;=</code></td></tr>
+<tr><td><code>mod</code></td><td><code>%</code></td></tr>
+</table>
+
+<blockquote><p><strong>تنبيه:</strong> في Algobox تُكتب المساواة داخل الشرط <code>==</code> (علامتان). والنوع <code>NOMBRE</code> يشمل الأعداد الصحيحة والحقيقية معًا. ويجب التصريح بعدّاد الحلقة <code>i</code> كمتغير مثل باقي المتغيرات.</p></blockquote>
+
+<p>هكذا تظهر خوارزمية «ناجح أم راسب» في Algobox:</p>
+
+<pre><code class="text">
+VARIABLES
+  moyenne EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE moyenne
+  SI (moyenne &gt;= 10) ALORS
+    DEBUT_SI
+    AFFICHER &quot;Admis&quot;
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      AFFICHER &quot;Ajourné&quot;
+      FIN_SINON
+FIN_ALGORITHME
+</code></pre>
+
+<h3>ج. بطاقة الأنشطة</h3>
+
+<p><strong>العمل:</strong> فرديًا أو في ثنائيات (واحد يكتب والآخر يتتبّع على الورق، ثم يتبادلان) — <strong>التسليم:</strong> ملف <code>.alg</code> لكل نشاط أو جدول تتبع مكتمل.</p>
+
+<table>
+<tr><th>الحصة</th><th>النشاط</th><th>ما يجب إنجازه</th><th>مؤشر النجاح</th></tr>
+<tr><td>2</td><td>تبادل قيمتين</td><td>كتابة خوارزمية <code>Echange</code> وتنفيذها خطوة بخطوة</td><td>ما يعرضه Algobox يطابق جدول التتبع</td></tr>
+<tr><td>2</td><td>تحويل الدقائق</td><td>كتابة <code>Conversion_Duree</code> واختبارها بـ 135 ثم 59 ثم 60</td><td><code>2 h 15 min</code> ثم <code>0 h 59 min</code> ثم <code>1 h 0 min</code></td></tr>
+<tr><td>4</td><td>ناجح أم راسب</td><td>كتابة <code>Eleve_Admis</code> واختبارها بـ 9.75 ثم 10 ثم 13.5</td><td>النتيجة صحيحة عند القيمة الحدّية 10</td></tr>
+<tr><td>4</td><td>تذكرة الحافلة</td><td>إضافة الشرط المركّب واختبار الأعمار 4 و15 و60 و65</td><td>ثلاثة أعمار مجانية وواحد بـ 25 دج</td></tr>
+<tr><td>6</td><td>جدول الضرب</td><td>كتابة <code>Table_Multiplication</code> ثم تعديلها لتصبح حتى 12</td><td>تعديل سطر واحد فقط يكفي</td></tr>
+<tr><td>6</td><td>إحصائيات المباريات</td><td>كتابة <code>Stat_Matchs</code> واختبارها بالمدخلات 2، 0، 3، 1، 4</td><td><code>Total : 10 buts</code> و<code>nb = 2</code></td></tr>
+<tr><td>7 أو 8</td><td>شحن الهاتف</td><td>كتابة <code>Charge_Batterie</code> بـ <code>TANT_QUE</code> واختبارها بـ 40 ثم 100</td><td><code>30</code> دقيقة ثم <code>0</code> دقيقة (0 دورة)</td></tr>
+</table>
+
+<hr>
+
+<h2>8. جسر نحو Python (إثراء)</h2>
+
+<p><strong>Python</strong> لغة برمجة حقيقية تُستعمل في الجامعات والشركات. ما تعلّمته في هذه الوحدة هو نفسه في Python بكلمات إنجليزية. هذا القسم <strong>اختياري</strong>: الشبه-رمز هو المعتمد في الدروس والتقويم.</p>
+
+<p><strong>القراءة والكتابة والإسناد</strong> (تحويل الدقائق):</p>
+
+<pre><code class="python">
+duree = int(input(&quot;Durée en minutes : &quot;))
+h = duree // 60
+m = duree % 60
+print(h, &quot;h&quot;, m, &quot;min&quot;)
+</code></pre>
+
+<p><strong>الشرط</strong> (ناجح أم راسب):</p>
+
+<pre><code class="python">
+moyenne = float(input(&quot;Moyenne : &quot;))
+if moyenne &gt;= 10:
+    print(&quot;Admis&quot;)
+else:
+    print(&quot;Ajourné&quot;)
+</code></pre>
+
+<p><strong>الحلقة Pour</strong> (جدول الضرب):</p>
+
+<pre><code class="python">
+n = int(input(&quot;Table de : &quot;))
+for i in range(1, 11):
+    print(n, &quot;x&quot;, i, &quot;=&quot;, n * i)
+</code></pre>
+
+<p><strong>الحلقة TantQue</strong> (شحن الهاتف):</p>
+
+<pre><code class="python">
+charge = int(input(&quot;Charge (%) : &quot;))
+minutes = 0
+while charge &lt; 100:
+    charge = charge + 20
+    minutes = minutes + 10
+print(&quot;Durée :&quot;, minutes, &quot;min&quot;)
+</code></pre>
+
+<table>
+<tr><th>الشبه-رمز</th><th>Python</th><th>ملاحظة</th></tr>
+<tr><td><code>x ← 5</code></td><td><code>x = 5</code></td><td>في Python علامة <code>=</code> هي الإسناد</td></tr>
+<tr><td><code>a = b</code> (مقارنة)</td><td><code>a == b</code></td><td>والاختلاف <code>!=</code></td></tr>
+<tr><td><code>ET</code> / <code>OU</code> / <code>NON</code></td><td><code>and</code> / <code>or</code> / <code>not</code></td><td></td></tr>
+<tr><td><code>div</code> / <code>mod</code></td><td><code>//</code> / <code>%</code></td><td></td></tr>
+<tr><td><code>Lire(x)</code></td><td><code>x = int(input())</code></td><td>أو <code>float(input())</code> للأعداد الحقيقية</td></tr>
+<tr><td><code>FinSi</code>، <code>FinPour</code>، <code>FinTantQue</code></td><td>لا توجد</td><td>نهاية الكتلة تُعرف بنهاية <strong>الإزاحة</strong></td></tr>
+<tr><td><code>Pour i de 1 à 10</code></td><td><code>for i in range(1, 11)</code></td><td>الحد الأخير في <code>range</code> غير محسوب</td></tr>
+</table>
+
+<blockquote><p><strong>فخ مهم:</strong> <code>input()</code> تُرجع دائمًا <strong>نصًا</strong>. لو كتبت <code>age = input()</code> ثم <code>if age &gt; 18:</code> لتوقف البرنامج بخطأ <code>TypeError</code>، لأن Python لا تقارن نصًا بعدد. لذلك <code>int()</code> أو <code>float()</code> <strong>ضرورية</strong> وليست تفصيلًا.</p></blockquote>
+
+<hr>
+
+<h2>9. المشروع المصغر: إحصائيات القسم (التقويم الرسمي)</h2>
+
+<p><strong>الوضعية:</strong> يريد أستاذك الرئيسي برنامجًا صغيرًا يساعده عند ملء كشوف النقاط: يكتب عدد التلاميذ ثم نقطة كل تلميذ، فيُظهر البرنامج <strong>عدد الناجحين</strong> (نقطة 10 فأكثر)، و<strong>معدل القسم</strong>، و<strong>أحسن نقطة</strong>.</p>
+
+<p><strong>المطلوب:</strong></p>
+
+<ol>
+<li>حدّد المعطيات (المدخلات) والنتائج (المخرجات) ونوع كل متغير.</li>
+<li>حدّد الحلقة المناسبة وبرّر اختيارك.</li>
+<li>حدّد المجمّع والعدّاد وقيمتهما الابتدائية، وطريقة إيجاد أحسن نقطة.</li>
+<li>اكتب الخوارزمية كاملة بالشبه-رمز.</li>
+<li>تتبّعها بالمدخلات أدناه، ثم نفّذها في Algobox.</li>
+</ol>
+
+<p><strong>مثال تجريبي:</strong></p>
+
+<table>
+<tr><th>المدخلات</th><th>المخرجات المنتظرة</th></tr>
+<tr><td>عدد التلاميذ <code>5</code>، ثم النقاط <code>12</code>، <code>8.5</code>، <code>15</code>، <code>9</code>، <code>17.5</code></td><td><code>Admis : 3 sur 5</code> ثم <code>Moyenne classe : 12.4</code> ثم <code>Meilleure note : 17.5</code></td></tr>
+</table>
+
+<p><strong>مساعدة:</strong> لإيجاد أحسن نقطة، استعمل متغيرًا <code>meilleure</code> يبدأ بـ 0 (أصغر نقطة ممكنة)، وفي كل دورة: إن كانت النقطة الجديدة أكبر منه أخذ قيمتها.</p>
+
+<p><strong>للمتفوقين:</strong> أضف مراقبة الإدخال بـ <code>TantQue</code> حتى لا تُقبل نقطة خارج المجال [0 ; 20]، ثم أظهر تقدير القسم حسب معدله.</p>
+
+<hr>
+
+<h2>تمارين متدرجة</h2>
+
+<p>كل تمرين يذكر مثالًا عن المدخلات والمخرجات المنتظرة؛ اختبر حلّك به.</p>
+
+<h3>المستوى الأول: الإسناد والقراءة والكتابة</h3>
+
+<ol>
+<li><strong>تتبّع الإسناد:</strong> أنجز جدول تتبع للتعليمات <code>a ← 5</code> ثم <code>b ← a * 2</code> ثم <code>a ← b - 3</code> ثم <code>b ← a + b</code>، ثم حدّد ما تُظهره <code>Ecrire(&quot;a = &quot;, a, &quot; ; b = &quot;, b)</code>.</li>
+<li><strong>ثمن المشتريات:</strong> اكتب خوارزمية تقرأ ثمن الوحدة والكمية وتُظهر المبلغ الإجمالي. مثال: <code>45</code> و<code>4</code> يُعطي <code>Total : 180 DA</code>.</li>
+<li><strong>موجب، سالب أم معدوم؟</strong> اكتب خوارزمية تقرأ عددًا وتُظهر <code>Positif</code> أو <code>Négatif</code> أو <code>Nul</code>. مثال: <code>-7</code> يُعطي <code>Négatif</code>، و<code>0</code> يُعطي <code>Nul</code>.</li>
+</ol>
+
+<h3>المستوى الثاني: الشرط والحلقة</h3>
+
+<ol>
+<li><strong>تخفيض المتجر:</strong> يقدّم متجر تخفيضًا بـ 10% إذا بلغ ثمن المشتريات 5000 دج أو أكثر. اكتب خوارزمية تقرأ الثمن وتُظهر المبلغ الواجب دفعه. مثال: <code>6000</code> يُعطي <code>A payer : 5400 DA</code>، و<code>3000</code> يُعطي <code>A payer : 3000 DA</code>.</li>
+<li><strong>إشارات المرور:</strong> اكتب خوارزمية تقرأ لون الإشارة (<code>Chaîne</code>) وتُظهر <code>Arrêtez</code> للأحمر (<code>rouge</code>) و<code>Ralentissez</code> للبرتقالي (<code>orange</code>) و<code>Passez</code> للأخضر (<code>vert</code>) و<code>Couleur inconnue</code> لغيرها. مثال: <code>orange</code> يُعطي <code>Ralentissez</code>.</li>
+<li><strong>جدول ضرب حتى 12:</strong> عدّل خوارزمية جدول الضرب لتُظهر 12 سطرًا. مثال: <code>9</code> يُعطي آخر سطر <code>9 x 12 = 108</code>.</li>
+<li><strong>مجموع الأعداد الزوجية:</strong> اكتب خوارزمية تحسب مجموع الأعداد الزوجية الأقل من 20 (التقويم المرحلي للوحدة 15). المخرج المنتظر: <code>Somme = 90</code>.</li>
+</ol>
+
+<h3>المستوى الثالث: الجمع بين الشرط والتكرار</h3>
+
+<ol>
+<li><strong>نقاط البطولة:</strong> فريقك لعب 4 مباريات. في كل مباراة تقرأ الأهداف المسجّلة والأهداف المتلقاة؛ الفوز 3 نقاط والتعادل نقطة والخسارة 0. أظهر مجموع النقاط. مثال: <code>2 1</code>، <code>0 0</code>، <code>1 3</code>، <code>3 0</code> يُعطي <code>Points : 7</code>.</li>
+<li><strong>رمز PIN بثلاث محاولات:</strong> الرمز السري ثابت <code>CODE = 2580</code>. يُسمح للمستخدم بثلاث محاولات على الأكثر. أظهر <code>Accès autorisé</code> أو <code>Carte bloquée</code>. مثال: <code>1111</code> ثم <code>2580</code> يُعطي <code>Accès autorisé</code>؛ و<code>1</code> ثم <code>2</code> ثم <code>3</code> يُعطي <code>Carte bloquée</code>.</li>
+<li><strong>اكتشف الأخطاء:</strong> أراد تلميذ إظهار العدّ التنازلي <code>5 4 3 2 1</code> ثم <code>Bonne année !</code>. جد الأخطاء الثلاثة وصحّحها، ثم بيّن ماذا كان سيحدث عند التنفيذ.</li>
+</ol>
+
+<pre><code class="text">
+Algorithme Compte_a_Rebours
+Var
+    i : Entier
+Début
+    i = 5
+    TantQue i &gt; 0 Faire
+        Ecrire(&quot;i&quot;)
+        i ← i + 1
+    FinTantQue
+    Ecrire(&quot;Bonne année !&quot;)
+Fin
+</code></pre>
+
+<hr>
+
+<h2>تقويم ختامي للوحدة</h2>
+
+<ol>
+<li><strong>الإسناد:</strong> ما الفرق بين <code>x ← x + 1</code> و<code>x = x + 1</code> في الرياضيات؟ ولماذا نحتاج متغيرًا ثالثًا لتبادل قيمتين؟</li>
+<li><strong>الكتابة:</strong> إذا كانت <code>S = 20</code>، ماذا تُظهر <code>Ecrire(&quot;S&quot;)</code> و<code>Ecrire(S)</code> و<code>Ecrire(&quot;S = &quot;, S)</code>؟</li>
+<li><strong>الشرط:</strong> لماذا لا نكتب الشرط <code>10 ≤ moyenne ≤ 20</code>؟ اكتبه بالشكل الصحيح.</li>
+<li><strong>الحلقات:</strong> متى نستعمل <code>Pour</code> ومتى نستعمل <code>TantQue</code>؟ وما الحد الأدنى لعدد دورات كل من <code>TantQue</code> و<code>Répéter</code>؟</li>
+<li><strong>المجمّع:</strong> لماذا نكتب <code>S ← 0</code> قبل الحلقة لا داخلها؟</li>
+<li><strong>الحلقة اللانهائية:</strong> ما سببها؟ وكيف تتأكد قبل التنفيذ أن حلقتك ستتوقف؟</li>
+</ol>
+
+<hr>
+
+<h2>بطاقة خروج سريعة (3–2–1)</h2>
+
+<p>قبل مغادرة الحصة، اكتب في دقيقة واحدة:</p>
+
+<ul>
+<li><strong>3</strong> تعليمات تعلّمتها اليوم مع مثال لكل منها.</li>
+<li><strong>2</strong> خطأين شائعين يجب أن تتجنبهما.</li>
+<li><strong>1</strong> سؤال ما زال لديك حول الخوارزميات.</li>
+</ul>
+
+<p>يستعملها الأستاذ لبداية الحصة التالية: يُجيب عن السؤال المتكرر ويصحّح المفهوم الخاطئ الشائع.</p>
+
+<hr>
+
+<h3>بطاقة إجابة مختصرة للأستاذ</h3>
+
+<p><strong>محطة منتصف الوحدة:</strong></p>
+
+<ol>
+<li>x = 3 ثم y = 7 ثم x = 14 ثم y = 7 - 14 = <strong>-7</strong>. النتيجة: <code>x = 14</code> و<code>y = -7</code>.</li>
+<li><code>Ecrire(&quot;x&quot;)</code> تُظهر <code>x</code>؛ و<code>Ecrire(x)</code> تُظهر <code>4</code>.</li>
+<li><code>n = 15</code>: <code>15 mod 3 = 0</code> يُعطي <code>Multiple de 3</code>؛ <code>n = 8</code>: <code>8 mod 3 = 2</code> يُعطي <code>Non</code>.</li>
+<li><code>t ≥ 18 ET t ≤ 25</code>.</li>
+<li>حل ممكن (بعد <code>Lire(butsA, butsB)</code>):</li>
+</ol>
+
+<pre><code class="text">
+Si butsA &gt; butsB Alors
+    Ecrire(&quot;Victoire A&quot;)
+Sinon
+    Si butsB &gt; butsA Alors
+        Ecrire(&quot;Victoire B&quot;)
+    Sinon
+        Ecrire(&quot;Match nul&quot;)
+    FinSi
+FinSi
+</code></pre>
+
+<p><strong>التمارين:</strong></p>
+
+<ol>
+<li>a=5؛ b=10؛ a=7؛ b=7+10=17 يُعطي <code>a = 7 ; b = 17</code>.</li>
+<li>بعد <code>Lire(prix_u, qte)</code>: <code>total ← prix_u * qte</code> ثم <code>Ecrire(&quot;Total : &quot;, total, &quot; DA&quot;)</code> يُعطي 45 × 4 = 180.</li>
+<li><code>Si n &gt; 0 Alors Positif</code>، وإلا <code>Si n &lt; 0 Alors Négatif</code> وإلا <code>Nul</code> (شرطان متداخلان، و<code>FinSi</code> لكل منهما).</li>
+<li>الحل:</li>
+</ol>
+
+<pre><code class="text">
+Lire(prix)
+Si prix ≥ 5000 Alors
+    prix ← prix - prix * 10 / 100
+FinSi
+Ecrire(&quot;A payer : &quot;, prix, &quot; DA&quot;)
+</code></pre>
+
+<p>6000 - 600 = 5400؛ و3000 لا تتغير لأن الشرط خاطئ.</p>
+
+<ol>
+<li>شروط متداخلة: <code>Si couleur = &quot;rouge&quot;</code> … <code>Sinon Si couleur = &quot;orange&quot;</code> … <code>Sinon Si couleur = &quot;vert&quot;</code> … <code>Sinon Ecrire(&quot;Couleur inconnue&quot;)</code>، مع ثلاث <code>FinSi</code>. القيم النصية تُكتب بين مزدوجتين في الشرط.</li>
+<li>يكفي تغيير <code>Pour i de 1 à 10</code> إلى <code>Pour i de 1 à 12</code>؛ 9 × 12 = 108.</li>
+<li>الحل (2 + 4 + … + 18 = 90):</li>
+</ol>
+
+<pre><code class="text">
+S ← 0
+Pour i de 1 à 19 Faire
+    Si i mod 2 = 0 Alors
+        S ← S + i
+    FinSi
+FinPour
+Ecrire(&quot;Somme = &quot;, S)
+</code></pre>
+
+<p>حل بديل دون شرط: <code>Pour i de 1 à 9 Faire S ← S + 2 * i FinPour</code>.</p>
+
+<ol>
+<li>الحل:</li>
+</ol>
+
+<pre><code class="text">
+pts ← 0
+Pour i de 1 à 4 Faire
+    Lire(bm, be)
+    Si bm &gt; be Alors
+        pts ← pts + 3
+    Sinon
+        Si bm = be Alors
+            pts ← pts + 1
+        FinSi
+    FinSi
+FinPour
+Ecrire(&quot;Points : &quot;, pts)
+</code></pre>
+
+<p>التتبع: <code>pts</code> تصبح 3 (فوز) ثم 4 (تعادل) ثم 4 (خسارة) ثم 7 (فوز).</p>
+
+<ol>
+<li>الحل (<code>CODE</code> ثابت في <code>Const</code>):</li>
+</ol>
+
+<pre><code class="text">
+essais ← 1
+Lire(pin)
+TantQue pin ≠ CODE ET essais &lt; 3 Faire
+    Lire(pin)
+    essais ← essais + 1
+FinTantQue
+Si pin = CODE Alors
+    Ecrire(&quot;Accès autorisé&quot;)
+Sinon
+    Ecrire(&quot;Carte bloquée&quot;)
+FinSi
+</code></pre>
+
+<p>مع <code>1111</code> ثم <code>2580</code>: بعد المحاولة الثانية <code>pin = CODE</code> فنخرج: <code>Accès autorisé</code>. مع <code>1، 2، 3</code>: نخرج لأن <code>essais = 3</code> و<code>pin ≠ CODE</code>: <code>Carte bloquée</code>. لاحظ أن الشرط بعد الحلقة ضروري لمعرفة <strong>سبب</strong> الخروج.</p>
+
+<ol>
+<li>الأخطاء: (1) <code>i = 5</code> تُصحَّح إلى <code>i ← 5</code>؛ (2) <code>Ecrire(&quot;i&quot;)</code> تُصحَّح إلى <code>Ecrire(i)</code> وإلا ظهر الحرف i؛ (3) <code>i ← i + 1</code> تُصحَّح إلى <code>i ← i - 1</code>. بالخطأ الثالث تزداد i دائمًا فيبقى <code>i &gt; 0</code> صحيحًا: <strong>حلقة لا نهائية</strong>.</li>
+</ol>
+
+<p><strong>المشروع المصغر:</strong> الحل الكامل وجدول تتبعه وشبكة التصحيح في دليل الأستاذ (<code>أنشطة_وتقويم.md</code>).</p>
+
+<p><strong>التقويم الختامي:</strong></p>
+
+<ol>
+<li><code>←</code> أمر يضع قيمة جديدة (تزيد x بواحد)، و<code>=</code> الرياضية علاقة مساواة مستحيلة هنا. المتغير الثالث يحفظ القيمة الأولى قبل أن يمحوها الإسناد.</li>
+<li><code>S</code> ثم <code>20</code> ثم <code>S = 20</code>.</li>
+<li>لأن كل مقارنة بسيطة تقارن قيمتين فقط؛ الصحيح <code>moyenne ≥ 10 ET moyenne ≤ 20</code>.</li>
+<li><code>Pour</code> عندما يكون عدد الدورات معروفًا قبل البدء، و<code>TantQue</code> عندما يتوقف التكرار على شرط. الحد الأدنى: 0 لـ <code>TantQue</code> و1 لـ <code>Répéter</code>.</li>
+<li>لأن الإسناد داخل الحلقة يعيده إلى الصفر في كل دورة فيضيع المجموع.</li>
+<li>شرط لا يصبح خاطئًا أبدًا (غياب تحديث المتغير أو تحديثه في الاتجاه الخاطئ). نتحقق أن متغيرًا من الشرط يتغير داخل الحلقة ويقترب من جعل الشرط خاطئًا.</li>
+</ol>
+
+<hr>
+
+<h2>معجم المصطلحات</h2>
+
+<table>
+<tr><th>المصطلح</th><th>العربية</th><th>الشرح المختصر</th></tr>
+<tr><td>Instruction</td><td>تعليمة</td><td>أمر واحد ينفّذه الحاسوب</td></tr>
+<tr><td>Séquence</td><td>التسلسل</td><td>تنفيذ التعليمات بالترتيب من الأعلى إلى الأسفل</td></tr>
+<tr><td>Affectation</td><td>الإسناد</td><td>وضع قيمة في متغير بالرمز <code>←</code></td></tr>
+<tr><td>Lecture (<code>Lire</code>)</td><td>القراءة</td><td>أخذ قيمة من المستخدم</td></tr>
+<tr><td>Écriture (<code>Ecrire</code>)</td><td>الكتابة</td><td>إظهار نص أو قيمة على الشاشة</td></tr>
+<tr><td>Condition</td><td>شرط</td><td>عبارة قيمتها <code>Vrai</code> أو <code>Faux</code></td></tr>
+<tr><td>Si imbriqués</td><td>شروط متداخلة</td><td><code>Si</code> داخل فرع من <code>Si</code> أخرى</td></tr>
+<tr><td>Opérateur logique</td><td>عملية منطقية</td><td><code>ET</code> و<code>OU</code> و<code>NON</code></td></tr>
+<tr><td>Boucle</td><td>حلقة</td><td>مجموعة تعليمات تتكرر</td></tr>
+<tr><td>Compteur</td><td>عدّاد</td><td>متغير يعدّ الدورات أو الحالات</td></tr>
+<tr><td>Accumulateur</td><td>مجمّع</td><td>متغير يجمع القيم دورة بعد دورة</td></tr>
+<tr><td>Boucle infinie</td><td>حلقة لا نهائية</td><td>حلقة لا يصبح شرطها خاطئًا أبدًا</td></tr>
+<tr><td>Tableau de suivi</td><td>جدول التتبع</td><td>جدول يُظهر قيم المتغيرات بعد كل خطوة</td></tr>
+<tr><td>Algobox</td><td>—</td><td>برنامج تعليمي لكتابة الخوارزميات وتنفيذها</td></tr>
+</table>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الوحدة 16: الخوارزميات</title>
+<title>الوحدة 16: الخوارزميات — من المسألة إلى خوارزمية مكتوبة</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
 body{font-family:'Amiri','Noto Naskh Arabic',serif;direction:rtl;text-align:right;background:#fff;color:#1a1a1a;line-height:2;max-width:900px;margin:0 auto;padding:20px 30px}
@@ -26,431 +26,522 @@ img{max-width:100%;height:auto}
 </style>
 </head>
 <body>
-<h1>الوحدة 16: الخوارزميات</h1>
-<h2>المجال الرابع: المقدمة في البرمجة</h2>
-<h3>المدة الزمنية: 12 ساعة</h3>
+<h1>الوحدة 16: الخوارزميات — من المسألة إلى خوارزمية مكتوبة</h1>
+
+<h2>المجال المفاهيمي الثاني: مقدمة في البرمجة</h2>
+
+<p><strong>المستوى:</strong> السنة الأولى ثانوي (1AS)</p>
+<p><strong>المدة الزمنية:</strong> 4 ساعات (أسبوعان: حصة نظرية + حصة تطبيقية في كل أسبوع)</p>
 
 <hr>
 
-<h3>2. الخوارزميات</h3>
+<h2>الأهداف التعلمية</h2>
 
-<h4>الكفاءات المستهدفة</h4>
-
-<ul>
-<li>يدرك المتعلم مفهوم الخوارزمية.</li>
-<li>القدرة على التفكير لحل المشكلات.</li>
-<li>يتمكن من كتابة برامج للحاسوب.</li>
-</ul>
-
-<h4>أصل كلمة خوارزمية</h4>
-
-<p>كلمة خوارزمية مشتقة من اسم العالم الفارسي محمد بن موسى الخوارزمي (780م إلى 840م)، وقد برع هذا العالم في علم الرياضيات والفلك، ووضع مبادئ علم الجبر، وألف كتاب الجبر والمقابلة، واشتغل على جداول الضرب والقسمة والحساب العشري وحساب الظل.</p>
-
-<p>أطلق هذا الاسم &quot;الخوارزميات&quot; Algorithmes، وظل متداولًا في أوروبا إلى أن حمل مدلولًا جديدًا مرتبطًا بالبرمجة.</p>
-
-<h4>تعريف الخوارزمية:</h4>
-
-<p>هي مجموعة من الخطوات الرياضية والمنطقية المتسلسلة والمحدودة، اللازمة لحل مسألة ما والوصول إلى نتائج محددة اعتبارًا من معطيات ابتدائية.</p>
-
-<h4>خصائص الخوارزمية السليمة:</h4>
-
-<ul>
-<li>كل خطوة يجب أن تكون معروفة دون أي غموض ومحددة بعبارات دقيقة.</li>
-<li>أن تتوقف العمليات بعد عدد محدد من الخطوات.</li>
-<li>أن تؤدي الخطوات بمجملها إلى الحل الصحيح للمسألة.</li>
-</ul>
-
-<h4>الهيكل العام للخوارزمية:</h4>
-
-<p>يشمل الهيكل العام للخوارزمية ثلاث أجزاء أساسية، وهي كالآتي:</p>
-
-<p><img src="artifacts/image_000271_8a3c275c498c52721339ccaee7db00f19593115a32d4f35ad270baafc6dcee02.png" alt="Image"></p>
-
-<p>##### جزء En-tête</p>
-
-<p>يحتوي هذا الجزء على اسم الخوارزمية الذي يحدد نسبةً للمسألة المراد حلها.</p>
-
-<p>##### جزء التصريحات Déclarations</p>
-
-<p>يتم في هذا الجزء حجز مكان في الذاكرة لقائمة المتغيرات وقائمة الثوابت التي تستعمل في جزء التعليمات من الخوارزمية.</p>
-
-<p>##### جزء التعليمات Instructions</p>
-
-<p>يتضمن هذا الجزء ثلاث مراحل أساسية هي:</p>
-
-<ul>
-<li>المرحلة الأولى &quot;المدخلات&quot;: يتم فيها التحضير لحل المسألة وذلك بإدخال المعطيات اللازمة لتنفيذها.</li>
-<li>المرحلة الثانية &quot;المعالجة&quot;: تتم فيها عملية التنفيذ باستعمال معطيات (مدخلات) المرحلة الأولى، وتحتوي هذه المرحلة على مجموعة من التعليمات اللازمة لحل المسألة.</li>
-<li>المرحلة الثالثة &quot;المخرجات&quot;: تعرض فيها النتائج المطلوبة.</li>
-</ul>
-
-<p>##### الكلمات المحجوزة Mots clés</p>
-
-<p>هي كلمات تتخلل الأجزاء الأساسية الثلاث للهيكل العام للخوارزمية، يمكن كتابتها بأحرف لاتينية كبيرة أو صغيرة دون تفرقة، ولدينا من خلال الهيكل العام الكلمات المحجوزة الآتية:</p>
-
-<ul>
-<li>Algorithme: نكتب أمام هذه الكلمة اسم الخوارزمية (identificateur)، ويخضع هذا الأخير لقواعد معينة نشير إليها في العنصر الموالي.</li>
-<li>Variable: نكتب هذه الكلمة للتصريح عن المتغيرات.</li>
-</ul>
-
-<ul>
-<li>المتغير: هو عنصر يمكن لمحتواه أن يتغير أثناء تنفيذ الخوارزمية.</li>
-<li>الثابت: هو العنصر الذي لا يتغير محتواه أثناء تنفيذ الخوارزمية.</li>
-</ul>
-
-<ul>
-<li>Constante: نكتب هذه الكلمة للتصريح عن الثوابت.</li>
-<li>Début و Fin: كل من الكلمتين تمثلان بداية ونهاية الخوارزمية، وتوجد بينهما المراحل الثلاث لجزء التعليمات من الخوارزمية.</li>
-</ul>
-
-<p>ملاحظة: توجد كلمات محجوزة أخرى يمكن مصادفتها في مختلف أنواع الخوارزميات.</p>
-
-<p>أسماء المعرفات هي الأسماء التي تطلق على البيانات سواء كانت معطيات أو نتائج، متغيرة منها أو ثابتة، فكل عنصر نستعمله في الخوارزمية له اسم معرف وحيد. ولتسمية المتغيرات والثوابت لابد من احترام القواعد الآتية:</p>
-
-<ul>
-<li>يمكن لاسم المعرف أن يحتوي على رموز حرفية وعددية من A إلى Z، ومن a إلى z، ومن 0 إلى 9، كما يمكن استعمال الرمز _ (tiret du huit) فقط.</li>
-<li>لا يمكن للاسم أن يحتوي على فراغ (مسافة).</li>
-<li>يجب أن تبدأ التسمية بحرف.</li>
-<li>لا يمكن استعمال أي معرف غير مصرح به في جزء التصريحات.</li>
-<li>عدم استعمال أي كلمة من الكلمات المحجوزة في التسمية.</li>
-<li>لتسهيل قراءة وكتابة الخوارزمية، يستحسن استعمال أسماء معرفات ذات دلالة، مثل: Largeur_rect عوض LR.</li>
-</ul>
-
-<p>##### ملاحظة: اصطلاحًا، يستحسن كتابة معرفات الثوابت بالأحرف الكبيرة (Majuscules).</p>
-
-<h4>أنواع البيانات Types de données</h4>
-
-<ul>
-<li>النوع: هو المجال الذي تنتمي إليه البيانات سواء كانت معطيات (مدخلات) أو نتائج (مخرجات)، متغيرة كانت أو ثابتة.</li>
-</ul>
-
-<p>يمكننا استعمال عدة أنواع من البيانات في الخوارزمية، نذكر منها الأنواع الأساسية الآتية:</p>
-
-<ul>
-<li>Entier (الأعداد الصحيحة).</li>
-<li>Réel (الأعداد الحقيقية).</li>
-<li>Caractère (الحروف والرموز).</li>
-<li>Chaines de caractères (الكلمات).</li>
-<li>Booléen (منطقي): هذا النوع يتضمن إحدى القيمتين صحيح أو خطأ.</li>
-</ul>
-
-<p>أمثلة:</p>
+<p>في نهاية هذه الوحدة، يكون المتعلم قادرًا على أن:</p>
 
 <ol>
-<li>كل من اللقب والاسم يصنفان إلى النوع &quot;chaine de caractères&quot;.</li>
-<li>العدد 3.3 يصنف إلى النوع &quot;Réel&quot;.</li>
+<li>يعرّف الخوارزمية (Algorithm / <em>Algorithme</em>) ويذكر أصل تسميتها.</li>
+<li>يحكم على خوارزمية بسيطة بأنها سليمة أو لا، اعتمادًا على خصائصها الأربع.</li>
+<li>يحلّل مسألة إلى <strong>مدخلات</strong> و<strong>معالجة</strong> و<strong>مخرجات</strong>، ويربط ذلك بالمخطط الانسيابي (الوحدة 15).</li>
+<li>يتعرف على الهيكل العام للخوارزمية: الرأس، التصريحات، جسم الخوارزمية.</li>
+<li>يصنّف معطيات من الحياة اليومية حسب نوعها: <code>Entier</code>، <code>Réel</code>، <code>Caractère</code>، <code>Chaîne</code>، <code>Booléen</code>.</li>
+<li>يميّز اسم المعرّف الصحيح من الخاطئ، ويصرّح عن الثوابت والمتغيرات تصريحًا سليمًا.</li>
+<li>يميّز الرموز الحسابية والمقارنة والمنطقية، ويحسب قيمة عبارة باحترام الأولويات.</li>
+<li>يكتب خوارزمية لحساب <strong>مجموع عددين</strong> وخوارزمية لـ<strong>مقارنة عددين</strong>، ويجرّبهما على الورق أو في Algobox.</li>
 </ol>
 
-<h4>التصريح عن المتغيرات والثوابت:</h4>
+<hr>
 
-<ul>
-<li>التصريح عن الثوابت: يتم التصريح عن الثوابت كما يلي:</li>
-</ul>
-
-<p>Const ou Constante &lt;Identificateur&gt; = &lt;Valeur&gt;</p>
-
-<ul>
-<li>Const أو Constante هما كلمتان محجوزتان تسمحان بالتصريح عن الثوابت.</li>
-<li>Identificateur هو اسم المعرف الذي يطلق على الثابت.</li>
-<li>Valeur هي القيمة التي تعطى للثابت.</li>
-</ul>
-
-<p>أمثلة:</p>
-
-<pre><code class="text">
-Constante
-PI = 3.14
-B = Vrai
-Prénom = &quot;Zahra&quot;
-</code></pre>
-
-<ul>
-<li>التصريح عن المتغيرات: يتم التصريح عنها كما يلي:</li>
-</ul>
-
-<p>Var ou Variable &lt;Identificateur&gt; : &lt;Type&gt;</p>
-
-<ul>
-<li>Var ou Variable هما كلمتان محجوزتان تسمحان بالتصريح عن المتغيرات.</li>
-<li>Identificateur هو اسم المعرف الذي يطلق على المتغير.</li>
-<li>Type هو نوع المتغير.</li>
-</ul>
-
-<p>أمثلة:</p>
-
-<pre><code class="text">
-Variable
-Nom, Prénom : chaine de caractères
-x, y, z : réel
-</code></pre>
-
-<h4>العمليات الحسابية</h4>
+<h2>خريطة التعلم في أسبوعين</h2>
 
 <table>
-<tr><th>الصيغة</th><th>الرمز</th><th>العملية الحسابية</th></tr>
-<tr><td>A = X + Y</td><td>+</td><td>الجمع</td></tr>
-<tr><td>A = 5 - 3</td><td>-</td><td>الطرح</td></tr>
-<tr><td>A = 2 * B</td><td>*</td><td>الضرب</td></tr>
-<tr><td>A = X / Y</td><td>/</td><td>القسمة</td></tr>
-<tr><td>A = C ^ 2</td><td>^</td><td>الأس</td></tr>
-<tr><td>A = 7 * ( M - N )</td><td>( )</td><td>الأقواس</td></tr>
+<tr><th>الحصة</th><th>السؤال المركزي</th><th>ناتج التعلّم القابل للملاحظة</th></tr>
+<tr><td>الأسبوع 1 — نظري (1 سا)</td><td>ما الخوارزمية؟ وكيف ننتقل من مسألة إلى خطوات؟</td><td>يحلّل مسألة إلى مدخلات / معالجة / مخرجات ويكتب هيكلها العام.</td></tr>
+<tr><td>الأسبوع 1 — تطبيقي (1 سا)</td><td>ما نوع كل معطى؟ وكيف نسمّيه ونصرّح عنه؟</td><td>يصنّف معطيات، ويصحّح أسماء خاطئة، ويكتب جزء التصريحات.</td></tr>
+<tr><td>الأسبوع 2 — نظري (1 سا)</td><td>كيف يحسب الحاسوب العبارات؟</td><td>يحسب قيمة عبارات حسابية ومنطقية ويقرأ خوارزمية المجموع سطرًا بسطر.</td></tr>
+<tr><td>الأسبوع 2 — تطبيقي (1 سا)</td><td>هل تعمل خوارزميتي فعلًا؟</td><td>يكتب خوارزميتي المجموع والمقارنة ويجرّبهما بقيم معطاة.</td></tr>
 </table>
 
-<h4>عمليات المقارنة</h4>
+<blockquote><p><strong>فكرة الوحدة:</strong> الحاسوب لا «يفهم» ما تريد؛ إنه ينفّذ بدقة ما تكتبه له فقط. الخوارزمية هي فنّ كتابة الحلّ بطريقة لا تترك للآلة أي مجال للتخمين.</p></blockquote>
+
+<hr>
+
+<h2>1. ما هي الخوارزمية؟</h2>
+
+<h3>أ. خوارزميات تستعملها كل يوم</h3>
+
+<p>قبل الحاسوب، أنت تتبع خوارزميات طوال يومك دون أن تسمّيها كذلك:</p>
 
 <table>
-<tr><th>المعنى</th><th>العملية</th></tr>
-<tr><td>يساوي</td><td>=</td></tr>
-<tr><td>يختلف</td><td>&lt;&gt;</td></tr>
-<tr><td>أصغر من</td><td>&lt;</td></tr>
-<tr><td>أصغر من أو يساوي</td><td>&lt;=</td></tr>
-<tr><td>أكبر من</td><td>&gt;</td></tr>
-<tr><td>أكبر من أو يساوي</td><td>&gt;=</td></tr>
+<tr><th>الموقف</th><th>المدخلات</th><th>الخطوات</th><th>المخرجات</th></tr>
+<tr><td>وصفة كسرة المطلوع</td><td>سميد، ماء، خميرة، ملح</td><td>اعجن، اترك العجين يختمر، اطهُ على الطاجين</td><td>خبز جاهز</td></tr>
+<tr><td>تطبيق الملاحة (GPS)</td><td>موقعك، وجهتك</td><td>احسب الطريق، «انعطف يمينًا بعد 200 م»...</td><td>وصولك</td></tr>
+<tr><td>آلة بيع المشروبات</td><td>القطع النقدية، رقم المشروب</td><td>تحقّق من المبلغ، أخرِج المشروب، احسب الباقي</td><td>المشروب + الباقي</td></tr>
+<tr><td>قواعد لعبة الدومينو</td><td>قطع اللاعبين</td><td>العب قطعة تطابق الطرف، وإلا اسحب أو مرّر</td><td>الفائز</td></tr>
 </table>
 
-<h4>أولوية العمليات الحسابية: عند إنجاز عملية حسابية يجب احترام الأولويات التالية:</h4>
+<p>كلها تشترك في شيء واحد: <strong>معطيات</strong> تدخل، و<strong>خطوات مرتبة</strong> تُنفّذ، و<strong>نتيجة</strong> تخرج.</p>
 
-<ul>
-<li>1) الأقواس ( )</li>
-<li>2) الأس</li>
-<li>3) الضرب * والقسمة /: يتم تنفيذ عمليات الضرب والقسمة بدءًا من اليسار إلى اليمين.</li>
-<li>4) الجمع + والطرح -: يتم تنفيذ عمليات الجمع والطرح بدءًا من اليسار إلى اليمين.</li>
-</ul>
+<h3>ب. أصل الكلمة</h3>
 
-<h4>التعليمات الأساسية للغة الخوارزمية:</h4>
+<p>كلمة «خوارزمية» مشتقة من اسم العالم المسلم <strong>محمد بن موسى الخوارزمي</strong> (نحو 780 – 850م)، من إقليم خوارزم، عمل في <strong>بيت الحكمة</strong> ببغداد. ألّف كتاب «<strong>الجبر والمقابلة</strong>» الذي أعطى الرياضيات كلمة «الجبر» (Algebra)، وكتابًا في الحساب بالأرقام الهندية نُقل إلى اللاتينية، فصار اسمه هناك <em>Algoritmi</em>، ثم صارت الكلمة تعني كل طريقة حساب منظمة خطوة بخطوة، واليوم: أساس كل برنامج حاسوب.</p>
 
-<p>التعليمة: هي أمر يسمح للجهاز بتحديد العملية المراد إنجازها.</p>
+<h3>ج. التعريف</h3>
 
-<p>يمكن التعبير عن مسار حل مسألة ما لكتابة خوارزمية بواسطة التعليمات الخمسة الآتية:</p>
+<p><strong>الخوارزمية</strong> (Algorithm / <em>Algorithme</em>) هي مجموعة <strong>منتهية</strong> من الخطوات <strong>المرتبة</strong> و<strong>الدقيقة</strong>، تنطلق من معطيات (مدخلات) وتؤدي إلى حلّ مسألة (مخرجات).</p>
+
+<h3>د. خصائص الخوارزمية السليمة</h3>
+
+<table>
+<tr><th>الخاصية</th><th>معناها</th><th>مثال على مخالفتها</th></tr>
+<tr><td><strong>منتهية</strong> (Finite / <em>Finie</em>)</td><td>تتوقف بعد عدد محدود من الخطوات</td><td>«استمر في التحريك» دون أن تقول متى تتوقف</td></tr>
+<tr><td><strong>دقيقة</strong> (Precise / <em>Précise</em>)</td><td>كل خطوة لها معنى واحد لا غموض فيه</td><td>«أضِف قليلًا من الملح» — كم هو «قليل»؟</td></tr>
+<tr><td><strong>لها مدخلات ومخرجات</strong> (Input / Output)</td><td>تأخذ معطيات وتعطي نتيجة واحدة على الأقل</td><td>خوارزمية تحسب ولا تُظهر أي نتيجة</td></tr>
+<tr><td><strong>فعّالة</strong> (Effective / <em>Efficace</em>)</td><td>كل خطوة قابلة للتنفيذ فعلًا، والمجموع يؤدي إلى الحل الصحيح</td><td>«اقسم على صفر»، أو «احزر الرقم السري»</td></tr>
+</table>
+
+<blockquote><p><strong>تطبيق سريع (3 دقائق):</strong> صديقك كتب هذه التعليمات لصنع الشاي: «سخّن الماء، ضع الشاي، أضف السكر حسب ذوقك، اتركه حتى يصبح جيدًا». حدّد خطوتين تخالفان خاصية <strong>الدقة</strong>، وأعد كتابتهما بدقة.</p></blockquote>
+
+<hr>
+
+<h2>2. من المسألة إلى الخوارزمية</h2>
+
+<h3>أ. التحليل: مدخلات، معالجة، مخرجات</h3>
+
+<p>قبل أن نكتب أي سطر، نطرح ثلاثة أسئلة:</p>
 
 <ol>
-<li>تعليمة الإسناد.</li>
-<li>تعليمة القراءة (أو إدخال المعطيات).</li>
-<li>تعليمة الكتابة (أو إظهار النتائج).</li>
-<li>التعليمة الشرطية.</li>
-<li>التعليمة التكرارية.</li>
+<li><strong>ماذا أعرف؟</strong> ← المدخلات (Inputs / <em>Entrées</em>): المعطيات التي يُدخلها المستخدم.</li>
+<li><strong>ماذا أفعل بها؟</strong> ← المعالجة (Processing / <em>Traitement</em>): الحسابات والقرارات.</li>
+<li><strong>ماذا أريد أن أحصل عليه؟</strong> ← المخرجات (Outputs / <em>Sorties</em>): النتيجة التي تُعرض.</li>
 </ol>
 
-<p>##### 1. تعليمة الإسناد Instruction d&#x27;affectation</p>
+<table>
+<tr><th>المسألة</th><th>المدخلات</th><th>المعالجة</th><th>المخرجات</th></tr>
+<tr><td>مجموع عددين</td><td>العددان a و b</td><td>s ← a + b</td><td>المجموع s</td></tr>
+<tr><td>مساحة مستطيل</td><td>الطول، العرض</td><td>المساحة ← الطول × العرض</td><td>المساحة</td></tr>
+<tr><td>ثمن 3 كتب متماثلة</td><td>ثمن الكتاب الواحد</td><td>الثمن الكلي ← الثمن × 3</td><td>الثمن الكلي</td></tr>
+</table>
 
-<p>تسمح بإسناد قيمة محددة أو نتيجة صيغة إلى متغير ما في الخانة الذاكرة (case mémoire) المحجوزة له.</p>
+<h3>ب. من المخطط الانسيابي إلى الخوارزمية</h3>
 
-<p>الشكل النظامي (Syntaxe):</p>
+<p>في <strong>الوحدة 15</strong> رسمت الحلّ بالأشكال. الخوارزمية تكتب <strong>الحلّ نفسه</strong> بالكلمات. كل شكل يقابله سطر:</p>
 
-<pre><code class="text">
-Nom de variable ← Expression
-</code></pre>
+<table>
+<tr><th>الشكل في المخطط الانسيابي</th><th>معناه</th><th>ما يقابله في الخوارزمية</th></tr>
+<tr><td>الشكل البيضوي «بداية»</td><td>بداية الحل</td><td><code>Début</code> (بداية)</td></tr>
+<tr><td>متوازي الأضلاع (إدخال)</td><td>قراءة معطى</td><td><code>Lire(...)</code> (اقرأ)</td></tr>
+<tr><td>المستطيل</td><td>عملية حسابية</td><td><code>s ← a + b</code> (إسناد)</td></tr>
+<tr><td>المعيّن</td><td>سؤال / قرار</td><td><code>Si ... Alors</code> (إذا ... فإن)</td></tr>
+<tr><td>متوازي الأضلاع (إخراج)</td><td>عرض نتيجة</td><td><code>Ecrire(...)</code> (اكتب)</td></tr>
+<tr><td>الشكل البيضوي «نهاية»</td><td>نهاية الحل</td><td><code>Fin</code> (نهاية)</td></tr>
+</table>
 
-<ul>
-<li>Nom de variable يمثل اسم المعرف (Identificateur).</li>
-<li>Expression قد تكون قيمة ثابتة أو نتيجة دالة أو اسم متغير آخر، كما يمكن أن تكون نتيجة لعبارة حسابية.</li>
-</ul>
+<hr>
 
-<p>المعنى: المتغير يأخذ قيمة الصيغة.</p>
+<h2>3. الهيكل العام للخوارزمية</h2>
 
-<p>مثال:</p>
+<h3>أ. الأجزاء الثلاثة</h3>
 
-<pre><code class="text">
-Surface_rect ← largeur * longueur
-PI ← 3.14
-</code></pre>
-
-<p>##### 2. تعليمة القراءة Instruction de lecture</p>
-
-<p>تسمح بإدخال قيمة إلى الجهاز بواسطة لوحة المفاتيح ووضعها في خانة ذاكرة.</p>
-
-<p>الشكل النظامي (Syntaxe):</p>
-
-<pre><code class="text">
-Lire(Nom de variable)
-</code></pre>
-
-<p>المعنى: هذه التعليمة أمر يطلب أخذ القيمة المعطاة بواسطة لوحة المفاتيح ووضعها في الخانة الذاكرة المحجوزة للمتغير.</p>
-
-<p>أمثلة:</p>
-
-<ul>
-<li>Lire(N): معناه ضع القيمة المعطاة من لوحة المفاتيح في الخانة الذاكرة المحجوزة لـ N.</li>
-<li>Lire(a, b, c): معناه ضع القيم المعطاة من لوحة المفاتيح في الخانات الذاكرة المحجوزة لـ a، b و c على الترتيب.</li>
-</ul>
-
-<p>##### 3. تعليمة الكتابة Instruction d&#x27;écriture</p>
-
-<p>تسمح بإظهار قيمة معينة على الشاشة.</p>
-
-<p>الشكل النظامي (Syntaxe):</p>
+<p>كل خوارزمية تُكتب بالترتيب نفسه، مثل استمارة لها خانات ثابتة:</p>
 
 <pre><code class="text">
-Ecrire(&quot;Expression&quot;)
-</code></pre>
-
-<p>المعنى: هذه التعليمة أمر بإظهار الصيغة المحصورة بين المزدوجتين على الشاشة.</p>
-
-<p>أمثلة:</p>
-
-<pre><code class="text">
-Ecrire(&quot;Entrez la valeur de S&quot;)
-</code></pre>
-
-<p>هذه التعليمة تسمح بإظهار الصيغة الآتية على الشاشة: Entrez la valeur de S</p>
-
-<pre><code class="text">
-Ecrire(&quot;2&quot;)
-Ecrire(5 - 3)
-</code></pre>
-
-<p>هاتان التعليمتان تسمحان بإظهار 2 على الشاشة.</p>
-
-<p>##### 4. التعليمة الشرطية Instruction conditionnelle</p>
-
-<p>تطلب الخوارزمية في بعض الحالات أثناء الكتابة إلى بعض التعليمات بالتناوب (غير متسلسلة)، يطلق عليها اسم التعليمات الشرطية التي تقيد بشرط معين، إذا تحقق هذا الأخير نقوم بعملية وإلا نقوم بعملية أخرى. نميز نوعين من التعليمات الشرطية هما:</p>
-
-<p>###### أ. التعليمة الشرطية البسيطة:</p>
-
-<p>إذا تحقق الشرط تنفذ التعليمة.</p>
-
-<p>الشكل النظامي:</p>
-
-<pre><code class="text">
-Si &lt;Condition&gt; alors
-    &lt;Instructions&gt;
-</code></pre>
-
-<p>المعنى: تنفذ مجموعة التعليمات &lt;Instructions&gt; إذا تحقق الشرط &lt;Condition&gt;.</p>
-
-<p>###### ب. التعليمة الشرطية الاختيارية:</p>
-
-<p>إذا تحقق الشرط تنفذ مجموعة من التعليمات، وإلا تنفذ مجموعة أخرى من التعليمات.</p>
-
-<p>الشكل النظامي:</p>
-
-<pre><code class="text">
-Si &lt;Condition&gt; alors
-    &lt;liste d&#x27;instructions 1&gt;
-Sinon
-    &lt;liste d&#x27;instructions 2&gt;
-FinSi
-</code></pre>
-
-<p><img src="artifacts/image_000272_4a22842ccfef36a02853ca548f64fc96e8e3c100c4d0eb07daabd06bcde12526.png" alt="Image"></p>
-
-<p>Suite de l&#x27;algorithme</p>
-
-<p>مثال: كتابة الخوارزمية التي تسمح بإظهار على الشاشة نتيجة نجاح تلميذ أو رسوبه.</p>
-
-<pre><code class="text">
-Algorithme Elève_admis
-Variable
-    Moyenne : réel
+Algorithme Nom_Algorithme
+Const
+    NOM_CONSTANTE = valeur
+Var
+    nom_variable : Type
 Début
-    Lire(Moyenne)
-    Si Moyenne &gt;= 10 Alors
-        Ecrire(&quot;L&#x27;élève est admis&quot;)
+    instruction 1
+    instruction 2
+Fin
+</code></pre>
+
+<table>
+<tr><th>الجزء</th><th>الأسطر</th><th>دوره</th></tr>
+<tr><td><strong>الرأس</strong> (Header / <em>En-tête</em>)</td><td><code>Algorithme Nom</code></td><td>يعطي الخوارزمية اسمًا يدلّ على المسألة</td></tr>
+<tr><td><strong>التصريحات</strong> (Declarations / <em>Déclarations</em>)</td><td><code>Const</code> ثم <code>Var</code></td><td>يحجز مكانًا في الذاكرة لكل ثابت ومتغير قبل استعماله</td></tr>
+<tr><td><strong>الجسم</strong> (Body / <em>Corps</em>)</td><td>من <code>Début</code> إلى <code>Fin</code></td><td>التعليمات بالترتيب: مدخلات ← معالجة ← مخرجات</td></tr>
+</table>
+
+<h3>ب. الكلمات المحجوزة</h3>
+
+<p><strong>الكلمات المحجوزة</strong> (Reserved words / <em>Mots réservés</em>) كلمات لها معنى ثابت في لغة الخوارزميات، فلا يجوز استعمالها اسمًا لمتغير. نكتبها بالفرنسية كما في Algobox والامتحانات، ونقرؤها بالعربية:</p>
+
+<table>
+<tr><th>الكلمة</th><th>القراءة بالعربية</th><th>دورها</th></tr>
+<tr><td><code>Algorithme</code></td><td>خوارزمية</td><td>يسبق اسم الخوارزمية</td></tr>
+<tr><td><code>Const</code></td><td>ثوابت</td><td>يفتح قائمة الثوابت</td></tr>
+<tr><td><code>Var</code></td><td>متغيرات</td><td>يفتح قائمة المتغيرات</td></tr>
+<tr><td><code>Début</code> / <code>Fin</code></td><td>بداية / نهاية</td><td>يحدّان جسم الخوارزمية</td></tr>
+</table>
+
+<blockquote><p>ستلتقي كلمات محجوزة أخرى (<code>Lire</code>، <code>Ecrire</code>، <code>Si</code>...) في المثالين الأخيرين من هذه الوحدة، ثم بالتفصيل في الوحدة 17.</p></blockquote>
+
+<hr>
+
+<h2>4. أنواع البيانات</h2>
+
+<h3>أ. الأنواع الخمسة الأساسية</h3>
+
+<p><strong>النوع</strong> (Data type / <em>Type</em>) يحدد مجموعة القيم التي يقبلها المعطى، والعمليات الممكنة عليه، والمساحة التي يحتاجها في الذاكرة.</p>
+
+<table>
+<tr><th>النوع</th><th>القراءة</th><th>ما يحتويه</th><th>أمثلة</th></tr>
+<tr><td><code>Entier</code></td><td>عدد صحيح (Integer)</td><td>أعداد بلا فاصلة، موجبة أو سالبة</td><td><code>17</code>، <code>-4</code>، <code>0</code></td></tr>
+<tr><td><code>Réel</code></td><td>عدد حقيقي (Real / Float)</td><td>أعداد بفاصلة عشرية</td><td><code>14.25</code>، <code>-0.5</code>، <code>3.14</code></td></tr>
+<tr><td><code>Caractère</code></td><td>حرف (Character)</td><td>رمز واحد بين علامتي <code>&#x27; &#x27;</code></td><td><code>&#x27;A&#x27;</code>، <code>&#x27;7&#x27;</code>، <code>&#x27;?&#x27;</code></td></tr>
+<tr><td><code>Chaîne</code></td><td>سلسلة حرفية (String)</td><td>نص بين علامتي <code>&quot; &quot;</code></td><td><code>&quot;Alger&quot;</code>، <code>&quot;1AS&quot;</code></td></tr>
+<tr><td><code>Booléen</code></td><td>منطقي (Boolean)</td><td>قيمتان فقط: <code>Vrai</code> / <code>Faux</code></td><td><code>Vrai</code> (صحيح)، <code>Faux</code> (خطأ)</td></tr>
+</table>
+
+<blockquote><p><strong>انتبه:</strong> في الخوارزمية نكتب الفاصلة العشرية <strong>نقطة</strong>: <code>14.25</code> لا <code>14,25</code>. و<code>17</code> عدد، أما <code>&quot;17&quot;</code> فنصّ لا يُجمع.</p></blockquote>
+
+<h3>ب. تمرين تصنيف</h3>
+
+<p>حدّد النوع المناسب لكل معطى: (1) عدد تلاميذ قسمك، (2) معدّلك في الفصل الأول، (3) اسم ولايتك، (4) هل التلميذ ناجح؟، (5) فوج التلميذ <code>&#x27;A&#x27;</code> أو <code>&#x27;B&#x27;</code>، (6) درجة الحرارة في تمنراست اليوم، (7) رقم هاتف يبدأ بـ 0، (8) <code>&quot;2026&quot;</code>.</p>
+
+<hr>
+
+<h2>5. قواعد تسمية المعرّفات</h2>
+
+<h3>أ. القواعد</h3>
+
+<p><strong>المعرّف</strong> (Identifier / <em>Identificateur</em>) هو الاسم الذي نعطيه لخوارزمية أو ثابت أو متغير. قواعده:</p>
+
+<ol>
+<li>يتكون من <strong>حروف لاتينية</strong> (<code>a</code>–<code>z</code>، <code>A</code>–<code>Z</code>) و<strong>أرقام</strong> (<code>0</code>–<code>9</code>) والرمز <code>_</code> فقط.</li>
+<li>يبدأ <strong>بحرف</strong> دائمًا، لا برقم ولا بـ <code>_</code>.</li>
+<li><strong>لا فراغ</strong> فيه: نكتب <code>prix_total</code> لا <code>prix total</code>.</li>
+<li><strong>لا حروف بنبرة</strong> ولا حروف عربية: <code>prenom</code> لا <code>prénom</code>.</li>
+<li><strong>ليس كلمة محجوزة</strong>: لا <code>Var</code> ولا <code>Fin</code> ولا <code>Si</code>.</li>
+<li><strong>ذو دلالة</strong>: <code>largeur_rect</code> أوضح من <code>lr</code>.</li>
+<li><strong>اصطلاح:</strong> أسماء الثوابت بحروف كبيرة: <code>PI</code>، <code>TVA</code>.</li>
+</ol>
+
+<blockquote><p><strong>تصحيح للكتاب القديم:</strong> كانت بعض الأمثلة تستعمل أسماء مثل <code>Prénom</code> و<code>Elève_admis</code>، وهي مخالفة للقاعدة 4. الصحيح: <code>prenom</code> و<code>Eleve_admis</code>.</p></blockquote>
+
+<h3>ب. تمرين: صالح أم غير صالح؟</h3>
+
+<p>ضع ✔ أمام المعرّف الصالح، و✘ أمام غير الصالح مع ذكر رقم القاعدة المخالفة:</p>
+
+<p><code>moyenne</code> ، <code>2eme_note</code> ، <code>note_2</code> ، <code>prix total</code> ، <code>prénom</code> ، <code>nb-eleves</code> ، <code>Var</code> ، <code>_total</code> ، <code>NbEleves</code> ، <code>مجموع</code></p>
+
+<hr>
+
+<h2>6. التصريح عن الثوابت والمتغيرات</h2>
+
+<h3>أ. الذاكرة علب ذات بطاقات</h3>
+
+<p>تخيّل ذاكرة الحاسوب <strong>رفًّا من العلب</strong>:</p>
+
+<ul>
+<li><strong>اسم المعرّف</strong> هو البطاقة الملصقة على العلبة.</li>
+<li><strong>النوع</strong> هو شكل العلبة: علبة <code>Entier</code> لا تتسع لنص.</li>
+<li><strong>القيمة</strong> هي ما بداخل العلبة الآن.</li>
+<li><strong>المتغير</strong> (Variable / <em>Variable</em>) علبة مفتوحة: يمكن تغيير محتواها أثناء التنفيذ.</li>
+<li><strong>الثابت</strong> (Constant / <em>Constante</em>) علبة مختومة: قيمتها تُحدَّد مرة واحدة ولا تتغير.</li>
+</ul>
+
+<p><strong>التصريح</strong> (Declaration) يعني: «احجز لي علبة بهذا الاسم وهذا الشكل قبل أن أستعملها». لا يجوز استعمال معرّف لم يُصرَّح عنه.</p>
+
+<h3>ب. التصريح عن الثوابت</h3>
+
+<p>الصيغة: <code>NOM = valeur</code> تحت الكلمة <code>Const</code>.</p>
+
+<pre><code class="text">
+Const
+    PI = 3.14
+    NB_MATIERES = 3
+    VILLE = &quot;Oran&quot;
+</code></pre>
+
+<h3>ج. التصريح عن المتغيرات</h3>
+
+<p>الصيغة: <code>nom1, nom2 : Type</code> تحت الكلمة <code>Var</code>.</p>
+
+<pre><code class="text">
+Var
+    nom, prenom : Chaîne
+    age : Entier
+    moyenne : Réel
+    groupe : Caractère
+    admis : Booléen
+</code></pre>
+
+<blockquote><p><strong>قاعدة:</strong> متغيرات من النوع نفسه تُكتب في سطر واحد تفصل بينها فاصلة <code>,</code>.</p></blockquote>
+
+<h3>د. تمرين: صرّح</h3>
+
+<p>مسألة: <strong>حساب ثمن تذاكر السينما</strong>. ثمن التذكرة الواحدة ثابت <strong>400 دج</strong>، والمستخدم يُدخل اسمه وعدد التذاكر، والخوارزمية تحسب الثمن الكلي.</p>
+
+<p>اكتب جزء التصريحات كاملًا (ثابت واحد وثلاثة متغيرات)، واختر أسماء صالحة وذات دلالة.</p>
+
+<hr>
+
+<h2>7. العمليات والعبارات</h2>
+
+<p><strong>العبارة</strong> (Expression) تركيب من قيم ومتغيرات وعمليات، يُحسب ليعطي قيمة واحدة. مثل: <code>a + b * 2</code>.</p>
+
+<h3>أ. العمليات الحسابية</h3>
+
+<table>
+<tr><th>الرمز</th><th>العملية</th><th>مثال</th><th>النتيجة</th></tr>
+<tr><td><code>+</code></td><td>الجمع</td><td><code>7 + 3</code></td><td><code>10</code></td></tr>
+<tr><td><code>-</code></td><td>الطرح</td><td><code>7 - 3</code></td><td><code>4</code></td></tr>
+<tr><td><code>*</code></td><td>الضرب</td><td><code>7 * 3</code></td><td><code>21</code></td></tr>
+<tr><td><code>/</code></td><td>القسمة</td><td><code>7 / 2</code></td><td><code>3.5</code></td></tr>
+<tr><td><code>div</code></td><td>حاصل القسمة الصحيحة</td><td><code>17 div 5</code></td><td><code>3</code></td></tr>
+<tr><td><code>mod</code></td><td>باقي القسمة الصحيحة</td><td><code>17 mod 5</code></td><td><code>2</code></td></tr>
+</table>
+
+<blockquote><p><strong>مثال من آلة البيع:</strong> معك 75 دج وتريد قطعًا من فئة 20 دج: <code>75 div 20 = 3</code> قطع، و<code>75 mod 20 = 15</code> دج باقية. ونستعمل <code>mod</code> أيضًا لمعرفة الزوجي: <code>n mod 2 = 0</code> يعني أن <code>n</code> زوجي.</p></blockquote>
+
+<h3>ب. عمليات المقارنة</h3>
+
+<p>نتيجة المقارنة دائمًا قيمة منطقية: <code>Vrai</code> أو <code>Faux</code>.</p>
+
+<table>
+<tr><th>الرمز</th><th><code>=</code></th><th><code>≠</code></th><th><code>&lt;</code></th><th><code>&gt;</code></th><th><code>≤</code></th><th><code>≥</code></th></tr>
+<tr><td>المعنى</td><td>يساوي</td><td>يختلف عن</td><td>أصغر من</td><td>أكبر من</td><td>أصغر أو يساوي</td><td>أكبر أو يساوي</td></tr>
+<tr><td>مثال</td><td><code>5 = 5</code></td><td><code>5 ≠ 5</code></td><td><code>3 &lt; 8</code></td><td><code>3 &gt; 8</code></td><td><code>8 ≤ 8</code></td><td><code>2 ≥ 9</code></td></tr>
+<tr><td>النتيجة</td><td>Vrai</td><td>Faux</td><td>Vrai</td><td>Faux</td><td>Vrai</td><td>Faux</td></tr>
+</table>
+
+<h3>ج. العمليات المنطقية</h3>
+
+<p>تربط بين شرطين أو تعكس شرطًا:</p>
+
+<table>
+<tr><th>العملية</th><th>القراءة</th><th>تعطي <code>Vrai</code> عندما...</th></tr>
+<tr><td><code>ET</code></td><td>و (AND)</td><td>يكون الشرطان صحيحين معًا</td></tr>
+<tr><td><code>OU</code></td><td>أو (OR)</td><td>يكون أحد الشرطين على الأقل صحيحًا</td></tr>
+<tr><td><code>NON</code></td><td>ليس (NOT)</td><td>يكون الشرط خاطئًا</td></tr>
+</table>
+
+<table>
+<tr><th>A</th><th>B</th><th><code>A ET B</code></th><th><code>A OU B</code></th><th><code>NON A</code></th></tr>
+<tr><td>Vrai</td><td>Vrai</td><td>Vrai</td><td>Vrai</td><td>Faux</td></tr>
+<tr><td>Vrai</td><td>Faux</td><td>Faux</td><td>Vrai</td><td>Faux</td></tr>
+<tr><td>Faux</td><td>Vrai</td><td>Faux</td><td>Vrai</td><td>Vrai</td></tr>
+<tr><td>Faux</td><td>Faux</td><td>Faux</td><td>Faux</td><td>Vrai</td></tr>
+</table>
+
+<blockquote><p><strong>من الحياة:</strong> لدخول الملعب تحتاج «تذكرة <strong>ET</strong> بطاقة هوية». لتدفع ثمن الخبز تقبل «نقدًا <strong>OU</strong> بطاقة».</p></blockquote>
+
+<h3>د. أولوية العمليات</h3>
+
+<p>عند حساب عبارة نتبع هذا الترتيب، من الأعلى أولوية إلى الأدنى، والعمليات من المستوى نفسه تُحسب من اليسار إلى اليمين:</p>
+
+<p><strong>الأقواس <code>( )</code></strong> ← <strong><code>NON</code></strong> ← *<em><code></em></code> <code>/</code> <code>div</code> <code>mod</code><strong> ← </strong><code>+</code> <code>-</code><strong> ← </strong>المقارنات<strong> ← </strong><code>ET</code><strong> ← </strong><code>OU</code>**</p>
+
+<p>مثال محلول: <code>2 + 3 <em> 4 = 2 + 12 = 14</code>، أما <code>(2 + 3) </em> 4 = 5 * 4 = 20</code>.</p>
+
+<h3>هـ. تمرين: احسب قيمة العبارة</h3>
+
+<p>نفترض أن <code>a = 6</code> و<code>b = 4</code>. احسب قيمة كل عبارة:</p>
+
+<p>(1) <code>10 - 4 / 2</code> ، (2) <code>17 div 5 + 17 mod 5</code> ، (3) <code>a mod b * 2</code> ، (4) <code>(a + b) / 2</code> ، (5) <code>(a &gt; 5) ET (b &gt; 5)</code> ، (6) <code>(a &gt; 5) OU (b &gt; 5)</code> ، (7) <code>NON (a ≤ b)</code> ، (8) <code>a mod 2 = 0</code>.</p>
+
+<hr>
+
+<h2>8. أول خوارزمية كاملة: مجموع عددين</h2>
+
+<h3>أ. التحليل</h3>
+
+<ul>
+<li><strong>المدخلات:</strong> عددان صحيحان <code>a</code> و<code>b</code>.</li>
+<li><strong>المعالجة:</strong> <code>s ← a + b</code>.</li>
+<li><strong>المخرجات:</strong> المجموع <code>s</code>.</li>
+</ul>
+
+<h3>ب. الخوارزمية</h3>
+
+<pre><code class="text">
+Algorithme Somme_Deux_Nombres
+Var
+    a, b, s : Entier
+Début
+    Ecrire(&quot;Donner deux nombres :&quot;)
+    Lire(a, b)
+    s ← a + b
+    Ecrire(&quot;La somme est : &quot;, s)
+Fin
+</code></pre>
+
+<h3>ج. قراءة سطرًا بسطر</h3>
+
+<table>
+<tr><th>السطر</th><th>القراءة بالعربية</th><th>ماذا يحدث؟</th></tr>
+<tr><td><code>Algorithme Somme_Deux_Nombres</code></td><td>خوارزمية مجموع عددين</td><td>الرأس: اسم الخوارزمية</td></tr>
+<tr><td><code>Var a, b, s : Entier</code></td><td>متغيرات a، b، s أعداد صحيحة</td><td>حجز ثلاث علب في الذاكرة</td></tr>
+<tr><td><code>Début</code></td><td>بداية</td><td>بداية التعليمات</td></tr>
+<tr><td><code>Ecrire(&quot;Donner deux nombres :&quot;)</code></td><td>اكتب</td><td>عرض رسالة توجّه المستخدم</td></tr>
+<tr><td><code>Lire(a, b)</code></td><td>اقرأ</td><td>ما يكتبه المستخدم يوضع في العلبتين a ثم b</td></tr>
+<tr><td><code>s ← a + b</code></td><td>يُسند إلى s</td><td>حساب المجموع ووضعه في العلبة s</td></tr>
+<tr><td><code>Ecrire(&quot;La somme est : &quot;, s)</code></td><td>اكتب</td><td>عرض الرسالة ثم قيمة s</td></tr>
+<tr><td><code>Fin</code></td><td>نهاية</td><td>انتهاء التنفيذ</td></tr>
+</table>
+
+<p><strong>تجربة:</strong> المدخلات <code>7</code> و<code>5</code> ← المخرجات: <code>La somme est : 12</code>.</p>
+
+<blockquote><p><strong>ملاحظات:</strong> السهم <code>←</code> يعني «يأخذ القيمة»، وهو ليس علامة مساواة رياضية. سندرس تعليمات <strong>الإسناد</strong> <code>←</code> و<strong>القراءة</strong> <code>Lire</code> و<strong>الكتابة</strong> <code>Ecrire</code> بالتفصيل في <strong>الوحدة 17</strong>.</p></blockquote>
+
+<hr>
+
+<h2>9. مثال موجّه: مقارنة عددين</h2>
+
+<h3>أ. التحليل والربط بالمخطط</h3>
+
+<ul>
+<li><strong>المدخلات:</strong> عددان <code>a</code> و<code>b</code>.</li>
+<li><strong>المعالجة:</strong> سؤال واحد: هل <code>a &gt; b</code>؟</li>
+<li><strong>المخرجات:</strong> رسالة تُظهر العدد الأكبر.</li>
+</ul>
+
+<p>في المخطط الانسيابي (الوحدة 15) رسمنا هذا السؤال <strong>معيّنًا</strong> له مخرجان: «نعم» و«لا». في الخوارزمية يصبح المعيّن تعليمة <strong>شرطية</strong>: <code>Si ... Alors ... Sinon ... FinSi</code> (إذا ... فإن ... وإلا ... نهاية إذا).</p>
+
+<h3>ب. الخوارزمية</h3>
+
+<pre><code class="text">
+Algorithme Comparer_Deux_Nombres
+Var
+    a, b : Entier
+Début
+    Ecrire(&quot;Donner deux nombres :&quot;)
+    Lire(a, b)
+    Si a &gt; b Alors
+        Ecrire(&quot;Le plus grand : &quot;, a)
     Sinon
-        Ecrire(&quot;L&#x27;élève est ajourné&quot;)
+        Ecrire(&quot;Le plus grand : &quot;, b)
     FinSi
 Fin
 </code></pre>
 
-<p><img src="artifacts/image_000273_d8c26e2715219d300930bef8327e0050ed8210d5e3a9662be53104f080d67fc0.png" alt="Image"></p>
+<p>فرع «نعم» في المعيّن هو الأسطر بين <code>Alors</code> و<code>Sinon</code>، وفرع «لا» هو الأسطر بين <code>Sinon</code> و<code>FinSi</code>.</p>
 
-<p>##### 5. التعليمة التكرارية Instruction répétitive</p>
+<h3>ج. جرّبها</h3>
 
-<p>يستعمل هذا النوع لتكرار تنفيذ مجموعة من التعليمات، يرتبط هذا التكرار بتحقق شرط معين، ومادام هذا الشرط محققًا يعاد تنفيذ مجموعة من التعليمات. هناك نوعان من التعليمات التكرارية:</p>
+<table>
+<tr><th>المدخلات (a ، b)</th><th>الشرط <code>a &gt; b</code></th><th>المخرجات المنتظرة</th></tr>
+<tr><td><code>7</code> ، <code>3</code></td><td>Vrai</td><td><code>Le plus grand : 7</code></td></tr>
+<tr><td><code>2</code> ، <code>9</code></td><td>Faux</td><td><code>Le plus grand : 9</code></td></tr>
+<tr><td><code>5</code> ، <code>5</code></td><td>Faux</td><td><code>Le plus grand : 5</code></td></tr>
+</table>
 
-<ul>
-<li>التعليمة التكرارية Tant que</li>
-<li>التعليمة التكرارية Pour</li>
-</ul>
+<blockquote><p><strong>سؤال للتفكير:</strong> في الحالة الأخيرة النتيجة صحيحة، لكن كيف نجعل الخوارزمية تكتب «العددان متساويان»؟ ستكتشف الجواب مع <strong>التعليمات الشرطية</strong> في الوحدة 17.</p></blockquote>
 
-<p><img src="artifacts/image_000274_ad02909c3a2155e0eb7ab01524f384d6fbbd40d88fd1abe70412186b3a6989f6.png" alt="Image"></p>
+<hr>
 
-<p>###### أ. التعليمة التكرارية Tant que</p>
+<h2>10. جسر نحو Python (إثراء)</h2>
 
-<p>في حالة عدم معرفة عدد التكرارات لتنفيذ التعليمات وارتباط التكرار بتحقيق شرط معين نستعمل الحلقة Tant que.</p>
+<blockquote><p><strong>هذا القسم اختياري.</strong> لغات البرمجة الحقيقية تترجم الخوارزمية نفسها بكلمات أخرى: <code>Lire(a)</code> تصبح <code>a = int(input())</code>، و<code>←</code> تصبح <code>=</code>، و<code>Ecrire</code> تصبح <code>print</code>. هذه خوارزمية المجموع بلغة <strong>Python</strong>:</p></blockquote>
 
-<p>الشكل النظامي:</p>
-
-<pre><code class="text">
-Tant que &lt;Condition&gt; faire
-    &lt;Liste d&#x27;instructions&gt;
-Fin tant que
+<pre><code class="python">
+a = int(input(&quot;Donner a : &quot;))
+b = int(input(&quot;Donner b : &quot;))
+s = a + b
+print(&quot;La somme est :&quot;, s)
 </code></pre>
 
-<p>المعنى: مادام الشرط محققًا يكرر تنفيذ مجموعة من التعليمات إلى غاية عدم تحققه.</p>
+<p>لاحظ: في Python الإسناد يُكتب <code>=</code>، و<code>int(...)</code> تحوّل ما يكتبه المستخدم (نص) إلى عدد صحيح؛ وبدونها يصبح <code>&quot;7&quot; + &quot;5&quot;</code> يساوي <code>&quot;75&quot;</code>!</p>
 
-<p>ملاحظة: الحد الأدنى للتكرارات هو &quot;0&quot;؛ أي إذا كان الشرط غير محقق من البداية فلن تُنفَّذ التعليمات ولا مرة واحدة.</p>
+<hr>
 
-<p>مثال: أكتب الخوارزمية لحساب مجموع الأعداد الصحيحة من 1 إلى 100.</p>
+<h2>نشاط تطبيقي: من الورقة إلى الحاسوب</h2>
 
-<pre><code class="text">
-Algorithme Somme_100valeurs
-Variable
-    S, i : entier
-Début
-    S ← 0
-    i ← 1
-    Tant que i &lt;= 100 faire
-        S ← S + i
-        i ← i + 1
-    Fin tant que
-    Ecrire(&quot;la somme des valeurs de 1 à 100 est : &quot;, S)
-Fin
-</code></pre>
+<p><strong>العمل:</strong> في ثنائيات — <strong>المدة:</strong> حصة تطبيقية الأسبوع 2 (ساعة).</p>
 
-<p><img src="artifacts/image_000275_235a686b6a1c6a18981e6080a16899314b19ecc4384559f236570c456b75a50f.png" alt="Image"></p>
+<p><strong>الوسائل:</strong> ورقة وقلم (إلزامي). برنامج <strong>Algobox</strong> (مجاني، معتمد في التدرج السنوي) إن كان مثبتًا في المخبر؛ وإلا يعرضه الأستاذ على جهازه أمام القسم.</p>
 
-<p><img src="artifacts/image_000276_20737cba4b133728d6087ebeef47dd102f72660fdb792f6ebc5e51d1d038dce0.png" alt="Image"></p>
+<blockquote><p><strong>في Algobox:</strong> الكتابة لا تكون حرفًا بحرف بل بأزرار. <code>Var</code> يقابلها «Déclarer nouvelle variable» (النوع <code>NOMBRE</code> للأعداد و<code>CHAINE</code> للنص)، و<code>Lire</code> يقابلها «LIRE» (متغير واحد في كل سطر)، و<code>Ecrire</code> يقابلها «AFFICHER»، و<code>←</code> تظهر <code>PREND_LA_VALEUR</code>، ثم نضغط «Tester l&#x27;algorithme».</p></blockquote>
 
-<p>###### ب. التعليمة التكرارية Pour</p>
+<table>
+<tr><th>المهمة</th><th>ما يجب إنجازه</th><th>مؤشر النجاح</th></tr>
+<tr><td>1</td><td>تحليل مسألة المجموع في جدول مدخلات / معالجة / مخرجات</td><td>جدول من ثلاثة أعمدة صحيح</td></tr>
+<tr><td>2</td><td>كتابة خوارزمية المجموع على الورقة دون النظر إلى الدرس</td><td>الهيكل كامل والتصريحات صحيحة</td></tr>
+<tr><td>3</td><td>تنفيذها يدويًا بالمدخلات <code>12</code> و<code>30</code></td><td>المخرجات: <code>La somme est : 42</code></td></tr>
+<tr><td>4</td><td>إدخالها في Algobox (أو متابعة عرض الأستاذ) وتجربتها بالقيم نفسها</td><td>النتيجة على الشاشة تطابق التنفيذ اليدوي</td></tr>
+<tr><td>5</td><td>كتابة خوارزمية المقارنة وتجربتها بالمدخلات <code>-3</code> و<code>-8</code></td><td>المخرجات: <code>Le plus grand : -3</code></td></tr>
+<tr><td>6</td><td>تعديل خوارزمية المقارنة لتُظهر <strong>الأصغر</strong> بدل الأكبر</td><td>المدخلات <code>4</code> و<code>11</code> ← <code>Le plus petit : 4</code></td></tr>
+</table>
 
-<p>عند معرفة عدد التكرارات في تنفيذ التعليمات نستعمل التعليمة &quot;Pour&quot; بعداد &quot;Compteur&quot; التي تتوقف عند وصول العداد إلى قيمته النهائية.</p>
+<p><strong>تسليم:</strong> ورقة الخوارزميتين مع جدول التجارب (المدخلات / المخرجات المنتظرة / المخرجات المحصّلة).</p>
 
-<p>الشكل النظامي:</p>
+<hr>
 
-<pre><code class="text">
-Pour &lt;Nom de variable&gt; de &lt;valeur initiale&gt; à &lt;valeur finale&gt; faire
-    &lt;Liste d&#x27;instructions&gt;
-</code></pre>
-
-<p>المعنى: من أجل كل قيمة من قيم العداد التي تتغير من القيمة الابتدائية إلى القيمة النهائية، تنفذ العمليات، وكل تنفيذ يكون بمقدار خطوة (pas).</p>
-
-<p>شرح طريقة عمل التعليمة التكرارية Pour:</p>
-
-<ul>
-<li>إعطاء القيمة الابتدائية للعداد (valeur initiale).</li>
-<li>زيادة قيمة العداد بخطوة بعد كل تنفيذ لمجموعة التعليمات.</li>
-<li>مراقبة شرط التوقف (أي وصول العداد إلى قيمته النهائية).</li>
-</ul>
-
-<p><img src="artifacts/image_000277_9c257c4d35ee03abc2f5705e1a491049c01dcfb3bd19354dff4c6efceaae043b.png" alt="Image"></p>
-
-<p>مثال: كتابة خوارزمية تسمح بإظهار على الشاشة مضاعفات العدد 5 المحصورة بين 1 و 100.</p>
-
-<pre><code class="text">
-Algorithme Multiples_de_5
-Variable
-    i, Multiple : entier
-Début
-    Pour i de 1 à 20 Faire
-        Multiple ← i * 5
-        Ecrire(Multiple, &quot; est multiple de 5&quot;)
-    Fin faire
-Fin
-</code></pre>
-
-<p><img src="artifacts/image_000278_93931f475fe251bff31c1086331c15466b140e6a14f777fc890661e84477728a.png" alt="Image"></p>
-
-<h4>تطبيقات</h4>
+<h2>تقويم ختامي للوحدة</h2>
 
 <ol>
-<li>اكتب خوارزمية لقراءة عددين وإيجاد حاصل جمعهما؟</li>
-<li>اكتب خوارزمية لطباعة المعدل السنوي (بفرض أننا نملك معدل كل فصل)؟</li>
-<li>اكتب خوارزمية الحل لطباعة الأعداد المحصورة بين 1 و 11.</li>
-<li>اكتب الخوارزمية لقراءة ثلاثة أعداد (A, B, C) ومعرفة العدد الأكبر بينها.</li>
-<li>اكتب الخوارزمية لقراءة عدد وطباعة كلمة Positive إذا كانت قيمة العدد أكبر من أو تساوي صفر، وكلمة Négative إذا كان العدد أقل من الصفر؟</li>
-<li>اكتب الخوارزمية لقراءة الأضواء الثلاثية (feu tricolores) (أحمر, أخضر, برتقالي).</li>
-<li>اكتب الخوارزمية لطباعة جدول الضرب للعدد 7.</li>
+<li><strong>التعريف:</strong> عرّف الخوارزمية، ثم بيّن الخاصية التي تخالفها كل تعليمة: «اطبخ حتى ينضج جيدًا»، «كرّر إلى الأبد».</li>
+<li><strong>التحليل:</strong> حدّد المدخلات والمعالجة والمخرجات لمسألة <strong>محيط مستطيل</strong>.</li>
+<li><strong>التصحيح:</strong> في هذا الجزء أربعة أخطاء. استخرجها وصحّحها:</li>
 </ol>
+
+<pre><code class="text">
+Algorithme Moyenne Eleve
+Const
+    nb_matières = 3
+Var
+    note1, note2 : Entier
+    Fin : Réel
+</code></pre>
+
+<ol>
+<li><strong>العبارات:</strong> احسب: <code>20 div 6</code>، <code>20 mod 6</code>، <code>3 + 4 * 2 - 1</code>، <code>(8 &gt; 5) ET NON (3 = 3)</code>.</li>
+<li><strong>المجموع (التقويم الرسمي):</strong> اكتب خوارزمية تقرأ عددين حقيقيين وتُظهر <strong>معدّلهما</strong>. تجربة: المدخلات <code>12</code> و<code>15</code> ← المخرجات <code>La moyenne est : 13.5</code>.</li>
+<li><strong>المقارنة (التقويم الرسمي):</strong> اكتب خوارزمية تقرأ عددين وتُظهر الأصغر بينهما. تجربة: المدخلات <code>7</code> و<code>3</code> ← المخرجات <code>Le plus petit : 3</code>.</li>
+</ol>
+
+<hr>
+
+<h2>بطاقة خروج سريعة (3–2–1)</h2>
+
+<p>قبل مغادرة الحصة، اكتب في دقيقة واحدة:</p>
+
+<ul>
+<li><strong>3</strong> أنواع بيانات مع مثال لكل منها.</li>
+<li><strong>2</strong> قاعدتين لتسمية المعرّفات.</li>
+<li><strong>1</strong> سؤال ما زال لديك عن الخوارزميات.</li>
+</ul>
+
+<p>يستعملها الأستاذ لبداية الحصة التالية: يُجيب عن السؤال المتكرر ويصحّح المفهوم الخاطئ الشائع.</p>
+
+<hr>
+
+<h3>بطاقة إجابة مختصرة للأستاذ</h3>
+
+<ul>
+<li><strong>تطبيق الشاي (§1):</strong> «حسب ذوقك» و«حتى يصبح جيدًا» غير دقيقتين؛ البديل: «ضع ملعقتين من السكر»، «اتركه 5 دقائق».</li>
+<li><strong>التصنيف (§4):</strong> 1 <code>Entier</code>، 2 <code>Réel</code>، 3 <code>Chaîne</code>، 4 <code>Booléen</code>، 5 <code>Caractère</code>، 6 <code>Réel</code> (أو <code>Entier</code> إن قُرّبت)، 7 <code>Chaîne</code> (الصفر الأول يضيع لو خزّناه عددًا، ولا نحسب به)، 8 <code>Chaîne</code> (بين علامتي تنصيص).</li>
+<li><strong>المعرّفات (§5):</strong> صالحة: <code>moyenne</code>، <code>note_2</code>، <code>NbEleves</code>. غير صالحة: <code>2eme_note</code> (يبدأ برقم)، <code>prix total</code> (فراغ)، <code>prénom</code> (نبرة)، <code>nb-eleves</code> (الرمز <code>-</code>)، <code>Var</code> (محجوزة)، <code>_total</code> (لا يبدأ بحرف)، <code>مجموع</code> (حروف غير لاتينية).</li>
+<li><strong>التصريح (§6):</strong> <code>Const PRIX_TICKET = 400</code> ؛ <code>Var nom : Chaîne</code> ؛ <code>nb_tickets : Entier</code> ؛ <code>total : Entier</code> (تُقبل <code>Réel</code>).</li>
+<li><strong>العبارات (§7):</strong> 1 <code>8</code> ؛ 2 <code>3 + 2 = 5</code> ؛ 3 <code>(6 mod 4) * 2 = 4</code> ؛ 4 <code>5</code> ؛ 5 <code>Faux</code> ؛ 6 <code>Vrai</code> ؛ 7 <code>Vrai</code> ؛ 8 <code>Vrai</code>.</li>
+<li><strong>التقويم 1:</strong> الأولى تخالف <strong>الدقة</strong>، الثانية تخالف <strong>الانتهاء</strong>.</li>
+<li><strong>التقويم 2:</strong> مدخلات: الطول والعرض ؛ معالجة: <code>p ← 2 * (longueur + largeur)</code> ؛ مخرجات: المحيط.</li>
+<li><strong>التقويم 3:</strong> <code>Moyenne Eleve</code> فيه فراغ ← <code>Moyenne_Eleve</code> ؛ <code>nb_matières</code> فيه نبرة ويُكتب ثابتًا بحروف كبيرة ← <code>NB_MATIERES</code> ؛ النقاط أعداد بفاصلة ← <code>Réel</code> ؛ <code>Fin</code> كلمة محجوزة ← <code>moyenne</code>.</li>
+<li><strong>التقويم 4:</strong> <code>3</code> ؛ <code>2</code> ؛ <code>10</code> ؛ <code>Faux</code>.</li>
+<li><strong>التقويم 5:</strong> متغيرات <code>a, b, m : Réel</code> ؛ <code>Lire(a, b)</code> ؛ <code>m ← (a + b) / 2</code> ؛ <code>Ecrire(&quot;La moyenne est : &quot;, m)</code>. الأقواس ضرورية: بدونها تُحسب <code>a + b / 2</code>.</li>
+<li><strong>التقويم 6:</strong> نفس خوارزمية المقارنة مع <code>Si a &lt; b Alors Ecrire(&quot;Le plus petit : &quot;, a) Sinon Ecrire(&quot;Le plus petit : &quot;, b) FinSi</code>.</li>
+</ul>
+
+<hr>
+
+<h2>معجم المصطلحات</h2>
+
+<table>
+<tr><th>المصطلح</th><th>العربية</th><th>الشرح المختصر</th></tr>
+<tr><td>Algorithm / <em>Algorithme</em></td><td>خوارزمية</td><td>خطوات منتهية ودقيقة ومرتبة لحل مسألة</td></tr>
+<tr><td>Input / Output — <em>Entrée / Sortie</em></td><td>مدخلات / مخرجات</td><td>المعطيات التي تحتاجها الخوارزمية / النتائج التي تعرضها</td></tr>
+<tr><td>Declaration / <em>Déclaration</em></td><td>تصريح</td><td>حجز مكان في الذاكرة لثابت أو متغير</td></tr>
+<tr><td>Identifier / <em>Identificateur</em></td><td>معرّف</td><td>اسم ثابت أو متغير أو خوارزمية</td></tr>
+<tr><td>Variable / <em>Variable</em></td><td>متغير</td><td>علبة في الذاكرة تتغير قيمتها</td></tr>
+<tr><td>Constant / <em>Constante</em></td><td>ثابت</td><td>قيمة مسمّاة لا تتغير أثناء التنفيذ</td></tr>
+<tr><td>Data type / <em>Type</em></td><td>نوع البيانات</td><td>مجموعة القيم التي يقبلها المعطى</td></tr>
+<tr><td>Boolean / <em>Booléen</em></td><td>منطقي</td><td>نوع له قيمتان: <code>Vrai</code> و<code>Faux</code></td></tr>
+<tr><td>Expression / <em>Expression</em></td><td>عبارة</td><td>تركيب من قيم وعمليات يعطي قيمة واحدة</td></tr>
+<tr><td>Reserved word / <em>Mot réservé</em></td><td>كلمة محجوزة</td><td>كلمة لها معنى ثابت لا تُستعمل اسمًا</td></tr>
+<tr><td>Operator precedence / <em>Priorité</em></td><td>أولوية العمليات</td><td>ترتيب حساب العمليات داخل العبارة</td></tr>
+</table>
 </body>
 </html>

@@ -15,8 +15,8 @@ The core objective is to **modernize and upgrade the textbook and lesson content
   1. `1-التعامل_مع_بيئة_الحاسوب` (Units 01-06: TIC, Hardware Assembly, OS, Control Panel, Security, LAN)
   2. `2-المكتبية` (Units 07-12: Word Styles/Templates/Sections/Mail-Merge, Excel Formulas/Functions & Data Sorting)
   3. `3-العروض_التقديمية` (Units 13-14: PowerPoint Hyperlinks, Animations & Presentations)
-  4. `4-المقدمة_في_البرمجة` (Units 15-16: Flowcharts, Algorithms & Programming Concepts)
-  5. `5-تقنيات_الويب` (Units 17-20: Web Browsers, Email, Social Networks, HTML Web Page Creation)
+  4. `4-المقدمة_في_البرمجة` (Units 15-17: Flowcharts, Algorithms, Basic Instructions)
+  5. `5-تقنيات_الويب` (Units 18-21: Web Browsers, Email, Social Networks, HTML Web Page Creation)
 - `courses/convert_lessons.py`: Python script to convert all Markdown lesson files into styled RTL HTML.
 
 ---

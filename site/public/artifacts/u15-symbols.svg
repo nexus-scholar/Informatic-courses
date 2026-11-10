@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 410" width="360" height="410" role="img" aria-label="رموز المخطط النسقي الستة">
+<title>رموز المخطط النسقي الستة</title>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#000"/></marker>
+<style>
+text{font-family:"Segoe UI",Tahoma,Arial,"Noto Sans Arabic",sans-serif;text-anchor:middle;dominant-baseline:central;fill:#000}
+.s{fill:#fff;stroke:#000;stroke-width:2}
+.a{fill:none;stroke:#000;stroke-width:2;marker-end:url(#ah)}
+.l{fill:none;stroke:#000;stroke-width:2}
+</style>
+</defs>
+<rect width="360" height="410" fill="#fff"/>
+<rect class="s" x="210" y="35" width="120" height="40" rx="20"/><text x="270" y="55" font-size="14" direction="rtl">بداية</text><text x="270" y="110" font-size="15" direction="rtl" font-weight="bold">بداية / نهاية</text><text x="270" y="130" font-size="11" fill="#555">Terminal / Début-Fin</text><polygon class="s" points="39,35 155,35 141,75 25,75"/><text x="90" y="55" font-size="14">Lire(x)</text><text x="90" y="110" font-size="15" direction="rtl" font-weight="bold">إدخال / إخراج</text><text x="90" y="130" font-size="11" fill="#555">Input-Output / Lire-Ecrire</text><rect class="s" x="210" y="165" width="120" height="40"/><text x="270" y="185" font-size="14">y ← x * 2</text><text x="270" y="240" font-size="15" direction="rtl" font-weight="bold">معالجة (عملية)</text><text x="270" y="260" font-size="11" fill="#555">Process / Traitement</text><polygon class="s" points="90,149 152,185 90,221 28,185"/><text x="90" y="185" font-size="14">x &gt; 0 ?</text><text x="90" y="240" font-size="15" direction="rtl" font-weight="bold">قرار (شرط)</text><text x="90" y="260" font-size="11" fill="#555">Decision / Test</text><polyline class="a" points="270,283 270,347"/><text x="270" y="370" font-size="15" direction="rtl" font-weight="bold">خط السير (سهم)</text><text x="270" y="390" font-size="11" fill="#555">Flow line / Flèche</text><circle class="s" cx="90" cy="315" r="20"/><text x="90" y="315" font-size="15">A</text><text x="90" y="370" font-size="15" direction="rtl" font-weight="bold">نقطة الربط</text><text x="90" y="390" font-size="11" fill="#555">Connector / Connecteur</text><line x1="180" y1="15" x2="180" y2="400" stroke="#bbb" stroke-width="1"/><line x1="10" y1="152" x2="350" y2="152" stroke="#bbb" stroke-width="1"/><line x1="10" y1="282" x2="350" y2="282" stroke="#bbb" stroke-width="1"/>
+</svg>
