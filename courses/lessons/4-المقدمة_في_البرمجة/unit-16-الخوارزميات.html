@@ -40,11 +40,11 @@ img{max-width:100%;height:auto}
 <p>في نهاية هذه الوحدة، يكون المتعلم قادرًا على أن:</p>
 
 <ol>
-<li>يعرّف الخوارزمية (Algorithm / <em>Algorithme</em>) ويذكر أصل تسميتها.</li>
+<li>يعرّف الخوارزمية (Algorithm) ويذكر أصل تسميتها.</li>
 <li>يحكم على خوارزمية بسيطة بأنها سليمة أو لا، اعتمادًا على خصائصها الأربع.</li>
 <li>يحلّل مسألة إلى <strong>مدخلات</strong> و<strong>معالجة</strong> و<strong>مخرجات</strong>، ويربط ذلك بالمخطط الانسيابي (الوحدة 15).</li>
 <li>يتعرف على الهيكل العام للخوارزمية: الرأس، التصريحات، جسم الخوارزمية.</li>
-<li>يصنّف معطيات من الحياة اليومية حسب نوعها: <code>Entier</code>، <code>Réel</code>، <code>Caractère</code>، <code>Chaîne</code>، <code>Booléen</code>.</li>
+<li>يصنّف معطيات من الحياة اليومية حسب نوعها: <code>Integer</code>، <code>Real</code>، <code>Char</code>، <code>String</code>، <code>Boolean</code>.</li>
 <li>يميّز اسم المعرّف الصحيح من الخاطئ، ويصرّح عن الثوابت والمتغيرات تصريحًا سليمًا.</li>
 <li>يميّز الرموز الحسابية والمقارنة والمنطقية، ويحسب قيمة عبارة باحترام الأولويات.</li>
 <li>يكتب خوارزمية لحساب <strong>مجموع عددين</strong> وخوارزمية لـ<strong>مقارنة عددين</strong>، ويجرّبهما على الورق أو في Algobox.</li>
@@ -88,16 +88,16 @@ img{max-width:100%;height:auto}
 
 <h3>ج. التعريف</h3>
 
-<p><strong>الخوارزمية</strong> (Algorithm / <em>Algorithme</em>) هي مجموعة <strong>منتهية</strong> من الخطوات <strong>المرتبة</strong> و<strong>الدقيقة</strong>، تنطلق من معطيات (مدخلات) وتؤدي إلى حلّ مسألة (مخرجات).</p>
+<p><strong>الخوارزمية</strong> (Algorithm) هي مجموعة <strong>منتهية</strong> من الخطوات <strong>المرتبة</strong> و<strong>الدقيقة</strong>، تنطلق من معطيات (مدخلات) وتؤدي إلى حلّ مسألة (مخرجات).</p>
 
 <h3>د. خصائص الخوارزمية السليمة</h3>
 
 <table>
 <tr><th>الخاصية</th><th>معناها</th><th>مثال على مخالفتها</th></tr>
-<tr><td><strong>منتهية</strong> (Finite / <em>Finie</em>)</td><td>تتوقف بعد عدد محدود من الخطوات</td><td>«استمر في التحريك» دون أن تقول متى تتوقف</td></tr>
-<tr><td><strong>دقيقة</strong> (Precise / <em>Précise</em>)</td><td>كل خطوة لها معنى واحد لا غموض فيه</td><td>«أضِف قليلًا من الملح» — كم هو «قليل»؟</td></tr>
+<tr><td><strong>منتهية</strong> (Finite)</td><td>تتوقف بعد عدد محدود من الخطوات</td><td>«استمر في التحريك» دون أن تقول متى تتوقف</td></tr>
+<tr><td><strong>دقيقة</strong> (Precise)</td><td>كل خطوة لها معنى واحد لا غموض فيه</td><td>«أضِف قليلًا من الملح» — كم هو «قليل»؟</td></tr>
 <tr><td><strong>لها مدخلات ومخرجات</strong> (Input / Output)</td><td>تأخذ معطيات وتعطي نتيجة واحدة على الأقل</td><td>خوارزمية تحسب ولا تُظهر أي نتيجة</td></tr>
-<tr><td><strong>فعّالة</strong> (Effective / <em>Efficace</em>)</td><td>كل خطوة قابلة للتنفيذ فعلًا، والمجموع يؤدي إلى الحل الصحيح</td><td>«اقسم على صفر»، أو «احزر الرقم السري»</td></tr>
+<tr><td><strong>فعّالة</strong> (Effective)</td><td>كل خطوة قابلة للتنفيذ فعلًا، والمجموع يؤدي إلى الحل الصحيح</td><td>«اقسم على صفر»، أو «احزر الرقم السري»</td></tr>
 </table>
 
 <blockquote><p><strong>تطبيق سريع (3 دقائق):</strong> صديقك كتب هذه التعليمات لصنع الشاي: «سخّن الماء، ضع الشاي، أضف السكر حسب ذوقك، اتركه حتى يصبح جيدًا». حدّد خطوتين تخالفان خاصية <strong>الدقة</strong>، وأعد كتابتهما بدقة.</p></blockquote>
@@ -111,9 +111,9 @@ img{max-width:100%;height:auto}
 <p>قبل أن نكتب أي سطر، نطرح ثلاثة أسئلة:</p>
 
 <ol>
-<li><strong>ماذا أعرف؟</strong> ← المدخلات (Inputs / <em>Entrées</em>): المعطيات التي يُدخلها المستخدم.</li>
-<li><strong>ماذا أفعل بها؟</strong> ← المعالجة (Processing / <em>Traitement</em>): الحسابات والقرارات.</li>
-<li><strong>ماذا أريد أن أحصل عليه؟</strong> ← المخرجات (Outputs / <em>Sorties</em>): النتيجة التي تُعرض.</li>
+<li><strong>ماذا أعرف؟</strong> ← المدخلات (Inputs): المعطيات التي يُدخلها المستخدم.</li>
+<li><strong>ماذا أفعل بها؟</strong> ← المعالجة (Processing): الحسابات والقرارات.</li>
+<li><strong>ماذا أريد أن أحصل عليه؟</strong> ← المخرجات (Outputs): النتيجة التي تُعرض.</li>
 </ol>
 
 <table>
@@ -129,12 +129,12 @@ img{max-width:100%;height:auto}
 
 <table>
 <tr><th>الشكل في المخطط الانسيابي</th><th>معناه</th><th>ما يقابله في الخوارزمية</th></tr>
-<tr><td>الشكل البيضوي «بداية»</td><td>بداية الحل</td><td><code>Début</code> (بداية)</td></tr>
-<tr><td>متوازي الأضلاع (إدخال)</td><td>قراءة معطى</td><td><code>Lire(...)</code> (اقرأ)</td></tr>
+<tr><td>الشكل البيضوي «بداية»</td><td>بداية الحل</td><td><code>Begin</code> (بداية)</td></tr>
+<tr><td>متوازي الأضلاع (إدخال)</td><td>قراءة معطى</td><td><code>Read(...)</code> (اقرأ)</td></tr>
 <tr><td>المستطيل</td><td>عملية حسابية</td><td><code>s ← a + b</code> (إسناد)</td></tr>
-<tr><td>المعيّن</td><td>سؤال / قرار</td><td><code>Si ... Alors</code> (إذا ... فإن)</td></tr>
-<tr><td>متوازي الأضلاع (إخراج)</td><td>عرض نتيجة</td><td><code>Ecrire(...)</code> (اكتب)</td></tr>
-<tr><td>الشكل البيضوي «نهاية»</td><td>نهاية الحل</td><td><code>Fin</code> (نهاية)</td></tr>
+<tr><td>المعيّن</td><td>سؤال / قرار</td><td><code>If ... Then</code> (إذا ... فإن)</td></tr>
+<tr><td>متوازي الأضلاع (إخراج)</td><td>عرض نتيجة</td><td><code>Write(...)</code> (اكتب)</td></tr>
+<tr><td>الشكل البيضوي «نهاية»</td><td>نهاية الحل</td><td><code>End</code> (نهاية)</td></tr>
 </table>
 
 <hr>
@@ -146,37 +146,37 @@ img{max-width:100%;height:auto}
 <p>كل خوارزمية تُكتب بالترتيب نفسه، مثل استمارة لها خانات ثابتة:</p>
 
 <pre><code class="text">
-Algorithme Nom_Algorithme
+Algorithm AlgorithmName
 Const
-    NOM_CONSTANTE = valeur
+    CONSTANT_NAME = value
 Var
-    nom_variable : Type
-Début
+    variableName : Type
+Begin
     instruction 1
     instruction 2
-Fin
+End
 </code></pre>
 
 <table>
 <tr><th>الجزء</th><th>الأسطر</th><th>دوره</th></tr>
-<tr><td><strong>الرأس</strong> (Header / <em>En-tête</em>)</td><td><code>Algorithme Nom</code></td><td>يعطي الخوارزمية اسمًا يدلّ على المسألة</td></tr>
-<tr><td><strong>التصريحات</strong> (Declarations / <em>Déclarations</em>)</td><td><code>Const</code> ثم <code>Var</code></td><td>يحجز مكانًا في الذاكرة لكل ثابت ومتغير قبل استعماله</td></tr>
-<tr><td><strong>الجسم</strong> (Body / <em>Corps</em>)</td><td>من <code>Début</code> إلى <code>Fin</code></td><td>التعليمات بالترتيب: مدخلات ← معالجة ← مخرجات</td></tr>
+<tr><td><strong>الرأس</strong> (Header)</td><td><code>Algorithm Name</code></td><td>يعطي الخوارزمية اسمًا يدلّ على المسألة</td></tr>
+<tr><td><strong>التصريحات</strong> (Declarations)</td><td><code>Const</code> ثم <code>Var</code></td><td>يحجز مكانًا في الذاكرة لكل ثابت ومتغير قبل استعماله</td></tr>
+<tr><td><strong>الجسم</strong> (Body)</td><td>من <code>Begin</code> إلى <code>End</code></td><td>التعليمات بالترتيب: مدخلات ← معالجة ← مخرجات</td></tr>
 </table>
 
 <h3>ب. الكلمات المحجوزة</h3>
 
-<p><strong>الكلمات المحجوزة</strong> (Reserved words / <em>Mots réservés</em>) كلمات لها معنى ثابت في لغة الخوارزميات، فلا يجوز استعمالها اسمًا لمتغير. نكتبها بالفرنسية كما في Algobox والامتحانات، ونقرؤها بالعربية:</p>
+<p><strong>الكلمات المحجوزة</strong> (Reserved words) كلمات لها معنى ثابت في لغة الخوارزميات، فلا يجوز استعمالها اسمًا لمتغير. نكتبها بالإنجليزية، كما في لغات البرمجة الحقيقية، ونقرؤها بالعربية:</p>
 
 <table>
 <tr><th>الكلمة</th><th>القراءة بالعربية</th><th>دورها</th></tr>
-<tr><td><code>Algorithme</code></td><td>خوارزمية</td><td>يسبق اسم الخوارزمية</td></tr>
+<tr><td><code>Algorithm</code></td><td>خوارزمية</td><td>يسبق اسم الخوارزمية</td></tr>
 <tr><td><code>Const</code></td><td>ثوابت</td><td>يفتح قائمة الثوابت</td></tr>
 <tr><td><code>Var</code></td><td>متغيرات</td><td>يفتح قائمة المتغيرات</td></tr>
-<tr><td><code>Début</code> / <code>Fin</code></td><td>بداية / نهاية</td><td>يحدّان جسم الخوارزمية</td></tr>
+<tr><td><code>Begin</code> / <code>End</code></td><td>بداية / نهاية</td><td>يحدّان جسم الخوارزمية</td></tr>
 </table>
 
-<blockquote><p>ستلتقي كلمات محجوزة أخرى (<code>Lire</code>، <code>Ecrire</code>، <code>Si</code>...) في المثالين الأخيرين من هذه الوحدة، ثم بالتفصيل في الوحدة 17.</p></blockquote>
+<blockquote><p>ستلتقي كلمات محجوزة أخرى (<code>Read</code> اقرأ، <code>Write</code> اكتب، <code>If</code> إذا...) في المثالين الأخيرين من هذه الوحدة، ثم بالتفصيل في الوحدة 17.</p></blockquote>
 
 <hr>
 
@@ -184,15 +184,15 @@ Fin
 
 <h3>أ. الأنواع الخمسة الأساسية</h3>
 
-<p><strong>النوع</strong> (Data type / <em>Type</em>) يحدد مجموعة القيم التي يقبلها المعطى، والعمليات الممكنة عليه، والمساحة التي يحتاجها في الذاكرة.</p>
+<p><strong>النوع</strong> (Data type) يحدد مجموعة القيم التي يقبلها المعطى، والعمليات الممكنة عليه، والمساحة التي يحتاجها في الذاكرة.</p>
 
 <table>
 <tr><th>النوع</th><th>القراءة</th><th>ما يحتويه</th><th>أمثلة</th></tr>
-<tr><td><code>Entier</code></td><td>عدد صحيح (Integer)</td><td>أعداد بلا فاصلة، موجبة أو سالبة</td><td><code>17</code>، <code>-4</code>، <code>0</code></td></tr>
-<tr><td><code>Réel</code></td><td>عدد حقيقي (Real / Float)</td><td>أعداد بفاصلة عشرية</td><td><code>14.25</code>، <code>-0.5</code>، <code>3.14</code></td></tr>
-<tr><td><code>Caractère</code></td><td>حرف (Character)</td><td>رمز واحد بين علامتي <code>&#x27; &#x27;</code></td><td><code>&#x27;A&#x27;</code>، <code>&#x27;7&#x27;</code>، <code>&#x27;?&#x27;</code></td></tr>
-<tr><td><code>Chaîne</code></td><td>سلسلة حرفية (String)</td><td>نص بين علامتي <code>&quot; &quot;</code></td><td><code>&quot;Alger&quot;</code>، <code>&quot;1AS&quot;</code></td></tr>
-<tr><td><code>Booléen</code></td><td>منطقي (Boolean)</td><td>قيمتان فقط: <code>Vrai</code> / <code>Faux</code></td><td><code>Vrai</code> (صحيح)، <code>Faux</code> (خطأ)</td></tr>
+<tr><td><code>Integer</code></td><td>عدد صحيح</td><td>أعداد بلا فاصلة، موجبة أو سالبة</td><td><code>17</code>، <code>-4</code>، <code>0</code></td></tr>
+<tr><td><code>Real</code></td><td>عدد حقيقي</td><td>أعداد بفاصلة عشرية</td><td><code>14.25</code>، <code>-0.5</code>، <code>3.14</code></td></tr>
+<tr><td><code>Char</code></td><td>حرف</td><td>رمز واحد بين علامتي <code>&#x27; &#x27;</code></td><td><code>&#x27;A&#x27;</code>، <code>&#x27;7&#x27;</code>، <code>&#x27;?&#x27;</code></td></tr>
+<tr><td><code>String</code></td><td>سلسلة حرفية</td><td>نص بين علامتي <code>&quot; &quot;</code></td><td><code>&quot;الجزائر&quot;</code>، <code>&quot;1AS&quot;</code></td></tr>
+<tr><td><code>Boolean</code></td><td>منطقي</td><td>قيمتان فقط: <code>True</code> / <code>False</code></td><td><code>True</code> (صحيح)، <code>False</code> (خطأ)</td></tr>
 </table>
 
 <blockquote><p><strong>انتبه:</strong> في الخوارزمية نكتب الفاصلة العشرية <strong>نقطة</strong>: <code>14.25</code> لا <code>14,25</code>. و<code>17</code> عدد، أما <code>&quot;17&quot;</code> فنصّ لا يُجمع.</p></blockquote>
@@ -207,25 +207,25 @@ Fin
 
 <h3>أ. القواعد</h3>
 
-<p><strong>المعرّف</strong> (Identifier / <em>Identificateur</em>) هو الاسم الذي نعطيه لخوارزمية أو ثابت أو متغير. قواعده:</p>
+<p><strong>المعرّف</strong> (Identifier) هو الاسم الذي نعطيه لخوارزمية أو ثابت أو متغير. نختاره كلمة إنجليزية أو اختصارًا قصيرًا ذا معنى. قواعده:</p>
 
 <ol>
 <li>يتكون من <strong>حروف لاتينية</strong> (<code>a</code>–<code>z</code>، <code>A</code>–<code>Z</code>) و<strong>أرقام</strong> (<code>0</code>–<code>9</code>) والرمز <code>_</code> فقط.</li>
 <li>يبدأ <strong>بحرف</strong> دائمًا، لا برقم ولا بـ <code>_</code>.</li>
-<li><strong>لا فراغ</strong> فيه: نكتب <code>prix_total</code> لا <code>prix total</code>.</li>
-<li><strong>لا حروف بنبرة</strong> ولا حروف عربية: <code>prenom</code> لا <code>prénom</code>.</li>
-<li><strong>ليس كلمة محجوزة</strong>: لا <code>Var</code> ولا <code>Fin</code> ولا <code>Si</code>.</li>
-<li><strong>ذو دلالة</strong>: <code>largeur_rect</code> أوضح من <code>lr</code>.</li>
-<li><strong>اصطلاح:</strong> أسماء الثوابت بحروف كبيرة: <code>PI</code>، <code>TVA</code>.</li>
+<li><strong>لا فراغ</strong> فيه: نكتب <code>total_price</code> لا <code>total price</code>.</li>
+<li><strong>لا حروف بنبرة</strong> ولا حروف عربية: <code>cafe</code> لا <code>café</code>، و<code>total</code> لا <code>مجموع</code>.</li>
+<li><strong>ليس كلمة محجوزة</strong>: لا <code>Var</code> ولا <code>End</code> ولا <code>If</code>.</li>
+<li><strong>ذو دلالة</strong>: <code>rectWidth</code> أوضح من <code>rw</code>.</li>
+<li><strong>اصطلاح:</strong> أسماء الثوابت بحروف كبيرة: <code>PI</code>، <code>MAX_SCORE</code>.</li>
 </ol>
 
-<blockquote><p><strong>تصحيح للكتاب القديم:</strong> كانت بعض الأمثلة تستعمل أسماء مثل <code>Prénom</code> و<code>Elève_admis</code>، وهي مخالفة للقاعدة 4. الصحيح: <code>prenom</code> و<code>Eleve_admis</code>.</p></blockquote>
+<blockquote><p><strong>تصحيح للكتاب القديم:</strong> كانت بعض الأمثلة تستعمل أسماء مثل <code>Prénom</code> و<code>Elève_admis</code>، وهي مخالفة للقاعدة 4. في اصطلاحنا نكتبها بالإنجليزية: <code>firstName</code> و<code>passedStudent</code>.</p></blockquote>
 
 <h3>ب. تمرين: صالح أم غير صالح؟</h3>
 
 <p>ضع ✔ أمام المعرّف الصالح، و✘ أمام غير الصالح مع ذكر رقم القاعدة المخالفة:</p>
 
-<p><code>moyenne</code> ، <code>2eme_note</code> ، <code>note_2</code> ، <code>prix total</code> ، <code>prénom</code> ، <code>nb-eleves</code> ، <code>Var</code> ، <code>_total</code> ، <code>NbEleves</code> ، <code>مجموع</code></p>
+<p><code>average</code> ، <code>2nd_mark</code> ، <code>mark_2</code> ، <code>total price</code> ، <code>résumé</code> ، <code>nb-students</code> ، <code>Var</code> ، <code>_total</code> ، <code>NbStudents</code> ، <code>مجموع</code></p>
 
 <hr>
 
@@ -237,36 +237,36 @@ Fin
 
 <ul>
 <li><strong>اسم المعرّف</strong> هو البطاقة الملصقة على العلبة.</li>
-<li><strong>النوع</strong> هو شكل العلبة: علبة <code>Entier</code> لا تتسع لنص.</li>
+<li><strong>النوع</strong> هو شكل العلبة: علبة <code>Integer</code> لا تتسع لنص.</li>
 <li><strong>القيمة</strong> هي ما بداخل العلبة الآن.</li>
-<li><strong>المتغير</strong> (Variable / <em>Variable</em>) علبة مفتوحة: يمكن تغيير محتواها أثناء التنفيذ.</li>
-<li><strong>الثابت</strong> (Constant / <em>Constante</em>) علبة مختومة: قيمتها تُحدَّد مرة واحدة ولا تتغير.</li>
+<li><strong>المتغير</strong> (Variable) علبة مفتوحة: يمكن تغيير محتواها أثناء التنفيذ.</li>
+<li><strong>الثابت</strong> (Constant) علبة مختومة: قيمتها تُحدَّد مرة واحدة ولا تتغير.</li>
 </ul>
 
 <p><strong>التصريح</strong> (Declaration) يعني: «احجز لي علبة بهذا الاسم وهذا الشكل قبل أن أستعملها». لا يجوز استعمال معرّف لم يُصرَّح عنه.</p>
 
 <h3>ب. التصريح عن الثوابت</h3>
 
-<p>الصيغة: <code>NOM = valeur</code> تحت الكلمة <code>Const</code>.</p>
+<p>الصيغة: <code>NAME = value</code> تحت الكلمة <code>Const</code>.</p>
 
 <pre><code class="text">
 Const
     PI = 3.14
-    NB_MATIERES = 3
-    VILLE = &quot;Oran&quot;
+    NB_SUBJECTS = 3
+    CITY = &quot;وهران&quot;
 </code></pre>
 
 <h3>ج. التصريح عن المتغيرات</h3>
 
-<p>الصيغة: <code>nom1, nom2 : Type</code> تحت الكلمة <code>Var</code>.</p>
+<p>الصيغة: <code>name1, name2 : Type</code> تحت الكلمة <code>Var</code>.</p>
 
 <pre><code class="text">
 Var
-    nom, prenom : Chaîne
-    age : Entier
-    moyenne : Réel
-    groupe : Caractère
-    admis : Booléen
+    name, firstName : String
+    age : Integer
+    avg : Real
+    group : Char
+    passed : Boolean
 </code></pre>
 
 <blockquote><p><strong>قاعدة:</strong> متغيرات من النوع نفسه تُكتب في سطر واحد تفصل بينها فاصلة <code>,</code>.</p></blockquote>
@@ -299,13 +299,13 @@ Var
 
 <h3>ب. عمليات المقارنة</h3>
 
-<p>نتيجة المقارنة دائمًا قيمة منطقية: <code>Vrai</code> أو <code>Faux</code>.</p>
+<p>نتيجة المقارنة دائمًا قيمة منطقية: <code>True</code> أو <code>False</code>.</p>
 
 <table>
 <tr><th>الرمز</th><th><code>=</code></th><th><code>≠</code></th><th><code>&lt;</code></th><th><code>&gt;</code></th><th><code>≤</code></th><th><code>≥</code></th></tr>
 <tr><td>المعنى</td><td>يساوي</td><td>يختلف عن</td><td>أصغر من</td><td>أكبر من</td><td>أصغر أو يساوي</td><td>أكبر أو يساوي</td></tr>
 <tr><td>مثال</td><td><code>5 = 5</code></td><td><code>5 ≠ 5</code></td><td><code>3 &lt; 8</code></td><td><code>3 &gt; 8</code></td><td><code>8 ≤ 8</code></td><td><code>2 ≥ 9</code></td></tr>
-<tr><td>النتيجة</td><td>Vrai</td><td>Faux</td><td>Vrai</td><td>Faux</td><td>Vrai</td><td>Faux</td></tr>
+<tr><td>النتيجة</td><td>True</td><td>False</td><td>True</td><td>False</td><td>True</td><td>False</td></tr>
 </table>
 
 <h3>ج. العمليات المنطقية</h3>
@@ -313,27 +313,27 @@ Var
 <p>تربط بين شرطين أو تعكس شرطًا:</p>
 
 <table>
-<tr><th>العملية</th><th>القراءة</th><th>تعطي <code>Vrai</code> عندما...</th></tr>
-<tr><td><code>ET</code></td><td>و (AND)</td><td>يكون الشرطان صحيحين معًا</td></tr>
-<tr><td><code>OU</code></td><td>أو (OR)</td><td>يكون أحد الشرطين على الأقل صحيحًا</td></tr>
-<tr><td><code>NON</code></td><td>ليس (NOT)</td><td>يكون الشرط خاطئًا</td></tr>
+<tr><th>العملية</th><th>القراءة</th><th>تعطي <code>True</code> عندما...</th></tr>
+<tr><td><code>AND</code></td><td>و</td><td>يكون الشرطان صحيحين معًا</td></tr>
+<tr><td><code>OR</code></td><td>أو</td><td>يكون أحد الشرطين على الأقل صحيحًا</td></tr>
+<tr><td><code>NOT</code></td><td>ليس</td><td>يكون الشرط خاطئًا</td></tr>
 </table>
 
 <table>
-<tr><th>A</th><th>B</th><th><code>A ET B</code></th><th><code>A OU B</code></th><th><code>NON A</code></th></tr>
-<tr><td>Vrai</td><td>Vrai</td><td>Vrai</td><td>Vrai</td><td>Faux</td></tr>
-<tr><td>Vrai</td><td>Faux</td><td>Faux</td><td>Vrai</td><td>Faux</td></tr>
-<tr><td>Faux</td><td>Vrai</td><td>Faux</td><td>Vrai</td><td>Vrai</td></tr>
-<tr><td>Faux</td><td>Faux</td><td>Faux</td><td>Faux</td><td>Vrai</td></tr>
+<tr><th>A</th><th>B</th><th><code>A AND B</code></th><th><code>A OR B</code></th><th><code>NOT A</code></th></tr>
+<tr><td>True</td><td>True</td><td>True</td><td>True</td><td>False</td></tr>
+<tr><td>True</td><td>False</td><td>False</td><td>True</td><td>False</td></tr>
+<tr><td>False</td><td>True</td><td>False</td><td>True</td><td>True</td></tr>
+<tr><td>False</td><td>False</td><td>False</td><td>False</td><td>True</td></tr>
 </table>
 
-<blockquote><p><strong>من الحياة:</strong> لدخول الملعب تحتاج «تذكرة <strong>ET</strong> بطاقة هوية». لتدفع ثمن الخبز تقبل «نقدًا <strong>OU</strong> بطاقة».</p></blockquote>
+<blockquote><p><strong>من الحياة:</strong> لدخول الملعب تحتاج «تذكرة <strong>AND</strong> بطاقة هوية». لتدفع ثمن الخبز تقبل «نقدًا <strong>OR</strong> بطاقة».</p></blockquote>
 
 <h3>د. أولوية العمليات</h3>
 
 <p>عند حساب عبارة نتبع هذا الترتيب، من الأعلى أولوية إلى الأدنى، والعمليات من المستوى نفسه تُحسب من اليسار إلى اليمين:</p>
 
-<p><strong>الأقواس <code>( )</code></strong> ← <strong><code>NON</code></strong> ← *<em><code></em></code> <code>/</code> <code>div</code> <code>mod</code><strong> ← </strong><code>+</code> <code>-</code><strong> ← </strong>المقارنات<strong> ← </strong><code>ET</code><strong> ← </strong><code>OU</code>**</p>
+<p><strong>الأقواس <code>( )</code></strong> ← <strong><code>NOT</code></strong> ← *<em><code></em></code> <code>/</code> <code>div</code> <code>mod</code><strong> ← </strong><code>+</code> <code>-</code><strong> ← </strong>المقارنات<strong> ← </strong><code>AND</code><strong> ← </strong><code>OR</code>**</p>
 
 <p>مثال محلول: <code>2 + 3 <em> 4 = 2 + 12 = 14</code>، أما <code>(2 + 3) </em> 4 = 5 * 4 = 20</code>.</p>
 
@@ -341,7 +341,7 @@ Var
 
 <p>نفترض أن <code>a = 6</code> و<code>b = 4</code>. احسب قيمة كل عبارة:</p>
 
-<p>(1) <code>10 - 4 / 2</code> ، (2) <code>17 div 5 + 17 mod 5</code> ، (3) <code>a mod b * 2</code> ، (4) <code>(a + b) / 2</code> ، (5) <code>(a &gt; 5) ET (b &gt; 5)</code> ، (6) <code>(a &gt; 5) OU (b &gt; 5)</code> ، (7) <code>NON (a ≤ b)</code> ، (8) <code>a mod 2 = 0</code>.</p>
+<p>(1) <code>10 - 4 / 2</code> ، (2) <code>17 div 5 + 17 mod 5</code> ، (3) <code>a mod b * 2</code> ، (4) <code>(a + b) / 2</code> ، (5) <code>(a &gt; 5) AND (b &gt; 5)</code> ، (6) <code>(a &gt; 5) OR (b &gt; 5)</code> ، (7) <code>NOT (a ≤ b)</code> ، (8) <code>a mod 2 = 0</code>.</p>
 
 <hr>
 
@@ -358,34 +358,34 @@ Var
 <h3>ب. الخوارزمية</h3>
 
 <pre><code class="text">
-Algorithme Somme_Deux_Nombres
+Algorithm SumTwoNumbers
 Var
-    a, b, s : Entier
-Début
-    Ecrire(&quot;Donner deux nombres :&quot;)
-    Lire(a, b)
+    a, b, s : Integer
+Begin
+    Write(&quot;أدخل عددين:&quot;)
+    Read(a, b)
     s ← a + b
-    Ecrire(&quot;La somme est : &quot;, s)
-Fin
+    Write(&quot;المجموع = &quot;, s)
+End
 </code></pre>
 
 <h3>ج. قراءة سطرًا بسطر</h3>
 
 <table>
 <tr><th>السطر</th><th>القراءة بالعربية</th><th>ماذا يحدث؟</th></tr>
-<tr><td><code>Algorithme Somme_Deux_Nombres</code></td><td>خوارزمية مجموع عددين</td><td>الرأس: اسم الخوارزمية</td></tr>
-<tr><td><code>Var a, b, s : Entier</code></td><td>متغيرات a، b، s أعداد صحيحة</td><td>حجز ثلاث علب في الذاكرة</td></tr>
-<tr><td><code>Début</code></td><td>بداية</td><td>بداية التعليمات</td></tr>
-<tr><td><code>Ecrire(&quot;Donner deux nombres :&quot;)</code></td><td>اكتب</td><td>عرض رسالة توجّه المستخدم</td></tr>
-<tr><td><code>Lire(a, b)</code></td><td>اقرأ</td><td>ما يكتبه المستخدم يوضع في العلبتين a ثم b</td></tr>
+<tr><td><code>Algorithm SumTwoNumbers</code></td><td>خوارزمية مجموع عددين</td><td>الرأس: اسم الخوارزمية</td></tr>
+<tr><td><code>Var a, b, s : Integer</code></td><td>متغيرات a، b، s أعداد صحيحة</td><td>حجز ثلاث علب في الذاكرة</td></tr>
+<tr><td><code>Begin</code></td><td>بداية</td><td>بداية التعليمات</td></tr>
+<tr><td><code>Write(&quot;أدخل عددين:&quot;)</code></td><td>اكتب</td><td>عرض رسالة توجّه المستخدم</td></tr>
+<tr><td><code>Read(a, b)</code></td><td>اقرأ</td><td>ما يكتبه المستخدم يوضع في العلبتين a ثم b</td></tr>
 <tr><td><code>s ← a + b</code></td><td>يُسند إلى s</td><td>حساب المجموع ووضعه في العلبة s</td></tr>
-<tr><td><code>Ecrire(&quot;La somme est : &quot;, s)</code></td><td>اكتب</td><td>عرض الرسالة ثم قيمة s</td></tr>
-<tr><td><code>Fin</code></td><td>نهاية</td><td>انتهاء التنفيذ</td></tr>
+<tr><td><code>Write(&quot;المجموع = &quot;, s)</code></td><td>اكتب</td><td>عرض الرسالة ثم قيمة s</td></tr>
+<tr><td><code>End</code></td><td>نهاية</td><td>انتهاء التنفيذ</td></tr>
 </table>
 
-<p><strong>تجربة:</strong> المدخلات <code>7</code> و<code>5</code> ← المخرجات: <code>La somme est : 12</code>.</p>
+<p><strong>تجربة:</strong> المدخلات <code>7</code> و<code>5</code> ← المخرجات: <code>المجموع = 12</code>.</p>
 
-<blockquote><p><strong>ملاحظات:</strong> السهم <code>←</code> يعني «يأخذ القيمة»، وهو ليس علامة مساواة رياضية. سندرس تعليمات <strong>الإسناد</strong> <code>←</code> و<strong>القراءة</strong> <code>Lire</code> و<strong>الكتابة</strong> <code>Ecrire</code> بالتفصيل في <strong>الوحدة 17</strong>.</p></blockquote>
+<blockquote><p><strong>ملاحظات:</strong> السهم <code>←</code> يعني «يأخذ القيمة»، وهو ليس علامة مساواة رياضية. و<code>Write</code> تعرض أجزاءها متتالية دون أن تضيف فراغًا، لذلك نضع الفراغ داخل الرسالة <code>&quot;المجموع = &quot;</code>. سندرس تعليمات <strong>الإسناد</strong> <code>←</code> و<strong>القراءة</strong> <code>Read</code> و<strong>الكتابة</strong> <code>Write</code> بالتفصيل في <strong>الوحدة 17</strong>.</p></blockquote>
 
 <hr>
 
@@ -399,34 +399,34 @@ Fin
 <li><strong>المخرجات:</strong> رسالة تُظهر العدد الأكبر.</li>
 </ul>
 
-<p>في المخطط الانسيابي (الوحدة 15) رسمنا هذا السؤال <strong>معيّنًا</strong> له مخرجان: «نعم» و«لا». في الخوارزمية يصبح المعيّن تعليمة <strong>شرطية</strong>: <code>Si ... Alors ... Sinon ... FinSi</code> (إذا ... فإن ... وإلا ... نهاية إذا).</p>
+<p>في المخطط الانسيابي (الوحدة 15) رسمنا هذا السؤال <strong>معيّنًا</strong> له مخرجان: «نعم» و«لا». في الخوارزمية يصبح المعيّن تعليمة <strong>شرطية</strong>: <code>If ... Then ... Else ... EndIf</code> (إذا ... فإن ... وإلا ... نهاية إذا).</p>
 
 <h3>ب. الخوارزمية</h3>
 
 <pre><code class="text">
-Algorithme Comparer_Deux_Nombres
+Algorithm CompareTwoNumbers
 Var
-    a, b : Entier
-Début
-    Ecrire(&quot;Donner deux nombres :&quot;)
-    Lire(a, b)
-    Si a &gt; b Alors
-        Ecrire(&quot;Le plus grand : &quot;, a)
-    Sinon
-        Ecrire(&quot;Le plus grand : &quot;, b)
-    FinSi
-Fin
+    a, b : Integer
+Begin
+    Write(&quot;أدخل عددين:&quot;)
+    Read(a, b)
+    If a &gt; b Then
+        Write(&quot;الأكبر هو: &quot;, a)
+    Else
+        Write(&quot;الأكبر هو: &quot;, b)
+    EndIf
+End
 </code></pre>
 
-<p>فرع «نعم» في المعيّن هو الأسطر بين <code>Alors</code> و<code>Sinon</code>، وفرع «لا» هو الأسطر بين <code>Sinon</code> و<code>FinSi</code>.</p>
+<p>فرع «نعم» في المعيّن هو الأسطر بين <code>Then</code> و<code>Else</code>، وفرع «لا» هو الأسطر بين <code>Else</code> و<code>EndIf</code>.</p>
 
 <h3>ج. جرّبها</h3>
 
 <table>
 <tr><th>المدخلات (a ، b)</th><th>الشرط <code>a &gt; b</code></th><th>المخرجات المنتظرة</th></tr>
-<tr><td><code>7</code> ، <code>3</code></td><td>Vrai</td><td><code>Le plus grand : 7</code></td></tr>
-<tr><td><code>2</code> ، <code>9</code></td><td>Faux</td><td><code>Le plus grand : 9</code></td></tr>
-<tr><td><code>5</code> ، <code>5</code></td><td>Faux</td><td><code>Le plus grand : 5</code></td></tr>
+<tr><td><code>7</code> ، <code>3</code></td><td>True</td><td><code>الأكبر هو: 7</code></td></tr>
+<tr><td><code>2</code> ، <code>9</code></td><td>False</td><td><code>الأكبر هو: 9</code></td></tr>
+<tr><td><code>5</code> ، <code>5</code></td><td>False</td><td><code>الأكبر هو: 5</code></td></tr>
 </table>
 
 <blockquote><p><strong>سؤال للتفكير:</strong> في الحالة الأخيرة النتيجة صحيحة، لكن كيف نجعل الخوارزمية تكتب «العددان متساويان»؟ ستكتشف الجواب مع <strong>التعليمات الشرطية</strong> في الوحدة 17.</p></blockquote>
@@ -435,16 +435,16 @@ Fin
 
 <h2>10. جسر نحو Python (إثراء)</h2>
 
-<blockquote><p><strong>هذا القسم اختياري.</strong> لغات البرمجة الحقيقية تترجم الخوارزمية نفسها بكلمات أخرى: <code>Lire(a)</code> تصبح <code>a = int(input())</code>، و<code>←</code> تصبح <code>=</code>، و<code>Ecrire</code> تصبح <code>print</code>. هذه خوارزمية المجموع بلغة <strong>Python</strong>:</p></blockquote>
+<blockquote><p><strong>هذا القسم اختياري.</strong> لغات البرمجة الحقيقية تترجم الخوارزمية نفسها بكلمات قريبة جدًا: <code>Read(a)</code> تصبح <code>a = int(input())</code>، و<code>←</code> تصبح <code>=</code>، و<code>Write</code> تصبح <code>print</code>. هذه خوارزمية المجموع بلغة <strong>Python</strong>:</p></blockquote>
 
 <pre><code class="python">
-a = int(input(&quot;Donner a : &quot;))
-b = int(input(&quot;Donner b : &quot;))
+a = int(input(&quot;أدخل a: &quot;))
+b = int(input(&quot;أدخل b: &quot;))
 s = a + b
-print(&quot;La somme est :&quot;, s)
+print(&quot;المجموع =&quot;, s)
 </code></pre>
 
-<p>لاحظ: في Python الإسناد يُكتب <code>=</code>، و<code>int(...)</code> تحوّل ما يكتبه المستخدم (نص) إلى عدد صحيح؛ وبدونها يصبح <code>&quot;7&quot; + &quot;5&quot;</code> يساوي <code>&quot;75&quot;</code>!</p>
+<p>لاحظ: في Python الإسناد يُكتب <code>=</code>، و<code>int(...)</code> تحوّل ما يكتبه المستخدم (نص) إلى عدد صحيح؛ وبدونها يصبح <code>&quot;7&quot; + &quot;5&quot;</code> يساوي <code>&quot;75&quot;</code>! ولاحظ أيضًا أن <code>print</code> تضيف فراغًا بين أجزائها، عكس <code>Write</code>.</p>
 
 <hr>
 
@@ -454,16 +454,16 @@ print(&quot;La somme est :&quot;, s)
 
 <p><strong>الوسائل:</strong> ورقة وقلم (إلزامي). برنامج <strong>Algobox</strong> (مجاني، معتمد في التدرج السنوي) إن كان مثبتًا في المخبر؛ وإلا يعرضه الأستاذ على جهازه أمام القسم.</p>
 
-<blockquote><p><strong>في Algobox:</strong> الكتابة لا تكون حرفًا بحرف بل بأزرار. <code>Var</code> يقابلها «Déclarer nouvelle variable» (النوع <code>NOMBRE</code> للأعداد و<code>CHAINE</code> للنص)، و<code>Lire</code> يقابلها «LIRE» (متغير واحد في كل سطر)، و<code>Ecrire</code> يقابلها «AFFICHER»، و<code>←</code> تظهر <code>PREND_LA_VALEUR</code>، ثم نضغط «Tester l&#x27;algorithme».</p></blockquote>
+<blockquote><p><strong>في Algobox:</strong> الكتابة لا تكون حرفًا بحرف بل بأزرار، والبرنامج يعرض كلماته بالفرنسية. هذا ما تراه في Algobox مقابل كل كلمة من خوارزميتنا: <code>Var</code> ← الزر «Déclarer nouvelle variable» (النوع <code>NOMBRE</code> للأعداد و<code>CHAINE</code> للنص)، <code>Read</code> ← «LIRE» (متغير واحد في كل سطر)، <code>Write</code> ← «AFFICHER»، <code>←</code> ← <code>PREND_LA_VALEUR</code>، ثم نضغط الزر «Tester l&#x27;algorithme» للتجريب.</p></blockquote>
 
 <table>
 <tr><th>المهمة</th><th>ما يجب إنجازه</th><th>مؤشر النجاح</th></tr>
 <tr><td>1</td><td>تحليل مسألة المجموع في جدول مدخلات / معالجة / مخرجات</td><td>جدول من ثلاثة أعمدة صحيح</td></tr>
 <tr><td>2</td><td>كتابة خوارزمية المجموع على الورقة دون النظر إلى الدرس</td><td>الهيكل كامل والتصريحات صحيحة</td></tr>
-<tr><td>3</td><td>تنفيذها يدويًا بالمدخلات <code>12</code> و<code>30</code></td><td>المخرجات: <code>La somme est : 42</code></td></tr>
+<tr><td>3</td><td>تنفيذها يدويًا بالمدخلات <code>12</code> و<code>30</code></td><td>المخرجات: <code>المجموع = 42</code></td></tr>
 <tr><td>4</td><td>إدخالها في Algobox (أو متابعة عرض الأستاذ) وتجربتها بالقيم نفسها</td><td>النتيجة على الشاشة تطابق التنفيذ اليدوي</td></tr>
-<tr><td>5</td><td>كتابة خوارزمية المقارنة وتجربتها بالمدخلات <code>-3</code> و<code>-8</code></td><td>المخرجات: <code>Le plus grand : -3</code></td></tr>
-<tr><td>6</td><td>تعديل خوارزمية المقارنة لتُظهر <strong>الأصغر</strong> بدل الأكبر</td><td>المدخلات <code>4</code> و<code>11</code> ← <code>Le plus petit : 4</code></td></tr>
+<tr><td>5</td><td>كتابة خوارزمية المقارنة وتجربتها بالمدخلات <code>-3</code> و<code>-8</code></td><td>المخرجات: <code>الأكبر هو: -3</code></td></tr>
+<tr><td>6</td><td>تعديل خوارزمية المقارنة لتُظهر <strong>الأصغر</strong> بدل الأكبر</td><td>المدخلات <code>4</code> و<code>11</code> ← <code>الأصغر هو: 4</code></td></tr>
 </table>
 
 <p><strong>تسليم:</strong> ورقة الخوارزميتين مع جدول التجارب (المدخلات / المخرجات المنتظرة / المخرجات المحصّلة).</p>
@@ -479,18 +479,18 @@ print(&quot;La somme est :&quot;, s)
 </ol>
 
 <pre><code class="text">
-Algorithme Moyenne Eleve
+Algorithm Student Average
 Const
-    nb_matières = 3
+    عدد_المواد = 3
 Var
-    note1, note2 : Entier
-    Fin : Réel
+    mark1, mark2 : Integer
+    End : Real
 </code></pre>
 
 <ol>
-<li><strong>العبارات:</strong> احسب: <code>20 div 6</code>، <code>20 mod 6</code>، <code>3 + 4 * 2 - 1</code>، <code>(8 &gt; 5) ET NON (3 = 3)</code>.</li>
-<li><strong>المجموع (التقويم الرسمي):</strong> اكتب خوارزمية تقرأ عددين حقيقيين وتُظهر <strong>معدّلهما</strong>. تجربة: المدخلات <code>12</code> و<code>15</code> ← المخرجات <code>La moyenne est : 13.5</code>.</li>
-<li><strong>المقارنة (التقويم الرسمي):</strong> اكتب خوارزمية تقرأ عددين وتُظهر الأصغر بينهما. تجربة: المدخلات <code>7</code> و<code>3</code> ← المخرجات <code>Le plus petit : 3</code>.</li>
+<li><strong>العبارات:</strong> احسب: <code>20 div 6</code>، <code>20 mod 6</code>، <code>3 + 4 * 2 - 1</code>، <code>(8 &gt; 5) AND NOT (3 = 3)</code>.</li>
+<li><strong>المجموع (التقويم الرسمي):</strong> اكتب خوارزمية تقرأ عددين حقيقيين وتُظهر <strong>معدّلهما</strong>. تجربة: المدخلات <code>12</code> و<code>15</code> ← المخرجات <code>المعدل = 13.5</code>.</li>
+<li><strong>المقارنة (التقويم الرسمي):</strong> اكتب خوارزمية تقرأ عددين وتُظهر الأصغر بينهما. تجربة: المدخلات <code>7</code> و<code>3</code> ← المخرجات <code>الأصغر هو: 3</code>.</li>
 </ol>
 
 <hr>
@@ -513,16 +513,16 @@ Var
 
 <ul>
 <li><strong>تطبيق الشاي (§1):</strong> «حسب ذوقك» و«حتى يصبح جيدًا» غير دقيقتين؛ البديل: «ضع ملعقتين من السكر»، «اتركه 5 دقائق».</li>
-<li><strong>التصنيف (§4):</strong> 1 <code>Entier</code>، 2 <code>Réel</code>، 3 <code>Chaîne</code>، 4 <code>Booléen</code>، 5 <code>Caractère</code>، 6 <code>Réel</code> (أو <code>Entier</code> إن قُرّبت)، 7 <code>Chaîne</code> (الصفر الأول يضيع لو خزّناه عددًا، ولا نحسب به)، 8 <code>Chaîne</code> (بين علامتي تنصيص).</li>
-<li><strong>المعرّفات (§5):</strong> صالحة: <code>moyenne</code>، <code>note_2</code>، <code>NbEleves</code>. غير صالحة: <code>2eme_note</code> (يبدأ برقم)، <code>prix total</code> (فراغ)، <code>prénom</code> (نبرة)، <code>nb-eleves</code> (الرمز <code>-</code>)، <code>Var</code> (محجوزة)، <code>_total</code> (لا يبدأ بحرف)، <code>مجموع</code> (حروف غير لاتينية).</li>
-<li><strong>التصريح (§6):</strong> <code>Const PRIX_TICKET = 400</code> ؛ <code>Var nom : Chaîne</code> ؛ <code>nb_tickets : Entier</code> ؛ <code>total : Entier</code> (تُقبل <code>Réel</code>).</li>
-<li><strong>العبارات (§7):</strong> 1 <code>8</code> ؛ 2 <code>3 + 2 = 5</code> ؛ 3 <code>(6 mod 4) * 2 = 4</code> ؛ 4 <code>5</code> ؛ 5 <code>Faux</code> ؛ 6 <code>Vrai</code> ؛ 7 <code>Vrai</code> ؛ 8 <code>Vrai</code>.</li>
+<li><strong>التصنيف (§4):</strong> 1 <code>Integer</code>، 2 <code>Real</code>، 3 <code>String</code>، 4 <code>Boolean</code>، 5 <code>Char</code>، 6 <code>Real</code> (أو <code>Integer</code> إن قُرّبت)، 7 <code>String</code> (الصفر الأول يضيع لو خزّناه عددًا، ولا نحسب به)، 8 <code>String</code> (بين علامتي تنصيص).</li>
+<li><strong>المعرّفات (§5):</strong> صالحة: <code>average</code>، <code>mark_2</code>، <code>NbStudents</code>. غير صالحة: <code>2nd_mark</code> (يبدأ برقم)، <code>total price</code> (فراغ)، <code>résumé</code> (نبرة)، <code>nb-students</code> (الرمز <code>-</code>)، <code>Var</code> (محجوزة)، <code>_total</code> (لا يبدأ بحرف)، <code>مجموع</code> (حروف غير لاتينية).</li>
+<li><strong>التصريح (§6):</strong> <code>Const TICKET_PRICE = 400</code> ؛ <code>Var name : String</code> ؛ <code>ticketCount : Integer</code> ؛ <code>total : Integer</code> (تُقبل <code>Real</code>).</li>
+<li><strong>العبارات (§7):</strong> 1 <code>8</code> ؛ 2 <code>3 + 2 = 5</code> ؛ 3 <code>(6 mod 4) * 2 = 4</code> ؛ 4 <code>5</code> ؛ 5 <code>False</code> ؛ 6 <code>True</code> ؛ 7 <code>True</code> ؛ 8 <code>True</code>.</li>
 <li><strong>التقويم 1:</strong> الأولى تخالف <strong>الدقة</strong>، الثانية تخالف <strong>الانتهاء</strong>.</li>
-<li><strong>التقويم 2:</strong> مدخلات: الطول والعرض ؛ معالجة: <code>p ← 2 * (longueur + largeur)</code> ؛ مخرجات: المحيط.</li>
-<li><strong>التقويم 3:</strong> <code>Moyenne Eleve</code> فيه فراغ ← <code>Moyenne_Eleve</code> ؛ <code>nb_matières</code> فيه نبرة ويُكتب ثابتًا بحروف كبيرة ← <code>NB_MATIERES</code> ؛ النقاط أعداد بفاصلة ← <code>Réel</code> ؛ <code>Fin</code> كلمة محجوزة ← <code>moyenne</code>.</li>
-<li><strong>التقويم 4:</strong> <code>3</code> ؛ <code>2</code> ؛ <code>10</code> ؛ <code>Faux</code>.</li>
-<li><strong>التقويم 5:</strong> متغيرات <code>a, b, m : Réel</code> ؛ <code>Lire(a, b)</code> ؛ <code>m ← (a + b) / 2</code> ؛ <code>Ecrire(&quot;La moyenne est : &quot;, m)</code>. الأقواس ضرورية: بدونها تُحسب <code>a + b / 2</code>.</li>
-<li><strong>التقويم 6:</strong> نفس خوارزمية المقارنة مع <code>Si a &lt; b Alors Ecrire(&quot;Le plus petit : &quot;, a) Sinon Ecrire(&quot;Le plus petit : &quot;, b) FinSi</code>.</li>
+<li><strong>التقويم 2:</strong> مدخلات: الطول والعرض ؛ معالجة: <code>p ← 2 * (length + width)</code> ؛ مخرجات: المحيط.</li>
+<li><strong>التقويم 3:</strong> <code>Student Average</code> فيه فراغ ← <code>StudentAverage</code> ؛ <code>عدد_المواد</code> بحروف عربية ويُكتب ثابتًا بحروف كبيرة ← <code>NB_SUBJECTS</code> ؛ النقاط أعداد بفاصلة ← <code>Real</code> ؛ <code>End</code> كلمة محجوزة ← <code>avg</code>.</li>
+<li><strong>التقويم 4:</strong> <code>3</code> ؛ <code>2</code> ؛ <code>10</code> ؛ <code>False</code>.</li>
+<li><strong>التقويم 5:</strong> متغيرات <code>a, b, m : Real</code> ؛ <code>Read(a, b)</code> ؛ <code>m ← (a + b) / 2</code> ؛ <code>Write(&quot;المعدل = &quot;, m)</code>. الأقواس ضرورية: بدونها تُحسب <code>a + b / 2</code>.</li>
+<li><strong>التقويم 6:</strong> نفس خوارزمية المقارنة مع <code>If a &lt; b Then Write(&quot;الأصغر هو: &quot;, a) Else Write(&quot;الأصغر هو: &quot;, b) EndIf</code>.</li>
 </ul>
 
 <hr>
@@ -531,17 +531,17 @@ Var
 
 <table>
 <tr><th>المصطلح</th><th>العربية</th><th>الشرح المختصر</th></tr>
-<tr><td>Algorithm / <em>Algorithme</em></td><td>خوارزمية</td><td>خطوات منتهية ودقيقة ومرتبة لحل مسألة</td></tr>
-<tr><td>Input / Output — <em>Entrée / Sortie</em></td><td>مدخلات / مخرجات</td><td>المعطيات التي تحتاجها الخوارزمية / النتائج التي تعرضها</td></tr>
-<tr><td>Declaration / <em>Déclaration</em></td><td>تصريح</td><td>حجز مكان في الذاكرة لثابت أو متغير</td></tr>
-<tr><td>Identifier / <em>Identificateur</em></td><td>معرّف</td><td>اسم ثابت أو متغير أو خوارزمية</td></tr>
-<tr><td>Variable / <em>Variable</em></td><td>متغير</td><td>علبة في الذاكرة تتغير قيمتها</td></tr>
-<tr><td>Constant / <em>Constante</em></td><td>ثابت</td><td>قيمة مسمّاة لا تتغير أثناء التنفيذ</td></tr>
-<tr><td>Data type / <em>Type</em></td><td>نوع البيانات</td><td>مجموعة القيم التي يقبلها المعطى</td></tr>
-<tr><td>Boolean / <em>Booléen</em></td><td>منطقي</td><td>نوع له قيمتان: <code>Vrai</code> و<code>Faux</code></td></tr>
-<tr><td>Expression / <em>Expression</em></td><td>عبارة</td><td>تركيب من قيم وعمليات يعطي قيمة واحدة</td></tr>
-<tr><td>Reserved word / <em>Mot réservé</em></td><td>كلمة محجوزة</td><td>كلمة لها معنى ثابت لا تُستعمل اسمًا</td></tr>
-<tr><td>Operator precedence / <em>Priorité</em></td><td>أولوية العمليات</td><td>ترتيب حساب العمليات داخل العبارة</td></tr>
+<tr><td>Algorithm</td><td>خوارزمية</td><td>خطوات منتهية ودقيقة ومرتبة لحل مسألة</td></tr>
+<tr><td>Input / Output</td><td>مدخلات / مخرجات</td><td>المعطيات التي تحتاجها الخوارزمية / النتائج التي تعرضها</td></tr>
+<tr><td>Declaration</td><td>تصريح</td><td>حجز مكان في الذاكرة لثابت أو متغير</td></tr>
+<tr><td>Identifier</td><td>معرّف</td><td>اسم ثابت أو متغير أو خوارزمية</td></tr>
+<tr><td>Variable</td><td>متغير</td><td>علبة في الذاكرة تتغير قيمتها</td></tr>
+<tr><td>Constant</td><td>ثابت</td><td>قيمة مسمّاة لا تتغير أثناء التنفيذ</td></tr>
+<tr><td>Data type</td><td>نوع البيانات</td><td>مجموعة القيم التي يقبلها المعطى</td></tr>
+<tr><td>Boolean</td><td>منطقي</td><td>نوع له قيمتان: <code>True</code> و<code>False</code></td></tr>
+<tr><td>Expression</td><td>عبارة</td><td>تركيب من قيم وعمليات يعطي قيمة واحدة</td></tr>
+<tr><td>Reserved word</td><td>كلمة محجوزة</td><td>كلمة لها معنى ثابت لا تُستعمل اسمًا</td></tr>
+<tr><td>Operator precedence</td><td>أولوية العمليات</td><td>ترتيب حساب العمليات داخل العبارة</td></tr>
 </table>
 </body>
 </html>

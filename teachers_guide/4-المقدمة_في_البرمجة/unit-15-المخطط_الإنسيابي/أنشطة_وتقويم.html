@@ -36,10 +36,10 @@ img{max-width:100%;height:auto}
 <li><strong>التعليمة:</strong> يعرض الأستاذ تعليمة، ويرفع التلاميذ بطاقة الرمز المناسب (أو يرسمونه على اللوحة):</li>
 </ul>
 <ol>
-<li><code>Lire(x)</code> ← متوازي أضلاع.</li>
+<li><code>Read(x)</code> ← متوازي أضلاع.</li>
 <li><code>z ← x + 5</code> ← مستطيل.</li>
 <li><code>x &gt; 10 ?</code> ← معيّن.</li>
-<li><code>Ecrire(z)</code> ← متوازي أضلاع.</li>
+<li><code>Write(z)</code> ← متوازي أضلاع.</li>
 <li>أول المخطط وآخره ← مستطيل بزوايا مستديرة.</li>
 <ul>
 <li><strong>الهدف:</strong> ترسيخ دلالة كل رمز، وخاصة التمييز بين الإدخال/الإخراج والمعالجة.</li>
@@ -49,9 +49,9 @@ img{max-width:100%;height:auto}
 <h3>النشاط الثاني: اكتشف الخطأ (5 دقائق)</h3>
 
 <ul>
-<li><strong>التعليمة:</strong> يرسم الأستاذ على السبورة: بداية ← <code>surface ← long * larg</code> ← <code>Lire(long, larg)</code> ← <code>Ecrire(surface)</code> ← نهاية.</li>
+<li><strong>التعليمة:</strong> يرسم الأستاذ على السبورة: بداية ← <code>area ← length * width</code> ← <code>Read(length, width)</code> ← <code>Write(area)</code> ← نهاية.</li>
 <li><strong>السؤال:</strong> نفّذ المخطط بالقيمتين <code>4</code> و<code>2</code>. ماذا يحدث؟ أصلحه.</li>
-<li><strong>الإجابة المنتظرة:</strong> عند الحساب لا قيمة لـ <code>long</code> و<code>larg</code> بعد؛ نقدّم <code>Lire(long, larg)</code> على المعالجة. بعد الإصلاح: المخرج <code>8</code>.</li>
+<li><strong>الإجابة المنتظرة:</strong> عند الحساب لا قيمة لـ <code>length</code> و<code>width</code> بعد؛ نقدّم <code>Read(length, width)</code> على المعالجة. بعد الإصلاح: المخرج <code>8</code>.</li>
 </ul>
 
 <h3>النشاط الثالث: أي طريق؟ (4 دقائق)</h3>
@@ -71,7 +71,7 @@ img{max-width:100%;height:auto}
 <h3>النشاط الرابع: تتبع الحلقة (6 دقائق)</h3>
 
 <ul>
-<li><strong>التعليمة:</strong> أكمل جدول التتبع لمخطط الأعداد الزوجية الأقل من 20 (الأعمدة: الدورة، <code>i &lt; 20 ?</code>، s، i، Ecrire).</li>
+<li><strong>التعليمة:</strong> أكمل جدول التتبع لمخطط الأعداد الزوجية الأقل من 20 (الأعمدة: الدورة، <code>i &lt; 20 ?</code>، s، i، Write).</li>
 <li><strong>الإجابة المنتظرة:</strong> 9 دورات بجواب «نعم»، ثم الخروج عند <code>i = 20</code>، والمخرج <code>90</code>.</li>
 <li><strong>سؤال إضافي:</strong> ماذا يحدث لو بدأنا بـ <code>i ← 0</code>؟ <em>(المجموع نفسه 90، مع دورة إضافية.)</em></li>
 </ul>

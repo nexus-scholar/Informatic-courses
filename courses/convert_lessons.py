@@ -171,6 +171,12 @@ TEMPLATE = """<!DOCTYPE html>
 count = 0
 for md_file in sorted(LESSONS.rglob("*.md")):
     md = md_file.read_text(encoding="utf-8")
+    # Interactive portal widgets cannot run in the offline HTML copy: point to the portal instead.
+    md = re.sub(
+        r"\{%\s*flowchart-studio[^%]*/%\}",
+        "> **المختبر التفاعلي:** افتح https://informatique.mouadh.info/studio/ لتجربة هذه المخططات خطوة بخطوة.",
+        md,
+    )
     body = md_to_html(md)
     # Extract title from first heading
     title_m = re.search(r"^#\s+(.+)", md, re.MULTILINE)

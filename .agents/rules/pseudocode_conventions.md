@@ -1,57 +1,67 @@
 # Pseudo-code conventions (Units 15–17)
 
-One dialect for every algorithm in the student lessons, teacher guides and assessments. It follows the 2015 textbook (French keywords, as in Algobox and in classroom exams) and adds a fixed Arabic reading for each keyword. The future interactive playground will parse exactly this dialect, so do not invent variants.
+One dialect for every algorithm and flowchart in the student lessons, teacher guides, assessments and the flowchart studio (`site/src/components/studio/`). **Keywords, types and identifiers are in English; every message shown to the user is in Arabic. No French anywhere** (the only exception: naming Algobox's own on-screen buttons, since that program is French).
+
+The studio's evaluator parses exactly this dialect, so do not invent variants.
 
 ## Keywords
 
-| Pseudo-code | القراءة بالعربية | Python (extension only) |
-|---|---|---|
-| `Algorithme Nom` | خوارزمية الاسم | — |
-| `Const` | ثوابت | `NOM = valeur` |
-| `Var` | متغيرات | — |
-| `Début` / `Fin` | بداية / نهاية | — |
-| `x ← expression` | يُسند إلى x | `x = expression` |
-| `Lire(x)` / `Lire(a, b)` | اقرأ | `x = int(input())` / `float(input())` |
-| `Ecrire("texte", x)` | اكتب | `print("texte", x)` |
-| `Si cond Alors … FinSi` | إذا … فإن … نهاية إذا | `if cond:` |
-| `Si cond Alors … Sinon … FinSi` | إذا … فإن … وإلا … نهاية إذا | `if … else:` |
-| `Pour i de 1 à n Faire … FinPour` | من أجل i من 1 إلى n افعل … نهاية من أجل | `for i in range(1, n + 1):` |
-| `TantQue cond Faire … FinTantQue` | طالما … افعل … نهاية طالما | `while cond:` |
-| `Répéter … Jusqu'à cond` (إثراء) | كرّر … إلى أن | — |
+| Pseudo-code | القراءة بالعربية |
+|---|---|
+| `Algorithm Name` | خوارزمية الاسم |
+| `Const` | ثوابت |
+| `Var` | متغيرات |
+| `Begin` / `End` | بداية / نهاية |
+| `x ← expression` | يُسند إلى x |
+| `Read(x)` / `Read(a, b)` | اقرأ |
+| `Write("نص", x)` | اكتب |
+| `If cond Then … EndIf` | إذا … فإن … نهاية إذا |
+| `If cond Then … Else … EndIf` | إذا … فإن … وإلا … نهاية إذا |
+| `For i ← 1 To n Do … EndFor` | من أجل i من 1 إلى n افعل … نهاية من أجل |
+| `While cond Do … EndWhile` | طالما … افعل … نهاية طالما |
+| `Repeat … Until cond` (إثراء) | كرّر … إلى أن |
+
+Python appears only in optional «جسر نحو Python» boxes: `x = int(input())`, `print("نص", x)`, `if/else`, `for i in range(1, n + 1)`, `while`.
 
 ## Declarations and types
 
 ```text
-Algorithme Surface_Rectangle
+Algorithm RectangleArea
 Const
     PI = 3.14
 Var
-    longueur, largeur, surface : Réel
-    n : Entier
-    nom : Chaîne
-    admis : Booléen
-Début
-    Ecrire("Donner la longueur et la largeur :")
-    Lire(longueur, largeur)
-    surface ← longueur * largeur
-    Ecrire("La surface est : ", surface)
-Fin
+    length, width, area : Real
+    n : Integer
+    name : String
+    passed : Boolean
+Begin
+    Write("أدخل الطول والعرض:")
+    Read(length, width)
+    area ← length * width
+    Write("المساحة = ", area)
+End
 ```
 
-- Types: `Entier`, `Réel`, `Caractère`, `Chaîne`, `Booléen` (values `Vrai` / `Faux`).
-- Identifiers: Latin letters, digits and `_`; start with a letter; no spaces, no accents, no reserved words. Constants in CAPITALS.
+- Types: `Integer`, `Real`, `Char`, `String`, `Boolean` (values `True` / `False`).
+- Identifiers: English words or short abbreviations (`avg`, `total`, `count`, `goalsA`); Latin letters, digits and `_`; start with a letter; no spaces, no accents, no reserved words. Constants in CAPITALS.
 - Indent block contents by 4 spaces. One instruction per line.
 
 ## Operators
 
 - Arithmetic: `+  -  *  /  div  mod` (`div` = integer quotient, `mod` = remainder).
 - Comparison: `=  ≠  <  >  ≤  ≥` (write `≠ ≤ ≥`, not `<> <= >=`).
-- Logical: `ET  OU  NON`.
+- Logical: `AND  OR  NOT`.
 - Assignment is always `←` (never `=` or `:=`).
+
+## Output
+
+- `Write` prints its parts one after another **with no added space**: `Write("x = ", x)` → `x = 3`.
+- Messages are Arabic strings: `Write("ناجح")`, `Write("لا يوجد حل")`.
 
 ## Formatting in Markdown
 
 - Pseudo-code in fenced blocks tagged ```` ```text ````; Python in ```` ```python ````.
-- Every closing keyword is written (`FinSi`, `FinPour`, `FinTantQue`); never `Fin faire` / `Fin tant que`.
-- Trace tables (جدول التتبع) are Markdown tables: one column per variable plus `Ecrire` output, one row per executed step or loop turn.
-- Each exercise states its input and the expected output for a sample input, so it can later be checked automatically.
+- Every closing keyword is written (`EndIf`, `EndFor`, `EndWhile`).
+- Trace tables (جدول التتبع) are Markdown tables: one column per variable plus the `Write` output, one row per executed step or loop turn.
+- Each exercise states its input and the expected output for a sample input, so it can be checked automatically.
+- Terminology in prose: Arabic first, then the English term in parentheses where useful — e.g. المخطط النسقي (Flowchart). No French glosses.
