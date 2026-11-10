@@ -1,7 +1,16 @@
 import { Callout } from '@/components/Callout'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
+import { FlowchartStudio } from '@/components/studio/FlowchartStudio'
 
 const tags = {
+  'flowchart-studio': {
+    selfClosing: true,
+    attributes: {
+      example: { type: String },
+      only: { type: String },
+    },
+    render: FlowchartStudio,
+  },
   callout: {
     attributes: {
       title: { type: String },
