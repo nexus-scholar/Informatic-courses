@@ -177,6 +177,11 @@ for md_file in sorted(LESSONS.rglob("*.md")):
         "> **المختبر التفاعلي:** افتح https://informatique.mouadh.info/studio/ لتجربة هذه المخططات خطوة بخطوة.",
         md,
     )
+    md = re.sub(
+        r"\{%\s*algorithm-studio[^%]*/%\}",
+        "> **المختبر التفاعلي:** افتح https://informatique.mouadh.info/studio/algorithms/ لتنفيذ هذه الخوارزميات سطرًا بسطر.",
+        md,
+    )
     body = md_to_html(md)
     # Extract title from first heading
     title_m = re.search(r"^#\s+(.+)", md, re.MULTILINE)
