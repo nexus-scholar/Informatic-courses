@@ -45,3 +45,12 @@
     display: none;
   }
 }
+
+/* Phones: wide lesson tables scroll inside their own box instead of spilling off-screen. */
+@media (max-width: 640px) {
+  .prose table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
