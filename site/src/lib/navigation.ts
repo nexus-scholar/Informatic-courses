@@ -52,6 +52,7 @@ export const navigation = [
       { title: 'الوحدة 19: البريد الإلكتروني', href: '/docs/unit-19' },
       { title: 'الوحدة 20: شبكات التواصل الاجتماعي', href: '/docs/unit-20' },
       { title: 'الوحدة 21: إنشاء صفحة ويب HTML', href: '/docs/unit-21' },
+      { title: 'مختبر HTML', href: '/studio/html' },
     ],
   },
 ]

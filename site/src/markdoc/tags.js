@@ -2,8 +2,17 @@ import { Callout } from '@/components/Callout'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
 import { AlgorithmStudio } from '@/components/studio/AlgorithmStudio'
 import { FlowchartStudio } from '@/components/studio/FlowchartStudio'
+import { HtmlStudio } from '@/components/studio/HtmlStudio'
 
 const tags = {
+  'html-studio': {
+    selfClosing: true,
+    attributes: {
+      example: { type: String },
+      only: { type: String },
+    },
+    render: HtmlStudio,
+  },
   'algorithm-studio': {
     selfClosing: true,
     attributes: {

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="320" height="180" role="img" aria-label="Desert and oasis">
+<rect width="320" height="180" fill="#ffd9a0"/>
+<circle cx="250" cy="45" r="22" fill="#ffb347"/>
+<path d="M0 120 Q60 90 120 118 T240 112 T320 116 V180 H0Z" fill="#e8a55c"/>
+<path d="M0 145 Q80 120 160 142 T320 138 V180 H0Z" fill="#d48a3f"/>
+<rect x="68" y="88" width="5" height="40" fill="#7a4a1d"/>
+<path d="M70 88 q-22 -6 -30 6 q16 -8 30 -2 q-10 -16 -26 -12 q18 0 26 8 q2 -18 18 -22 q-14 10 -16 22 q14 -10 30 -4 q-18 -2 -30 4z" fill="#3f8f3a"/>
+<ellipse cx="72" cy="132" rx="26" ry="5" fill="#5fb3d9"/>
+</svg>

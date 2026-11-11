@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="200" height="220" role="img" aria-label="Historic monument">
+<rect width="200" height="220" fill="#dff1ff"/>
+<rect x="20" y="180" width="160" height="16" fill="#b8a27a"/>
+<rect x="40" y="110" width="120" height="70" fill="#e8d3a3"/>
+<path d="M60 180 V140 a20 20 0 0 1 40 0 V180z" fill="#7a5c33"/>
+<path d="M110 180 V140 a20 20 0 0 1 40 0 V180z" fill="#7a5c33"/>
+<rect x="88" y="40" width="24" height="70" fill="#e8d3a3"/>
+<path d="M84 40 L100 18 L116 40z" fill="#c9a96a"/>
+<rect x="95" y="56" width="10" height="16" rx="5" fill="#7a5c33"/>
+</svg>
