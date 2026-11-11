@@ -20,19 +20,19 @@ export const navigation = [
   {
     title: 'المجال 2: المكتبية (Word & Excel)',
     links: [
-      { title: 'الوحدة 07: الأنماط في Word', href: '/docs/unit-07' },
+      { title: 'الوحدة 07: أساسيات Word والأنماط', href: '/docs/unit-07' },
       { title: 'الوحدة 08: القوالب في Word', href: '/docs/unit-08' },
-      { title: 'الوحدة 09: المقاطع في Word', href: '/docs/unit-09' },
+      { title: 'الوحدة 09: المقاطع والفواصل', href: '/docs/unit-09' },
       { title: 'الوحدة 10: دمج المراسلات', href: '/docs/unit-10' },
       { title: 'الوحدة 11: الصيغ والدوال في Excel', href: '/docs/unit-11' },
-      { title: 'الوحدة 12: فرز وتصفية البيانات', href: '/docs/unit-12' },
+      { title: 'الوحدة 12: ترتيب البيانات وفرزها', href: '/docs/unit-12' },
     ],
   },
   {
     title: 'تنظيم البوابة: العروض التقديمية',
     links: [
-      { title: 'الوحدة 13: الارتباطات التشعبية', href: '/docs/unit-13' },
-      { title: 'الوحدة 14: الحركة والمؤثرات', href: '/docs/unit-14' },
+      { title: 'الوحدة 13: الشرائح والارتباطات', href: '/docs/unit-13' },
+      { title: 'الوحدة 14: الحركة والوسائط', href: '/docs/unit-14' },
     ],
   },
   {
