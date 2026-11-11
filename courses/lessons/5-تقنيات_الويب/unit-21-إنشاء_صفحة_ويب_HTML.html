@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الوحدة 21: إنشاء صفحة ويب HTML</title>
+<title>الوحدة 21: إنشاء صفحة ويب بلغة HTML5</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
 body{font-family:'Amiri','Noto Naskh Arabic',serif;direction:rtl;text-align:right;background:#fff;color:#1a1a1a;line-height:2;max-width:900px;margin:0 auto;padding:20px 30px}
@@ -26,452 +26,1008 @@ img{max-width:100%;height:auto}
 </style>
 </head>
 <body>
-<h1>الوحدة 21: إنشاء صفحة ويب HTML</h1>
-<h2>المجال الخامس: تقنيات الويب</h2>
-<h3>المدة الزمنية: 06 ساعات</h3>
+<h1>الوحدة 21: إنشاء صفحة ويب بلغة HTML5</h1>
+
+<h2>المجال المفاهيمي الرابع: تقنيات الويب</h2>
+
+<p><strong>المستوى:</strong> السنة الأولى ثانوي (1AS)</p>
+<p><strong>المدة الزمنية:</strong> 06 ساعات (ثلاثة أسابيع: حصة نظرية وحصة تطبيقية كل أسبوع)</p>
+<p><strong>المكتسبات القبلية:</strong> مبادئ التصفح والعنوان الإلكتروني للموقع (وحدة المتصفح)، حفظ الملفات وتنظيمها في مجلدات، مبادئ الخوارزميات (المجال المفاهيمي الثاني)</p>
 
 <hr>
 
-<h3>1 مقدمة</h3>
+<h2>الأهداف التعلمية</h2>
 
-<p>يظن بعض الناس أن إنشاء المواقع عملية صعبة معقدة، وهذا ليس صحيحاً، فيمكن للجميع تعلم كيفية إنشاء المواقع. الهدف من هذا الدرس هو مقدمة سهلة في كيفية إنشاء المواقع، وهذا الدرس لا يتطلب أي معرفة مسبقة منك عن البرمجة أو تطوير المواقع.</p>
+<p>في نهاية هذه الوحدة، يكون المتعلم قادرًا على أن:</p>
 
-<h3>2 ما هي HTML</h3>
+<ol>
+<li>يعرّف صفحة الويب ولغة HTML، ويشرح لماذا هي لغة توصيف (Markup language) وليست لغة برمجة.</li>
+<li>يميّز بين الوسم (Tag) والعنصر (Element) والخاصية (Attribute).</li>
+<li>يكتب الهيكل الأساسي لملف HTML5 ويحفظه بترميز UTF-8 وبامتداد <code>.html</code>، ثم يفتحه في المتصفح.</li>
+<li>ينسّق النص بالعناوين والفقرات، ويفرّق بين وسوم المعنى (<code>strong</code>، <code>em</code>) ووسوم المظهر (<code>b</code>، <code>i</code>).</li>
+<li>ينشئ قائمة مرقّمة (العدّاد الرقمي) وقائمة نقطية (العدّاد النقطي) وقائمة متداخلة.</li>
+<li>يُدرج ارتباطًا تشعبيًا نحو موقع، ونحو صفحة أخرى من موقعه، ونحو بريد إلكتروني، ويفرّق بين المسار النسبي والمسار المطلق.</li>
+<li>يُدرج صورة مع نص بديل (<code>alt</code>) ويختار صيغة الصورة المناسبة.</li>
+<li>ينشئ جدولًا لعرض البيانات، ويستعمل أوراق الأنماط (CSS) بدل الخصائص القديمة لتلوين الصفحة وتنسيقها.</li>
+<li>ينشئ موقعًا صغيرًا من صفحتين يتضمن فقرات وصورة وارتباطًا تشعبيًا (التقويم الرسمي للوحدة).</li>
+</ol>
 
-<p>هي اللغة المستخدمة في إنشاء وتصميم صفحات الويب.</p>
+<hr>
 
-<p>اخترعت HTML في عام 1991م من قبل عالم يسمى تيم بيرنرزلي، الهدف من هذه اللغة هو تبسيط عملية وصول العلماء في جامعات مختلفة إلى البحوث التي ينشرونها. المشروع نجح بشكل لم يتصوره تيم بيرنرزلي، فباختراعه HTML قام تيم بيرنرزلي بوضع أساس شبكة الويب كما نعرفها اليوم.</p>
+<h2>خريطة التعلم في ست حصص</h2>
 
-<p>هي لغة تسمح بعرض المعلومات (مثال: البحوث العلمية) على شبكة الإنترنت، وهذا ما نراه عند زيارتنا لأي صفحة في الشبكة.</p>
+<table>
+<tr><th>الحصة</th><th>السؤال المركزي</th><th>ناتج التعلّم القابل للملاحظة</th></tr>
+<tr><td>1 — نظري (الأسبوع 1)</td><td>كيف «يفهم» المتصفح صفحة الويب؟</td><td>يشرح دور الوسوم ويكتب هيكل HTML5 على الورق.</td></tr>
+<tr><td>2 — تطبيقي (الأسبوع 1)</td><td>كيف أكتب صفحتي الأولى وأنسّق نصها؟</td><td>يحفظ <code>index.html</code> ويعرضه في المتصفح بعناوين وفقرات.</td></tr>
+<tr><td>3 — نظري (الأسبوع 2)</td><td>كيف أرتّب المعلومات وأربط الصفحات؟</td><td>يكتب قوائم مرقّمة ونقطية وارتباطات بأنواعها.</td></tr>
+<tr><td>4 — تطبيقي (الأسبوع 2)</td><td>كيف أضيف صورة لا تختفي؟</td><td>يُدرج صورة من مجلد <code>images</code> مع <code>alt</code>، ويُنجز <strong>محطة منتصف الوحدة</strong>.</td></tr>
+<tr><td>5 — نظري (الأسبوع 3)</td><td>كيف أعرض بيانات وأجمّل صفحتي بطريقة حديثة؟</td><td>ينشئ جدولًا ويكتب أول قواعد CSS.</td></tr>
+<tr><td>6 — تطبيقي (الأسبوع 3)</td><td>هل أستطيع بناء موقع صغير وحدي؟</td><td>يُنجز مشروع «صفحة التعريف بولايتي» (التقويم الرسمي).</td></tr>
+</table>
 
-<h3>3 ماذا تعني H-T-M-L؟</h3>
+<blockquote><p>في وحدة المتصفح تعلّمت كيف <strong>تزور</strong> صفحات الويب. في هذه الوحدة تنتقل إلى الجهة الأخرى: ستصبح أنت من <strong>يصنع</strong> الصفحة التي يعرضها المتصفح.</p></blockquote>
 
-<p>كلمة HTML هي اختصار &quot;HyperText Markup Language&quot;،</p>
+<hr>
 
-<ul>
-<li>HYPER هي عكس &quot;خطي&quot;، وهي تعني في هذه الحالة أن ننتقل من أي نقطة إلى أي نقطة بدون أن نسير في خط سير محدد.</li>
-<li>Text تعني النص.</li>
-<li>Mark-up هو ما نفعله بالنص، فهذه الكلمة تعني توصيف النص، فنحن نقوم بتوصيف النص تماماً كما نفعل مع معالجات النصوص والكلمات، فنضيف العناوين والنقاط والنص السميك وغيرها.</li>
-<li>Language تعني اللغة، فتقنية HTML هي لغة توصيف.</li>
-</ul>
+<h2>1. ما هي صفحة الويب؟ وما هي لغة HTML؟</h2>
 
-<p>تكتب ملفات HTML في صورة ملفات نصوص بسيطة (Text)، تأخذ الامتداد .html عادة، وتكتب في أي برنامج للنصوص البسيطة، في الويندوز نستخدم Notepad++.</p>
+<h3>أ. صفحة الويب</h3>
 
-<p>لغة HTML لغة وصفية سهلة جداً ذات قدرات عالية وميزات فريدة وقوية، جميع الصفحات العالمية متقنة التصميم تم إعدادها باستخدام لغة HTML، وتتميز HTML أيضاً بأنها ذات قواعد سهلة ومعروفة.</p>
+<p><strong>صفحة الويب</strong> (Web page) ملف نصي يحتوي على المحتوى (نصوص، صور، روابط…) وعلى تعليمات تصف هذا المحتوى. يقرأ <strong>المتصفح</strong> (Browser) مثل Edge أو Chrome أو Firefox هذا الملف، ثم <strong>يعرضه</strong> (Render) على الشاشة بالعناوين والألوان والصور.</p>
 
-<blockquote><p>مورد إضافي للأستاذ: راجع صفحة «موارد موثوقة للتعلم والتدريس» في البوابة، وبالأخص درس MDN التمهيدي عن إنشاء أول صفحة ويب.</p></blockquote>
+<p><strong>الموقع</strong> (Website) مجموعة صفحات مترابطة بارتباطات تشعبية، والصفحة الرئيسية فيه تُسمّى عادة <code>index.html</code>.</p>
 
-<h3>4 العناصر والوسوم</h3>
+<h3>ب. لغة HTML</h3>
 
-<p>تتكون ملفات HTML من قسمين:</p>
+<p><strong>HTML</strong> اختصار لـ HyperText Markup Language، أي <strong>لغة توصيف النص التشعبي</strong>:</p>
 
-<ul>
-<li>المحتوى: وهو ما يشاهده الجمهور في صفحتك.</li>
-</ul>
+<table>
+<tr><th>الجزء</th><th>المعنى</th></tr>
+<tr><td>HyperText — النص التشعبي</td><td>نص يحتوي على روابط تنقلك من صفحة إلى أخرى دون ترتيب خطي.</td></tr>
+<tr><td>Markup — التوصيف</td><td>وضع «علامات» حول النص لتقول للمتصفح: هذا عنوان، هذه فقرة، هذه صورة.</td></tr>
+<tr><td>Language — لغة</td><td>مجموعة قواعد متفق عليها يفهمها كل المتصفحات.</td></tr>
+</table>
 
-<p>الوسوم (Tags) هي الأجزاء التي تحدد وتصف المحتوى من حيث التنسيق. الوسوم هي توصيفات نستخدمها ونضعها في بداية العنصر وعند نهايته. كل الوسوم لها نفس الشكل، تبدأ مع علامة أصغر من &quot;&amp;lt;&quot; وتنتهي مع علامة أكبر من &quot;&amp;gt;&quot;.</p>
+<p>ابتكر العالم <strong>تيم بيرنرز-لي</strong> (Tim Berners-Lee) لغة HTML وشبكة الويب في بداية التسعينيات لتسهيل تبادل البحوث بين العلماء. والنسخة المعتمدة اليوم هي <strong>HTML5</strong>.</p>
+
+<h3>ج. HTML لغة توصيف وليست لغة برمجة</h3>
+
+<p>في المجال المفاهيمي الثاني كتبت خوارزميات فيها <strong>شروط</strong> (<code>If</code>) و<strong>حلقات</strong> (<code>For</code>، <code>While</code>) و<strong>متغيرات</strong>. لغة HTML لا تحتوي على شيء من ذلك: هي لا تحسب ولا تقرّر، بل <strong>تصف</strong> بنية المحتوى فقط.</p>
+
+<table>
+<tr><th>لغة برمجة (مثل Python)</th><th>لغة توصيف (HTML)</th></tr>
+<tr><td>تنفّذ تعليمات وتحسب نتائج</td><td>تصف أجزاء المحتوى</td></tr>
+<tr><td>فيها متغيرات وشروط وحلقات</td><td>فيها وسوم وخصائص</td></tr>
+<tr><td>السؤال: «ماذا أفعل؟»</td><td>السؤال: «ما هذا الجزء؟»</td></tr>
+</table>
+
+<blockquote><p><strong>تقسيم الأدوار في الويب الحديث:</strong> HTML تصف <strong>البنية</strong> (ما هو المحتوى)، و<strong>CSS</strong> تحدّد <strong>المظهر</strong> (الألوان والخطوط)، و<strong>JavaScript</strong> تضيف <strong>السلوك</strong> (التفاعل). في هذه الوحدة نتعلّم HTML ونتذوّق CSS في نهايتها.</p></blockquote>
+
+<h3>د. الوسم والعنصر والخاصية</h3>
+
+<p><strong>الوسم</strong> (Tag) كلمة محاطة بالعلامتين <code>&lt;</code> و<code>&gt;</code>. أغلب الوسوم تأتي زوجًا: <strong>وسم فتح</strong> و<strong>وسم إغلاق</strong> يتميّز بالشرطة المائلة <code>/</code>.</p>
 
 <pre><code class="html">
-&lt;html&gt; .............................................&lt;/html&gt;
+&lt;p&gt;الجزائر بلد جميل.&lt;/p&gt;
 </code></pre>
 
-<p>بشكل عام هناك نوعان من الوسوم، وسم البداية مثلاً: &amp;lt;html&amp;gt; ثم وسم الإغلاق &amp;lt;/html&amp;gt;. الفرق بين الاثنين هو علامة &quot;/&quot;، وتوصيف المحتوى يكون بوضعه بين وسم البداية ووسم الإغلاق.</p>
-
-<p>بعض الأمثلة:</p>
-
 <ul>
-<li>المثال 1:</li>
+<li><code>&lt;p&gt;</code> وسم الفتح، و<code>&lt;/p&gt;</code> وسم الإغلاق.</li>
+<li><strong>العنصر</strong> (Element) هو الكل: وسم الفتح + المحتوى + وسم الإغلاق.</li>
+<li>بعض العناصر <strong>فارغة</strong> (Void element) لا محتوى لها ولا وسم إغلاق، مثل <code>&lt;br&gt;</code> و<code>&lt;img&gt;</code>.</li>
 </ul>
 
-<p>الوسم em هو اختصار لكلمة &quot;emphasis&quot;، أو الوسم i، يجعل النص &quot;مائلاً&quot;، وكل النصوص بين وسم البداية &amp;lt;em&amp;gt; ووسم الإغلاق &amp;lt;/em&amp;gt; ستظهر بشكل مائل في المتصفح.</p>
+<p><strong>الخاصية</strong> (Attribute) معلومة إضافية تُكتب <strong>داخل وسم الفتح</strong> على شكل <code>اسم=&quot;قيمة&quot;</code>:</p>
 
 <pre><code class="html">
-&lt;em&gt;نص مائل&lt;/em&gt;
+&lt;a href=&quot;https://www.example.com&quot;&gt;زر الموقع&lt;/a&gt;
 </code></pre>
 
-<ul>
-<li>المثال 2:</li>
-</ul>
+<p>هنا <code>href</code> اسم الخاصية، و<code>https://www.example.com</code> قيمتها، وتُكتب القيمة بين مزدوجتين.</p>
 
-<p>الوسم b هو اختصار لكلمة Bold أو الوسم strong للخط العريض، ويأتي في صورة زوج من الوسوم، وسم للفتح ووسم للإغلاق.</p>
+<blockquote><p><strong>قواعد ذهبية:</strong> (1) أغلق كل وسم فتحته. (2) أغلق الوسوم بعكس ترتيب فتحها: <code>&lt;p&gt;&lt;strong&gt;نص&lt;/strong&gt;&lt;/p&gt;</code> صحيح، و<code>&lt;p&gt;&lt;strong&gt;نص&lt;/p&gt;&lt;/strong&gt;</code> خطأ. (3) اكتب أسماء الوسوم بحروف لاتينية صغيرة.</p></blockquote>
+
+<h3>هـ. أدوات العمل</h3>
+
+<p>لا تحتاج إلا إلى برنامجين مجانيين موجودين في كل حاسوب أو سهلي التثبيت:</p>
+
+<ol>
+<li><strong>محرّر نصوص</strong> (Text editor):</li>
+<ul>
+<li><strong>المفكرة</strong> (Notepad) في Windows 11: كافية للبداية.</li>
+<li>محرّر مجاني متخصص مثل <strong>Visual Studio Code</strong> أو <strong>Notepad++</strong>: يلوّن الوسوم ويُكمل الكتابة ويُظهر الأخطاء.</li>
+<li>في Linux (Ubuntu/Debian): <strong>محرّر النصوص</strong> (Text Editor) أو Visual Studio Code.</li>
+</ul>
+<li><strong>متصفح</strong> حديث: Edge أو Chrome أو Firefox.</li>
+</ol>
+
+<blockquote><p>لا تكتب صفحة الويب في Word: معالج النصوص يضيف تنسيقات خفية ويحفظ بصيغة <code>.docx</code> التي لا يفهمها المتصفح كصفحة ويب.</p></blockquote>
+
+<h3>و. الحفظ والفتح والتحديث</h3>
+
+<ol>
+<li>أنشئ في سطح المكتب أو في «المستندات» مجلدًا لموقعك باسم لاتيني بسيط، مثل <code>mysite</code>.</li>
+<li>في المحرّر: <strong>ملف ← حفظ باسم</strong> (File ← Save as).</li>
+<li>اكتب الاسم <code>index.html</code>. في المفكرة اختر نوع الملف <strong>كل الملفات</strong> (All files) حتى لا يصبح الاسم <code>index.html.txt</code>.</li>
+<li>تأكّد أن <strong>الترميز</strong> (Encoding) هو <strong>UTF-8</strong>، فهو الذي يُظهر الحروف العربية سليمة.</li>
+<li>افتح الملف بالنقر المزدوج عليه، أو اسحبه إلى نافذة المتصفح.</li>
+<li>كلما عدّلت الملف: <strong>احفظ</strong> في المحرّر (<code>Ctrl + S</code>) ثم <strong>حدّث</strong> الصفحة في المتصفح (<code>F5</code> أو <code>Ctrl + R</code>).</li>
+</ol>
+
+<p><strong>قواعد تسمية الملفات:</strong></p>
+
+<table>
+<tr><th>صحيح</th><th>خطأ</th><th>السبب</th></tr>
+<tr><td><code>index.html</code></td><td><code>صفحتي.html</code></td><td>تجنّب الحروف العربية في أسماء الملفات.</td></tr>
+<tr><td><code>page2.html</code></td><td><code>Page 2.html</code></td><td>لا مسافات، واستعمل الحروف الصغيرة.</td></tr>
+<tr><td><code>my-city.html</code></td><td><code>my city!.html</code></td><td>لا رموز خاصة؛ الشرطة <code>-</code> مقبولة.</td></tr>
+</table>
+
+<blockquote><p><strong>نصيحة:</strong> في مستكشف الملفات اعرض امتدادات الملفات من <strong>عرض ← إظهار ← ملحقات أسماء الملفات</strong> (View ← Show ← File name extensions) لترى الامتداد الحقيقي لكل ملف.</p></blockquote>
+
+<blockquote><p><strong>إثراء:</strong> في المتصفح، الاختصار <code>Ctrl + U</code> يعرض <strong>الشيفرة المصدرية</strong> (Source code) لأي صفحة تزورها، و<code>F12</code> يفتح <strong>أدوات المطوّر</strong> (Developer tools).</p></blockquote>
+
+<hr>
+
+<h2>2. الهيكل الأساسي لصفحة HTML5</h2>
+
+<p>كل صفحة ويب تُبنى على الهيكل نفسه. احفظه جيدًا، فكل أمثلة الوحدة تنطلق منه:</p>
 
 <pre><code class="html">
-HTML is a &lt;b&gt;Great&lt;/b&gt; Language
-</code></pre>
-
-<p>وعند استخدام المتصفح في مشاهدة السطر سيظهر هكذا:</p>
-
-<p>سيظهر بهذا الشكل في المتصفح: HTML is a Great Language</p>
-
-<h4>ملاحظات:</h4>
-
-<ul>
-<li>جميع عناصر ملف HTML يتم إدراجها عن طريق الوسوم، وتحدد خصائصها أيضاً عن طريق الوسوم.</li>
-<li>لغة HTML لا تراعي حالة الأحرف من حيث كونها كبيرة أو صغيرة، أي أنه في HTML الوسم &amp;lt;b&amp;gt; لا يختلف عن &amp;lt;B&amp;gt;.</li>
-<li>بعض الوسوم تحتاج إلى وسم إغلاق وبعضها لا يحتاج إليه، مثلاً الوسم &amp;lt;br&amp;gt; الذي يستخدم لتحديد نهاية السطر وبداية سطر جديد ليس له وسم إغلاق.</li>
-<li>لغة HTML لا تراعي الفراغات والمسافات البيضاء، أما الفراغات فتعتبر رموزاً خاصة أيضاً، وللتحكم بها نستخدم الوسم non breakable space (&amp;amp;nbsp)، وإذا أردنا إدخال عدة فراغات بين نص وآخر ما علينا إلا كتابة هذا الوسم بنفس الفراغات المطلوبة.</li>
-<li>توضع التعليقات بين &amp;lt;!-- و --&amp;gt;، أي أن المتصفح يتجاهل أي شيء بينهما وكأنه غير موجود.</li>
-</ul>
-
-<h4>بنية ملف HTML</h4>
-
-<p>يتكون ملف HTML من جزئيين رئيسيين هما:</p>
-
-<ul>
-<li>البداية: HTML — &amp;lt;html&amp;gt; وسم بداية المستند، و&amp;lt;/html&amp;gt; وسم نهاية المستند.</li>
-<li>الرأس: Head — يحتوي على المعلومات الإضافية الخاصة بالمستند من حيث، مثلاً، عنوان الصفحة والكلمات المفتاحية فيها وغيرها من الأمور الخاصة بالصفحة والتي لا تعتبر من ضمن محتوى المستند.</li>
-<li>العنوان: Title — يحتوي على عنوان المستند.</li>
-<li>الجسم: Body — وهو يحتوي على محتوى المستند الذي يراه المستخدم.</li>
-</ul>
-
-<p><img src="artifacts/image_000295_74d64fd865cd7746db019af7ff3e8187299b9843c31fff2c83fcbc7e0fbe226d.png" alt="Image"></p>
-
-<pre><code class="html">
-&lt;/body&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot;
+          content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;صفحتي الأولى&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;مرحبًا بالويب!&lt;/h1&gt;
+    &lt;p&gt;هذه أول صفحة أكتبها بلغة HTML.&lt;/p&gt;
+  &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
 
-<p>المثال التالي يبين كيفية تقسيم ملف HTML:</p>
+<table>
+<tr><th>السطر</th><th>دوره</th></tr>
+<tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>يُعلم المتصفح أن الملف مكتوب بـ HTML5. ليس وسمًا ولا يُغلق.</td></tr>
+<tr><td><code>&lt;html lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;</code></td><td>العنصر الجذر الذي يحتوي كل شيء. <code>lang=&quot;ar&quot;</code>: لغة الصفحة عربية، و<code>dir=&quot;rtl&quot;</code>: الكتابة من اليمين إلى اليسار.</td></tr>
+<tr><td><code>&lt;head&gt;</code></td><td><strong>الرأس</strong>: معلومات عن الصفحة لا تظهر داخلها.</td></tr>
+<tr><td><code>&lt;meta charset=&quot;utf-8&quot;&gt;</code></td><td>ترميز الحروف، ليُعرض النص العربي سليمًا.</td></tr>
+<tr><td><code>&lt;meta name=&quot;viewport&quot; …&gt;</code></td><td>يجعل الصفحة تتكيّف مع شاشة الهاتف.</td></tr>
+<tr><td><code>&lt;title&gt;</code></td><td>عنوان الصفحة الذي يظهر في <strong>علامة التبويب</strong> (Tab) وفي نتائج محركات البحث.</td></tr>
+<tr><td><code>&lt;body&gt;</code></td><td><strong>الجسم</strong>: كل ما يراه الزائر داخل الصفحة.</td></tr>
+</table>
 
-<p><img src="artifacts/image_000296_2f035fba18d0da051ab45623151e67c753e20afa1af022dc66d2d6b353328b86.png" alt="Image"></p>
+<blockquote><p><strong>تشبيه:</strong> الرأس <code>head</code> مثل بطاقة التعريف الملصقة على غلاف الكتاب، والجسم <code>body</code> هو صفحات الكتاب نفسها.</p></blockquote>
 
-<p>الأجزاء التابعة للرأس توضع بين الوسمين &amp;lt;head&amp;gt; و&amp;lt;/head&amp;gt;، أما الأجزاء التابعة للجسم فتوضع بين الوسمين &amp;lt;body&amp;gt; و&amp;lt;/body&amp;gt;.</p>
+<p><strong>المسافات البادئة</strong> (Indentation) في الشيفرة لا تظهر في المتصفح، لكنها تجعل الشيفرة مقروءة وتُسهّل اكتشاف وسم نسيت إغلاقه.</p>
 
-<p>يتم تحديد عنوان المستند الذي يظهر في شريط العنوان للمتصفح بإحاطته بالوسمين &amp;lt;title&amp;gt; و&amp;lt;/title&amp;gt;، والمكان الصحيح لوسم الـ title هو الرأس، حيث أن الوسم title لا يعتبر من ضمن محتوى الصفحة ولا يظهر في الصفحة، وهو يستخدم في عمليات البحث والأرشيف كما في محركات البحث.</p>
+<h3>جرّبها في مختبر HTML</h3>
 
-<h3>5 العناوين والفقرات</h3>
+<p>غيّر نص العنوان <code>title</code> ونص الفقرة، ولاحظ أين يظهر كل تغيير في المعاينة.</p>
 
-<h4>الأنماط الأساسية</h4>
+<blockquote><p><strong>المختبر التفاعلي:</strong> افتح https://informatique.mouadh.info/studio/html/ لكتابة الكود ومشاهدة الصفحة مباشرة.</p></blockquote>
 
-<p>العناوين: وهي من ستة مستويات، العنوان الأول h1 والثاني h2 وهكذا حتى h6.</p>
+<hr>
 
-<pre><code class="html">
-&lt;h1&gt;المستوى 1&lt;/h1&gt; &lt;h2&gt;المستوى 2&lt;/h2&gt; &lt;h3&gt;المستوى 3&lt;/h3&gt; &lt;h4&gt;المستوى 4&lt;/h4&gt; &lt;h5&gt;المستوى 5&lt;/h5&gt; &lt;h6&gt;المستوى 6&lt;/h6&gt;
-</code></pre>
+<h2>3. تنسيق النص</h2>
 
-<p><img src="artifacts/image_000297_f16566fe120db90b8823894fb58c8dc973c229407e99882f8f191d8efda9cc72.png" alt="Image"></p>
+<h3>أ. العناوين والفقرات</h3>
 
-<pre><code class="html">
-&lt;p&gt;Paragraph Text&lt;/p&gt;
-</code></pre>
-
-<p><img src="artifacts/image_000298_b87bf2885ba7951d6def976a25e6e430e336cfa7a3fc6bb88af8ae610ca70f8d.png" alt="Image"></p>
-
-<p>تحديد الفقرات:</p>
-
-<p>يتم إحاطة الفقرة بالوسم:</p>
-
-<p>P</p>
-
-<p><img src="artifacts/image_000299_a11a64d72be287d42c15064311ecef92a4eeafeec7304dc933cee986f7a0d634.png" alt="Image"></p>
-
-<h4>تحديد اتجاه الفقرة: استخدم الخاصية align في الوسم P</h4>
-
-<p><img src="artifacts/image_000300_abfcecd6de1f73d6438aa7744ef871fba632ef4d07363e7abfdbfd675d519ee8.png" alt="Image"></p>
-
-<p><img src="artifacts/image_000301_ba0077a089d6c3f3b9736d109bbec01d44c9bb375085ac00670cfc008a1f7565.png" alt="Image"></p>
-
-<h4>الوسم Font</h4>
-
-<p>يستعمل الوسم &amp;lt;font&amp;gt; دائماً مع مجموعة من الخصائص، فهو لا يمتلك أي تأثير لوحده، وأهم خصائصه هي التي تحدد نوع الخط ولونه وحجمه.</p>
-
-<h4>خصائص الوسم font</h4>
-
-<p>الخاصية face: تحدد نوع الخط المستخدم:</p>
+<p>لغة HTML توفّر <strong>ستة مستويات</strong> من العناوين، من <code>h1</code> (الأهم والأكبر) إلى <code>h6</code> (الأقل أهمية):</p>
 
 <pre><code class="html">
-&lt;font face=&quot;Arial&quot;&gt;هذا ملف html&lt;/font&gt;&lt;br&gt;
-&lt;font face=&quot;Courier New&quot;&gt;هذا ملف html&lt;/font&gt;&lt;br&gt;
-&lt;font face=&quot;andalus&quot;&gt;هذا ملف html&lt;/font&gt;
-</code></pre>
-
-<p><img src="artifacts/image_000302_6913e8c47029e2bfb8cf367e3a13d7a5f38b79afc8f0f3882017230dd0e20bc5.png" alt="Image"></p>
-
-<p>الخاصية color: تستخدم لتحديد لون الخط (انظر إلى الألوان في الأسفل):</p>
-
-<pre><code class="html">
-هذه الكلمة &lt;font color=&quot;red&quot;&gt;حمراء&lt;/font&gt; وهذه &lt;font color=&quot;blue&quot;&gt;زرقاء&lt;/font&gt;
-</code></pre>
-
-<p><img src="artifacts/image_000303_423b537752b13342ec1379c42736325ded432c2275cbd729c9a38091917b5a8d.png" alt="Image"></p>
-
-<p>الخاصية size: تستخدم لتحديد حجم الخط.</p>
-
-<p>توجد سبعة أحجام للخط، والخط الأساسي في الصفحة يأخذ أحد هذه الأحجام، وإذا أردنا تغيير حجم الخط في كلمة معينة أو جزء ما من النص، نستخدم الوسم font مع الخاصية size لزيادة حجم الخط أو إنقاصه بمقدار معين.</p>
-
-<p><img src="artifacts/image_000304_05f246f3c32cf7aeee5aa1f1cdbb776f49c2d42ee2869245ceaa5f5417dda275.png" alt="Image"></p>
-
-<p><img src="artifacts/image_000305_cce6bc9907f33d8f25515c6c5a816744fca094064abd43ac09f84d16841c885c.png" alt="Image"></p>
-
-<p>توجد أيضاً طريقة سريعة لتكبير الخط خطوة واحدة أو تصغيره خطوة واحدة، باستخدام الوسم &amp;lt;big&amp;gt; أو &amp;lt;small&amp;gt;.</p>
-
-<p><img src="artifacts/image_000306_55dd98b8209f78532de6fb38dae83b38e7a3a500a7899b1b4b0095fdde86c7d2.png" alt="Image"></p>
-
-<p><img src="artifacts/image_000307_4c987d2b2da0225cc452e19b9b1a271d153d0907d0056578fed4d6ea4f0ced50.png" alt="Image"></p>
-
-<h4>ملاحظة:</h4>
-
-<p>يمكننا كذلك تغيير حجم الخط الأساسي في المستند، وهذا سيؤثر على جميع الأماكن التي استخدمت فيها الأحجام النسبية للخطوط.</p>
-
-<p>نغير الخط الأساسي باستخدام وسم يدعى basefont، ويمكن استخدامه لتغيير حجم الخط الأساسي في المستند ولونه ونوعه، وهو لا يأخذ قيماً نسبية في الحجم.</p>
-
-<h4>مثال:</h4>
-
-<p>لتغيير الخط الأساسي إلى Arial بحجم 3 ولون أخضر، نضع السطر التالي في المستند:</p>
-
-<pre><code class="html">
-&lt;basefont color=&quot;Green&quot; size=&quot;3&quot; face=&quot;Arial&quot;&gt;
-</code></pre>
-
-<p>والوسم basefont لا يستخدم في جزء محدد من نصوص HTML، بل يظهر تأثيره في الصفحة كلها، لذلك فهو لا يحتاج إلى وسم إغلاق.</p>
-
-<h4>الوسم <code>&lt;hr&gt;</code> وهو وسم خاص لوضع الخط الأفقي</h4>
-
-<p>يمكننا تحديد عرض الخط بالخاصية width، حيث تأخذ width قيماً مطلقة مثل 11 أو 293 وهي تحدد العرض بالبكسل، أو قيماً نسبية تقاس بالنسبة إلى عرض الصفحة، مثل 21% و55%.</p>
-
-<p>توجد أيضاً خاصية وهي size التي تحدد ارتفاع الخط رأسياً، وتأخذ قيماً مطلقة صغيرة.</p>
-
-<p>توجد أيضاً خاصية color لتحديد لون الخط.</p>
-
-<p>توجد أيضاً الخاصية noshade وهي خاصية بدون قيمة، وعند وضعها تجعل الخط يبدو مصمتاً وليس منحوتاً كما في الحالة القياسية.</p>
-
-<ul>
-<li>خط أفقي: <code>&lt;hr&gt;</code></li>
-<li>خط أفقي ملون: <code>&lt;hr color=&quot;red&quot;&gt;</code></li>
-<li>خط أفقي ملون أكبر عرضاً: <code>&lt;hr color=&quot;Purple&quot; size=&quot;8&quot;&gt;</code></li>
-<li>خط أفقي محدود الطول: <code>&lt;hr width=&quot;30%&quot;&gt;</code></li>
-<li>خط أفقي سميك: <code>&lt;hr noshade size=&quot;20&quot;&gt;</code></li>
-</ul>
-
-<p><img src="artifacts/image_000308_76cda1cd869c15bc6df00b2e4bd7115e582a7a76aead0e72c34b1e3240f924f8.png" alt="Image"></p>
-
-<h4>تنسيق الصفحة:</h4>
-
-<p>يمكن أيضاً استخدام بعض المتغيرات في وسم الجسم body، وهذه المتغيرات تستخدم في تحديد تنسيق الصفحة:</p>
-
-<ul>
-<li>لون خلفية الصفحة: bgcolor</li>
-<li>لون النص: text</li>
-<li>حاشية الصفحة العلوية: topmargin، والسفلية: bottommargin، واليسرى: leftmargin، واليمنى: rightmargin.</li>
-</ul>
-
-<p><img src="artifacts/image_000309_c3b0ea2983480a4724acdbe573f00bade963d1b2b340467ee40be92928c397fe.png" alt="Image"></p>
-
-<p><img src="artifacts/image_000310_52f02b01949a216ba24b219d60453e11cfd5c8a70bb2eb344f9ee1868749b8de.png" alt="Image"></p>
-
-<p>disc، circle</p>
-
-<h3>6 تنظيم المحتوى</h3>
-
-<h4>التعداد الرقمي والنقطي</h4>
-
-<p>يمكننا تنظيم المحتوى في لغة HTML في عدة أشكال، مثلاً وضعه في صورة قائمة مرتبة، أو في صورة شجرة (مخطط هرمي).</p>
-
-<p>يمكننا إنجاز قائمة مرتبة بالتعداد الرقمي باستخدام الوسم ol وهي اختصار &quot;ordered list&quot;، وقائمة غير مرتبة بالتعداد النقطي باستخدام الوسم ul وهي اختصار &quot;unordered list&quot;، بحيث توضع البنود بينهما، وكل بند يحدد بالوسم li وهي اختصار &quot;list item&quot;.</p>
-
-<p>يمكننا تحديد نوع الترقيم في القوائم المرتبة بالحروف أو بالأرقام العربية أو الرومانية وغيرها عبر الخاصية type، وتأخذ أحد القيم التالية:</p>
-
-<pre><code>
-1, 2, 3, 4, ... : أرقام عادية
-a, b, c, d, ... : أحرف صغيرة
-A, B, C, D, ... : أحرف كبيرة
-i, ii, iii, iv, ... : أرقام رومانية صغيرة
-I, II, III, IV, ... : أرقام رومانية كبيرة
-</code></pre>
-
-<p>وفي القوائم غير المرتبة: disc، circle، square.</p>
-
-<p>ويمكننا وضع قائمة داخل قائمة لتشكيل المخططات الهرمية.</p>
-
-<p>مثال:</p>
-
-<p><img src="artifacts/image_000311_d8c0cea351defeb9f1cf315bbea1fcb5d77fcc9f6bd40b264d2ebe828074e901.png" alt="Image"></p>
-
-<p><img src="artifacts/image_000312_8a9f58db560c09ec2a127a92b6875f718869839dfa0922d9bd77d0f30624b140.png" alt="Image"></p>
-
-<h3>7 الصور والرسومات</h3>
-
-<p>يمكننا في لغة HTML عرض الصور في الصفحات والتحكم في خواصها.</p>
-
-<h4>ملاحظة:</h4>
-
-<p>يجب أن تكون الصورة جاهزة للنشر على الويب، أي أن لا تكون ذات حجم كبير لأن ذلك سيؤدي إلى بطء شديد في التحميل، لذلك يفضل التقليل من الصور قدر الإمكان في صفحات HTML.</p>
-
-<p>لكي نستطيع عرض الصور في المستند، يجب أن تكون الصورة من النوع JPEG أو GIF أو PNG.</p>
-
-<h4>إدراج الصور</h4>
-
-<p>يتم إدراج الصور في صفحة HTML عن طريق الوسم IMG، وهو وسم مفرد (لا يحتاج إلى وسم إغلاق)، وهذا الوسم يحتاج إلى خاصية مهمة لكي يعمل بشكل سليم وهي src اختصار لكلمة source، والتي نضع بها عنوان الصورة المطلوبة:</p>
-
-<pre><code class="html">
-&lt;img src=&quot;velo.jpg&quot;&gt;
-</code></pre>
-
-<p><img src="artifacts/image_000313_f7ed5295d691e340a01dbc09af45e2772501a4bd33fd1587dbe6971a6aa62ec5.png" alt="Image"></p>
-
-<p><img src="artifacts/image_000314_8802b77dd4fb8937220e1b9b21a42936e9eb3bcef0a0ec05e9dc05c3e9e8350b.png" alt="Image"></p>
-
-<h4>الخاصية width و height</h4>
-
-<p>الخاصية width تستعمل لتحديد عرض الصورة، والخاصية height لتحديد ارتفاع الصورة. يمكن بواسطة الخاصيتين السابقتين تكبير الصورة وتصغيرها حسب المطلوب، وإذا كنت تريد إظهارها بالحجم الطبيعي فيمكنك ترك هذه الخصائص.</p>
-
-<p><img src="artifacts/image_000315_8742f5f41670c694a88cb4d49fa406e5b5b7468614028fc9b8292b15c22d712a.png" alt="Image"></p>
-
-<p><img src="artifacts/image_000316_60037f2510e1c6282e6fc340d950de96165da9a63a6b9770c8b657a805200d2f.png" alt="Image"></p>
-
-<h4>الخاصية align</h4>
-
-<p>وهي خاصية مهمة جداً في الصور، وتنبع أهميتها من كونها الطريقة الوحيدة للتحكم بكيفية عرض الصورة بالنسبة للنصوص المحيطة بها، حيث أن الصور في HTML تعتبر جزءاً من النص المحيط بها، تتحرك معه وترتبط به.</p>
-
-<p>تأخذ align العديد من القيم وهي:</p>
-
-<ul>
-<li>bottom, baseline, absbottom: وهي تعرض الصورة بحيث تكون على السطر مثل أي كلمة أخرى.</li>
-<li><code>&lt;img src=&quot;velo.gif&quot; align=&quot;bottom&quot;&gt;</code></li>
-<li>left: وهي تعرض الصورة على يسار الفقرة ولا يكون للصورة علاقة بالسطر.</li>
-<li><code>&lt;img src=&quot;velo.gif&quot; align=&quot;left&quot;&gt;</code></li>
-<li>middle, absmiddle: وهي تعرض الصورة في منتصف السطر.</li>
-<li><code>&lt;img src=&quot;velo.gif&quot; align=&quot;middle&quot;&gt;</code></li>
-<li>right: وهي تعرض الصورة على يمين الفقرة ولا يكون للصورة علاقة بالسطر.</li>
-<li><code>&lt;img src=&quot;velo.gif&quot; align=&quot;right&quot;&gt;</code></li>
-<li>top, texttop: وهي تعرض الصورة أعلى السطر فيكون السطر أسفلها.</li>
-<li><code>&lt;img src=&quot;velo.gif&quot; align=&quot;top&quot;&gt;</code></li>
-</ul>
-
-<h3>8 الارتباطات التشعبية</h3>
-
-<p>تعد الارتباطات التشعبية من أهم مكونات صفحة الويب، لأنها هي المسؤولة عن ربط مجموعة من صفحات الويب المختلفة بينها، مما يتيح للمستخدم التنقل عبرها بسهولة.</p>
-
-<p>لإنجاز وصلة نستخدم الوسم a وهي اختصار لكلمة anchor، وهي لا تعمل لوحدها ولكن تتطلب خصائص معينة، من أهمها الخاصية href وهي اختصار &quot;hypertext reference&quot;، لتحديد الوجهة.</p>
-
-<ul>
-<li>الوجهة قد تكون صفحة من موقع خارجي، وعندها يبدأ العنوان عادة بـ <code>https://</code>:</li>
-</ul>
-
-<pre><code class="html">
-&lt;a href=&quot;https://example.com/&quot;&gt;موقع نموذجي&lt;/a&gt;&lt;br&gt;
-&lt;a href=&quot;https://example.com/&quot;&gt;انقر هنا&lt;/a&gt;&lt;br&gt;
-</code></pre>
-
-<p><img src="artifacts/image_000317_110ebd825fba33d0eae07507a97717f589dd52f014935fc3fb76b01e36176840.png" alt="Image"></p>
-
-<p>يمكننا إدراج صورة أو زر كبديل عن الكلمات:</p>
-
-<pre><code class="html">
-&lt;a href=&quot;https://example.com/&quot;&gt;&lt;img src=&quot;new.gif&quot; alt=&quot;زر نموذجي&quot;&gt;&lt;/a&gt;&lt;br&gt;
+&lt;h1&gt;ولايتي&lt;/h1&gt;
+&lt;h2&gt;الموقع الجغرافي&lt;/h2&gt;
+&lt;h3&gt;التضاريس&lt;/h3&gt;
 </code></pre>
 
 <ul>
-<li>الوجهة قد تكون ملفاً موجوداً في نفس الموقع، سواء كانت صفحة أو صورة أو غير ذلك:</li>
+<li>استعمل <code>h1</code> <strong>مرة واحدة</strong> في الصفحة للعنوان الرئيسي.</li>
+<li>لا تقفز المستويات: بعد <code>h2</code> يأتي <code>h3</code> لا <code>h5</code>.</li>
+<li>اختر مستوى العنوان حسب <strong>أهميته</strong> لا حسب حجم خطه؛ الحجم يُضبط لاحقًا بـ CSS.</li>
 </ul>
 
-<pre><code class="html">
-&lt;a href=&quot;صفحتي.htm&quot;&gt;الصفحة الأولى&lt;/a&gt;&lt;br&gt;
-</code></pre>
+<p><strong>الفقرة</strong> (Paragraph) تُحاط بالوسم <code>p</code>:</p>
 
 <pre><code class="html">
-&lt;a href=&quot;velo.gif&quot;&gt;&lt;img src=&quot;velo.gif&quot;&gt;انقر على الصورة&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;تقع ولايتي في الهضاب العليا.&lt;/p&gt;
+&lt;p&gt;يشتهر سكانها بالكرم وحسن الضيافة.&lt;/p&gt;
 </code></pre>
 
-<p><img src="artifacts/image_000318_d7da290561ea40f143132b8da42f0f98932489c3e970c46cb91acd9f90c4703c.png" alt="Image"></p>
+<blockquote><p><strong>ملاحظة مهمة:</strong> المتصفح يتجاهل الأسطر الفارغة والمسافات المتتالية في الشيفرة. لكتابة فقرة جديدة استعمل <code>p</code>، لا مفتاح الإدخال.</p></blockquote>
+
+<h3>ب. السطر الجديد والخط الفاصل</h3>
 
 <ul>
-<li>الوجهة قد تكون عنواناً لبريد إلكتروني، وعندها يبدأ بـ mailto:</li>
+<li><code>&lt;br&gt;</code> ينقل النص إلى <strong>سطر جديد</strong> داخل الفقرة نفسها (مفيد للعنوان البريدي أو أبيات الشعر).</li>
+<li><code>&lt;hr&gt;</code> يرسم <strong>خطًا أفقيًا</strong> يفصل بين موضوعين.</li>
 </ul>
 
+<p>كلاهما عنصر فارغ: لا محتوى له ولا وسم إغلاق.</p>
+
 <pre><code class="html">
-&lt;a href=&quot;mailto:nordine@hotmail.com&quot;&gt;Mon E-mail&lt;/a&gt;
+&lt;p&gt;ثانوية الأمير عبد القادر&lt;br&gt;
+شارع الاستقلال&lt;br&gt;
+الجزائر&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;موضوع جديد يبدأ هنا.&lt;/p&gt;
+</code></pre>
+
+<h3>ج. وسوم المعنى ووسوم المظهر</h3>
+
+<table>
+<tr><th>الوسم</th><th>الشكل في المتصفح</th><th>المعنى</th><th>متى نستعمله؟</th></tr>
+<tr><td><code>&lt;strong&gt;</code></td><td>عريض</td><td><strong>أهمية</strong> النص</td><td>تحذير، معلومة أساسية</td></tr>
+<tr><td><code>&lt;b&gt;</code></td><td>عريض</td><td>لفت الانتباه دون أهمية خاصة</td><td>كلمة مفتاحية في ملخّص</td></tr>
+<tr><td><code>&lt;em&gt;</code></td><td>مائل</td><td><strong>تأكيد</strong> يغيّر نبرة الجملة</td><td>«أنا <strong>لم</strong> أقل ذلك»</td></tr>
+<tr><td><code>&lt;i&gt;</code></td><td>مائل</td><td>صوت مختلف</td><td>مصطلح أجنبي، اسم علمي</td></tr>
+</table>
+
+<pre><code class="html">
+&lt;p&gt;&lt;strong&gt;تنبيه:&lt;/strong&gt; احفظ عملك كل خمس دقائق.&lt;/p&gt;
+&lt;p&gt;اسم النخلة العلمي &lt;i&gt;Phoenix dactylifera&lt;/i&gt;.&lt;/p&gt;
+&lt;p&gt;المهم أن &lt;em&gt;تفهم&lt;/em&gt; الدرس، لا أن تحفظه.&lt;/p&gt;
+</code></pre>
+
+<blockquote><p>لماذا نهتم بالمعنى؟ لأن <strong>قارئ الشاشة</strong> (Screen reader) الذي يستعمله المكفوفون ومحركات البحث يفهمان <code>strong</code> و<code>em</code>، فيغيّر قارئ الشاشة نبرة صوته عندها.</p></blockquote>
+
+<h3>د. التعليقات</h3>
+
+<p><strong>التعليق</strong> (Comment) ملاحظة يكتبها المصمّم لنفسه أو لزملائه، ولا تظهر في الصفحة:</p>
+
+<pre><code class="html">
+&lt;!-- القسم الأول: التعريف بالولاية --&gt;
+&lt;h2&gt;نبذة عن ولايتي&lt;/h2&gt;
+</code></pre>
+
+<h3>هـ. الرموز الخاصة (الكيانات)</h3>
+
+<p>بعض الرموز لها معنى خاص في HTML، فإذا أردت إظهارها كما هي نكتب <strong>كيانًا</strong> (Entity) يبدأ بـ <code>&amp;</code> وينتهي بـ <code>;</code>:</p>
+
+<table>
+<tr><th>الرمز المطلوب</th><th>الكيان</th><th>الاستعمال</th></tr>
+<tr><td><code>&lt;</code></td><td><code>&amp;lt;</code></td><td>إظهار علامة «أصغر من»</td></tr>
+<tr><td><code>&gt;</code></td><td><code>&amp;gt;</code></td><td>إظهار علامة «أكبر من»</td></tr>
+<tr><td><code>&amp;</code></td><td><code>&amp;amp;</code></td><td>إظهار علامة «و» اللاتينية</td></tr>
+<tr><td>مسافة غير منكسرة</td><td><code>&amp;nbsp;</code></td><td>مسافة لا يُقطع عندها السطر</td></tr>
+<tr><td>©</td><td><code>&amp;copy;</code></td><td>حقوق النشر</td></tr>
+</table>
+
+<pre><code class="html">
+&lt;p&gt;الوسم &amp;lt;p&amp;gt; يعني فقرة.&lt;/p&gt;
+&lt;p&gt;50&amp;nbsp;كلم&lt;/p&gt;
+&lt;p&gt;&amp;copy; 2026 قسم السنة الأولى ثانوي&lt;/p&gt;
+</code></pre>
+
+<blockquote><p><strong>انتبه:</strong> <code>&amp;nbsp;</code> <strong>كيان</strong> وليس وسمًا؛ لا يُكتب بين <code>&lt;</code> و<code>&gt;</code> ولا يُغلق.</p></blockquote>
+
+<h3>جرّبها في مختبر HTML</h3>
+
+<p>أضف عنوانًا من المستوى الثاني وفقرة فيها كلمة مهمة بـ <code>strong</code>، ثم أظهر الرمز <code>&lt;</code> في النص.</p>
+
+<blockquote><p><strong>المختبر التفاعلي:</strong> افتح https://informatique.mouadh.info/studio/html/ لكتابة الكود ومشاهدة الصفحة مباشرة.</p></blockquote>
+
+<h3>نشاط الحصة الثانية: صفحتي الأولى</h3>
+
+<p>أنشئ المجلد <code>mysite</code> ثم الملف <code>index.html</code> بالهيكل الأساسي. <strong>يجب أن تُظهر الصفحة:</strong></p>
+
+<ol>
+<li>عنوانًا <code>h1</code>: «مرحبًا بكم في صفحتي».</li>
+<li>عنوانًا <code>h2</code>: «من أنا؟» تليه فقرة من سطرين تعرّف فيها بنفسك (الاسم الأول، القسم، الهواية).</li>
+<li>خطًا فاصلًا <code>hr</code>، ثم عنوانًا <code>h2</code>: «هواياتي» تليه فقرة فيها كلمة بـ <code>strong</code> وكلمة بـ <code>em</code>.</li>
+<li>تعليقًا في الشيفرة يشرح القسم الثاني، وسطرًا أخيرًا فيه <code>&amp;copy;</code> واسمك.</li>
+<li>عنوان علامة التبويب: «صفحة» متبوعًا باسمك الأول.</li>
+</ol>
+
+<hr>
+
+<h2>4. القوائم: العدّاد الرقمي والعدّاد النقطي</h2>
+
+<h3>أ. القائمة النقطية (غير المرتّبة)</h3>
+
+<p><strong>القائمة النقطية</strong> (Unordered list) تُستعمل حين <strong>لا يهمّ الترتيب</strong>. نكتبها بالوسم <code>ul</code>، وكل عنصر فيها بالوسم <code>li</code> (List item):</p>
+
+<pre><code class="html">
+&lt;h2&gt;أدوات المختبر&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;حاسوب&lt;/li&gt;
+  &lt;li&gt;شاشة&lt;/li&gt;
+  &lt;li&gt;لوحة مفاتيح&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>يُظهر المتصفح نقطة (•) أمام كل عنصر.</p>
+
+<h3>ب. القائمة المرقّمة (المرتّبة)</h3>
+
+<p><strong>القائمة المرقّمة</strong> (Ordered list) تُستعمل حين <strong>يهمّ الترتيب</strong>: خطوات، ترتيب فائزين… نكتبها بالوسم <code>ol</code>:</p>
+
+<pre><code class="html">
+&lt;h2&gt;خطوات تشغيل الحاسوب&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;اضغط زر التشغيل.&lt;/li&gt;
+  &lt;li&gt;انتظر ظهور شاشة القفل.&lt;/li&gt;
+  &lt;li&gt;اكتب كلمة المرور.&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+
+<p>يُرقّم المتصفح العناصر آليًا 1، 2، 3. إذا حذفت عنصرًا أو أضفته يُعاد الترقيم وحده.</p>
+
+<p><strong>خاصيتان مفيدتان للوسم <code>ol</code>:</strong></p>
+
+<table>
+<tr><th>الخاصية</th><th>القيم</th><th>المثال</th><th>النتيجة</th></tr>
+<tr><td><code>type</code></td><td><code>1</code> (افتراضي)، <code>a</code>، <code>A</code>، <code>i</code>، <code>I</code></td><td><code>&lt;ol type=&quot;A&quot;&gt;</code></td><td>A، B، C</td></tr>
+<tr><td><code>start</code></td><td>عدد صحيح</td><td><code>&lt;ol start=&quot;4&quot;&gt;</code></td><td>4، 5، 6</td></tr>
+</table>
+
+<pre><code class="html">
+&lt;ol type=&quot;i&quot; start=&quot;3&quot;&gt;
+  &lt;li&gt;الفصل الثالث&lt;/li&gt;
+  &lt;li&gt;الفصل الرابع&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+
+<p>النتيجة: iii ثم iv.</p>
+
+<blockquote><p><strong>إثراء:</strong> الخاصية <code>reversed</code> تجعل الترقيم تنازليًا (للعدّ العكسي). أما شكل نقاط <code>ul</code> (دائرة، مربّع) فيُغيَّر اليوم بـ CSS عبر <code>list-style-type</code>، لا بخاصية في HTML.</p></blockquote>
+
+<h3>ج. القائمة المتداخلة</h3>
+
+<p>يمكن وضع قائمة <strong>داخل</strong> عنصر <code>li</code> من قائمة أخرى. لاحظ أن القائمة الداخلية تُكتب <strong>قبل</strong> إغلاق <code>&lt;/li&gt;</code>:</p>
+
+<pre><code class="html">
+&lt;ul&gt;
+  &lt;li&gt;المكتبية
+    &lt;ol&gt;
+      &lt;li&gt;معالج النصوص&lt;/li&gt;
+      &lt;li&gt;المجدول&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;تقنيات الويب&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<table>
+<tr><th>أختار…</th><th>عندما…</th></tr>
+<tr><td><code>ul</code></td><td>العناصر متساوية والترتيب لا يغيّر المعنى (مكوّنات، أدوات).</td></tr>
+<tr><td><code>ol</code></td><td>الترتيب جزء من المعنى (خطوات، ترتيب، وصفة).</td></tr>
+</table>
+
+<h3>جرّبها في مختبر HTML</h3>
+
+<p>حوّل القائمة النقطية إلى مرقّمة تبدأ من 5 بحروف لاتينية كبيرة، ثم أضف قائمة متداخلة.</p>
+
+<blockquote><p><strong>المختبر التفاعلي:</strong> افتح https://informatique.mouadh.info/studio/html/ لكتابة الكود ومشاهدة الصفحة مباشرة.</p></blockquote>
+
+<hr>
+
+<h2>5. الارتباطات التشعبية</h2>
+
+<h3>أ. الوسم <code>a</code> والخاصية <code>href</code></h3>
+
+<p><strong>الارتباط التشعبي</strong> (Hyperlink) هو ما يجعل الويب «شبكة». نكتبه بالوسم <code>a</code> (Anchor)، والخاصية <code>href</code> تحدّد <strong>وجهة</strong> الرابط، والنص بين الوسمين هو ما يضغط عليه الزائر:</p>
+
+<pre><code class="html">
+&lt;a href=&quot;https://www.example.com&quot;&gt;موقع المثال&lt;/a&gt;
+</code></pre>
+
+<blockquote><p>اكتب نصًّا يصف الوجهة: «جدول الامتحانات» أفضل من «اضغط هنا».</p></blockquote>
+
+<h3>ب. أنواع الارتباطات</h3>
+
+<p><strong>1. نحو موقع آخر</strong> (رابط خارجي): نكتب العنوان الكامل بـ <code>https://</code>.</p>
+
+<pre><code class="html">
+&lt;a href=&quot;https://www.wikipedia.org&quot;&gt;ويكيبيديا&lt;/a&gt;
+</code></pre>
+
+<p><strong>2. نحو صفحة أخرى من موقعي</strong> (رابط داخلي): نكتب اسم الملف فقط.</p>
+
+<pre><code class="html">
+&lt;a href=&quot;page2.html&quot;&gt;الصفحة الثانية&lt;/a&gt;
+</code></pre>
+
+<p><strong>3. نحو بريد إلكتروني:</strong> نبدأ بـ <code>mailto:</code>؛ عند الضغط يفتح برنامج البريد برسالة جديدة موجّهة إلى هذا العنوان.</p>
+
+<pre><code class="html">
+&lt;a href=&quot;mailto:contact@example.com&quot;&gt;راسلنا&lt;/a&gt;
+</code></pre>
+
+<p><strong>4. فتح الرابط في علامة تبويب جديدة:</strong> نضيف الخاصية <code>target=&quot;_blank&quot;</code>، فيبقى موقعك مفتوحًا.</p>
+
+<pre><code class="html">
+&lt;a href=&quot;https://www.example.com&quot;
+   target=&quot;_blank&quot;&gt;يُفتح في تبويب جديد&lt;/a&gt;
+</code></pre>
+
+<blockquote><p>استعمل <code>target=&quot;_blank&quot;</code> للروابط الخارجية فقط، فالتبويبات الكثيرة تُربك الزائر.</p></blockquote>
+
+<h3>ج. المسار المطلق والمسار النسبي</h3>
+
+<table>
+<tr><th>النوع</th><th>المثال</th><th>متى نستعمله؟</th></tr>
+<tr><td><strong>مسار مطلق</strong> (Absolute path)</td><td><code>https://www.example.com/news.html</code></td><td>للوصول إلى موقع آخر؛ العنوان كامل.</td></tr>
+<tr><td><strong>مسار نسبي</strong> (Relative path)</td><td><code>page2.html</code> أو <code>images/map.png</code></td><td>لملفات موقعي؛ المسار يُحسب انطلاقًا من مكان الصفحة الحالية.</td></tr>
+</table>
+
+<p>تخيّل أن موقعك منظّم هكذا:</p>
+
+<pre><code class="text">
+mysite/
+├── index.html
+├── page2.html
+└── images/
+    └── logo.png
 </code></pre>
 
 <ul>
-<li>الوجهة قد تكون مكاناً ما داخل نفس الصفحة، أولها، أخيرها أو أي مكان نريده.</li>
+<li>من <code>index.html</code> إلى <code>page2.html</code>: <code>href=&quot;page2.html&quot;</code> (الملفان في المجلد نفسه).</li>
+<li>من <code>index.html</code> إلى الصورة: <code>images/logo.png</code> (ندخل المجلد <code>images</code>).</li>
 </ul>
 
-<p>بإمكاننا إنشاء روابط داخلية ضمن الصفحة، كل ما تحتاجه هي خاصية تسمى id أو &quot;identification&quot;، والعلامة &quot;#&quot;.</p>
+<blockquote><p><strong>لماذا المسار النسبي؟</strong> لأنه يبقى صحيحًا إذا نقلت المجلد <code>mysite</code> كاملًا إلى قرص USB أو إلى حاسوب آخر أو إلى الإنترنت. أما مسار مثل <code>C:\Users\…\page2.html</code> فلا يعمل إلا على حاسوبك.</p></blockquote>
 
-<p>استخدم خاصية id لتضع إشارة للعنصر الذي تريد وضع رابط له، مثال:</p>
+<h3>جرّبها في مختبر HTML</h3>
+
+<p>أنشئ ثلاثة روابط: نحو موقع خارجي يُفتح في تبويب جديد، ونحو <code>page2.html</code>، ونحو بريد <code>@example.com</code>.</p>
+
+<blockquote><p><strong>المختبر التفاعلي:</strong> افتح https://informatique.mouadh.info/studio/html/ لكتابة الكود ومشاهدة الصفحة مباشرة.</p></blockquote>
+
+<hr>
+
+<h2>6. الصور</h2>
+
+<h3>أ. الوسم <code>img</code></h3>
+
+<p>نُدرج الصورة بالوسم <code>img</code> وهو <strong>عنصر فارغ</strong> (لا وسم إغلاق له):</p>
 
 <pre><code class="html">
-&lt;p&gt;&lt;a href=&quot;#heading1&quot;&gt;انتقل إلى العنوان رقم 1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;#heading2&quot;&gt;انتقل إلى العنوان رقم 2&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;heading1&quot;&gt;العنوان رقم 1&lt;/h1&gt;
-&lt;p&gt;نص... نص... نص...&lt;/p&gt;
-&lt;h1 id=&quot;heading2&quot;&gt;العنوان رقم 2&lt;/h1&gt;
-&lt;p&gt;نص... نص... نص...&lt;/p&gt;
+&lt;img src=&quot;images/fountain.jpg&quot;
+     alt=&quot;نافورة وسط ساحة المدينة&quot;
+     width=&quot;400&quot; height=&quot;300&quot;&gt;
 </code></pre>
 
-<p><img src="artifacts/image_000319_2b55493476368f19f743aeba4b22c3a5886a93d1679f43ec000549a43e25f8a6.png" alt="Image"></p>
+<table>
+<tr><th>الخاصية</th><th>دورها</th></tr>
+<tr><td><code>src</code> (Source)</td><td><strong>مسار</strong> ملف الصورة، نسبي أو مطلق. إلزامية.</td></tr>
+<tr><td><code>alt</code> (Alternative text)</td><td><strong>النص البديل</strong>: وصف قصير للصورة. إلزامية.</td></tr>
+<tr><td><code>width</code> و<code>height</code></td><td>العرض والارتفاع بالبكسل (Pixel)، تُكتب أرقامًا دون وحدة.</td></tr>
+</table>
 
-<h3>9 الجداول</h3>
+<blockquote><p>إذا حدّدت <code>width</code> وحده، يحسب المتصفح الارتفاع آليًا ويحافظ على نسب الصورة. إذا حدّدت القيمتين بنسب مختلفة عن الأصل تتشوّه الصورة.</p></blockquote>
 
-<p>تعتبر الجداول من أهم مكونات صفحات HTML، وجميع التصاميم الاحترافية تستفيد من الجداول لتصميم الصفحة وتوزيع الكائنات عليها وتشكيلها في القالب الذي يريدونه.</p>
+<h3>ب. لماذا <code>alt</code> مهمّة؟</h3>
 
-<p>يتم إدراج الجدول بالوسم &amp;lt;table&amp;gt;، وداخل الجدول يجب إدراج صفوف باستخدام الوسم &amp;lt;tr&amp;gt; وتعني &quot;table row&quot;، وداخل الصفوف توجد البيانات بالوسم &amp;lt;td&amp;gt; وهو اختصار &quot;table data&quot;، وهذا الوسم يبدأ وينهي كل خلية في صفوف الجدول.</p>
+<ol>
+<li><strong>إتاحة الوصول</strong> (Accessibility): قارئ الشاشة يقرأ النص البديل بصوت مرتفع للزائر الكفيف.</li>
+<li>إذا <strong>لم تُحمَّل</strong> الصورة (مسار خاطئ، اتصال ضعيف) يظهر النص البديل مكانها.</li>
+<li><strong>محركات البحث</strong> تفهم محتوى الصورة من نصها البديل.</li>
+</ol>
 
-<p>يمكن وضع إطار للجدول بالخاصية border، حيث نحدد فيها سماكة الإطار المطلوب. القيمة الافتراضية للإطار هي 0 أي بدون إطار.</p>
+<table>
+<tr><th>نص بديل ضعيف</th><th>نص بديل جيد</th></tr>
+<tr><td><code>alt=&quot;صورة&quot;</code></td><td><code>alt=&quot;خريطة الجزائر تُظهر موقع الولاية&quot;</code></td></tr>
+<tr><td><code>alt=&quot;IMG_2041.jpg&quot;</code></td><td><code>alt=&quot;طلبة يعملون في مختبر الإعلام الآلي&quot;</code></td></tr>
+</table>
 
-<p><img src="artifacts/image_000320_20bbd5244f485b812dfe519e0c9c39a8ed1daf0abeafc9bb9826f74fe155f567.png" alt="Image"></p>
+<blockquote><p>صورة تزيينية بحتة (زخرفة) تأخذ <code>alt=&quot;&quot;</code> فارغة، حتى يتجاهلها قارئ الشاشة.</p></blockquote>
 
-<p><img src="artifacts/image_000321_28c7018d80a6ffcdcb7b24dd54c1b2d704bc548973be02673275f35ff260a673.png" alt="Image"></p>
+<h3>ج. صيغ الصور على الويب</h3>
 
-<h4>الخاصية cellspacing و cellpadding</h4>
+<table>
+<tr><th>الصيغة</th><th>مناسبة لـ</th><th>ملاحظة</th></tr>
+<tr><td><strong>JPG</strong> (JPEG)</td><td>الصور الفوتوغرافية</td><td>حجم صغير، لا تدعم الشفافية</td></tr>
+<tr><td><strong>PNG</strong></td><td>الشعارات، لقطات الشاشة، الرسوم</td><td>تدعم الشفافية، حجمها أكبر</td></tr>
+<tr><td><strong>SVG</strong></td><td>الأيقونات والشعارات البسيطة</td><td>صورة متّجهة: تبقى حادّة مهما كبّرتها</td></tr>
+<tr><td><strong>WebP</strong></td><td>كل الأنواع</td><td>صيغة حديثة بحجم أصغر بكثير وجودة جيدة</td></tr>
+</table>
 
-<p>يمكننا التحكم بالمسافة بين الخلايا بواسطة الخاصية cellspacing، والمسافة بين الحدود الداخلية للخلايا ومحتوياتها بواسطة الخاصية cellpadding:</p>
+<h3>د. تنظيم الصور في مجلد فرعي</h3>
 
-<p><img src="artifacts/image_000322_265f3267b9a43b38411b2f129a47f14d9adf97b2aab252de44c10048213290dc.png" alt="Image"></p>
+<p>ضع كل صور موقعك في مجلد <code>images</code> داخل <code>mysite</code>، وسمِّها بحروف لاتينية صغيرة دون مسافات: <code>map.png</code> و<code>fountain.jpg</code>، لا <code>صورة 1.JPG</code>.</p>
+
+<blockquote><p><strong>أخطاء شائعة:</strong> (1) المسار لا يطابق اسم الملف حرفًا حرفًا: <code>Fountain.JPG</code> و<code>fountain.jpg</code> ملفان مختلفان على الخادم. (2) الصورة خارج مجلد الموقع. (3) نسيان المجلد في المسار: <code>src=&quot;fountain.jpg&quot;</code> بدل <code>src=&quot;images/fountain.jpg&quot;</code>.</p></blockquote>
+
+<blockquote><p><strong>احترم حقوق المؤلف:</strong> استعمل صورًا التقطتها بنفسك أو صورًا ذات رخصة حرّة، واذكر مصدرها في الصفحة.</p></blockquote>
+
+<h3>هـ. صورة تعمل كرابط (إثراء)</h3>
+
+<p>يمكن وضع <code>img</code> داخل <code>a</code> فتصبح الصورة قابلة للضغط:</p>
 
 <pre><code class="html">
-&lt;table cellspacing=&quot;10&quot; cellpadding=&quot;20&quot; border=&quot;1&quot;&gt;
- &lt;tr&gt;
-    &lt;td&gt;الخلية الأولى&lt;/td&gt;
-    &lt;td&gt;الخلية الثانية&lt;/td&gt;
- &lt;/tr&gt;
+&lt;a href=&quot;page2.html&quot;&gt;
+  &lt;img src=&quot;images/logo.png&quot; alt=&quot;الصفحة الثانية&quot;
+       width=&quot;120&quot;&gt;
+&lt;/a&gt;
+</code></pre>
+
+<h3>جرّبها في مختبر HTML</h3>
+
+<p>غيّر قيمة <code>width</code> وراقب الصورة، ثم اكتب مسارًا خاطئًا لترى كيف يظهر النص البديل مكانها.</p>
+
+<blockquote><p><strong>المختبر التفاعلي:</strong> افتح https://informatique.mouadh.info/studio/html/ لكتابة الكود ومشاهدة الصفحة مباشرة.</p></blockquote>
+
+<hr>
+
+<h2>محطة منتصف الوحدة (نهاية الأسبوع الثاني)</h2>
+
+<p><strong>المطلوب في 20 دقيقة:</strong> أنشئ في المجلد <code>mysite</code> الملف <code>hobbies.html</code>. <strong>يجب أن تُظهر الصفحة:</strong></p>
+
+<ol>
+<li>عنوانًا <code>h1</code>: «هواياتي».</li>
+<li>قائمة نقطية بثلاث هوايات على الأقل.</li>
+<li>قائمة مرقّمة بخطوات تعلّم إحدى الهوايات (ثلاث خطوات على الأقل).</li>
+<li>صورة من المجلد <code>images</code> بعرض 300 بكسل ونص بديل يصفها.</li>
+<li>رابطًا نصّه «العودة إلى الصفحة الرئيسية» نحو <code>index.html</code>.</li>
+</ol>
+
+<p><strong>تحقّق بنفسك قبل التسليم:</strong></p>
+
+<ul>
+<li>[ ] كل الحروف العربية تظهر سليمة (الترميز UTF-8).</li>
+<li>[ ] الصورة تظهر، وإذا غيّرت اسمها مؤقتًا يظهر النص البديل.</li>
+<li>[ ] الرابط يفتح <code>index.html</code> فعلًا.</li>
+<li>[ ] كل وسم مفتوح مُغلق.</li>
+</ul>
+
+<hr>
+
+<h2>7. الجداول: لعرض البيانات فقط</h2>
+
+<h3>أ. متى نستعمل الجدول؟</h3>
+
+<p>نستعمل <strong>الجدول</strong> (Table) لعرض <strong>بيانات</strong> منظّمة في صفوف وأعمدة: استعمال زمني، نتائج، أسعار. <strong>لا</strong> نستعمله لتقسيم الصفحة وترتيب أجزائها (Layout)، فهذه طريقة قديمة تُربك قارئ الشاشة والهواتف؛ الترتيب اليوم من عمل CSS.</p>
+
+<h3>ب. وسوم الجدول</h3>
+
+<table>
+<tr><th>الوسم</th><th>معناه</th></tr>
+<tr><td><code>&lt;table&gt;</code></td><td>الجدول كاملًا</td></tr>
+<tr><td><code>&lt;caption&gt;</code></td><td>عنوان الجدول، يُكتب مباشرة بعد <code>&lt;table&gt;</code></td></tr>
+<tr><td><code>&lt;tr&gt;</code></td><td>صف (Table row)</td></tr>
+<tr><td><code>&lt;th&gt;</code></td><td>خلية عنوان (Table header)، تظهر عريضة في الوسط</td></tr>
+<tr><td><code>&lt;td&gt;</code></td><td>خلية بيانات (Table data)</td></tr>
+</table>
+
+<pre><code class="html">
+&lt;table&gt;
+  &lt;caption&gt;نتائج الفصل الأول&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th&gt;المادة&lt;/th&gt;
+    &lt;th&gt;العلامة&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;الرياضيات&lt;/td&gt;
+    &lt;td&gt;15&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;الإعلام الآلي&lt;/td&gt;
+    &lt;td&gt;17.5&lt;/td&gt;
+  &lt;/tr&gt;
 &lt;/table&gt;
 </code></pre>
 
-<h4>الخاصية width و height</h4>
+<blockquote><p><strong>كيف تقرأ الجدول؟</strong> المتصفح يبني الجدول <strong>صفًا بعد صف</strong>: كل <code>tr</code> صف، وبداخله الخلايا من اليمين إلى اليسار (لأن الصفحة <code>rtl</code>). عدد الخلايا في كل صف يجب أن يكون متساويًا.</p></blockquote>
 
-<p>يمكن التحكم بعرض الجدول بالخاصية width وارتفاعه بالخاصية height، وكلاهما يأخذ قيماً مطلقة أو نسباً مئوية، ويمكن استخدام هذه الخصائص في الخلايا td أيضاً:</p>
+<p>بدون CSS يظهر الجدول دون حدود. سنضيف الحدود في القسم التالي.</p>
+
+<h3>ج. إثراء: دمج الخلايا</h3>
+
+<ul>
+<li><code>colspan=&quot;2&quot;</code>: الخلية تمتدّ على <strong>عمودين</strong>.</li>
+<li><code>rowspan=&quot;2&quot;</code>: الخلية تمتدّ على <strong>صفّين</strong>.</li>
+</ul>
 
 <pre><code class="html">
-&lt;table width=&quot;100%&quot; height=&quot;100%&quot; border=&quot;1&quot;&gt;
- &lt;tr&gt;
-    &lt;td width=&quot;100&quot; height=&quot;40%&quot;&gt;الخلية الأولى&lt;/td&gt;
-    &lt;td width=&quot;100%&quot; height=&quot;40%&quot;&gt;الخلية الثانية&lt;/td&gt;
- &lt;/tr&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th colspan=&quot;2&quot;&gt;الأحد&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;8:00&lt;/td&gt;
+    &lt;td&gt;رياضيات&lt;/td&gt;
+  &lt;/tr&gt;
 &lt;/table&gt;
+</code></pre>
+
+<blockquote><p><strong>إثراء:</strong> في الجداول الكبيرة نجمع صف العناوين داخل <code>&lt;thead&gt;</code> وبقية الصفوف داخل <code>&lt;tbody&gt;</code>؛ هذا يوضّح البنية ولا يغيّر الشكل.</p></blockquote>
+
+<h3>جرّبها في مختبر HTML</h3>
+
+<p>أضف صفًّا لمادة جديدة، ثم أضف عنوانًا <code>caption</code> للجدول، وجرّب <code>colspan</code> على خلية.</p>
+
+<blockquote><p><strong>المختبر التفاعلي:</strong> افتح https://informatique.mouadh.info/studio/html/ لكتابة الكود ومشاهدة الصفحة مباشرة.</p></blockquote>
+
+<hr>
+
+<h2>8. لمسة أولى من CSS: تجميل الصفحة بطريقة حديثة</h2>
+
+<h3>أ. لماذا CSS؟</h3>
+
+<p>في الماضي كان المصمّمون يلوّنون الصفحة بوسوم وخصائص داخل HTML مثل <code>&lt;font&gt;</code> و<code>bgcolor</code>. هذه الطريقة <strong>ألغيت في HTML5</strong>، لأنها تخلط المحتوى بالمظهر، وتُجبرك على تكرار التنسيق في كل سطر.</p>
+
+<p>اليوم نكتب المظهر بلغة <strong>CSS</strong> (Cascading Style Sheets، أي <strong>أوراق الأنماط المتتالية</strong>). أبسط طريقة: عنصر <code>&lt;style&gt;</code> داخل <code>&lt;head&gt;</code>.</p>
+
+<h3>ب. شكل القاعدة في CSS</h3>
+
+<pre><code class="css">
+h1 {
+  color: darkgreen;
+  text-align: center;
+}
 </code></pre>
 
 <ul>
-<li>الخاصية bgcolor: التحكم في لون خلفية الجدول.</li>
-<li>الخاصية background: تعيين صورة الخلفية للجدول.</li>
+<li><code>h1</code> <strong>المحدِّد</strong> (Selector): العناصر التي نريد تنسيقها، هنا كل عناوين <code>h1</code>.</li>
+<li><code>color</code> <strong>الخاصية</strong> (Property)، و<code>darkgreen</code> <strong>القيمة</strong> (Value).</li>
+<li>كل سطر ينتهي بفاصلة منقوطة <code>;</code>، والقاعدة كلها بين حاضنتين <code>{ }</code>.</li>
 </ul>
 
-<p>يمكن استعمال هذه الخواص في الخلايا td أيضاً، وعند تعيين قيمة bgcolor للجدول مختلفة عن قيمة أحد الخلايا، فإن لون الخلية سيطغى على لون الجدول في تلك الخلية، لأن الخلية موجودة فوق الجدول في ترتيب الطبقات:</p>
+<h3>ج. خصائص نستعملها في هذه الوحدة</h3>
+
+<table>
+<tr><th>الخاصية</th><th>دورها</th><th>مثال</th></tr>
+<tr><td><code>color</code></td><td>لون النص</td><td><code>color: navy;</code></td></tr>
+<tr><td><code>background-color</code></td><td>لون الخلفية</td><td><code>background-color: #f5f5dc;</code></td></tr>
+<tr><td><code>font-family</code></td><td>نوع الخط</td><td><code>font-family: Tahoma, sans-serif;</code></td></tr>
+<tr><td><code>font-size</code></td><td>حجم الخط</td><td><code>font-size: 18px;</code></td></tr>
+<tr><td><code>text-align</code></td><td>محاذاة النص</td><td><code>text-align: center;</code></td></tr>
+<tr><td><code>border</code></td><td>إطار حول العنصر</td><td><code>border: 1px solid gray;</code></td></tr>
+<tr><td><code>padding</code></td><td>فراغ داخلي بين الإطار والمحتوى</td><td><code>padding: 8px;</code></td></tr>
+</table>
+
+<p>الألوان تُكتب <strong>باسمها الإنجليزي</strong> (<code>red</code>، <code>navy</code>) أو <strong>برمزها الست-عشري</strong> (<code>#006233</code> أخضر العلم الوطني).</p>
+
+<h3>د. مثال كامل: صفحة منسّقة بجدول ذي حدود</h3>
 
 <pre><code class="html">
-&lt;table border=&quot;1&quot; width=&quot;90%&quot; height=&quot;80%&quot;&gt;
- &lt;tr&gt;
-    &lt;td bgcolor=&quot;Yellow&quot;&gt;الخلية الأولى&lt;/td&gt;
-    &lt;td&gt;الخلية الثانية&lt;/td&gt;
- &lt;/tr&gt;
-&lt;/table&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot;
+          content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;صفحة منسّقة&lt;/title&gt;
+    &lt;style&gt;
+      body {
+        font-family: Tahoma, Arial, sans-serif;
+        background-color: #f7f7f2;
+      }
+      h1 {
+        color: #006233;
+        text-align: center;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      th, td {
+        border: 1px solid #555;
+        padding: 8px;
+      }
+      th {
+        background-color: #d9ead3;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;جدول الحصص&lt;/h1&gt;
+    &lt;table&gt;
+      &lt;tr&gt;&lt;th&gt;اليوم&lt;/th&gt;&lt;th&gt;المادة&lt;/th&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;الأحد&lt;/td&gt;&lt;td&gt;إعلام آلي&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 
-<p><img src="artifacts/image_000323_ce808b9e4779cd955329453a2a231551e77441ace85e5d9b1dbbcdf3f42d0425.png" alt="Image"></p>
+<ul>
+<li><code>border-collapse: collapse;</code> يدمج حدود الخلايا المتجاورة في خط واحد.</li>
+<li><code>th, td</code> بفاصلة: القاعدة نفسها تُطبَّق على النوعين.</li>
+<li>لاحظ: <strong>لم نغيّر سطرًا واحدًا داخل <code>body</code></strong>. لو أردنا اللون الأزرق بدل الأخضر نعدّل سطرًا واحدًا في <code>style</code> فيتغيّر في الصفحة كلها.</li>
+</ul>
 
-<h4>الخاصية align</h4>
+<h3>هـ. قديم ← حديث: ما لم يعد صالحًا في HTML5</h3>
 
-<p>يمكن التحكم بمحاذاة محتوى الخلية أفقياً بالخاصية align.</p>
+<p>قد تصادف في كتب أو مواقع قديمة الوسوم والخصائص التالية. هي <strong>ملغاة</strong> (Obsolete) في HTML5: لا تستعملها، واستعمل مقابلها في CSS.</p>
 
-<p>في الخاصية align، القيمة left تعني محاذاة لليسار، وright لليمين، وcenter للمنتصف، وjustify للضبط الكلي الذي يجعل الأسطر متساوية في الطول.</p>
+<table>
+<tr><th>القديم (لا تستعمله)</th><th>الحديث (CSS)</th></tr>
+<tr><td><code>&lt;font color=&quot;red&quot;&gt;</code></td><td><code>color: red;</code></td></tr>
+<tr><td><code>&lt;font face=&quot;Arial&quot;&gt;</code></td><td><code>font-family: Arial;</code></td></tr>
+<tr><td><code>&lt;font size=&quot;5&quot;&gt;</code> و<code>&lt;big&gt;</code></td><td><code>font-size: 24px;</code></td></tr>
+<tr><td><code>&lt;basefont&gt;</code></td><td><code>font-family</code> و<code>font-size</code> على <code>body</code></td></tr>
+<tr><td><code>&lt;center&gt;</code></td><td><code>text-align: center;</code></td></tr>
+<tr><td><code>align=&quot;right&quot;</code> على <code>p</code> أو <code>h1</code> أو <code>td</code></td><td><code>text-align: right;</code></td></tr>
+<tr><td><code>valign=&quot;top&quot;</code> على <code>td</code></td><td><code>vertical-align: top;</code></td></tr>
+<tr><td><code>bgcolor=&quot;yellow&quot;</code></td><td><code>background-color: yellow;</code></td></tr>
+<tr><td><code>background=&quot;img.jpg&quot;</code> على <code>body</code></td><td><code>background-image: url(img.jpg);</code></td></tr>
+<tr><td><code>&lt;table border=&quot;1&quot;&gt;</code></td><td><code>border: 1px solid;</code> على <code>th, td</code></td></tr>
+<tr><td><code>cellpadding=&quot;10&quot;</code></td><td><code>padding: 10px;</code> على <code>th, td</code></td></tr>
+<tr><td><code>cellspacing=&quot;0&quot;</code></td><td><code>border-collapse: collapse;</code> على <code>table</code></td></tr>
+<tr><td><code>width</code> و<code>height</code> على <code>table</code> و<code>td</code></td><td><code>width</code> و<code>height</code> في CSS</td></tr>
+</table>
 
-<h4>الخاصية valign</h4>
+<blockquote><p>الخاصيتان <code>width</code> و<code>height</code> تبقيان <strong>صالحتين على <code>img</code></strong>، وهذا الاستثناء مقصود: يساعد المتصفح على حجز مكان الصورة قبل تحميلها.</p></blockquote>
 
-<p>يمكن التحكم بمحاذاة محتوى الخلية رأسياً بالخاصية valign.</p>
+<h3>جرّبها في مختبر HTML</h3>
 
-<p>في الخاصية valign، تأخذ القيمة top للأعلى، وbottom للأسفل.</p>
+<p>غيّر لون العناوين وخلفية الصفحة ونوع الخط، ثم أضف إطارًا لخلايا الجدول باستعمال <code>border</code>.</p>
 
-<p><img src="artifacts/image_000324_5bb8364fda40a211088ae1b5461b6aefdbd2827bbac2963dd1d908048664ff40.png" alt="Image"></p>
+<blockquote><p><strong>المختبر التفاعلي:</strong> افتح https://informatique.mouadh.info/studio/html/ لكتابة الكود ومشاهدة الصفحة مباشرة.</p></blockquote>
+
+<hr>
+
+<h2>9. المشروع النهائي: «صفحة التعريف بولايتي» (التقويم الرسمي)</h2>
+
+<h3>أ. الوضعية</h3>
+
+<p>تنظّم ثانويتك أسبوعًا للتعريف بولايات الجزائر، وطُلب من قسمك إعداد <strong>موقع صغير</strong> يُعرض على حواسيب المختبر يوم الأبواب المفتوحة. مهمتك: إنشاء موقع من صفحتين يعرّف بولايتك.</p>
+
+<h3>ب. بنية المجلد المطلوبة</h3>
+
+<pre><code class="text">
+wilaya/
+├── index.html
+├── page2.html
+└── images/
+    └── landmark.jpg
+</code></pre>
+
+<h3>ج. المطلوب في كل صفحة</h3>
+
+<p><strong>الصفحة الرئيسية <code>index.html</code> يجب أن تُظهر:</strong></p>
+
+<ol>
+<li>عنوانًا رئيسيًا <code>h1</code> باسم الولاية ورقمها.</li>
+<li>فقرتين على الأقل: الموقع الجغرافي، ونبذة عن تاريخ الولاية أو سكانها.</li>
+<li>صورة لمعلم من الولاية من المجلد <code>images</code> بعرض محدّد ونص بديل وصفي.</li>
+<li>قائمة (نقطية أو مرقّمة) بثلاثة معالم أو منتجات تشتهر بها الولاية.</li>
+<li>رابطًا نحو <code>page2.html</code> نصّه «اكتشف معالم ولايتي».</li>
+</ol>
+
+<p><strong>الصفحة الثانية <code>page2.html</code> يجب أن تُظهر:</strong></p>
+
+<ol>
+<li>عنوانًا <code>h1</code>: «معالم ولايتي».</li>
+<li>جدولًا صغيرًا (3 صفوف بيانات على الأقل) بعنوان <code>caption</code> وصف عناوين <code>th</code>: المَعلم، مكانه، نوعه.</li>
+<li>رابطًا خارجيًا نحو مصدر موثوق يُفتح في تبويب جديد.</li>
+<li>رابطًا نحو <code>index.html</code> نصّه «العودة إلى الصفحة الرئيسية».</li>
+</ol>
+
+<p><strong>في الصفحتين:</strong> الهيكل الكامل لـ HTML5، عنوان <code>title</code> مختلف لكل صفحة، وعنصر <code>style</code> يطبّق على الأقل: خطًّا للصفحة، لونًا للعناوين، وإطارًا للجدول.</p>
+
+<h3>د. نموذج انطلاق للصفحة الرئيسية</h3>
+
+<p>هذا نموذج عن ولاية سطيف؛ عوّض المحتوى بمعلومات ولايتك:</p>
+
+<pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot;
+          content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;ولاية سطيف&lt;/title&gt;
+    &lt;style&gt;
+      body { font-family: Tahoma, sans-serif; }
+      h1, h2 { color: #006233; }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;ولاية سطيف (19)&lt;/h1&gt;
+    &lt;p&gt;تقع ولاية سطيف في الهضاب العليا
+       شرق الجزائر.&lt;/p&gt;
+    &lt;img src=&quot;images/landmark.jpg&quot;
+         alt=&quot;نافورة عين الفوارة وسط مدينة سطيف&quot;
+         width=&quot;400&quot;&gt;
+    &lt;h2&gt;تشتهر ولايتي بـ&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;نافورة عين الفوارة&lt;/li&gt;
+      &lt;li&gt;الموقع الأثري جميلة&lt;/li&gt;
+      &lt;li&gt;الزراعة وتربية المواشي&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;&lt;a href=&quot;page2.html&quot;&gt;اكتشف معالم ولايتي&lt;/a&gt;&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<blockquote><p>النموذج ناقص عمدًا: أكمل الفقرة الثانية، واكتب <code>page2.html</code> كاملة بنفسك.</p></blockquote>
+
+<h3>جرّبها في مختبر HTML</h3>
+
+<p>ابدأ مشروعك في المختبر، وتأكّد أن كل معيار في شبكة التقييم يتحقّق قبل نقل الشيفرة إلى ملفاتك.</p>
+
+<blockquote><p><strong>المختبر التفاعلي:</strong> افتح https://informatique.mouadh.info/studio/html/ لكتابة الكود ومشاهدة الصفحة مباشرة.</p></blockquote>
+
+<h3>هـ. شبكة التقييم (على 20)</h3>
+
+<table>
+<tr><th>المعيار</th><th>المؤشر</th><th>النقطة</th></tr>
+<tr><td>الهيكل والحفظ</td><td><code>DOCTYPE</code> و<code>html lang dir</code> و<code>meta charset</code> و<code>title</code> و<code>body</code> صحيحة في الصفحتين؛ ملفات بأسماء لاتينية وامتداد <code>.html</code>؛ الحروف العربية سليمة</td><td>3</td></tr>
+<tr><td>النصوص</td><td><code>h1</code> واحد في كل صفحة، عناوين فرعية مرتبة، فقرتان على الأقل، استعمال <code>strong</code> أو <code>em</code> في مكانه</td><td>3</td></tr>
+<tr><td>الصورة</td><td>تظهر من المجلد <code>images</code> بمسار نسبي، مع <code>alt</code> وصفي و<code>width</code></td><td>3</td></tr>
+<tr><td>القائمة</td><td>قائمة صحيحة (<code>ul</code> أو <code>ol</code> مع <code>li</code>) بثلاثة عناصر على الأقل</td><td>2</td></tr>
+<tr><td>الارتباطات</td><td>رابط نحو <code>page2.html</code> ورابط عودة يعملان؛ رابط خارجي بـ <code>target=&quot;_blank&quot;</code></td><td>3</td></tr>
+<tr><td>الجدول</td><td><code>caption</code> و<code>th</code> وثلاثة صفوف بيانات، بعدد خلايا متساوٍ</td><td>3</td></tr>
+<tr><td>التنسيق بـ CSS</td><td>عنصر <code>style</code> في الرأس يحدّد خطًّا ولونًا وإطارًا للجدول؛ لا وسوم ولا خصائص ملغاة</td><td>2</td></tr>
+<tr><td>جودة الشيفرة</td><td>وسوم مغلقة ومتداخلة بشكل صحيح، مسافات بادئة، تعليق واحد على الأقل</td><td>1</td></tr>
+<tr><td><strong>المجموع</strong></td><td></td><td><strong>20</strong></td></tr>
+</table>
+
+<hr>
+
+<h2>تمارين متدرجة</h2>
+
+<h3>المستوى الأول: الفهم والتعرّف</h3>
+
+<ol>
+<li>صنّف ما يلي إلى «وسم» أو «عنصر» أو «خاصية»: <code>&lt;p&gt;</code>، <code>href=&quot;page2.html&quot;</code>، <code>&lt;h2&gt;نبذة&lt;/h2&gt;</code>، <code>alt</code>، <code>&lt;/body&gt;</code>.</li>
+<li>رتّب الأسطر التالية لتكوّن هيكلًا صحيحًا: <code>&lt;/head&gt;</code>، <code>&lt;body&gt;</code>، <code>&lt;!DOCTYPE html&gt;</code>، <code>&lt;head&gt;</code>، <code>&lt;/html&gt;</code>، <code>&lt;html lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;</code>، <code>&lt;/body&gt;</code>، <code>&lt;title&gt;تمرين&lt;/title&gt;</code>.</li>
+<li>اكتب الشيفرة التي تُظهر في الصفحة النص: <code>الوسم &lt;br&gt; عنصر فارغ</code>.</li>
+</ol>
+
+<h3>المستوى الثاني: الكتابة</h3>
+
+<ol>
+<li>اكتب قائمة مرقّمة بحروف لاتينية صغيرة (a، b، c) تحتوي على ثلاث خطوات لحفظ ملف في المفكرة. <strong>يجب أن تُظهر الصفحة:</strong> a. ثم b. ثم c.</li>
+<li>اكتب رابطين: الأول نحو <code>https://www.example.com</code> يُفتح في تبويب جديد، والثاني نحو البريد <code>club@example.com</code>. <strong>يجب أن تُظهر الصفحة</strong> النصّين «زر موقع النادي» و«راسل النادي».</li>
+<li>اكتب عنصر صورة للملف <code>logo.png</code> الموجود في المجلد <code>images</code>، بعرض 150 بكسل ونص بديل مناسب.</li>
+</ol>
+
+<h3>المستوى الثالث: الاكتشاف والتصحيح والتحديث</h3>
+
+<ol>
+<li>الشيفرة التالية تحتوي على <strong>أربعة أخطاء</strong>. اكتشفها وصحّحها:</li>
+</ol>
+
+<pre><code class="html">
+&lt;ul&gt;
+  &lt;li&gt;الحاسوب
+  &lt;li&gt;الطابعة&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&quot;images/Photo 1.JPG&quot;&gt;
+&lt;p&gt;&lt;strong&gt;تنبيه&lt;/p&gt;&lt;/strong&gt;
+</code></pre>
+
+<ol>
+<li>حدّث الشيفرة القديمة التالية إلى HTML5 وCSS. <strong>يجب أن تُظهر الصفحة</strong> العنوان نفسه بلون أحمر في الوسط على خلفية صفراء:</li>
+</ol>
+
+<pre><code class="html">
+&lt;body bgcolor=&quot;yellow&quot;&gt;
+&lt;center&gt;&lt;font color=&quot;red&quot;&gt;
+&lt;h1&gt;مرحبا&lt;/h1&gt;
+&lt;/font&gt;&lt;/center&gt;
+&lt;/body&gt;
+</code></pre>
+
+<ol>
+<li>أنشئ جدولًا لاستعمالك الزمني ليوم واحد (ثلاث حصص)، بعنوان <code>caption</code>، وصف عناوين «التوقيت» و«المادة»، وحدود بـ CSS. <strong>يجب أن تُظهر الصفحة</strong> جدولًا بثلاثة صفوف بيانات بخطوط حدود مدمجة.</li>
+</ol>
+
+<hr>
+
+<h2>تقويم ختامي للوحدة</h2>
+
+<ol>
+<li>لماذا نقول إن HTML لغة توصيف وليست لغة برمجة؟ اذكر فرقين.</li>
+<li>ما دور كل من: <code>&lt;meta charset=&quot;utf-8&quot;&gt;</code> و<code>&lt;title&gt;</code> و<code>dir=&quot;rtl&quot;</code>؟</li>
+<li>ما الفرق بين <code>&lt;strong&gt;</code> و<code>&lt;b&gt;</code> رغم أنهما يُظهران النص عريضًا؟</li>
+<li>متى نستعمل <code>ol</code> ومتى نستعمل <code>ul</code>؟ أعط مثالًا لكل منهما.</li>
+<li>ما الفرق بين المسار <code>page2.html</code> والمسار <code>https://www.example.com/page2.html</code>؟ وأيهما يبقى صحيحًا إذا نقلنا مجلد الموقع إلى قرص USB؟</li>
+<li>اذكر ثلاثة أسباب تجعل الخاصية <code>alt</code> ضرورية.</li>
+<li>لماذا لا نستعمل الوسم <code>&lt;center&gt;</code> والخاصية <code>bgcolor</code> في HTML5؟ ماذا نستعمل بدلهما؟</li>
+</ol>
+
+<hr>
+
+<h2>بطاقة خروج سريعة (3–2–1)</h2>
+
+<ul>
+<li><strong>3</strong> وسوم تعلّمتها اليوم وما يفعله كل منها.</li>
+<li><strong>2</strong> خطآن يجب أن أتجنّبهما عند كتابة صفحة ويب.</li>
+<li><strong>1</strong> سؤال ما زال يحيّرني أو شيء أريد إضافته إلى صفحتي.</li>
+</ul>
+
+<hr>
+
+<h3>بطاقة إجابة مختصرة للأستاذ</h3>
+
+<p><strong>التمارين:</strong></p>
+
+<ol>
+<li><code>&lt;p&gt;</code> وسم؛ <code>href=&quot;page2.html&quot;</code> خاصية؛ <code>&lt;h2&gt;نبذة&lt;/h2&gt;</code> عنصر؛ <code>alt</code> خاصية (اسمها)؛ <code>&lt;/body&gt;</code> وسم (إغلاق).</li>
+<li><code>&lt;!DOCTYPE html&gt;</code> ← <code>&lt;html lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;</code> ← <code>&lt;head&gt;</code> ← <code>&lt;title&gt;تمرين&lt;/title&gt;</code> ← <code>&lt;/head&gt;</code> ← <code>&lt;body&gt;</code> ← <code>&lt;/body&gt;</code> ← <code>&lt;/html&gt;</code>.</li>
+<li><code>&lt;p&gt;الوسم &amp;lt;br&amp;gt; عنصر فارغ&lt;/p&gt;</code>.</li>
+<li>الحل:</li>
+</ol>
+
+<pre><code class="html">
+&lt;ol type=&quot;a&quot;&gt;
+  &lt;li&gt;ملف ← حفظ باسم.&lt;/li&gt;
+  &lt;li&gt;اكتب الاسم index.html.&lt;/li&gt;
+  &lt;li&gt;اختر UTF-8 ثم اضغط حفظ.&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+
+<ol>
+<li>الحل:</li>
+</ol>
+
+<pre><code class="html">
+&lt;a href=&quot;https://www.example.com&quot;
+   target=&quot;_blank&quot;&gt;زر موقع النادي&lt;/a&gt;
+&lt;a href=&quot;mailto:club@example.com&quot;&gt;راسل النادي&lt;/a&gt;
+</code></pre>
+
+<ol>
+<li><code>&lt;img src=&quot;images/logo.png&quot; alt=&quot;شعار نادي الإعلام الآلي&quot; width=&quot;150&quot;&gt;</code> (أي نص بديل وصفي مقبول).</li>
+<li>الأخطاء: (1) <code>&lt;li&gt;الحاسوب</code> غير مغلق: نضيف <code>&lt;/li&gt;</code>؛ (2) القائمة تُفتح بـ <code>ul</code> وتُغلق بـ <code>&lt;/ol&gt;</code>: نكتب <code>&lt;/ul&gt;</code>؛ (3) الصورة بلا <code>alt</code>، واسم الملف فيه مسافة وحروف كبيرة: نعيد تسمية الملف <code>photo1.jpg</code> ونكتب <code>alt</code> وصفيًا؛ (4) تداخل خاطئ: الصحيح <code>&lt;p&gt;&lt;strong&gt;تنبيه&lt;/strong&gt;&lt;/p&gt;</code>. (يُقبل عدّ مشكلة الاسم ونقص <code>alt</code> خطأين منفصلين.)</li>
+<li>الحل:</li>
+</ol>
+
+<pre><code class="html">
+&lt;style&gt;
+  body { background-color: yellow; }
+  h1 { color: red; text-align: center; }
+&lt;/style&gt;
+&lt;!-- وفي الجسم --&gt;
+&lt;h1&gt;مرحبا&lt;/h1&gt;
+</code></pre>
+
+<p>يوضع <code>style</code> في <code>head</code>، ويبقى في <code>body</code> العنوان وحده.</p>
+
+<ol>
+<li>جدول فيه <code>caption</code> وصف <code>th</code> («التوقيت»، «المادة») وثلاثة صفوف <code>td</code>، مع <code>table { border-collapse: collapse; }</code> و<code>th, td { border: 1px solid #555; padding: 6px; }</code>.</li>
+</ol>
+
+<p><strong>التقويم الختامي:</strong></p>
+
+<ol>
+<li>HTML تصف بنية المحتوى ولا تنفّذ عمليات: لا متغيرات، ولا شروط، ولا حلقات، ولا حسابات.</li>
+<li><code>meta charset=&quot;utf-8&quot;</code>: ترميز يُظهر الحروف العربية سليمة؛ <code>title</code>: عنوان علامة التبويب ونتائج البحث؛ <code>dir=&quot;rtl&quot;</code>: اتجاه الصفحة من اليمين إلى اليسار.</li>
+<li><code>strong</code> يعني أن النص <strong>مهم</strong> (يفهمه قارئ الشاشة ومحرك البحث)، و<code>b</code> يلفت الانتباه بصريًا فقط دون معنى خاص.</li>
+<li><code>ol</code> عندما يكون الترتيب جزءًا من المعنى (خطوات تحضير وصفة)، و<code>ul</code> عندما لا يهم الترتيب (لوازم الحقيبة المدرسية).</li>
+<li>الأول مسار نسبي يُحسب انطلاقًا من مكان الصفحة الحالية، والثاني مسار مطلق يحدّد العنوان كاملًا على الإنترنت. المسار النسبي يبقى صحيحًا بعد نقل المجلد.</li>
+<li>قارئ الشاشة يقرؤه للمكفوفين؛ يظهر مكان الصورة إذا لم تُحمَّل؛ يساعد محركات البحث على فهم الصورة.</li>
+<li>لأنها وسوم وخصائص <strong>ملغاة</strong> تخلط المحتوى بالمظهر. نستعمل CSS: <code>text-align: center;</code> و<code>background-color: …;</code>.</li>
+</ol>
+
+<p><strong>المشروع النهائي:</strong> يُقيَّم بشبكة التقييم أعلاه. تحقّق سريع أثناء التصحيح: افتح الصفحتين، اضغط كل رابط، غيّر مؤقتًا اسم الصورة للتأكد من <code>alt</code>، ثم اعرض الشيفرة (<code>Ctrl + U</code>) للبحث عن وسوم ملغاة.</p>
+
+<hr>
+
+<h2>معجم المصطلحات</h2>
+
+<table>
+<tr><th>المصطلح بالعربية</th><th>English</th><th>الشرح المختصر</th></tr>
+<tr><td>صفحة ويب</td><td>Web page</td><td>ملف HTML يعرضه المتصفح</td></tr>
+<tr><td>موقع ويب</td><td>Website</td><td>مجموعة صفحات مترابطة</td></tr>
+<tr><td>لغة توصيف</td><td>Markup language</td><td>لغة تصف بنية المحتوى بالوسوم</td></tr>
+<tr><td>وسم</td><td>Tag</td><td>كلمة بين <code>&lt;</code> و<code>&gt;</code>، مثل <code>&lt;p&gt;</code></td></tr>
+<tr><td>عنصر</td><td>Element</td><td>وسم الفتح + المحتوى + وسم الإغلاق</td></tr>
+<tr><td>عنصر فارغ</td><td>Void element</td><td>عنصر بلا محتوى ولا وسم إغلاق، مثل <code>&lt;br&gt;</code></td></tr>
+<tr><td>خاصية</td><td>Attribute</td><td>معلومة إضافية داخل وسم الفتح</td></tr>
+<tr><td>الرأس</td><td>Head</td><td>معلومات عن الصفحة لا تظهر فيها</td></tr>
+<tr><td>الجسم</td><td>Body</td><td>المحتوى الظاهر للزائر</td></tr>
+<tr><td>ترميز الحروف</td><td>Character encoding</td><td>طريقة حفظ الحروف؛ نستعمل UTF-8</td></tr>
+<tr><td>كيان</td><td>Entity</td><td>رمز خاص مثل <code>&amp;lt;</code> و<code>&amp;nbsp;</code></td></tr>
+<tr><td>تعليق</td><td>Comment</td><td>ملاحظة في الشيفرة لا تظهر في الصفحة</td></tr>
+<tr><td>قائمة نقطية</td><td>Unordered list</td><td>قائمة <code>ul</code> لا يهم ترتيبها</td></tr>
+<tr><td>قائمة مرقّمة</td><td>Ordered list</td><td>قائمة <code>ol</code> مرقّمة آليًا</td></tr>
+<tr><td>ارتباط تشعبي</td><td>Hyperlink</td><td>رابط ينقل إلى صفحة أو موقع أو بريد</td></tr>
+<tr><td>مسار نسبي</td><td>Relative path</td><td>مسار يُحسب من مكان الصفحة الحالية</td></tr>
+<tr><td>مسار مطلق</td><td>Absolute path</td><td>عنوان كامل يبدأ بـ <code>https://</code></td></tr>
+<tr><td>نص بديل</td><td>Alternative text</td><td>وصف الصورة في الخاصية <code>alt</code></td></tr>
+<tr><td>إتاحة الوصول</td><td>Accessibility</td><td>جعل الصفحة قابلة للاستعمال من الجميع</td></tr>
+<tr><td>أوراق الأنماط المتتالية</td><td>Cascading Style Sheets (CSS)</td><td>لغة تحدّد مظهر الصفحة</td></tr>
+<tr><td>محدِّد</td><td>Selector</td><td>الجزء من قاعدة CSS الذي يختار العناصر</td></tr>
+<tr><td>ملغى</td><td>Obsolete</td><td>وسم أو خاصية لم تعد صالحة في HTML5</td></tr>
+<tr><td>شيفرة مصدرية</td><td>Source code</td><td>النص الذي كُتبت به الصفحة</td></tr>
+</table>
 </body>
 </html>
